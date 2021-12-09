@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style type="text/css">
+    canvas {
+      border: 1px solid red;
+    }
+  </style>
+</head>
+
+<body>
+  <canvas width="600" height="400"></canvas>
+  <script type="text/javascript">
+    //获取canvas画布对象
+    var canvas = document.querySelector("canvas");
+    //获取绘图上下文
+    var ctx = canvas.getContext("2d");
+
+    ctx.translate(100, 100);  //将原点位置移动到100,100
+    ctx.strokeRect(0, 0, 200, 100);
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>固定定位问题</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    #gud {
+      width: 1000px;
+      height: 80px;
+      background-color: skyblue;
+      position: fixed;
+      top: 0px;
+      left: 0px;
+      max-width: 1200px;
+    }
+
+    .box {
+      width: 1000px;
+      height: 800px;
+      background-color: thistle;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="gud">
+    <h1>导航栏 - 这里解决固定定位盒子不随滚动条而滚动的问题</h1>
+  </div>
+
+  <div class="box"></div>
+  <script>
+    window.onscroll = function () {
+      var sl = -Math.max(document.body.scrollLeft, document.documentElement.scrollLeft);
+      document.getElementById('gud').style.left = sl + 'px';
+    }
+  </script>
+</body>
+
+</html>

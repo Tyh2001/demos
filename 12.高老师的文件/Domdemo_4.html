@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+    <style>
+        .demo3 {
+            border: 2px solid #e20074;
+            width: 600px;
+            padding: 30px;
+        }
+
+        .demo3 select {
+            width: 200px;
+            height: 400px;
+            background-color: rgba(152, 157, 186, 0.7);
+            font: 20px 宋体;
+        }
+
+        .demo1 li {
+            height: 40px;
+            width: 400px;
+            line-height: 180%;
+            background-color: #00b5e2;
+            margin: 10px 0;
+            text-align: center;
+        }
+
+        .hi {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="demo1">
+        <input type="text" class="txt_1" />
+        <input type="button" class="btn_append" value="添加append" />
+        <input type="button" class="btn_pre" value="添加到最前面prepend" />
+        <input type="button" class="btn_append_ani" value="添加_带动画(after)" />
+        <input type="button" class="btn_pre_ani" value="添加(prepend)" />
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+        </ul>
+        <script>
+            $(function () {
+                $(".demo1 .btn_append").click(function () {
+                    var v = $(".demo1 .txt_1").val();
+                    $(".demo1 ul").append("<li>" + v + "</li>");
+                })
+                $(".demo1 .btn_pre").click(function () {
+                    var v = $(".demo1 .txt_1").val();
+                    $(".demo1 ul").prepend("<li>" + v + "</li>");
+                })
+                $(".demo1 .btn_append_ani").click(function () {
+                    var v = $("<li class='hi'>" + $(".demo1 .txt_1").val() + "</li>");
+                    $(".demo1 ul").append(v);
+                    v.slideDown(2000);
+                    //                $(".demo1 ul li:first").addClass("hi")
+                    //                $(".demo1 ul li:first").slideDown();
+                })
+                $(".demo1 .btn_pre_ani").click(function () {
+                    var v = $(".demo1 .txt_1").val();
+                    $(".demo1 ul").prepend("<li>" + v + "</li>").slideDown();
+                })
+            })
+        </script>
+    </div>
+    <div class="demo2">
+        <input type="text" class="txt_1" />
+        <input type="button" class="btn_after" value="添加到点击元素后面(after)" />
+        <input type="button" class="btn_before" value="添加到点击元素前面(before)" />
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+        </ul>
+        <script>
+            $(function () {
+                var val_z;
+                $(".demo2 ul li").click(function () {
+                    val_z = $(this);
+
+                })
+                $(".demo2 .btn_after").click(function () {
+                    var v = $(".demo2 .txt_1").val();
+                    val_z.after("<li>" + v + "</li>");
+                })
+                $(".demo2 .btn_before").click(function () {
+                    var v = $(".demo2 .txt_1").val();
+                    val_z.before("<li>" + v + "</li>");
+                })
+            })
+        </script>
+    </div>
+
+    <div class="demo3">
+        <input type="button" class="btn_right_one" value=">" />
+
+        <input type="button" class="btn_right_all" value=">>>" />
+        <br />
+        <select name="" id="sel_left" size="10">
+            <option value="苹果">苹果</option>
+            <option value="香蕉">香蕉</option>
+            <option value="大鸭梨">大鸭梨</option>
+            <option value="猕猴桃">猕猴桃</option>
+            <option value="西瓜">西瓜</option>
+        </select>
+        <select name="" id="sel_right" size="10">
+
+        </select>
+        <script>
+            $(function () {
+                var val_z;
+                $(".demo3 option").click(function () {
+                    val_z = $(this);
+
+                })
+                $(".demo3 .btn_right_one").click(function () {
+                    val_z.appendTo("#sel_right");
+                })
+                $(".demo3 .btn_right_all").click(function () {
+                    $("#sel_left option").appendTo("#sel_right");
+                })
+            })
+        </script>
+    </div>
+    <div class="demo4">
+        <input type="text" class="txt_1" />
+        <input type="button" class="remove" value="删除点击元素" />
+        <input type="button" class="replace" value="替换点击元素" />
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+        </ul>
+        <script>
+            $(function () {
+                var val_z;
+                $(".demo4 ul li").click(function () {
+                    val_z = $(this);
+                })
+                $(".demo4 .remove").click(function () {
+
+                    val_z.remove();
+                })
+                $(".demo4 .replace").click(function () {
+                    var v = $(".demo4 .txt_1").val();
+                    val_z.replaceWith("<li>" + v + "</li>");
+                })
+            })
+        </script>
+    </div>
+</body>
+
+</html>

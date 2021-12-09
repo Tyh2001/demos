@@ -1,0 +1,92 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+#box {
+  width: 1000px;
+  margin: 0 auto;
+}
+#box #header {
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#box #header .input-box {
+  border: 1px solid #9b9b9b;
+  background: #f1f1f1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 8px;
+  box-sizing: border-box;
+}
+#box #header .input-box input {
+  width: 100%;
+  height: 28px;
+  border: none;
+  outline: none;
+  margin-right: 3px;
+  background: #f1f1f1;
+}
+#box #header .input-box img {
+  cursor: pointer;
+}
+#box #list {
+  background: #313131;
+}
+#box #list ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#box #list ul li {
+  height: 62px;
+  width: 112px;
+  list-style: none;
+  border: 1px solid #484848;
+  background: #313131;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#box #banner {
+  height: 470px;
+  width: 100%;
+  background: url("博易科技大图.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+#box #Journalism {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#box #Journalism .newItem {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 240px;
+}
+#box #Journalism .newItem .forum-text {
+  width: 210px;
+  font-size: 13px;
+  text-align: center;
+}
+#box #footer {
+  width: 100%;
+}
+#box #footer .footer {
+  height: 330px;
+  background: #e5e5e5;
+}
+#box #footer .footer-text {
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

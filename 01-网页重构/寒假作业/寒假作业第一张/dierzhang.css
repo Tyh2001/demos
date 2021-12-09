@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.zuishang {
+  width: 1267px;
+  height: 98px;
+  margin: 0 auto;
+}
+.zuishang .logo {
+  float: left;
+  margin-top: 28px;
+  margin-left: 193px;
+}
+.fentiao {
+  width: 1267px;
+  height: 4px;
+  background-color: #e5378d;
+  margin: 0 auto;
+}
+.zhongjian {
+  width: 1267px;
+  height: 519px;
+  background-color: #f5f3f1;
+  margin: 0 auto;
+}
+.zhongjian .limianbaise {
+  width: 920px;
+  height: 519px;
+  background-color: #ffffff;
+  float: left;
+  margin-top: 0px;
+  margin-left: 174px;
+}
+.zhongjian .limianbaise .daiyanren {
+  float: left;
+  margin-top: 0px;
+  margin-left: 0px;
+}
+.tupiana .dierzhangdatu {
+  float: left;
+  margin-top: 0px;
+  margin-left: 317px;
+}
+.tupiana .diyi {
+  float: left;
+  margin-top: -493px;
+  margin-left: 904px;
+}
+.tupiana .dier {
+  float: left;
+  margin-top: 0px;
+  margin-left: 317px;
+}

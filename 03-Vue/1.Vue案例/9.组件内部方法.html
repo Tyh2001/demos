@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>组件内部方法</title>
+</head>
+<style>
+
+</style>
+
+<body>
+  <div id="app">
+    <hello />
+  </div>
+
+  <script src="./vue.js"></script>
+  <script>
+    //注册组件
+    Vue.component("hello", {
+      //template 模板
+      template:
+        `
+          <div>
+            <button v-on:click="showTxt">按钮</button>
+            <ul>
+              <li v-for="value,index in arr">{{index}}-->{{value}}</li>    
+            </ul>
+          </div>
+        `,
+      data() {
+        return {
+          msg: "hello 组件",
+          arr: ["a", "b", "c"]
+        }
+      },
+      //methods  方法
+      methods: {
+        showTxt() {
+          alert(this.msg)
+        }
+      }
+    })
+    //vue 实例化对象
+    new Vue({
+      el: "#app",
+    })
+  </script>
+</body>
+
+</html>

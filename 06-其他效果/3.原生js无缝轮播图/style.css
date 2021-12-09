@@ -1,0 +1,105 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+body {
+  padding: 20px;
+}
+
+#container {
+  width: 400px;
+  height: 300px;
+  border: 3px solid #333;
+  overflow: hidden;
+  position: relative;
+}
+
+#list {
+  width: 2800px;
+  height: 300px;
+  position: absolute;
+  z-index: 1;
+}
+
+#list img {
+  width: 400px;
+  float: left;
+}
+
+#buttons {
+  position: absolute;
+  height: 10px;
+  width: 110px;
+  z-index: 2;
+  bottom: 20px;
+  left: 20px;
+}
+
+#buttons span {
+  cursor: pointer;
+  float: left;
+  border: 1px solid #fff;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ccc;
+  margin-right: 8px;
+}
+
+#desc {
+  font-size: 16px;
+  color: #222;
+  z-index: 3;
+  position: absolute;
+  left: 20px;
+  bottom: 40px;
+}
+
+@keyframes longbtn {
+  0% {
+    width: 10px;
+  }
+  100% {
+    width: 20px;
+  }
+}
+
+#buttons .on {
+  background: #ccc;
+  border-radius: 15px;
+  animation: longbtn 0.5s ease;
+  width: 20px;
+}
+
+.arrow {
+  cursor: pointer;
+  display: none;
+  line-height: 39px;
+  text-align: center;
+  font-size: 36px;
+  font-weight: bold;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  z-index: 2;
+  top: 150px;
+  background: #fff;
+}
+
+.arrow:hover {
+  background: RGBA(0, 0, 0, 0.7);
+}
+
+#container:hover .arrow {
+  display: block;
+}
+
+#prev {
+  left: 10px;
+}
+
+#next {
+  right: 10px;
+}

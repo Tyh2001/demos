@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>多个类名</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .box.a.b.c {
+      /* 一个元素同时拥有这几个类名,这些类名必须在同一个元素上,中间没有空格 */
+      width: 300px;
+      height: 300px;
+      border: 3px solid black;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box a b c"></div>
+</body>
+
+</html>

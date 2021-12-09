@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var obj1 = {
+      // key:value,
+      name: "miaomiao",
+      age: 2
+    };
+    var obj2 = fn(obj1);
+    // 浅克隆
+    function fn(option) {
+      var newObj = {};
+      for (var i in option) { //for ... in 遍历
+        newObj[i] = option[i];
+      }
+      return newObj;
+    }
+    obj2.name = "小猫"
+    console.log(obj1)
+    console.log(obj2)
+  </script>
+</body>
+
+</html>

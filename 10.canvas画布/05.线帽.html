@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style type="text/css">
+    canvas {
+      border: 1px solid red;
+    }
+  </style>
+</head>
+
+<body>
+  <canvas width="600" height="400"></canvas>
+  <script type="text/javascript">
+    //获取canvas画布对象
+    var canvas = document.querySelector("canvas");
+    //获取绘图上下文
+    var ctx = canvas.getContext("2d");
+
+    ctx.strokeStyle = "red";
+    ctx.lineWidth = "20";
+
+    //设置线帽
+    ctx.lineCap = "butt";
+    ctx.moveTo(100, 50);
+    ctx.lineTo(300, 50);
+    ctx.stroke();
+
+
+    ctx.beginPath();
+
+    ctx.lineWidth = "20";
+    ctx.strokeStyle = "blue";
+    //设置线帽
+    ctx.lineCap = "round";
+    ctx.moveTo(100, 100);
+    ctx.lineTo(300, 100);
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.lineWidth = "20";
+    ctx.strokeStyle = "green";
+    ctx.lineCap = "square";
+    ctx.moveTo(100, 160);
+    ctx.lineTo(300, 160);
+    ctx.stroke();
+  </script>
+</body>
+
+</html>

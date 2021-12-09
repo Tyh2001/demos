@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .imgBox {
+      width: 500px;
+      margin: auto;
+    }
+
+    img {
+      width: 500px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="imgBox">
+    <img src="https://api.wod.xyz/Image/GetImage?type=3?giao=1">
+  </div>
+  <script>
+    let imgDom = document.querySelector('img')
+    // imgDom.onclick = function () {
+    //   let num = Math.random()
+    //   let url = `https://api.wod.xyz/Image/GetImage?type=3?giao=${num}`
+    //   imgDom.setAttribute('src', url)
+    // }
+    setInterval(() => {
+      let num = Math.random()
+      let url = `https://api.wod.xyz/Image/GetImage?type=3?giao=${num}`
+      imgDom.setAttribute('src', url)
+    }, 1000)
+  </script>
+</body>
+
+</html>

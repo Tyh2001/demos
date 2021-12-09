@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    document.write(`
+      <h1>请我吃饭好不好？</h1>
+      <button id="yesBtn">可以</button>
+      <button id="notBtn">不可以</button>
+    `)
+
+    function randomNum(max, min) {
+      return Math.floor(Math.random() * (max - min)) + min
+    }
+
+    const yesBtn = document.getElementById('yesBtn')
+    const notBtn = document.getElementById('notBtn')
+
+    yesBtn.addEventListener('click', function () {
+      alert('你终于同意了')
+    })
+
+    notBtn.addEventListener('mouseenter', function () {
+      notBtn.style = `
+        position: fixed;
+        top: ${randomNum(400, 20)}px;
+        left: ${randomNum(400, 20)}px;
+      `
+    })
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      display: inline-block;
+      width: 50px;
+      height: 30px;
+      border: 1px solid red;
+    }
+  </style>
+</head>
+
+<body>
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+    <li>7</li>
+    <li>8</li>
+    <li>9</li>
+    <li>10</li>
+  </ul>
+
+  <script>
+    var index;
+    var lis = document.querySelectorAll("li");
+    for (var i = 0; i < lis.length; i++) {
+      (function (index) {
+        lis[index].onclick = function () {
+          console.log(index)
+        }
+      })(i)
+    }
+  </script>
+</body>
+
+</html>

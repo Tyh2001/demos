@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .box {
+      position: fixed;
+      top: 0px;
+      right: 0px;
+      left: 0px;
+      bottom: 0px;
+      margin: auto;
+      width: 300px;
+      height: 200px;
+      padding: 20px;
+      box-sizing: border-box;
+      background: skyblue;
+    }
+
+    .box .yuan {
+      width: 40px;
+      height: 40px;
+      background: orange;
+      border-radius: 50%;
+      position: absolute;
+      top: -20px;
+      left: -20px;
+    }
+
+    .box .fang {
+      width: 40px;
+      height: 40px;
+      border-bottom-right-radius: 50%;
+      background: pink;
+      position: absolute;
+      bottom: -20px;
+      right: -20px;
+    }
+
+    .box .xin {
+      width: 40px;
+      height: 40px;
+      border-bottom-right-radius: 50%;
+      background: red;
+      position: absolute;
+      bottom: -20px;
+      left: -20px;
+      transform: rotate(-135deg);
+    }
+
+    .box .xin .right {
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      background: red;
+      position: absolute;
+      top: 24px;
+    }
+
+    .box .xin .left {
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      background: red;
+      position: absolute;
+      top: 0px;
+      right: -17px;
+    }
+
+    .jiao {
+      position: absolute;
+      top: -21px;
+      right: -11px;
+      width: 0;
+      height: 0;
+      transform: rotate(-35deg);
+      border-right: 30px solid purple;
+      border-top: 30px solid transparent;
+      border-left: 30px solid transparent;
+      border-bottom: 30px solid transparent;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <div class="yuan"></div>
+    <div class="fang"></div>
+    <div class="xin">
+      <div class="zhu"></div>
+      <div class="right"></div>
+      <div class="left"></div>
+    </div>
+    <div class="jiao"></div>
+    这是内容这是内容这是内容这是内容这是内容这是内容
+    这是内容这是内容这是内容这是内容这是内容这是内容
+  </div>
+</body>
+
+</html>

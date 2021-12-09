@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>原生禁止复制</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .box {
+      width: 500px;
+      height: 300px;
+      position: fixed;
+      top: 0px;
+      right: 0px;
+      left: 0px;
+      bottom: 0px;
+      margin: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 2px solid skyblue;
+    }
+
+    .left {
+      width: 200px;
+    }
+
+    .right {
+      width: 300px;
+      user-select: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <div class="left">
+      <p class="title">请支付20元后复制</p>
+      <button>点击支付20元</button>
+    </div>
+    <div class="right">
+      2011年，18岁的她考入加拿大的一所大学学习服装设计，
+      几个月后她决定休学，回中国参加艺考。宋伊人轻松通过
+      了汉语语言水平考试，况且她的法语流利，英语水平也占
+      优势，加上中西结合的生活经过，她对自己的艺考充满信
+      心。在中国的两个多月里，宋伊人参加了专业补习班学表
+      演，随后，她考入北京电影学院，成为2012级表演系本科
+      2班的一员
+    </div>
+  </div>
+
+  <script>
+    let btn = document.querySelector("button");
+    let right = document.querySelector(".right");
+    let title = document.querySelector(".title");
+
+    btn.onclick = function () {
+      title.innerHTML = "已支付20元";
+      title.style.color = "lawngreen";
+      right.style = "user-select: auto";
+      btn.style.display = "none";
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    img {
+      border-radius: 50%;
+      cursor: pointer;
+      width: 300px;
+      height: 300px;
+    }
+  </style>
+</head>
+
+<body>
+  <img src="图片/yonghu.jpg" alt="">
+  <input type="file" style="display: none;">
+  <script src="jquery.js"></script>
+  <script>
+    $("img").click(function (e) {
+      e.preventDefault();
+      $("input").click()
+    })
+    const $img = document.querySelector("img");
+    const $input = document.querySelector("input");
+    const imgType = ['.jpg', '.png', '.gif', '.svg'];
+
+    $input.onchange = function () {
+      const file = this.files[0];
+
+      // 获取上传图片的扩展名
+      // file.name.lastIndexOf(".") 获取最后一个.的索引值
+      // String.substring(index)  从索引最后截取字符串
+      const extendName = file.name.substring(file.name.lastIndexOf("."));
+      // console.log(extendName);
+
+      let flag = false;
+
+      for (let i = 0; i < imgType.length; i++) {
+        if (extendName === imgType[i]) {
+          flag = true;
+          break;  // 中止循环
+        }
+      }
+
+      if (flag) {
+        // 创建阅读器
+        const reader = new FileReader();
+
+        // 文件读取格式
+        reader.readAsDataURL(file);
+
+        // 读取完成
+        reader.onload = function () {
+          // this.result 读取后的结果
+          const $url = this.result;
+          $img.src = $url;
+        }
+      } else {
+        alert("文件格式错误")
+      }
+    }
+  </script>
+
+</body>
+
+</html>

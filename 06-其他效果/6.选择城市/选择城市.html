@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <title>下拉菜单</title>
+  <script src="http://cdn.static.runoob.com/libs/jquery/2.0.0/jquery.min.js"></script>
+  <script src="city.js"></script>
+</head>
+
+<body>
+  <select id="province" onchange="selectCityByPid()"></select>
+  <select id="city"></select>
+</body>
+<script>
+  $(function () {
+    initProvince("110000");
+  })
+  function initProvince(provinceBack) {
+    var optionStr = "<option value=\"-1\">请选择省</option>";
+    for (var province in citys) {
+      optionStr += "<option value=\"" + province + "\"";
+      if (province == provinceBack) {
+        optionStr += "selected='selected'";
+      }
+      optionStr += ">" + citys[province].n + "</option>";
+    }
+    $("#province").append(optionStr);
+    $("#city").empty();
+    optionStr = "<option value=\"-1\">请选择市</option>";
+    $("#city").append(optionStr);
+  }
+  function selectCityByPid() {
+    var provinceCode = $("#province").val();
+    $("#city").empty();
+    var optionStr = "<option value=\"-1\">请选择市</option>";
+    var cityList = citys[provinceCode].c
+    for (var city in cityList) {
+      optionStr += "<option value=\"" + city;
+      optionStr += "\">" + cityList[city].n + "</option>";
+    }
+    $("#city").append(optionStr);
+  }
+</script>
+
+</html>

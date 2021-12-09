@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style type="text/css">
+    canvas {
+      border: 1px solid red;
+    }
+  </style>
+</head>
+
+<body>
+  <canvas width="600" height="400"></canvas>
+  <script type="text/javascript">
+    //获取canvas画布对象
+    var canvas = document.querySelector("canvas");
+    //获取绘图上下文
+    var ctx = canvas.getContext("2d");
+
+    //绘制一个300*300矩形
+    ctx.moveTo(150, 50);
+    ctx.lineTo(450, 50);
+    ctx.lineTo(450, 350);
+    ctx.lineTo(150, 350);
+    ctx.lineTo(150, 50);
+
+    //开始绘制图形
+
+    ctx.moveTo(300, 100);
+    ctx.lineTo(200, 200);
+    ctx.lineTo(250, 200);
+    ctx.lineTo(250, 300);
+    ctx.lineTo(350, 300);
+    ctx.lineTo(350, 200);
+    ctx.lineTo(400, 200);
+    ctx.lineTo(300, 100);
+    ctx.fill();
+  </script>
+</body>
+
+</html>

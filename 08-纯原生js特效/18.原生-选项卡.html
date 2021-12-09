@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>选项卡</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      width: 150px;
+      height: 70px;
+      border: 3px solid black;
+      float: left;
+      list-style: none;
+      text-align: center;
+      line-height: 70px;
+      background-color: skyblue;
+    }
+
+    .box {
+      width: 462px;
+      height: 462px;
+      border: 3px solid black;
+      clear: both;
+      display: none;
+      background-color: yellowgreen;
+    }
+  </style>
+</head>
+
+<body>
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+  </ul>
+  <div>
+    <div class="box">111111</div>
+    <div class="box">222222</div>
+    <div class="box">333333</div>
+  </div>
+  <script>
+    function display(index, a, b, c) {
+      document.querySelectorAll("li")[index].onclick = function () {
+        document.querySelectorAll(".box")[0].style.display = a;
+        document.querySelectorAll(".box")[1].style.display = b;
+        document.querySelectorAll(".box")[2].style.display = c;
+      }
+    }
+    display(0, "block", "none", "none");
+    display(1, "none", "block", "none");
+    display(2, "none", "none", "block");
+  </script>
+</body>
+
+</html>

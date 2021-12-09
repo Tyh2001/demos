@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function count(m) {
+      //实现功能
+      var sum = 0;
+      for (var i = 0; i <= m; i++) {
+        if (i % 2 !== 0) {
+          sum += i;
+        }
+      }
+      return sum;
+    }
+
+    var result = count(10);
+    console.log(result); //输出1+3+5+7+9的结果
+  </script>
+</body>
+
+</html>

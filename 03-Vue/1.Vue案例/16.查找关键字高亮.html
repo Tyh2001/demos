@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <input type="text" v-model="text">
+    <ul>
+      <li v-for="(list, index) in lists" :key="index">
+        <!--
+          通过调用 highlight 函数 传递遍历出的每一项 list
+          来提取出文本框所输入的内容
+          并且将输入的内容高亮显示
+        -->
+        <p v-html="highlight(list)"></p>
+      </li>
+    </ul>
+  </div>
+  <script src="./vue.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data() {
+        return {
+          text: '', // 文本框输入的内容
+          lists: [
+            '12s22daczdc334',
+            'adadfdagrdadadgh',
+            'deddfadaddgfr342',
+            '23454fczsdadsad',
+            'jlpjhddjdadn2223',
+            '92hdksd234j22ha',
+            'kskddczvvvaqddj',
+            '9jdmn11o2dad8hc',
+            'ji22ds11jdadai2'
+          ]
+        }
+      },
+      methods: {
+        highlight(val) {
+          // 因为这里的正则匹配是一个变量，所以不能使用 /this.text/gi 来匹配
+          // 所以要创建一个正则对象
+
+          // 创建一个正则对象
+          // 使用 new RegExp() 来创建一个正则对象
+          // 其中有两个参数：
+          // 1.匹配的字段 可用于字符串或者变量
+          // 2.匹配模式
+          // 返回值是正则对象
+          // 匹配字段是 this.text
+          // 匹配模式是 'gi'  g: 全局匹配  i: 忽略大小写
+          const reg = new RegExp(this.text, 'gi')
+
+          // 字符串 replace() 方法，通过上方正则匹配的字段，将结果转换为带有颜色的 HTML 标签返回
+          const res = val.replace(reg, `<span style="color: red">${this.text}</span>`)
+          return res
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

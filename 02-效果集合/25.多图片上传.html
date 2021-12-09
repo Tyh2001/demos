@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    img {
+      width: 200px;
+      height: 150px;
+    }
+  </style>
+</head>
+
+<body>
+  <input type="file" multiple>
+  <script>
+    const $input = document.querySelector("input");
+    // 选择弯沉文件之后鼠标离开
+    $input.onchange = function () {
+      const files = this.files; //对象
+      console.log(files)
+
+      // 规定规则
+      const arr = ['.jpg', '.png', '.gif']
+
+      let flag = false;
+      for (let value of files) {
+        // 获取扩展名
+        const extendName = value.name.substring(value.name.lastIndexOf("."));
+
+        if (value == files.length) {
+          break; // 中止
+        };
+        for (let i = 0; i < arr.length; i++) {
+          if (extendName === arr[i]) {
+            flag = true;
+            break;
+          }
+        }
+      }
+
+      if (flag) {
+
+        for (let key of files) {
+
+          // 创建阅读器
+          const reader = new FileReader();
+          // readAsDataTEXT
+
+          // 读取文件的格式
+          reader.readAsDataURL(key);
+
+          // 读取完成
+          reader.onload = function () {
+            const $img = document.createElement('img');
+            $img.src = this.result;
+            document.body.appendChild($img);
+          }
+        }
+      }
+      else {
+        alert("格式错误")
+      }
+
+    }
+
+  </script>
+</body>
+
+</html>

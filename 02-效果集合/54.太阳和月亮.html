@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>昼夜切换动画</title>
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* 白天和黑夜的背景 */
+
+    .mk-dark-mode-sky,
+    .mk-dark-mode-sky:before {
+      content: "";
+      position: fixed;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      z-index: 999999999;
+      transition: 2s ease all;
+    }
+
+    .mk-dark-mode-sky {
+      background: linear-gradient(#feb8b0, #fef9db);
+    }
+
+    .mk-dark-mode-sky:before {
+      opacity: 0;
+      background: linear-gradient(#4c3f6d, #6c62bb, #93b1ed);
+    }
+
+    .mk-dark-mode .mk-dark-mode-sky:before {
+      opacity: 1;
+    }
+
+    /* 太阳和月亮 */
+
+    .mk-dark-mode-planet {
+      z-index: 1999999999;
+      position: fixed;
+      left: -50%;
+      top: -50%;
+      width: 200%;
+      height: 200%;
+      transform-origin: center bottom;
+      transition: 2s cubic-bezier(.7, 0, 0, 1) all;
+    }
+
+    .mk-dark-mode-planet:after {
+      position: absolute;
+      left: 35%;
+      top: 40%;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      content: "";
+      background: linear-gradient(#fefefe, #fffbe8);
+    }
+  </style>
+  <script src="jquery.js"></script>
+</head>
+
+<body>
+  <div class="mk-dark-mode-sky">
+    <div class="mk-dark-mode-planet"></div>
+  </div>
+
+  <script>
+    /* 这里为了方便演示，点击页面中任意位置即可触发切换动画 */
+    $("body").click(function () {
+      $("body").toggleClass("mk-dark-mode");
+
+      var angle = $('.mk-dark-mode-planet').data('angle') + 360 || 360;
+      $('.mk-dark-mode-planet').css({
+        'transform': 'rotate(' + angle + 'deg)'
+      });
+      $('.mk-dark-mode-planet').data('angle', angle);
+    });
+  </script>
+</body>
+
+</html>

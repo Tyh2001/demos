@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>v-html和v-text区别</title>
+</head>
+
+<body>
+  <div id="app">
+    <p v-html="a"></p>
+    <p v-text="b"></p>
+  </div>
+
+  <script src="./vue.js"></script>
+  <script>
+    new Vue({
+      el: "#app",
+      data: {
+        a: "<h1>哈哈哈</h1>",
+        b: "<h1>哈哈哈</h1>",
+      }
+    })
+  </script>
+</body>
+
+</html>

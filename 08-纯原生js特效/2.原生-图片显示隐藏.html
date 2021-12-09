@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>原生图片显示隐藏</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    img {
+      height: 200px;
+    }
+  </style>
+</head>
+
+<body>
+  <button class="btn">隐藏</button>
+  <br>
+  <img class="images" src="./图片/1.jpg" alt="">
+
+  <script>
+    let images = document.querySelector(".images");
+    let btn = document.querySelector(".btn");
+
+    let show = true;
+
+    btn.onclick = function () {
+      if (show) {
+        images.style.display = "none";
+        btn.innerHTML = "显示";
+        show = false;
+      } else {
+        images.style.display = "block";
+        btn.innerHTML = "隐藏";
+        show = true;
+      }
+    }
+
+        // 优化一下代码
+        // let images = document.querySelector(".images");
+        // let btn = document.querySelector(".btn");
+
+        // btn.onclick = function () {
+        //     if (btn.innerHTML === "隐藏") {
+        //         images.style.display = "none";
+        //         btn.innerHTML = "显示";
+        //     } else {
+        //         images.style.display = "block";
+        //         btn.innerHTML = "隐藏";
+        //     }
+        // }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,92 @@
+<html>
+
+<head>
+  <title>自定义动画导航</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Verdana, Geneva, sans-serif;
+      font-size: 14px;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    ul li {
+      float: left;
+      overflow: hidden;
+      height: 40px;
+      line-height: 40px;
+      cursor: pointer;
+    }
+
+    ul li a,
+    ul li span {
+      display: block;
+      height: 40px;
+      padding: 0 20px;
+    }
+
+    ul li span {
+      background: url(./图片/a_bg.gif) left top repeat-x;
+      color: #fff;
+    }
+
+    ul li a {
+      background: url(./图片/a_bg.gif) left bottom repeat-x;
+      color: #999;
+    }
+  </style>
+</head>
+
+<body>
+  <ul id="nav">
+    <li>
+      <span>Home</span>
+      <a href="#">Home</a>
+    </li>
+    <li>
+      <span>Services</span>
+      <a href="#">Services</a>
+    </li>
+    <li>
+      <span>Portfolio</span>
+      <a href="#">Portfolio</a>
+    </li>
+    <li>
+      <span>Blog</span>
+      <a href="#">Blog</a>
+    </li>
+    <li>
+      <span>About</span>
+      <a href="#">About</a>
+    </li>
+    <li>
+      <span>Contact</span>
+      <a href="#">Contact</a>
+    </li>
+  </ul>
+
+  <script src="./jquery.js"></script>
+  <script>
+    $(document).ready(function () {
+      $("ul#nav li").mouseover(function () {
+        $(this).find("span").stop().animate({ marginTop: -40 }, 300);
+      })
+      $("ul#nav li").mouseout(function () {
+        $(this).find("span").stop().animate({ marginTop: 0 }, 300);
+      })
+    })
+  </script>
+</body>
+
+</html>

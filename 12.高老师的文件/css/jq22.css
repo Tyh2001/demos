@@ -1,0 +1,221 @@
+﻿@charset "utf-8";
+
+/* CSS Document */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+form,
+img,
+dl,
+dt,
+dd,
+table,
+th,
+td,
+blockquote,
+fieldset,
+div,
+strong,
+label,
+em {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+ul,
+ol,
+li {
+	list-style: none;
+}
+input,
+button {
+	margin: 0;
+	font-size: 12px;
+	vertical-align: middle;
+}
+body {
+	font-size: 12px;
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: center;
+	margin: 0 auto;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+a {
+	color: #333;
+	text-decoration: none;
+}
+a:hover {
+	color: #ef9b11;
+	text-decoration: underline;
+}
+
+/*con-left*/
+.con-left {
+	width: 757px;
+	margin: 20px auto;
+	text-align: left;
+}
+#goods {
+	padding-left: 12px;
+	width: 777px;
+	background: url(../images/line05.gif) repeat-y;
+	padding-top: 10px;
+	margin-right: -30px;
+	overflow: hidden;
+}
+#card-goods {
+	position: relative;
+	padding-top: 15px;
+}
+
+/*goods-list*/
+.goods-list {
+	width: 116px;
+	height: 329px;
+	float: left;
+	display: inline;
+	margin-right: 32px;
+}
+.goods-list .child {
+	width: 100%;
+}
+.goods-list .goods-name {
+	background: url(../images/bg_ico.gif) no-repeat 4px 8px;
+	font-size: 14px;
+	padding-left: 45px;
+	height: 30px;
+	line-height: 30px;
+	font-weight: bold;
+	margin-bottom: 6px;
+}
+.goods-list .goods-img {
+	float: left;
+	width: 80px;
+	height: 125px;
+	overflow: hidden;
+	text-align: center;
+	display: inline;
+	margin-left: 12px;
+}
+.goods-list .goods-img img {
+	width: 90px;
+	height: 118px;
+	display: block;
+}
+.goods-list .goods-info {
+	float: left;
+	width: 105px;
+	height: 148px;
+}
+
+.goods-note {
+	overflow: hidden;
+	line-height: 15px;
+	height: 72px;
+}
+.goods-note a {
+	color: #555;
+	line-height: 18px;
+}
+.goods-price {
+	padding-top: 5px;
+}
+.goods-price strong {
+	color: #e74291;
+}
+.goods-price strong font {
+	font-size: 12px;
+}
+.goods-size {
+	padding-top: 5px;
+}
+.goods-list a:hover {
+	color: #30a1d1;
+}
+.goods-list .goods-params {
+	display: none;
+}
+.goods-add {
+	display: block;
+	background: url(../images/bg24.gif) no-repeat;
+	float: left;
+	width: 97px;
+	height: 24px;
+}
+
+.car {
+	width: 100%;
+	padding-top: 10px;
+}
+.card-list {
+	width: 100%;
+	padding-top: 20px;
+	height: 30px;
+	padding-bottom: 4px;
+	overflow: hidden;
+	background: url(../images/line04.gif) repeat-x left bottom;
+}
+.card-list .child .goods-name {
+	background: none;
+}
+.card-list .child {
+	width: 594px;
+	float: left;
+}
+.card-list .goods-img {
+	width: 70px;
+	height: 30px;
+	float: left;
+	text-align: center;
+}
+.card-list .goods-img img {
+	border: 0;
+	height: 30px;
+}
+.card-list .goods-name {
+	font-size: 14px;
+	padding-top: 10px;
+	width: 152px;
+	float: left;
+}
+.card-list .goods-name a {
+	color: #000;
+}
+.card-list .goods-note {
+	height: 45px;
+	overflow: hidden;
+	line-height: 15px;
+	display: none;
+}
+.card-list .goods-price {
+	padding-top: 10px;
+	float: left;
+	width: 372px;
+}
+.card-list a.goods-add {
+	display: none;
+}
+.card-list a:hover {
+	color: #30a1d1;
+}
+a.goods-del {
+	display: block;
+	background: url(../images/bg21.gif) no-repeat;
+	width: 96px;
+	margin-top: 3px;
+	overflow: hidden;
+	height: 23px;
+	float: left;
+}

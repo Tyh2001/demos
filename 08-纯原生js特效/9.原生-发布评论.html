@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>原生发布评论</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: "微软雅黑";
+    }
+
+    #box {
+      width: 600px;
+      background-color: rgb(224, 224, 224);
+      margin: 50px auto;
+      padding-bottom: 50px;
+    }
+
+    #box .textarea {
+      margin-top: 50px;
+      width: 500px;
+      height: 100px;
+      margin-left: 50px;
+    }
+
+    #box button {
+      float: right;
+      margin-right: 50px;
+    }
+
+    #box .clear {
+      clear: both;
+    }
+
+    #box ul {
+      list-style: none;
+      margin-left: 50px;
+    }
+
+    #box a {
+      float: right;
+      margin-right: 50px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="box">
+    <textarea class="textarea"></textarea>
+    <br>
+    <button>发布</button>
+    <div class="clear"></div>
+    <ul class="comment">
+      <!-- <li> -->
+      <!-- 我的内容 -->
+      <!-- javaScript:void(0) 阻止a标签默认跳转 -->
+      <!-- <a href="javaScript:void(0)">删除</a> -->
+      <!-- </li> -->
+    </ul>
+
+    <script>
+      function $(Class) {
+        return typeof Class === "string" ? document.querySelector(Class) : null;
+      }
+
+      // 1.监听按钮的点击
+      $("button").onclick = function () {
+        // 2.获取输入的内容
+        let data = $(".textarea").value;
+
+        // 3.判断是否输入内容
+        if (data === "") {
+          alert("请输入内容");
+          return;
+        }
+
+        // 4.创建一个li标签放到ul中
+        // 创建一个新的li标签
+        let newLi = document.createElement("li");
+        newLi.innerHTML = `${data}<a href="javaScript:void(0)">删除</a>`;
+        // $(".comment").appendChild(newLi);   // appendChild 添加新的节点
+        // 这里发布新的内容想让它在最上方显示
+        // 将 newLi 添加到ul下的第一个li上
+        $(".comment").insertBefore(newLi, $(".comment").children[0]);
+
+        // 5.清空输入框中的内容
+        $(".textarea").value = "";
+
+        // 6.删除评论
+        // let delBtn = document.getElementsByTagName("a");
+        let delBtn = document.querySelectorAll("a");
+        for (let i = 0; i < delBtn.length; i++) {
+          delBtn[i].onclick = function () {
+            // parentNode 返回父元素
+            this.parentNode.remove();
+          }
+        }
+
+      }
+    </script>
+  </div>
+</body>
+
+</html>

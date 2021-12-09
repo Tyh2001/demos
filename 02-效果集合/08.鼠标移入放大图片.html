@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>移入放大图片</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .tu {
+      width: 300px;
+      height: 180px;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    ul li {
+      float: left;
+    }
+
+    .aaa {
+      width: 600px;
+      height: 360px;
+      position: absolute;
+    }
+  </style>
+</head>
+
+<body>
+  <img class="tu" src="图片/牌子1.jpg" alt="">
+  <img class="tu" src="图片/牌子2.jpg" alt="">
+  <img class="tu" src="图片/牌子3.jpg" alt="">
+  <script src="jquery.js"></script>
+  <script>
+    $(".tu").mouseenter(function () {
+      var tu_src = $(this).attr("src"); //获取移入元素的src属性
+      var xin = $("<img class='aaa'>");
+      xin.attr("src", tu_src);
+      $("body").append(xin);
+    }).mousemove(function (e) {
+      var x = e.pageX;
+      var y = e.pageY;
+      $(".aaa").css({
+        left: x + 20,
+        top: y + 20
+      })
+    }).mouseleave(function () {
+      $(".aaa").remove();
+    })
+  </script>
+</body>
+
+</html>

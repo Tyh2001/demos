@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>图片上传</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .AddPicture {
+      width: 200px;
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+      background-color: skyblue;
+      cursor: pointer;
+      user-select: none;
+      display: inline-block;
+    }
+
+    .previewPictures {
+      width: 77px;
+      height: 77px;
+      border-radius: 10px;
+      padding: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="AddPicture">上传图片</div>
+  <input type="file" class="PictureSelection" hidden multiple accept="image/*">
+  <span class="documents"></span>
+  <br>
+  <div class="previewPicturesBox"></div>
+
+
+  <script>
+    function $(Class) {
+      return typeof Class === "string" ? document.querySelector(Class) : null;
+    }
+
+    // 添加图片
+    let PictureSelection = $(".PictureSelection");
+    let previewPicturesBox = $(".previewPicturesBox"); // 获取到需要展示的图片列表
+    $(".AddPicture").onclick = function () {
+      PictureSelection.click()
+      // 当文本框发生变化时候
+      PictureSelection.onchange = function () {
+        let FileListLength = PictureSelection.files.length; // 获取到上传文件的数组的长度
+        for (let i = 0; i < FileListLength; i++) {
+          $(".documents").innerHTML = `共选择了${FileListLength}张图片`;
+          const blogImg = window.URL.createObjectURL(PictureSelection.files[i]);
+          let previewPictures = document.createElement("img"); // 新建一个 img 标签
+          previewPictures.src = blogImg;
+          previewPictures.setAttribute("class", "previewPictures");
+          previewPicturesBox.appendChild(previewPictures);
+        }
+      }
+    }
+
+
+  </script>
+</body>
+
+</html>

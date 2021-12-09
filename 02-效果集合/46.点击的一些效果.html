@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>点击时一些效果</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .box {
+      width: 200px;
+      height: 200px;
+      border: 3px solid black;
+      background-color: #000;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 点击显示日期和时间 -->
+  <button class="btna">点击这里显示日期和时间</button>
+  <p class="pa"></p>
+  <br>
+  <br>
+  <!-- 点击改变内容 -->
+  <h2 class="h2b">能够改变 HTML 的内容</h2>
+  <button class="btnb">点击我！</button>
+  <br>
+  <br>
+  <!-- 点击改变颜色 -->
+  <button class="kai">开灯</button>
+  <div class="box"></div>
+  <button class="guan">关灯</button>
+  <br>
+  <br>
+  <!-- 点击改变字体大小 -->
+  <p class="pc">这是一段文字</p>
+  <button class="btnc">字体变大</button>
+  <br>
+  <br>
+  <!-- 点击显示隐藏 -->
+  <button class="btnd">隐藏</button>
+  <p class="pd">点击按钮这段话隐藏</p>
+  <script>
+    var btna = document.querySelector(".btna")
+    var pa = document.querySelector(".pa")
+    btna.onclick = function () {
+      // innerHTML可获取或设置指定元素标签bai内du的 html内容
+      // Date()  获取时间
+      pa.innerHTML = Date()
+    }
+    // ----------------分割线------------------
+    var h2b = document.querySelector(".h2b");
+    var btnb = document.querySelector(".btnb");
+    btnb.onclick = function () {
+      h2b.innerHTML = "Hello JavaScript!"
+    }
+    // ----------------分割线------------------
+    var kai = document.querySelector(".kai");
+    var guan = document.querySelector(".guan");
+    var box = document.querySelector(".box")
+    guan.onclick = function () {
+      box.style.background = "#000";
+    }
+    kai.onclick = function () {
+      box.style.background = "#fff";
+    }
+    // ----------------分割线------------------
+    var btnc = document.querySelector(".btnc");
+    var pc = document.querySelector(".pc");
+    btnc.onclick = function () {
+      pc.style.fontSize = "30px"
+    }
+    // ----------------分割线------------------
+    var btnd = document.querySelector(".btnd");
+    var pd = document.querySelector(".pd");
+    btnd.onclick = function () {
+      pd.style.display = "none";
+    }
+            // ----------------分割线------------------
+  </script>
+</body>
+
+</html>

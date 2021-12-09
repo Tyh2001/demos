@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>图片中心放大</title>
+	<style>
+		.clear:after,
+		clear:before {
+			content: "";
+			display: block;
+			clear: both;
+		}
+
+		.banner {
+			border: 1px solid #888;
+			padding: 20px 30px;
+			margin-top: 100px;
+		}
+
+		.list {
+			list-style: none;
+		}
+
+		.list li {
+			width: 210px;
+			margin-right: 10px;
+			float: left;
+		}
+
+		.pic {
+			width: 210px;
+			text-align: center;
+			overflow: hidden;
+		}
+
+		.pic img {
+			width: 210px;
+			height: 103px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="banner">
+		<div class="goods">
+			<ul class="list clear">
+				<li>
+					<div class="pic"><img src="images/car_1_03.gif" alt=""></div>
+					<div class="intro">
+						<p class="didian">美国 洛杉机</p>
+						<p class="didian2">自驾梦幻1号公路 </p>
+						<p class="jiage">￥142起</p>
+					</div>
+				</li>
+				<li>
+					<div class="pic"><img src="images/car_1_03.gif" alt=""></div>
+					<div class="intro">
+						<p class="didian">美国 洛杉机</p>
+						<p class="didian2">自驾梦幻1号公路 </p>
+						<p class="jiage">￥142起</p>
+					</div>
+				</li>
+				<li>
+					<div class="pic"><img src="images/car_1_03.gif" alt=""></div>
+					<div class="intro">
+						<p class="didian">美国 洛杉机</p>
+						<p class="didian2">自驾梦幻1号公路 </p>
+						<p class="jiage">￥142起</p>
+					</div>
+				</li>
+				<li>
+					<div class="pic"><img src="images/car_1_03.gif" alt=""></div>
+					<div class="intro">
+						<p class="didian">美国 洛杉机</p>
+						<p class="didian2">自驾梦幻1号公路 </p>
+						<p class="jiage">￥142起</p>
+					</div>
+				</li>
+
+
+			</ul>
+		</div>
+	</div>
+	<script src="../js/jquery-1.12.4.js"></script>
+	<script>
+		var w = $("li:first img").width();
+		var h = $("li:first img").height();
+
+		$("img").mouseenter(function () {
+			$(this).animate({ width: 1.05 * w, marginLeft: -(1.05 * w - w) / 2, height: 1.05 * h, marginTop: -(1.05 * h - h) / 2, })
+			$(this).parents('li').css({ "border": "1px solid #666", })
+		}).mouseleave(function () {
+			$(this).animate({ width: 210, marginLeft: 0 })
+			$(this).parents('li').css("border", "0px solid #666")
+		})
+	</script>
+</body>
+
+</html>

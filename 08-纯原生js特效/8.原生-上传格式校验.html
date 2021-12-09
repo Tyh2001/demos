@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>原生上传格式校验</title>
+  <script>
+    // window.onload 页面加载完毕之后执行js代码
+    window.onload = function () {
+      function $(id) {
+        return typeof id === "string" ? document.getElementById(id) : null;
+      }
+
+      // onchange 监听input标签的变化 如果发生改变就执行里面的逻辑
+      $("file").onchange = function () {
+        // 1.获取到图片上传的路径
+        // this.value 可以获取到当前上传的图片地址
+        let value = this.value;
+        console.log(value)
+        // 2.获取最后一个 . 在字符串中的位置
+        // 因为路径中也有可能有 . 所以要获取到最后一个.的索引值
+        let loc = value.lastIndexOf(".");
+        // console.log(loc)
+
+        // 3.截取从.开始到最后的所有字符串
+        // substr 截取后缀名的字符串
+        let suffix = value.substr(loc);
+        // console.log(suffix)
+
+        // 4.因为后缀名有可以能是大写字符，这里统一转成小写字母
+        let lover = suffix.toLowerCase();
+
+        if (lover === ".jpg" || lover === ".png" || lover === ".gif") {
+          return;
+        } else {
+          alert("上传格式不正确");
+        }
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <span>请选择上传的文件：</span>
+  <input type="file" id="file">
+</body>
+
+</html>

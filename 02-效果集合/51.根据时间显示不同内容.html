@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+  <p>hi！俱往矣</p>
+  <p class="data"></p>
+  <script src="jquery.js"></script>
+  <script>
+
+    setTimeout(() => {
+      let now = new Date();
+      var hour = now.getHours();
+      if (hour >= 5 && hour <= 8) {
+        $(".data").text("早上好");
+      }
+      if (hour > 8 && hour <= 12) {
+        $(".data").text("上午好~");
+      }
+      if (hour > 12 && hour <= 14) {
+        $(".data").text("中午好");
+      }
+      if (hour > 14 || hour < 5) {
+        $(".data").text("你好啊");
+      }
+    }, 1000)
+  </script>
+</body>
+
+</html>

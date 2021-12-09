@@ -1,0 +1,196 @@
+* {
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  font-family: "微软雅黑";
+  text-decoration: none;
+}
+
+.box {
+  width: 550px;
+  margin: 20px auto;
+
+  // 我的网站链接
+  .myWeb {
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: rgb(64, 158, 255);
+
+      img {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+
+  // 标题
+  .title {
+    text-align: center;
+    line-height: 40px;
+  }
+
+  #textarea {
+    width: 540px;
+    height: 80px;
+    font-size: 14px;
+    font-family: "微软雅黑";
+    padding: 5px;
+    border-radius: 8px;
+    resize: none;
+    border: none;
+    color: #333333;
+    background-color: #f0f1f4;
+    outline: none;
+  }
+
+  #textarea:focus {
+    background-color: #fff;
+    border: 1px solid #ff8140;
+  }
+
+  // 菜单栏
+  .menuBar {
+    width: 550px;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    // 添加图片按钮
+    .addImg {
+      cursor: pointer;
+      font-size: 15px;
+
+      img {
+        width: 20px;
+        vertical-align: middle;
+      }
+    }
+
+    // 发布按钮
+    .release-btn {
+      width: 82px;
+      height: 30px;
+      background-color: #ff8140;
+      border-radius: 2px;
+      font-size: 13px;
+      color: #fff;
+      outline: none;
+      border: none;
+      cursor: pointer;
+      position: relative;
+      margin: 10px 0 0 0;
+    }
+  }
+
+  // 图片预览的盒子
+  .previewPicturesBox {
+    margin-top: 10px;
+    width: 550px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+
+    .previewPicturesTop {
+      width: 70px;
+      height: 70px;
+      border-radius: 10px;
+      margin: 6.5px;
+      border: 4px solid rgb(192, 192, 192);
+    }
+  }
+
+  // 表情列表
+  .AddEmoticonsBox {
+    width: 550px;
+    box-shadow: 2px 2px 9px rgb(161, 161, 161);
+    background-color: #fff;
+    border-radius: 3px;
+    margin-top: 10px;
+
+    .top {
+      width: 100%;
+      height: 45px;
+      background-color: #eee;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+
+      .wordsSwitch {
+        display: inline-block;
+        width: 150px;
+        height: 45px;
+        line-height: 45px;
+        text-align: center;
+        font-size: 14px;
+        cursor: pointer;
+      }
+    }
+
+    // 表情盒子
+    .expressionMenu {
+      margin-top: 10px;
+      display: none;
+      background-color: #fff;
+
+      ul {
+        list-style: none;
+        width: 500px;
+        display: flex;
+        flex-wrap: wrap;
+
+        li {
+          width: 60px;
+          height: 60px;
+          cursor: pointer;
+          user-select: none;
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          font-size: 12px;
+        }
+
+        li:hover {
+          background-color: #f3f3f3;
+        }
+      }
+    }
+  }
+
+  h4 {
+    line-height: 40px;
+  }
+
+  // 展示的列表
+  .testBoxTitle {
+    width: 550px;
+    margin: auto;
+
+    // 图片
+    .previewPictures {
+      width: 120px;
+      height: 120px;
+      border-radius: 4px;
+      margin: 5px;
+    }
+
+    // 内容
+    li {
+      list-style: none;
+      border-bottom: 1px solid rgb(202, 202, 202);
+      padding: 30px 0 30px 0;
+
+      // 表情图片
+      img {
+        width: 20px;
+        vertical-align: middle;
+      }
+    }
+  }
+}

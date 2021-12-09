@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>原生图片切换</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    img {
+      height: 200px;
+    }
+  </style>
+</head>
+
+<body>
+  <img class="images" src="./图片/1.jpg" alt="">
+  <br>
+  <button class="up">上一张</button>
+  <button class="low">下一张</button>
+
+  <script>
+    let images = document.querySelector(".images");
+    let up = document.querySelector(".up");
+    let low = document.querySelector(".low");
+
+    let minIndex = 1; maxIndex = 5; Index = minIndex;
+
+    // 下一张切换
+    low.onclick = function () {
+      if (Index === maxIndex) {
+        Index = minIndex;
+      } else {
+        Index++;
+      }
+      // images.setAttribute("src", `./图片/${Index}.jpg`);
+      images.src = `./图片/${Index}.jpg`;
+    }
+
+    // 上一张切换
+    up.onclick = function () {
+      if (Index === minIndex) {
+        Index = maxIndex;
+      } else {
+        Index--;
+      }
+      // images.setAttribute("src", `./图片/${Index}.jpg`);
+      images.src = `./图片/${Index}.jpg`
+    }
+  </script>
+</body>
+
+</html>

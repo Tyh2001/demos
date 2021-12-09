@@ -1,0 +1,449 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  margin: 0 auto;
+}
+
+.a {
+  width: 1000px;
+  height: 1500px;
+}
+
+.a .aa {
+  width: 1000px;
+  height: 160px;
+}
+
+.a .ab {
+  width: 1000px;
+  height: 470px;
+}
+
+.a .ac {
+  width: 1000px;
+  height: 540px;
+}
+
+.a .ad {
+  width: 1000px;
+  height: 330px;
+}
+
+.a .aa .aaa {
+  width: 500px;
+  height: 100px;
+  float: left;
+}
+
+.a .aa .aaa img {
+  margin-top: 35px;
+  margin-left: 22px;
+}
+
+.a .aa .aab {
+  width: 496px;
+  height: 100px;
+  float: left;
+}
+
+.a .aa .aac {
+  width: 1000px;
+  height: 60px;
+  float: left;
+}
+
+.a .aa .aac ul li {
+  width: 120px;
+  height: 60px;
+  float: left;
+  border: 1px solid #484848;
+  background-color: #313131;
+  color: white;
+  list-style: none;
+  text-align: center;
+  line-height: 60px;
+}
+
+.a .aa .aac {
+  background-color: #313131;
+}
+
+.a .aa .aac ul {
+  margin-left: 12px;
+}
+
+input {
+  float: right;
+  margin-top: 35px;
+  margin-right: 19px;
+  width: 227px;
+  height: 28px;
+}
+
+input {
+  padding-left: 15px;
+  background-color: #f1f1f1;
+}
+
+.a .ac .aca {
+  width: 290px;
+  height: 240px;
+  float: left;
+}
+
+.a .ac .aca h3 {
+  margin-top: 36px;
+  margin-left: 22px;
+}
+
+.a .ac .aca ul {
+  margin-top: 30px;
+  margin-left: 35px;
+}
+
+.a .ac .aca ul li {
+  margin-top: 5px;
+}
+
+.a .ac .aca li {
+  font-size: 13px;
+}
+
+.a .ac .acb li {
+  font-size: 13px;
+}
+
+.a .ac .acb ul li {
+  margin-top: 5px;
+}
+
+.a .ac .acb {
+  width: 210px;
+  height: 240px;
+  float: left;
+}
+
+.a .ac .acb ul {
+  list-style: none;
+  margin-top: 84px;
+  margin-left: 125px;
+}
+
+.a .ac .acc {
+  width: 240px;
+  height: 240px;
+  float: left;
+  background-color: #f1f1f1;
+}
+
+.a .ac .acc h3 {
+  margin-top: 36px;
+  margin-left: 25px;
+}
+
+.a .ac .acc h4 {
+  margin-top: 42px;
+  margin-left: 25px;
+}
+
+.a .ac .acc h6 {
+  color: #595959;
+  margin-left: 25px;
+}
+
+.a .ac .acc P {
+  color: #9b9b9b;
+  margin-left: 25px;
+}
+
+.a .ac .acd {
+  width: 252px;
+  height: 240px;
+  float: right;
+}
+
+.a .ac .acd h3 {
+  margin-top: 36px;
+  margin-left: 26px;
+}
+
+.a .ac .acd p {
+  margin-left: 24px;
+}
+
+.a .ac .acd img {
+  margin-right: 1px;
+}
+
+.a .ac .acd p {
+  font-size: 14px;
+}
+
+.a .ac .ace {
+  width: 270px;
+  height: 300px;
+  float: left;
+}
+
+.a .ac .ace h3 {
+  margin-top: 13px;
+  margin-left: 23px;
+}
+
+.a .ac .ace img {
+  margin-top: 17px;
+  margin-left: 20px;
+}
+
+.a .ac .ace p {
+  margin-left: 22px;
+}
+
+.a .ac .ace p {
+  font-size: 12px;
+}
+
+.a .ac .acf p {
+  font-size: 12px;
+}
+
+.a .ac .acg p {
+  font-size: 12px;
+}
+
+.a .ac .ach p {
+  font-size: 12px;
+}
+
+.a .ac .acf {
+  width: 210px;
+  height: 300px;
+  float: left;
+}
+
+.a .ac .acf img {
+  margin-top: 59px;
+}
+
+.a .ac .acg {
+  width: 250px;
+  height: 300px;
+  float: left;
+}
+
+.a .ac .acg img {
+  margin-top: 59px;
+  margin-left: 40px;
+}
+
+.a .ac .acg p {
+  margin-left: 42px;
+}
+
+.a .ac .ach {
+  width: 262px;
+  height: 300px;
+  float: left;
+}
+
+.a .ac .ach img {
+  margin-top: 59px;
+  margin-left: 40px;
+}
+
+.a .ac .ach p {
+  margin-left: 42px;
+}
+
+.a .ad .ada {
+  width: 992px;
+  height: 60px;
+  float: left;
+  background-color: #e5e5e5;
+}
+
+.a .ad .ada .adaa {
+  width: 500px;
+  height: 60px;
+  float: left;
+}
+
+.a .ad .ada .adab {
+  width: 245px;
+  height: 60px;
+  float: left;
+}
+
+.a .ad .ada .adac {
+  width: 240px;
+  height: 60px;
+  float: left;
+}
+
+.a .ad .ada .adac p {
+  margin-left: 0px;
+}
+
+.a .ad .ada p {
+  color: #5b5b5b;
+}
+
+.a .ad .ada p {
+  margin-top: 30px;
+  margin-left: 31px;
+}
+
+.a .ad .adb {
+  width: 167px;
+  height: 194px;
+  float: left;
+  background-color: #e5e5e5;
+}
+
+.a .ad .adb ul li {
+  color: #535353;
+}
+
+.a .ad .adc ul li {
+  color: #535353;
+}
+
+.a .ad .add ul li {
+  color: #535353;
+}
+
+.a .ad .ade ul li {
+  color: #535353;
+}
+
+.a .ad .adb ul li {
+  font-size: 14px;
+  margin-left: 24px;
+}
+
+.a .ad .adb ul {
+  margin-top: 20px;
+}
+
+.a .ad .adc ul {
+  margin-top: 20px;
+}
+
+.a .ad .add ul {
+  margin-top: 20px;
+}
+
+.a .ad .ade ul {
+  margin-top: 20px;
+}
+
+.a .ad .adb ul li {
+  list-style: none;
+}
+
+.a .ad .adc ul li {
+  list-style: none;
+}
+
+.a .ad .adc ul li {
+  font-size: 14px;
+}
+
+.a .ad .ade ul li {
+  font-size: 14px;
+}
+
+.a .ad .add ul li {
+  list-style: none;
+}
+
+.a .ad .add ul li {
+  font-size: 14px;
+}
+
+.a .ad .adc {
+  width: 189px;
+  height: 194px;
+  float: left;
+  background-color: #e5e5e5;
+}
+
+.a .ad .add {
+  width: 162px;
+  height: 194px;
+  float: left;
+  background-color: #e5e5e5;
+}
+
+.a .ad .ade {
+  width: 474px;
+  height: 194px;
+  float: left;
+  background-color: #e5e5e5;
+}
+
+.a .ad .ade ul {
+  float: left;
+}
+
+.a .ad .ade ul li {
+  list-style: none;
+}
+
+.a .ad .ade img {
+  float: right;
+  margin-top: 12px;
+}
+
+.a .ad .adf {
+  width: 1000px;
+  height: 74px;
+  float: left;
+}
+
+.a .ad .adf p {
+  float: left;
+}
+
+.a .ad .adf img {
+  float: right;
+}
+
+.a .ad .adf p {
+  margin-top: 23px;
+  margin-left: 23px;
+}
+
+.a .ad .adf p {
+  color: #646464;
+}
+
+.a .ad .adf img {
+  margin-top: 28px;
+  margin-right: 18px;
+}
+
+.a .aa .aab img {
+  position: absolute;
+  margin-top: 43px;
+  margin-left: 447px;
+  widows: 19px;
+  height: 19px;
+}
+
+.a .ad .ada .adaa .adaaa {
+  width: 450px;
+  border: 1px solid #c1c1c1;
+}
+
+.a .ad .ada .adab .adaba {
+  width: 154px;
+  border: 1px solid #c1c1c1;
+  margin-left: 20px;
+}
+
+.a .ad .ada .adac .adaca {
+  width: 227px;
+  border: 1px solid #c1c1c1;
+  margin-left: 0px;
+}

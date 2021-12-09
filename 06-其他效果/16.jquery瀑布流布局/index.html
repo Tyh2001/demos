@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>瀑布流</title>
+</head>
+<style>
+  #main {
+    position: relative;
+  }
+
+  .box {
+    float: left;
+    padding: 5px;
+  }
+
+  .box img {
+    width: 120px;
+  }
+
+  .box img:hover {
+    margin-left: -5px;
+    width: 130px;
+    transition: 0.2s;
+  }
+</style>
+
+<body>
+  <div id="main">
+    <div class="box"><img src="img/1.jpg"></div>
+    <div class="box"><img src="img/2.jpg"></div>
+    <div class="box"><img src="img/3.jpg"></div>
+    <div class="box"><img src="img/4.jpg"></div>
+    <div class="box"><img src="img/5.jpg"></div>
+    <div class="box"><img src="img/6.jpg"></div>
+    <div class="box"><img src="img/7.jpg"></div>
+    <div class="box"><img src="img/8.jpg"></div>
+    <div class="box"><img src="img/9.jpg"></div>
+    <div class="box"><img src="img/10.jpg"></div>
+    <div class="box"><img src="img/11.jpg"></div>
+    <div class="box"><img src="img/12.jpg"></div>
+    <div class="box"><img src="img/13.jpg"></div>
+    <div class="box"><img src="img/14.jpg"></div>
+    <div class="box"><img src="img/15.jpg"></div>
+    <div class="box"><img src="img/16.jpg"></div>
+    <div class="box"><img src="img/1.jpg"></div>
+    <div class="box"><img src="img/2.jpg"></div>
+    <div class="box"><img src="img/3.jpg"></div>
+    <div class="box"><img src="img/4.jpg"></div>
+    <div class="box"><img src="img/5.jpg"></div>
+    <div class="box"><img src="img/6.jpg"></div>
+    <div class="box"><img src="img/7.jpg"></div>
+    <div class="box"><img src="img/8.jpg"></div>
+    <div class="box"><img src="img/9.jpg"></div>
+    <div class="box"><img src="img/10.jpg"></div>
+    <div class="box"><img src="img/11.jpg"></div>
+    <div class="box"><img src="img/12.jpg"></div>
+    <div class="box"><img src="img/13.jpg"></div>
+    <div class="box"><img src="img/14.jpg"></div>
+    <div class="box"><img src="img/15.jpg"></div>
+    <div class="box"><img src="img/16.jpg"></div>
+    <div class="box"><img src="img/1.jpg"></div>
+    <div class="box"><img src="img/2.jpg"></div>
+    <div class="box"><img src="img/3.jpg"></div>
+    <div class="box"><img src="img/4.jpg"></div>
+    <div class="box"><img src="img/5.jpg"></div>
+    <div class="box"><img src="img/6.jpg"></div>
+    <div class="box"><img src="img/7.jpg"></div>
+    <div class="box"><img src="img/8.jpg"></div>
+    <div class="box"><img src="img/9.jpg"></div>
+    <div class="box"><img src="img/10.jpg"></div>
+    <div class="box"><img src="img/11.jpg"></div>
+    <div class="box"><img src="img/12.jpg"></div>
+    <div class="box"><img src="img/13.jpg"></div>
+    <div class="box"><img src="img/14.jpg"></div>
+    <div class="box"><img src="img/15.jpg"></div>
+    <div class="box"><img src="img/16.jpg"></div>
+    <div class="box"><img src="img/1.jpg"></div>
+    <div class="box"><img src="img/2.jpg"></div>
+    <div class="box"><img src="img/3.jpg"></div>
+    <div class="box"><img src="img/4.jpg"></div>
+    <div class="box"><img src="img/5.jpg"></div>
+    <div class="box"><img src="img/6.jpg"></div>
+    <div class="box"><img src="img/7.jpg"></div>
+    <div class="box"><img src="img/8.jpg"></div>
+    <div class="box"><img src="img/9.jpg"></div>
+    <div class="box"><img src="img/10.jpg"></div>
+    <div class="box"><img src="img/11.jpg"></div>
+    <div class="box"><img src="img/12.jpg"></div>
+    <div class="box"><img src="img/13.jpg"></div>
+    <div class="box"><img src="img/14.jpg"></div>
+    <div class="box"><img src="img/15.jpg"></div>
+    <div class="box"><img src="img/16.jpg"></div>
+  </div>
+
+  <script src="./js/jQuery.js"></script>
+  <script>
+    (function waterFall() {
+      // 获取到页面中所有的存放图片的div
+      let box = $(".box")
+      // 当前图片的宽度
+      let boxWidth = box.outerWidth()
+      // 整个屏幕的宽度
+      let srceenWidth = $(window).width()
+      // 计算屏幕一行可以放几张图片
+      let cols = parseInt(srceenWidth / boxWidth)
+      // 创建数组
+      let heightArr = []
+      // 图片遍历循环，第一行不需要进行定位
+      $.each(box, (index, item) => {
+        let boxHeight = $(item).outerHeight()
+        // 第一排不需要定位处理
+        if (index < cols) {
+          heightArr[index] = boxHeight
+          // console.log(heightArr)
+        } else {
+          // 其余行获取每行最小图片的高度
+          let minBoxHeight = Math.min(...heightArr)
+          // 最下图片在数组中的索引值
+          let minBixIndex = heightArr.findIndex(item => item === minBoxHeight)
+          // 设置图片定位位置
+          $(item).css({
+            position: 'absolute',
+            left: minBixIndex * boxWidth + 'px',
+            top: minBoxHeight + 'px'
+          })
+          // 给最小高度的图片追加上当前图片的高度使之不是最小高度
+          heightArr[minBixIndex] += boxHeight
+        }
+      })
+    })()
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="app">
+    <button @click="$refs.file.click()">点击上传图片</button>
+    <input ref="file" style="display: none" type="file" accept="image/*" multiple="multiple"
+      @change="upImageFileInputChange" />
+
+    <!-- 展示出的图片列表 -->
+    <div class="fileList">
+      <img v-for="(url, index) in fileList" :key="index" style="width: 100px; height: 100px" :src="url" />
+    </div>
+  </div>
+  <script src='./vue.js'></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data() {
+        return {
+          fileList: []
+        }
+      },
+      methods: {
+        upImageFileInputChange() {
+          // 获取到选择文件的长度（数量）
+          const fileLength = this.$refs.file.files.length
+          if (fileLength > 9) {
+            alert('最多只能上传9张图片')
+            return
+          }
+          // 循环每个将其添加进展示的数组中
+          for (let i = 0; i < fileLength; i++) {
+            // 如果数组长度小于9张图片 则继续向里面添加 否则跳出循环
+            if (this.fileList.length < 9) {
+              this.fileList.push(URL.createObjectURL(this.$refs.file.files[i]))
+            } else {
+              alert('超出限制')
+              break
+            }
+          }
+          // 清空 file 的 value 防止选择相同文件不触发 change 事件
+          this.$refs.file.value = ''
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

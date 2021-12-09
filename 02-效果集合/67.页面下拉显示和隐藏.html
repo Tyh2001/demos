@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    body {
+      height: 2000px;
+    }
+
+    div {
+      width: 60px;
+      height: 60px;
+      background-color: coral;
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      display: none;
+    }
+
+    button {
+      position: fixed;
+    }
+  </style>
+</head>
+
+<body>
+  <div>返回顶部</div>
+  <button>获取</button>
+  <script>
+
+    window.onscroll = function () {
+      if (document.documentElement.scrollTop + document.body.scrollTop > 0) {
+        document.querySelector("div").style.display = "block";
+      }
+      else {
+        document.querySelector("div").style.display = "none";
+      }
+    }
+  </script>
+</body>
+
+</html>

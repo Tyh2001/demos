@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style type="text/css">
+    canvas {
+      border: 1px solid red;
+    }
+  </style>
+</head>
+
+<body>
+  <canvas width="600" height="400"></canvas>
+  <script type="text/javascript">
+    //获取canvas画布对象
+    var canvas = document.querySelector("canvas");
+    //获取绘图上下文
+    var ctx = canvas.getContext("2d");
+
+
+    //描边矩形
+    ctx.strokeStyle = "red";
+    ctx.strokeRect(100, 100, 200, 200);
+    ctx.beginPath();
+
+    //填充矩形
+    ctx.fillStyle = "red";
+    ctx.fillRect(330, 100, 200, 200);
+
+    //清除效果
+    ctx.clearRect(340, 100, 10, 200);
+  </script>
+</body>
+
+</html>

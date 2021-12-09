@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>过滤器</title>
+</head>
+
+<body>
+  <div id="app">
+    <!-- 前面的原始数据 | 后面的过滤器的名字  中间|分开 -->
+    <h1>{{message | mySplit}}</h1>
+    <h1>{{title | mySplit}}</h1>
+    <h1>{{ date | dateFormate }}</h1>
+    <h1>{{ date1 | dateFormate }}</h1>
+  </div>
+
+  <script src="./vue.js"></script>
+  <script>
+    new Vue({
+      el: "#app",
+      data() {
+        return {
+          message: "hello",
+          title: "world",
+          date: "2020-12-1",
+          date1: "2022-5-6"
+        }
+      },
+      // 过滤器
+      filters: {
+        // 定义形参value
+        mySplit(value) {
+          // split方法：将字符串拆分成数组
+          // join方法：将数组连接成字符串
+          return value.split("").join();
+        },
+
+        dateFormate(value) {
+          let date = new Date(value);
+          let year = date.getFullYear();
+          let month = date.getMonth() + 1;
+          let d = date.getDate();
+          return `${year}年${month}月${d}日`;
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

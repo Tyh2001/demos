@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>水果列表</title>
+</head>
+
+<body>
+  <input type="text">
+  <ol></ol>
+  <button>添加</button>
+  <script src="jquery.js"></script>
+  <script>
+    $("button").click(function () {
+      a = $("input").val()
+      if (a !== "") {
+        var b = document.createElement("li") //创建一个li给b
+        b.innerText = a;
+        $("ol").append(b) //把b的值给ol
+        $("input").val("")
+      }
+    })
+    $("ol").on("click", "li", function () {
+      $(this).remove()
+    })
+  </script>
+</body>
+
+</html>

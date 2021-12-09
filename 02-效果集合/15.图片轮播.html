@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>图片轮播</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrap {
+      width: 1000px;
+      overflow: hidden;
+    }
+
+    #imgs {
+      width: 5000px;
+      margin-left: 0px;
+    }
+
+    #imgs img {
+      width: 500px;
+      margin: 10px
+    }
+  </style>
+</head>
+
+<body>
+  <div id="wrap">
+    <div id="imgs" style="margin-left: 0px;">
+      <img src="图片/1.jpg">
+      <img src="图片/2.jpg">
+      <img src="图片/3.jpg">
+      <img src="图片/4.jpg">
+      <img src="图片/5.jpg">
+    </div>
+  </div>
+</body>
+<script>
+  // 获取装图片的大盒子
+  var imgs = document.querySelector("#imgs");
+  // 计时器 setInterval(fn,time)
+
+  function run() {
+    // 获取元素的margin-left值， 只要数字，不要单位
+    // parseInt() 函数可解析一个字符串，并返回一个整数
+    var l = parseInt(imgs.style.marginLeft) - 1;
+    // console.log(l)
+    imgs.style.marginLeft = l + "px";
+    if (l == -520) {
+      imgs.appendChild(imgs.children[0]);
+      imgs.style.marginLeft = 0 + "px";
+    }
+  }
+  var time = setInterval(run, 10);
+
+
+  // onmouseenter 鼠标移入
+  imgs.onmouseenter = function () {
+    // 移入停止计时器
+    clearInterval(time)
+  }
+  imgs.onmouseleave = function () {
+    time = setInterval(run, 10)
+  }
+</script>
+
+</html>

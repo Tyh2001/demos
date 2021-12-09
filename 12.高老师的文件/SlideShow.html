@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+    <script>
+        $(function () {
+            $(".list li:first").addClass("click_after");
+            var i = 0;
+            $(".list li").click(function () {
+                i = $(this).index();
+                //                alert(i*-777);
+                $(this).addClass("click_after");
+                $(this).siblings().removeClass("click_after");
+                $(".chang").animate({ "left": i * -777 }, 1000);
+
+            })
+            $("#right_b").click(function () {
+                i = i + 1;
+                if (i > 5) {
+                    $(".chang").stop().animate({ "left": 0 }, 500);
+                    i = 0;
+                }
+                else {
+                    $(".chang").stop().animate({ "left": i * -777 }, 500);
+                }
+                $(".list li:eq(" + i + ")").addClass("click_after");
+                $(".list li:eq(" + i + ")").siblings().removeClass("click_after");
+            })
+            $("#left_b").click(function () {
+                i = i - 1;
+                if (i < 0) {
+                    $(".chang").stop().animate({ "left": 5 * -777 }, 500);
+                    i = 5;
+                }
+                else {
+                    $(".chang").stop().animate({ "left": i * -777 }, 500);
+                }
+                $(".list li:eq(" + i + ")").addClass("click_after");
+                $(".list li:eq(" + i + ")").siblings().removeClass("click_after");
+            })
+
+        })
+    </script>
+    <style>
+        .banner {
+            width: 777px;
+            height: 397px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .chang {
+            width: 4662px;
+            height: 397px;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .chang img {
+            float: left;
+        }
+
+        .list {
+            list-style: none;
+            position: absolute;
+            right: 40px;
+            top: 340px;
+        }
+
+        .list li {
+            width: 11px;
+            height: 11px;
+            background-color: #000000;
+            float: left;
+            margin: 0 10px;
+
+        }
+
+        .list .click_after {
+            background-color: #FFFFFF;
+        }
+
+        #right_b {
+            position: absolute;
+            left: 733px;
+            top: 130px;
+        }
+
+        #left_b {
+            position: absolute;
+            left: 0px;
+            top: 130px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="banner">
+        <div class="chang">
+            <img src="images/banner_1.jpg">
+            <img src="images/banner_2.jpg">
+            <img src="images/banner_3.jpg">
+            <img src="images/banner_4.jpg">
+            <img src="images/banner_5.jpg">
+            <img src="images/banner_6.jpg">
+        </div>
+        <ul class="list">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <img src="images/banner_button_right_05.gif" id="right_b">
+        <img src="images/banner_button_left_05.gif" id="left_b">
+    </div>
+
+
+</body>
+
+</html>

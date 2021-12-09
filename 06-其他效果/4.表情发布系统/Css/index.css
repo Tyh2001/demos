@@ -1,0 +1,78 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.box {
+  width: 550px;
+  margin: 20px auto;
+}
+.box .title {
+  text-align: center;
+  line-height: 40px;
+}
+.box #textarea {
+  width: 540px;
+  height: 80px;
+  font-size: 14px;
+  font-family: "微软雅黑";
+  padding: 5px;
+  border-radius: 8px;
+  resize: none;
+  border: none;
+  color: #333333;
+  background-color: #f0f1f4;
+  outline: none;
+}
+.box #textarea:focus {
+  background-color: #fff;
+  border: 1px solid #ff8140;
+}
+.box .release-btn {
+  width: 82px;
+  height: 30px;
+  background-color: #ff8140;
+  border-radius: 2px;
+  font-size: 13px;
+  color: #fff;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  left: 467px;
+  margin: 10px 10px 0 0;
+}
+.box .expressionMenu {
+  margin-top: 10px;
+  background-color: #fff;
+  box-shadow: 0 0 1px 0px rgba(0, 0, 0, 0.3), 0 0 6px 2px rgba(0, 0, 0, 0.15);
+}
+.box .expressionMenu ul {
+  list-style: none;
+  width: 500px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.box .expressionMenu ul li {
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 12px;
+}
+.box .expressionMenu ul li:hover {
+  background-color: #f3f3f3;
+}
+.box h4 {
+  line-height: 40px;
+}
+.box .testBoxTitle {
+  width: 550px;
+  margin: 10px auto;
+}
+.box .testBoxTitle img {
+  width: 20px;
+  vertical-align: middle;
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style type="text/css">
+    canvas {
+      border: 1px solid red;
+    }
+  </style>
+</head>
+
+<body>
+  <canvas width="600" height="400"></canvas>
+  <script type="text/javascript">
+    //获取canvas画布对象
+    var canvas = document.querySelector("canvas");
+    //获取绘图上下文
+    var ctx = canvas.getContext("2d");
+
+    ctx.lineWidth = "20";
+    ctx.strokeStyle = "red";
+
+    // 设置线的链接方式
+    ctx.lineJoin = "miter";
+    ctx.moveTo(100, 50);
+    ctx.lineTo(200, 100);
+    ctx.lineTo(100, 150);
+    ctx.stroke();
+
+
+    ctx.beginPath();
+    // 设置线的链接方式
+    ctx.lineJoin = "round";
+    ctx.strokeStyle = "blue";
+    ctx.lineWidth = "20";
+    ctx.moveTo(250, 50);
+    ctx.lineTo(350, 100);
+    ctx.lineTo(250, 150);
+    ctx.stroke();
+
+    ctx.beginPath();
+
+    ctx.lineJoin = "bevel";
+    ctx.strokeStyle = "pink";
+    ctx.lineWidth = "20";
+    ctx.moveTo(400, 50);
+    ctx.lineTo(500, 100);
+    ctx.lineTo(400, 150);
+    ctx.stroke();
+
+  </script>
+</body>
+
+</html>

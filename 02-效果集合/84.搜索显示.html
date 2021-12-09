@@ -1,0 +1,140 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    ul,
+    li,
+    p {
+      margin: 0;
+      padding: 0;
+    }
+
+    ul {
+      list-style: none;
+      width: 600px;
+      border: 1px solid #7f7f7f;
+    }
+
+    ul li {
+      overflow: hidden;
+    }
+
+    li p {
+      float: left;
+      width: 150px;
+      text-align: center;
+      font: 20px 宋体;
+      line-height: 150%;
+    }
+
+    ul .hoverstyle {
+      background-color: yellow;
+      color: #000000;
+    }
+
+    .oddstyle {
+      background-color: #3a6ea5;
+      color: #ffffff;
+    }
+
+    .first {
+      color: blue;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <form action="">
+    查找：
+    <input type="text" id="txt" /><input type="button" id="btnSearch" value="搜索">
+  </form>
+
+  <ul>
+    <li>
+      <p>姓名</p>
+      <p>年龄</p>
+      <p>性别</p>
+      <p>地址</p>
+    </li>
+    <li>
+      <p>张三1</p>
+      <p>22</p>
+      <p>男</p>
+      <p>河北省秦皇岛</p>
+    </li>
+    <li>
+      <p>张三2</p>
+      <p>22</p>
+      <p>男</p>
+      <p>河北省秦皇岛</p>
+    </li>
+    <li>
+      <p>李四3</p>
+      <p>22</p>
+      <p>男</p>
+      <p>河北省秦皇岛</p>
+    </li>
+    <li>
+      <p>张三4</p>
+      <p>22</p>
+      <p>男</p>
+      <p>河北省秦皇岛</p>
+    </li>
+    <li>
+      <p>张三5</p>
+      <p>22</p>
+      <p>男</p>
+      <p>河北省秦皇岛</p>
+    </li>
+    <li>
+      <p>张三6</p>
+      <p>22</p>
+      <p>男</p>
+      <p>河北省秦皇岛</p>
+    </li>
+    <li>
+      <p>张三7</p>
+      <p>22</p>
+      <p>男</p>
+      <p>河北省秦皇岛</p>
+    </li>
+    <li>
+      <p>张三8</p>
+      <p>22</p>
+      <p>男</p>
+      <p>河北省秦皇岛</p>
+    </li>
+    <li>
+      <p>张三9</p>
+      <p>22</p>
+      <p>男</p>
+      <p>河北省秦皇岛</p>
+    </li>
+  </ul>
+
+  <script src="./jquery.js"></script>
+  <script>
+    $(function () {
+      $("#btnSearch").click(function () {
+        $("li").hide();
+        var txt = $("#txt").val();
+        $("li:not(:first):contains(" + txt + ")").show();
+      })
+    })
+
+    $(function () {
+      //为第一行加样式
+      $("li:first").addClass("first");
+
+      //为奇数行添加样样式
+      $("li:odd").addClass("oddstyle")
+
+    })
+  </script>
+</body>
+
+</html>

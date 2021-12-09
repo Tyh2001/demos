@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function count(m, o, n) {
+      switch (o) {
+        case "+": return m + n; break;
+        case "-": return m - n; break;
+        case "*": return m * n; break;
+        case "/": return m / n; break;
+      }
+    }
+    var result1 = count(5, "+", 6);
+    console.log(result1); //输出11
+    var result2 = count(5, "*", 6);
+    console.log(result2); //输出30
+  </script>
+</body>
+
+</html>

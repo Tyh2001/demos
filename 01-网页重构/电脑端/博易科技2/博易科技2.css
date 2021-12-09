@@ -1,0 +1,375 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  margin: 0 auto;
+}
+
+.a {
+  width: 1920px;
+  height: 2990px;
+  border: 1px solid black;
+}
+
+.a .z {
+  width: 1920px;
+  height: 38px;
+  background-color: #efefef;
+}
+
+.a .z .diyige {
+  float: left;
+  margin-top: 10px;
+  margin-left: 435px;
+}
+
+.a .z .dierge {
+  float: right;
+  margin-right: 435px;
+  margin-top: 10px;
+}
+
+.a .b {
+  width: 1920px;
+  height: 94px;
+  border: 1px solid black;
+}
+
+.a .b img {
+  margin-top: 4px;
+  margin-left: 436px;
+}
+
+.a .b p {
+  float: right;
+  margin-top: 41px;
+  margin-right: 434px;
+}
+
+.a .b span img {
+  position: absolute;
+  margin-top: 87px;
+  margin-left: 85px;
+
+}
+
+.a .c {
+  width: 1920px;
+  height: 937px;
+  border: 1px solid black;
+}
+
+.a .d {
+  width: 1920px;
+  height: 487px;
+  border: 1px solid black;
+  background-color: #e7e8ea;
+}
+
+.a .d img {
+  margin-top: 69px;
+  margin-left: 436px;
+}
+
+.a .d h2 {
+  float: left;
+  margin-top: 54px;
+  margin-left: 923px;
+}
+
+.a .d p {
+  color: #adafae;
+  float: left;
+  margin-top: 13px;
+  margin-left: 923px;
+}
+
+.a .d span {
+  float: left;
+  margin-top: 64px;
+  margin-left: -644px;
+  width: 1013px;
+  color: #656668;
+}
+
+.a .d .changa {
+  float: left;
+  margin-top: 24px;
+  margin-left: 8px;
+  width: 75px;
+  height: 1px;
+  background-color: #c9c9c9;
+}
+
+.a .d .changb {
+  float: left;
+  margin-top: 24px;
+  margin-left: -273px;
+  width: 75px;
+  height: 1px;
+  background-color: #c9c9c9;
+}
+
+.a .e {
+  width: 1920px;
+  height: 178px;
+  border: 1px solid black;
+}
+
+.a .e h2 {
+  float: left;
+  margin-top: 91px;
+  margin-left: 923px;
+}
+
+.a .e p {
+  float: left;
+  margin-top: 13px;
+  margin-left: 923px;
+  color: #adafae;
+}
+
+.a .f {
+  width: 1920px;
+  height: 472px;
+  border: 1px solid black;
+  background-color: #a4d1ee;
+}
+
+.a .f img {
+  float: left;
+  margin-top: 60px;
+  margin-left: 436px;
+}
+
+.a .f p {
+  float: left;
+  margin-top: 70px;
+  margin-left: 30px;
+  color: #ffffff;
+}
+
+.a .f ul {
+  margin-top: 125px;
+  color: #4b4b4d;
+}
+
+.a .f ul li {
+  list-style: none;
+  margin-top: 35px;
+  margin-left: 470px;
+  width: 285px;
+}
+
+.a .f ul li span {
+  color: #e52027;
+}
+
+.a .f span img {
+  float: left;
+  margin-left: 1214px;
+  margin-top: -287px;
+}
+
+.a .f .ria {
+  float: left;
+  margin-top: -286px;
+  margin-left: 990px;
+  color: #4c4d4c;
+}
+
+.a .f .rib {
+  float: left;
+  margin-top: -236px;
+  margin-left: 990px;
+  color: #4c4d4c;
+}
+
+.a .f .ric {
+  float: left;
+  margin-top: -181px;
+  margin-left: 990px;
+  color: #4c4d4c;
+}
+
+.a .f .rid {
+  float: left;
+  margin-top: -129px;
+  margin-left: 990px;
+  color: #4c4d4c;
+}
+
+.a .f .rie {
+  float: left;
+  margin-top: -76px;
+  margin-left: 990px;
+  color: #4c4d4c;
+}
+
+.a .f .rif {
+  float: left;
+  margin-top: -21px;
+  margin-left: 990px;
+  color: #4c4d4c;
+}
+
+.a .g {
+  width: 1920px;
+  height: 645px;
+  border: 1px solid black;
+}
+
+.a .g p {
+  float: left;
+  margin-top: 13px;
+  margin-left: 920px;
+  color: #a7a7a7;
+}
+
+.a .g h2 {
+  float: left;
+  margin-top: 101px;
+  margin-left: 922px;
+}
+
+.a .h {
+  width: 1920px;
+  height: 94px;
+  border: 1px solid black;
+  background-color: #3d9cd4;
+}
+
+.a .g img {
+  float: left;
+  margin-top: 66px;
+  margin-left: -619px;
+}
+
+.a .g ul {
+  margin-top: 199px;
+  margin-left: 609px;
+}
+
+.a .g ul li {
+  list-style: none;
+  height: 32px;
+  color: #666666;
+}
+
+.a .g span img {
+  float: left;
+  margin-top: 21px;
+  margin-left: 406px;
+}
+
+.a .g .www {
+  float: left;
+  margin-top: -193px;
+  margin-left: 61px;
+  color: #666666;
+}
+
+.a .g .eee {
+  float: left;
+  margin-top: -117px;
+  margin-left: 61px;
+  color: #666666;
+}
+
+.a .g .fff {
+  float: left;
+  margin-top: -45px;
+  margin-left: 61px;
+  color: #666666;
+}
+
+.a .g .ggg {
+  float: left;
+  margin-top: 27px;
+  margin-left: -628px;
+  color: #666666;
+}
+
+.a .g .inputa {
+  float: left;
+  margin-top: -170px;
+  margin-left: 54px;
+  width: 630px;
+  height: 34px;
+  border: 1px dashed #d3d3d3;
+  background-color: #f9f7f8;
+
+}
+
+.a .g .inputb {
+  float: left;
+  margin-top: -95px;
+  margin-left: 54px;
+  width: 630px;
+  height: 34px;
+  border: 1px dashed #d3d3d3;
+  background-color: #f9f7f8;
+}
+
+.a .g .inputc {
+  float: left;
+  margin-top: -22px;
+  margin-left: 54px;
+  width: 630px;
+  height: 34px;
+  border: 1px dashed #d3d3d3;
+  background-color: #f9f7f8;
+}
+
+.a .g .inputd {
+  float: left;
+  margin-top: 35px;
+  margin-left: -35px;
+  width: 630px;
+  height: 120px;
+  border: 1px dashed #d3d3d3;
+  background-color: #f9f7f8;
+}
+
+.a .g button {
+  float: left;
+  margin-top: 171px;
+  margin-left: -634px;
+  width: 92px;
+  height: 30px;
+  background-color: #3d9cd4;
+  color: #ffffff;
+}
+
+.a .h span {
+  float: left;
+  margin-top: 27px;
+  margin-left: 863px;
+  color: #ffffff;
+}
+
+.a .h img {
+  float: left;
+  margin-top: 25px;
+  margin-left: 20px;
+}
+
+.a .h p {
+  color: #ffffff;
+  float: left;
+  margin-top: 63px;
+  margin-left: -332px;
+}
+
+.a .i {
+  width: 1920px;
+  height: 24px;
+  border: 1px solid black;
+  background-color: #1c1b29;
+}
+
+.a .i p {
+  float: left;
+  margin-top: 3px;
+  margin-left: 690px;
+  color: #ffffff;
+}

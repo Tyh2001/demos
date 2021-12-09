@@ -1,0 +1,159 @@
+* {
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  font-family: "微软雅黑";
+  text-decoration: none;
+}
+.box {
+  width: 550px;
+  margin: 20px auto;
+}
+.box .myWeb {
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+}
+.box .myWeb a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #409eff;
+}
+.box .myWeb a img {
+  width: 20px;
+  height: 20px;
+}
+.box .title {
+  text-align: center;
+  line-height: 40px;
+}
+.box #textarea {
+  width: 540px;
+  height: 80px;
+  font-size: 14px;
+  font-family: "微软雅黑";
+  padding: 5px;
+  border-radius: 8px;
+  resize: none;
+  border: none;
+  color: #333333;
+  background-color: #f0f1f4;
+  outline: none;
+}
+.box #textarea:focus {
+  background-color: #fff;
+  border: 1px solid #ff8140;
+}
+.box .menuBar {
+  width: 550px;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.box .menuBar .addImg {
+  cursor: pointer;
+  font-size: 15px;
+}
+.box .menuBar .addImg img {
+  width: 20px;
+  vertical-align: middle;
+}
+.box .menuBar .release-btn {
+  width: 82px;
+  height: 30px;
+  background-color: #ff8140;
+  border-radius: 2px;
+  font-size: 13px;
+  color: #fff;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  margin: 10px 0 0 0;
+}
+.box .previewPicturesBox {
+  margin-top: 10px;
+  width: 550px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+}
+.box .previewPicturesBox .previewPicturesTop {
+  width: 70px;
+  height: 70px;
+  border-radius: 10px;
+  margin: 6.5px;
+  border: 4px solid #c0c0c0;
+}
+.box .AddEmoticonsBox {
+  width: 550px;
+  box-shadow: 2px 2px 9px #a1a1a1;
+  background-color: #fff;
+  border-radius: 3px;
+  margin-top: 10px;
+}
+.box .AddEmoticonsBox .top {
+  width: 100%;
+  height: 45px;
+  background-color: #eee;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.box .AddEmoticonsBox .top .wordsSwitch {
+  display: inline-block;
+  width: 150px;
+  height: 45px;
+  line-height: 45px;
+  text-align: center;
+  font-size: 14px;
+  cursor: pointer;
+}
+.box .AddEmoticonsBox .expressionMenu {
+  margin-top: 10px;
+  display: none;
+  background-color: #fff;
+}
+.box .AddEmoticonsBox .expressionMenu ul {
+  list-style: none;
+  width: 500px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.box .AddEmoticonsBox .expressionMenu ul li {
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 12px;
+}
+.box .AddEmoticonsBox .expressionMenu ul li:hover {
+  background-color: #f3f3f3;
+}
+.box h4 {
+  line-height: 40px;
+}
+.box .testBoxTitle {
+  width: 550px;
+  margin: auto;
+}
+.box .testBoxTitle .previewPictures {
+  width: 120px;
+  height: 120px;
+  border-radius: 4px;
+  margin: 5px;
+}
+.box .testBoxTitle li {
+  list-style: none;
+  border-bottom: 1px solid #cacaca;
+  padding: 30px 0 30px 0;
+}
+.box .testBoxTitle li img {
+  width: 20px;
+  vertical-align: middle;
+}

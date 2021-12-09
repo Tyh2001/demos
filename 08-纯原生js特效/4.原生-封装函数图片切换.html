@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>原生封装函数图片切换</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    #box {
+      width: 800px;
+      height: 100px;
+      padding-top: 200px;
+      background-image: url("./图片/1.jpg");
+    }
+
+    ul li {
+      list-style: none;
+      display: inline-block;
+      height: 100px;
+      margin-left: 40px;
+      margin-top: 20px;
+    }
+
+    ul li img {
+      height: 40px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="box"></div>
+  <ul>
+    <li><img id="images1" src="./图片/1.jpg" alt=""></li>
+    <li><img id="images2" src="./图片/2.jpg" alt=""></li>
+    <li><img id="images3" src="./图片/3.jpg" alt=""></li>
+    <li><img id="images4" src="./图片/4.jpg" alt=""></li>
+    <li><img id="images5" src="./图片/5.jpg" alt=""></li>
+  </ul>
+
+  <script>
+    // 一、函数封装写法
+
+    // 1.获取事件源
+    function $(id) {
+      // 使用 typeof 操作符来检测变量的数据类型
+      // id传的值必须的一个字符串
+      // 返回 id如果是字符串，就返回获取到的id值，否则就为null
+      return typeof id === "string" ? document.getElementById(id) : null;
+    }
+
+    // liId 每个li标签的id
+    // imgSrc 下面每个小图的src
+    // 改变背景图
+    function changeImg(liId, imgSrc) {
+      // 2.添加事件
+      $(liId).onmouseover = function () {
+        // 3.改变背景图  事件驱动
+        $("box").style.background = imgSrc;
+      }
+    }
+    changeImg("images1", `url("./图片/1.jpg")`);
+    changeImg("images2", `url("./图片/2.jpg")`);
+    changeImg("images3", `url("./图片/3.jpg")`);
+    changeImg("images4", `url("./图片/4.jpg")`);
+    changeImg("images5", `url("./图片/5.jpg")`);
+
+
+        // 二、初学者辣鸡写法
+        // let boxImg = document.getElementById("box");
+        // let images1 = document.getElementById("images1");
+        // let images2 = document.getElementById("images2");
+        // let images3 = document.getElementById("images3");
+        // let images4 = document.getElementById("images4");
+        // let images5 = document.getElementById("images5");
+
+        // images1.onmouseover = function () {
+        //     boxImg.style.background = `url("./图片/1.jpg")`;
+        // }
+        // images2.onmouseover = function () {
+        //     boxImg.style.background = `url("./图片/2.jpg")`;
+        // }
+        // images3.onmouseover = function () {
+        //     boxImg.style.background = `url("./图片/3.jpg")`;
+        // }
+        // images4.onmouseover = function () {
+        //     boxImg.style.background = `url("./图片/4.jpg")`;
+        // }
+        // images5.onmouseover = function () {
+        //     boxImg.style.background = `url("./图片/5.jpg")`;
+        // }
+  </script>
+</body>
+
+</html>

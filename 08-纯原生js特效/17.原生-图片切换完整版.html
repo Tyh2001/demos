@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>原生封装函数图片切换</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    #box {
+      width: 800px;
+      height: 100px;
+      padding-top: 200px;
+      background-image: url("./图片/1.jpg");
+    }
+
+    ul li {
+      list-style: none;
+      display: inline-block;
+      height: 100px;
+      margin-left: 40px;
+      margin-top: 20px;
+    }
+
+    ul li img {
+      height: 40px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="box"></div>
+  <ul>
+    <li><img class="images" src="./图片/1.jpg" alt=""></li>
+    <li><img class="images" src="./图片/2.jpg" alt=""></li>
+    <li><img class="images" src="./图片/3.jpg" alt=""></li>
+    <li><img class="images" src="./图片/4.jpg" alt=""></li>
+    <li><img class="images" src="./图片/5.jpg" alt=""></li>
+  </ul>
+
+  <script>
+    function $(id) {
+      return typeof id === "string" ? document.getElementById(id) : null;
+    }
+
+    let Images = document.getElementsByClassName("images");
+    for (let i = 0; i < Images.length; i++) {
+      let Image = Images[i];
+      Image.index = i + 1;
+      Images[i].onmouseover = function () {
+        $("box").style.background = `url("./图片/${this.index}.jpg")`;
+      }
+    }
+
+
+
+  </script>
+</body>
+
+</html>

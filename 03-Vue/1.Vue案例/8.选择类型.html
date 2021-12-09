@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>选择类型</title>
+</head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-size: 20px;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  #app {
+    width: 1000px;
+    height: 1000px;
+    margin: 50px auto;
+  }
+
+  .box {
+    height: 45px;
+    padding-left: 20px;
+    line-height: 40px;
+    background-color: skyblue;
+  }
+
+  span {
+    font-size: 20px;
+  }
+
+  .mark {
+    display: inline-block;
+    line-height: 1em;
+    padding: 5px 3px;
+    border: 1px solid rgb(101, 163, 179);
+    margin-left: 15px;
+    font-size: 12px;
+  }
+
+  .del {
+    display: inline-block;
+    background-color: rgb(101, 163, 179);
+    color: #fff;
+    margin-left: 10px;
+    padding: 2px;
+    cursor: pointer;
+  }
+
+  .xbox {
+    padding: 10px 40px;
+  }
+
+  .xbox li {
+    line-height: 3em;
+    border-bottom: 1px dashed #aaa;
+  }
+
+  .xbox li span {
+    font-size: 20px;
+    margin-left: 25px;
+  }
+
+  .xbox li .active {
+    color: blue;
+  }
+</style>
+</head>
+
+<body>
+  <div id="wrap">
+    <div class="box">
+      <h3>你的选择:<span class="mark" v-for="item,key in selected">
+          {{item}}
+          <span class="del" v-on:click="del(key)">X</span>
+        </span>
+      </h3>
+    </div>
+    <ul class="xbox">
+      <li v-for="item,index in lists">
+        <span>{{item.title}}</span>
+        <span v-bind:class="{active:item.index==i}" v-for="option,i in item.list" v-on:click="add(option,index,i)">
+          {{option}}
+        </span>
+      </li>
+    </ul>
+  </div>
+
+  <script src="./vue.js"></script>
+  <script>
+    new Vue({
+      el: "#wrap",
+      data: {
+        lists: [{
+          title: "品牌",
+          list: ["oppo", "华为", "苹果", "三星", "小米", "魅族", "锤子", "vivo"],
+          index: -1,
+        },
+        {
+          title: "尺寸",
+          list: ["3.0-3.9英寸", "4.0-4.5英寸", "4.6-4.9英寸", "5.0-5.5英寸", "5.5-5.6英寸", "6.0英寸以上"],
+          index: -1,
+        },
+        {
+          title: "系统",
+          list: ["苹果(IOS)", "安卓(Android)", "微软(WindowsPhone)", "其他", "无"],
+          index: -1,
+        }, {
+          title: "网络",
+          list: ["联通3G", "双卡单4G", "双卡双4G", "双卡5G", "电信4G", "联通4G", "移动4G"],
+          index: -1,
+        }
+        ],
+        selected: {}
+      },
+      methods: {
+        add(option, index, i) {
+          this.$set(this.selected, index, option);
+          this.lists[index].index = i;
+        },
+        del(key) {
+          this.$delete(this.selected, key);
+          this.lists[key].index = -1;
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

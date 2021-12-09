@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style type="text/css">
+    canvas {
+      border: 1px solid red;
+
+
+    }
+  </style>
+</head>
+
+<body>
+  <canvas width="600" height="400"></canvas>
+  <script type="text/javascript">
+    //获取canvas画布对象
+    var canvas = document.querySelector("canvas");
+    //获取绘图上下文
+    var ctx = canvas.getContext("2d");
+
+    ctx.moveTo(300, 0);
+    ctx.lineTo(300, 400);
+    ctx.stroke();
+
+    ctx.beginPath();
+
+    ctx.moveTo(0, 200);
+    ctx.lineTo(600, 200);
+    ctx.stroke();
+
+
+    //设置文字大小： 与css设置文字一样
+    ctx.font = "40px 微软雅黑";
+
+    //设置文字的对齐方式
+    ctx.textAlign = "center";
+
+    //设置文字上下对齐方式
+    ctx.textBaseline = "middle";
+
+    //设置带阴影的效果
+    ctx.shadowColor = "red";
+    ctx.shadowOffsetX = 5;
+    ctx.shadowOffsetY = 5;
+    ctx.shadowBlur = 10;
+
+    ctx.strokeText("撸起袖子加油干", 300, 200);
+    ctx.fillText("撸起袖子加油干", 300, 200);
+
+  </script>
+</body>
+
+</html>

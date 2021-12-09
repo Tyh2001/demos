@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>删除数据</title>
+</head>
+
+<body>
+  <div id="app">
+    <input type="text" v-model="c">
+    <button v-on:click="d">添加</button>
+    <h2>水果列表</h2>
+    <ul>
+      <li v-for="item,index in a">{{item}}
+        <!--删除是指定删除，所以需要找到指定的元素，数组中科通过
+                索引指定元素，这里给函数传入索引，用来删除数据-->
+        <button v-on:click="b(index)">删除</button>
+      </li>
+    </ul>
+  </div>
+
+  <script src="./vue.js"></script>
+  <script>
+    new Vue({
+      el: "#app",
+      data: {
+        a: ["香蕉", "苹果", "南瓜"],
+        c: "",
+      },
+      methods: {
+        b: function (i) {
+          this.a.splice(i, 1)
+        },
+        d: function () {
+          this.a.push(this.c)
+          this.c = "";
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

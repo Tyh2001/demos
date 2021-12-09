@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style type="text/css">
+    #content {
+
+      width: 300px;
+      height: 200px;
+      background: yellow;
+      border: 2px solid;
+
+
+    }
+  </style>
+</head>
+
+<body>
+
+  <input type="button" value="自定义动画" id="btn">
+
+  <div id="content">
+
+
+  </div>
+
+  <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+
+  <script type="text/javascript">
+
+    $("#btn").click(function () {
+
+      // content 移动
+
+
+      //  $("#content").animate({"background-color":"pink"},1000);
+
+
+      $("#content").animate({ "margin-left": "500px" }, 5000);
+
+      $("#content").animate({ marginLeft: 500, "width": "100px", "height": "50px" }, 2000)
+        .animate({ marginLeft: 0, width: 300, height: 200 }, 1000,
+          //回调函数
+          function () {
+            $("#content").css("background", "blue");
+
+          })
+
+
+
+    })
+
+
+  </script>
+
+
+</body>
+
+</html>

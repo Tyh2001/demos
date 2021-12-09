@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 将数组以ul li 形式输出
+    crr = ["a", "n", "s", "w", "e"];
+    u = "<ul>";
+    for (var i = 0; i < crr.length; i++) {
+      var aaa = u += "<li>" + crr[i] + "</li>";
+    }
+    document.write(aaa);
+
+    // 将数组转坏为字符串
+    sta = [2, 3, 6, 8, 2, 5];
+    var aa = sta.toString();
+    console.log(aa);
+
+    // 将数组转坏为字符串
+    var fruits = ["Banana", "Orange", "Apple", "Mango"];
+    var fru = fruits.toString();
+    console.log(fru);
+  </script>
+</body>
+
+</html>
