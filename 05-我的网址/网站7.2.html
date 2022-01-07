@@ -5,81 +5,7 @@
   <link rel="icon" href="https://www.hualigs.cn/image/60813be18fcf1.jpg">
   <title>网站 7.2</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      user-select: none;
-      text-decoration: none;
-    }
-
-    body,
-    html {
-      background: #f7f8fa;
-    }
-
-    #box {
-      width: 1160px;
-      margin: 20px auto;
-      display: flex;
-      background: #fff;
-      border-radius: 15px;
-      box-shadow: 0 7px 19px rgba(0, 0, 0, 0.1);
-    }
-
-    #box #menu {
-      width: 200px;
-      padding: 20px;
-      box-sizing: border-box;
-    }
-
-    #box #menu ul li {
-      list-style: none;
-      user-select: none;
-      line-height: 40px;
-      cursor: pointer;
-      width: 100%;
-      padding-left: 20px;
-      color: #333333;
-    }
-
-    #box #menu ul li:hover {
-      background: #f7f7f7;
-      color: #409eff;
-    }
-
-    #box #menu ul .clickItem {
-      background: #f7f7f7;
-      color: #409eff;
-    }
-
-    #box #content {
-      width: 960px;
-      padding: 20px;
-      box-sizing: border-box;
-    }
-
-    #box #content .crumbs {
-      color: #333333;
-    }
-
-    #box #content .webList {
-      width: 100%;
-      margin-top: 20px;
-    }
-
-    #box #content .webList a {
-      width: 170px;
-      height: 40px;
-      display: inline-block;
-      font-size: 18px;
-      font-weight: 800;
-      background-color: #eef3ff;
-      line-height: 40px;
-      text-align: center;
-      margin: 6px;
-      border-radius: 3px;
-      border: 1px solid #d8e4fd;
-    }
+*{margin:0;padding:0;user-select:none;text-decoration:none}body,html{background:#f7f8fa}#box{width:1160px;margin:20px auto;display:flex;background:#fff;border-radius:15px;box-shadow:0 7px 19px rgba(0,0,0,.1)}#box #menu{width:200px;padding:20px;box-sizing:border-box}#box #menu ul li{list-style:none;user-select:none;line-height:40px;cursor:pointer;width:100%;padding-left:20px;color:#333}#box #menu ul li:hover{background:#f7f7f7;color:#409eff}#box #menu ul .clickItem{background:#f7f7f7;color:#409eff}#box #content{width:960px;padding:20px;box-sizing:border-box}#box #content .crumbs{color:#333}#box #content .webList{width:100%;margin-top:20px}#box #content .webList a{width:170px;height:40px;display:inline-block;font-size:18px;font-weight:800;background-color:#eef3ff;line-height:40px;text-align:center;margin:6px;border-radius:3px;border:1px solid #d8e4fd}
   </style>
 </head>
 
@@ -93,7 +19,6 @@
   </div>
 
   <script>
-
     // 渲染侧边栏
     const menuList = [
       { id: 1, title: '常用网站' },
@@ -127,8 +52,9 @@
       // 常用网站
       [
         '<a style="color: #2319dc;" href="https://www.baidu.com">百度</a>',
-        '<a style="color: #333333;" href="https://tianyuhao.icu">Tyh</a>',
+        '<a style="color: #333333;" href="https://tianyuhao.cn">Tyh</a>',
         '<a style="color: #2319dc;" href="https://fanyi.baidu.com">百度翻译</a>',
+        '<a style="color: #212121;" href="https://developer.mozilla.org/zh-CN/">MDN</a>',
         '<a style="color: #41b883;" href="https://cn.vuejs.org">Vue.js</a>',
         '<a style="color: #41b883;" href="https://vue3js.cn/docs/zh/">Vue 3.0</a>',
         '<a style="color: #c71d23;" href="https://gitee.com/">码云</a>',
@@ -140,34 +66,26 @@
       ],
       // 我的网站
       [
-        '<a style="color: #333333;" href="https://tianyuhao.icu/blog">Tyh-blog</a>',
-        '<a style="color: rgb(201,0,0);" href="https://www.npmjs.com/package/tyh-ui">tyh-ui 仓库</a>',
-        '<a style="color: rgb(201,0,0);" href="https://www.npmjs.com/package/tyh-ui2">tyh-ui2 仓库</a>',
-        '<a style="color: #2b3137;" href="http://106.54.184.62/phpmyadmin">我的线上数据库</a>',
-        '<a style="color: #2b3137;" href="https://tianyuhao.icu/tyhui">Tyh-ui</a>',
-        '<a style="color: rgb(189,52,254);" href="https://tianyuhao.icu/tyhui/v3">Tyh-ui v3</a>',
-        '<a style="color: #2b3137;" href="https://tianyuhao.icu/release">Tyh-release</a>',
-        '<a style="color: #2b3137;" href="https://tianyuhao.icu/release/phone">Tyh-phone</a>',
-        '<a style="color: #2b3137;" href="https://tianyuhao.icu/release/pc">Tyh-pc</a>',
-        '<a style="color: #2b3137;" href="https://tianyuhao.icu/phpmyadmin/">服务器线上数据库</a>',
-        '<a style="color: #2b3137;" href="https://github.com/Tyh2001/tyh-ui">Tyh-ui 仓库</a>',
-        '<a style="color: #2b3137;" href="http://old.tianyuhao.icu">Tyh.(旧)</a>',
-        '<a style="color: #2b3137;" href="http://biaoqing.tianyuhao.icu">表情发布</a>',
-        '<a style="color: #2b3137;" href="http://article.tianyuhao.icu">盛邦文章发布</a>',
-        '<a style="color: #2b3137;" href="http://xinwen.tianyuhao.icu">今日头条</a>',
-        '<a style="color: #2b3137;" href="https://github.com/Tyh2001/tyh-doc">个人网站仓库</a>',
-        '<a style="color: #2b3137;" href="https://github.com/Tyh2001/Web-Interview-Lssues">面试题仓库</a>',
-        '<a style="color: #2b3137;" href="http://renova.tianyuhao.icu">达买可视化</a>',
-        '<a style="color: #2b3137;" href="https://www.infinitymcn.com/web/0705_renova_list/front_end/">达买可视化2</a>',
+        '<a style="color: rgb(189,52,254);" href="https://tianyuhao.cn/tyhui/v3">tyh-ui2</a>',
+        '<a style="color: #333333;" href="https://tianyuhao.cn/blog">blog</a>',
+        '<a style="color: rgb(201,0,0);" href="https://www.npmjs.com/package/tyh-ui2">tyh-ui2</a>',
+        '<a style="color: #2b3137;" href="https://tianyuhao.cn/release/phone">tyh-phone</a>',
+        '<a style="color: #2b3137;" href="https://tianyuhao.cn/release/pc">tyh-pc</a>',
+        '<a style="color: #2b3137;" href="https://tianyuhao.cn/phpmyadmin/">线上数据库</a>',
+        '<a style="color: #2b3137;" href="http://old.tianyuhao.cn">个人网站old</a>',
+        '<a style="color: #2b3137;" href="http://biaoqing.tianyuhao.cn">表情发布</a>',
+        '<a style="color: #2b3137;" href="https://www.infinitymcn.com/web/0705_renova_list/front_end/">达买可视化</a>',
       ],
       // 前端框架
       [
         '<a style="color: rgb(48,170,105);" href="https://www.naiveui.com/zh-CN/os-theme" title="Vue3 PC端">Naïve UI</a>',
+        '<a style="color: rgb(57,109,255);" href="https://www.antdv.com/docs/vue/introduce-cn/" title="Vue3 PC端">Ant Design of Vue</a>',
         '<a style="color: rgb(65,183,131);" href="https://primefaces.org/primevue/showcase/#/" title="Vue3 PC端">PRIMEVUE</a>',
         '<a style="color: #409eff;" href="https://element.eleme.cn/#/zh-CN" title="Vue PC端">element</a>',
         '<a style="color: #409eff;" href="https://element-plus.gitee.io/#/zh-CN" title="Vue3">element-Plus</a>',
         '<a style="color: #409eff;" href="https://e3.shengxinjing.cn/" title="Vue3">element3</a>',
-        '<a style="color: #36d7b7;" href="https://youzan.github.io/vant/#/zh-CN/quickstart" title="Vue 移动端">Vant</a>',
+        '<a style="color: #36d7b7;" href="https://youzan.github.io/vant/#/zh-CN/" title="Vue 移动端">Vant</a>',
+        '<a style="color: #36d7b7;" href="https://youzan.github.io/vant/v3/#/zh-CN/" title="Vue 移动端">Vant V3</a>',
         '<a style="color: #2d8cf0;" href="https://www.iviewui.com/" title="Vue PC端">iView UI</a>',
         '<a style="color: rgb(27,139,243);" href="https://at-ui.github.io/at-ui/#/zh/" title="Vue PC端">At UIKIT</a>',
         '<a style="color: rgb(11,181,226);" href="http://datav.jiaminghi.com/" title="Vue 大屏数据展示组件库">DataV</a>',
@@ -192,16 +110,14 @@
       ],
       // 文档教程
       [
+        '<a style="color: rgb(240,148,94);" href="https://zh.javascript.info/" title="">现代JavaScript教程</a>',
         '<a style="color: #bd2d30;" href="https://www.w3school.com.cn/">w3school</a>',
-        '<a style="color: #212121;" href="https://developer.mozilla.org/zh-CN/">MDN</a>',
         '<a style="color: rgba(111,183,55);" href="https://www.kancloud.cn/manual/thinkphp5/118003">ThinkPHP</a>',
-        '<a style="color: rgba(244,100,95);" href="https://www.houdunren.com/">后盾人视频教程</a>',
-        '<a style="color: rgba(62,175,124);" href="https://houdunren.gitee.io/note/">后盾人文档教程</a>',
+        '<a style="color: rgba(244,100,95);" href="https://www.houdunren.com/">后盾人</a>',
         '<a style="color: #2b3a42;" href="https://webpack.docschina.org/">webpack</a>',
         '<a style="color: rgb(90,41,228);" href="https://www.axios-http.cn/">axios</a>',
         '<a style="color: rgb(203,56,55);" href="https://www.npmjs.cn/">npm 中文文档</a>',
         '<a style="color: rgb(41,78,128);" href="https://www.tslang.cn/index.html">TypeScript</a>',
-        '<a style="color: #41b883;" href="https://github.com/vuejs/awesome-vue">Vue 官方资源包</a>',
         '<a style="color: #61dafb;" href="https://react.docschina.org/">React</a>',
         '<a style="color: #0177d7;" href="http://www.xiaozhoubg.com/">晓舟报告</a>',
         '<a style="color: rgb(255,64,75); " href="https://jquery.cuishifeng.cn/">jQuery</a>',
@@ -210,6 +126,9 @@
         '<a style="color: rgb(0,153,0);" href="http://nginx.org/en/download.html" title="服务器搭建">nginx</a>',
         '<a style="color: rgb(0,153,0);" href="https://lnmp.org/" title="服务器一键配置">LNMP</a>',
         '<a style="color: rgb(250,137,25);" href="https://time.geekbang.org/" title="">极课时间</a>',
+        '<a style="color: #41b883;" href="https://lxchuan12.gitee.io/" title="">若川</a>',
+        '<a style="color: #41b883;" href="https://shengxinjing.cn/" title="">大圣</a>',
+        '<a style="color:rgb(228,116,0)" href="https://stackoverflow.com/" title="">stackoverflow</a>',
       ],
       // Vue 相关
       [
@@ -224,9 +143,11 @@
         '<a style="color: #41b883;" href="https://next.vuex.vuejs.org/zh/index.html" title="">Vue3 Vuex</a>',
         '<a style="color: #41b883;" href="https://next.router.vuejs.org/zh/index.html" title="">Vue3 Router</a>',
         '<a style="color: #41b883;" href="https://vue3js.cn/interview/" title="">Vue3-官方面试题</a>',
-        '<a style="color: #41b883;" href="https://vuepress.vuejs.org/zh/" title="Vue 静态网站生成">VuePress</a>',
+        '<a style="color: #41b883;" href="https://v2.vuepress.vuejs.org/zh" title="Vue 静态网站生成">VuePress</a>',
         '<a style="color: #41b883;" href="https://vueuse.org/" title="">VueUse</a>',
         '<a style="color: rgb(248,217,80);" href="https://pinia.esm.dev/" title="下一代Vuex">Pinia</a>',
+        '<a style="color: #41b883;" href="https://blog.vuejs.org/" title="下一代Vuex">Vue 观点</a>',
+        '<a style="color: #41b883;" href="https://github.com/vuejs/awesome-vue">Vue 官方资源包</a>',
       ],
       // 前端常用工具
       [
@@ -259,11 +180,13 @@
         '<a style="color: rgb(45,144,222);" href="https://winscp.net/eng/docs/lang:chs">winSCP</a>',
         '<a style="color: rgb(39,43,48);" href="http://www.tianqiapi.com/user/index">天气 api 接口</a>',
         '<a style="color: rgb(0,154,97);" href="https://tool.lu">在线工具</a>',
+        '<a style="" href="https://www.cnblogs.com/1394htw/p/14949658.html">Typora表情</a>',
+        '<a style="color:rgb(77,108,242);" href="https://dwz.3wt.cn/" title="短域名">三维维</a>',
+        '<a style="color:rgb(0,0,0)" href="https://shields.io/" title="README图标">shields</a>',
       ],
       // Github 仓库
       [
         '<a style="color: #2b3137;" href="https://github.com/fengyuanchen/cropperjs" title="头像裁切器">cropperjs</a>',
-        '<a style="color: #2b3137;" href="https://github.com/axios/axios" title="axios文档">axios</a>',
         '<a style="color: #2b3137;" href="https://github.com/Leecason/element-tiptap" title="富文本编辑器">element-tiptap</a>',
         '<a style="color: #2b3137;" href="https://github.com/hinesboy/mavonEditor" title="富文本编辑器">mavonEditor</a>',
         '<a style="color: #2b3137;" href="https://github.com/sidorares/json-bigint" title="JS安全整数范围">json-bigint</a>',
@@ -294,7 +217,9 @@
         '<a style="color: #006cff;" href="https://juejin.cn/">掘金</a>',
         '<a style="color: rgb(13,45,97);" href="https://degree.qingshuxuetang.com/hdxy/Home">成高刷课时</a>',
         '<a style="color: rgb(60,176,103);" href="https://cli.im/">草料生成二维码</a>',
-        '<a style="color: rgb(3,119,226);" href="https://www.proginn.com/">程序员客栈</a>',
+        '<a style="color: rgb(66,127,228);" href="https://opensea.io/">opensea</a>',
+        '<a style="color: rgb(31,53,110);" href="https://codemart.com/">码市</a>',
+        '<a style="color: rgb(239,101,0);" href="https://www.epub360.com/">意派</a>',
       ],
       // 收藏
       [
@@ -367,7 +292,7 @@
       [
         '<a style="color: rgb(29,54,93);" href="https://less.bootcss.com/" title="css 预处理器">Less</a>',
         '<a style="color: rgb(204,102,153);" href="https://www.sass.hk/ " title="css 预处理器">Sass</a>',
-        '<a style="color: rgb(255,99,71);" href="https://www.sass.hk/" title="css 预处理器">Stylus</a>',
+        '<a style="color: rgb(255,99,71);" href="https://www.stylus-lang.cn/" title="css 预处理器">Stylus</a>',
         '<a style="color: rgba(180,160,120);" href="https://lhammer.cn/You-need-to-know-css/#/zh-cn/centering-known">好看的 CSS 样式</a>',
         '<a style="color: rgba(0,48,79);" href="https://chokcoco.github.io/CSS-Inspiration/#/">CSS 灵感</a>',
         '<a style="color: rgba(34,40,49);" href="https://qishaoxuan.github.io/css_tricks/">神奇 CSS</a>',
@@ -387,7 +312,6 @@
         '<a style="color: rgb(64,64,64);" href="https://svgwave.in/">SVG波浪生成器</a>',
       ]
     ]
-
 
     // 点击渲染不同的内容
     const menuLi = document.querySelectorAll('.menu_li')

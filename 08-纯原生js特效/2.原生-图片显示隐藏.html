@@ -25,33 +25,15 @@
     let images = document.querySelector(".images");
     let btn = document.querySelector(".btn");
 
-    let show = true;
-
     btn.onclick = function () {
-      if (show) {
+      if (btn.innerHTML === "隐藏") {
         images.style.display = "none";
         btn.innerHTML = "显示";
-        show = false;
       } else {
         images.style.display = "block";
         btn.innerHTML = "隐藏";
-        show = true;
       }
     }
-
-        // 优化一下代码
-        // let images = document.querySelector(".images");
-        // let btn = document.querySelector(".btn");
-
-        // btn.onclick = function () {
-        //     if (btn.innerHTML === "隐藏") {
-        //         images.style.display = "none";
-        //         btn.innerHTML = "显示";
-        //     } else {
-        //         images.style.display = "block";
-        //         btn.innerHTML = "隐藏";
-        //     }
-        // }
   </script>
 </body>
 
