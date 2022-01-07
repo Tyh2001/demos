@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    .tree,
+    .tree ul {
+      list-style: none;
+    }
+
+    .tree a {
+      text-decoration: none;
+      display: block;
+      /*background-color: #16A085;*/
+      background-image: url("images/treeview-collapsed.gif");
+    }
+
+    .tree p,
+    .tree a {
+      /*width:150px;*/
+      height: 32px;
+      color: #002c57;
+      font: 20px 宋体;
+      line-height: 200%;
+      padding-left: 15px;
+      background-repeat: no-repeat;
+      background-position: 0 5px;
+      background-color: #ecebe9;
+    }
+
+    .tree p {
+      /*background-color: #0099ff;*/
+      background-image: url("images/treeview-item.gif");
+    }
+
+    .tree .toggle {
+      background-image: url("images/treeview-expanded.gif");
+    }
+  </style>
+  <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+  <script>
+    $(function () {
+      $(".tree ul").hide();
+      $(".tree a").click(function () {
+        $(this).next().slideToggle();
+        $(this).toggleClass("toggle");
+
+      })
+    })
+  </script>
+</head>
+
+<body>
+  <ul class="tree">
+    <li>
+      <a href="#">软件课程</a>
+      <ul>
+        <li>
+          <p>sql server</p>
+        </li>
+        <li>
+          <a href="#">javasctip</a>
+          <ul>
+            <li>
+              <p>变量</p>
+            </li>
+            <li>
+              <p>for</p>
+            </li>
+            <li>
+              <p>while</p>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <p>jquery</p>
+        </li>
+        <li>
+          <p>css+div</p>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a href="#">网络课程</a>
+      <ul>
+        <li>
+          <p>思科</p>
+        </li>
+        <li>
+          <p>硬件</p>
+        </li>
+        <li>
+          <p>网络搭建</p>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</body>
+
+</html>

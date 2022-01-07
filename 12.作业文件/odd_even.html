@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    ul,
+    li,
+    p {
+      margin: 0;
+      padding: 0;
+    }
+
+    ul {
+      list-style: none;
+      width: 600px;
+      border: 1px solid #7f7f7f;
+    }
+
+    ul li {
+      overflow: hidden;
+    }
+
+    li p {
+      float: left;
+      width: 150px;
+      text-align: center;
+      /*font-size:20px;*/
+      /*font-family:宋体;*/
+      font: 20px 宋体;
+      line-height: 150%;
+    }
+  </style>
+  <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+  <script>
+    $(function () {
+
+      //为第一行加样式
+      $("li:first").css("color", "blue");
+      $("li:first").css("fontWeight", "bold");
+
+      //为奇数行添加样样式
+      $("li:odd").css("backgroundColor", "#3a6ea5");
+      $("li:odd").css("color", "#ffffff");
+
+    })
+  </script>
+</head>
+
+<body>
+  <ul>
+    <li>
+      <p>姓名</p>
+      <p>年龄</p>
+      <p>性别</p>
+      <p>地址</p>
+    </li>
+    <li>
+      <p>张三</p>
+      <p>22</p>
+      <p>男</p>
+      <p>河北省秦皇岛</p>
+    </li>
+    <li>
+      <p>张三</p>
+      <p>22</p>
+      <p>男</p>
+      <p>河北省秦皇岛</p>
+    </li>
+    <li>
+      <p>张三</p>
+      <p>22</p>
+      <p>男</p>
+      <p>河北省秦皇岛</p>
+    </li>
+    <li>
+      <p>张三</p>
+      <p>22</p>
+      <p>男</p>
+      <p>河北省秦皇岛</p>
+    </li>
+    <li>
+      <p>张三</p>
+      <p>22</p>
+      <p>男</p>
+      <p>河北省秦皇岛</p>
+    </li>
+    <li>
+      <p>张三</p>
+      <p>22</p>
+      <p>男</p>
+      <p>河北省秦皇岛</p>
+    </li>
+    <li>
+      <p>张三</p>
+      <p>22</p>
+      <p>男</p>
+      <p>河北省秦皇岛</p>
+    </li>
+    <li>
+      <p>张三</p>
+      <p>22</p>
+      <p>男</p>
+      <p>河北省秦皇岛</p>
+    </li>
+    <li>
+      <p>张三</p>
+      <p>22</p>
+      <p>男</p>
+      <p>河北省秦皇岛</p>
+    </li>
+  </ul>
+</body>
+
+</html>

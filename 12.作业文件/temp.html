@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+  <script>
+    $(function () {
+      $("ul li input").click(function () {
+        $(this).parent().parent().siblings().eq(2)
+          .css("backgroundColor", "green");
+        $(this).parent().parent().siblings().eq(0)
+          .css("backgroundColor", "red");
+        $(this).parent().parent().siblings().eq(3).children().eq(1)
+          .css("backgroundColor", "orange");
+        $(this).parent().parent().children().eq(2)
+          .css("backgroundColor", "blue");
+      })
+    })
+  </script>
+</head>
+
+<body>
+  <h2>sssss</h2>
+  <p>2222</p>
+  <p>2222</p>
+  <div>
+    <p>dddddddddd</p>
+    <p>dddddddddd</p>
+    <p>dddddddddd</p>
+  </div>
+  <ul>
+    <li><input type="button" value="按钮" /></li>
+    <li><input type="button" value="按钮" /></li>
+    <li><input type="button" value="按钮" /></li>
+  </ul>
+</body>
+
+</html>
