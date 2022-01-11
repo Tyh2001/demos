@@ -61,46 +61,41 @@
   </div>
 
   <script>
-    function $(Class) {
-      return typeof Class === "string" ? document.querySelector(Class) : null;
-    }
-
+    let num = 0
+    let timer = null
+    
     // 让图片向上滚动
-    let num = 0;
-    let timer = null;
-    $(".top").onmouseover = function () {
+    const img = document.querySelector('img')
+    document.querySelector('.top').addEventListener('mouseover', () => {
       clearInterval(timer)
       timer = setInterval(() => {
         num -= 4;
         // 图片3333高  盒子高度400
         // 那么图片在距上-2933时要清除计时器
         if (num >= -2933) {
-          $("img").style.top = num + "px";
+          img.style.top = `${num}px`
         } else {
           clearInterval(timer)
         }
-      }, 15);
-    }
+      }, 15)
+    })
 
     // 向下滚动
-    $(".bottom").onmouseover = function () {
+    document.querySelector('.bottom').addEventListener('mouseover', () => {
       clearInterval(timer)
       timer = setInterval(() => {
         num += 4;
-        // 图片3333高  盒子高度400
-        // 那么图片在距上-2933时要清除计时器
-        if (num <= 0) {
-          $("img").style.top = num + "px";
+        if (num <= -0) {
+          img.style.top = `${num}px`
         } else {
           clearInterval(timer)
         }
-      }, 15);
-    }
+      }, 15)
+    })
 
-    // 鼠标离开清除定时器
-    $(".box").onmouseout = function () {
+    document.querySelector('.box').addEventListener('mouseout', () => {
       clearInterval(timer)
-    }
+    })
 
   </script>
 </body>
