@@ -5,7 +5,81 @@
   <link rel="icon" href="https://www.hualigs.cn/image/60813be18fcf1.jpg">
   <title>网站 7.2</title>
   <style>
-*{margin:0;padding:0;user-select:none;text-decoration:none}body,html{background:#f7f8fa}#box{width:1160px;margin:20px auto;display:flex;background:#fff;border-radius:15px;box-shadow:0 7px 19px rgba(0,0,0,.1)}#box #menu{width:200px;padding:20px;box-sizing:border-box}#box #menu ul li{list-style:none;user-select:none;line-height:40px;cursor:pointer;width:100%;padding-left:20px;color:#333}#box #menu ul li:hover{background:#f7f7f7;color:#409eff}#box #menu ul .clickItem{background:#f7f7f7;color:#409eff}#box #content{width:960px;padding:20px;box-sizing:border-box}#box #content .crumbs{color:#333}#box #content .webList{width:100%;margin-top:20px}#box #content .webList a{width:170px;height:40px;display:inline-block;font-size:18px;font-weight:800;background-color:#eef3ff;line-height:40px;text-align:center;margin:6px;border-radius:3px;border:1px solid #d8e4fd}
+    * {
+      margin: 0;
+      padding: 0;
+      user-select: none;
+      text-decoration: none
+    }
+
+    body,
+    html {
+      background: #f7f8fa
+    }
+
+    #box {
+      width: 1160px;
+      margin: 20px auto;
+      display: flex;
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 7px 19px rgba(0, 0, 0, .1)
+    }
+
+    #box #menu {
+      width: 200px;
+      padding: 20px;
+      box-sizing: border-box
+    }
+
+    #box #menu ul li {
+      list-style: none;
+      user-select: none;
+      line-height: 40px;
+      cursor: pointer;
+      width: 100%;
+      padding-left: 20px;
+      color: #333
+    }
+
+    #box #menu ul li:hover {
+      background: #f7f7f7;
+      color: #409eff
+    }
+
+    #box #menu ul .clickItem {
+      background: #f7f7f7;
+      color: #409eff
+    }
+
+    #box #content {
+      width: 960px;
+      padding: 20px;
+      box-sizing: border-box
+    }
+
+    #box #content .crumbs {
+      color: #333
+    }
+
+    #box #content .webList {
+      width: 100%;
+      margin-top: 20px
+    }
+
+    #box #content .webList a {
+      width: 170px;
+      height: 40px;
+      display: inline-block;
+      font-size: 18px;
+      font-weight: 800;
+      background-color: #eef3ff;
+      line-height: 40px;
+      text-align: center;
+      margin: 6px;
+      border-radius: 3px;
+      border: 1px solid #d8e4fd
+    }
   </style>
 </head>
 
@@ -32,7 +106,8 @@
       { id: 9, title: '收藏类' },
       { id: 10, title: '娱乐类' },
       { id: 11, title: '翻墙' },
-      { id: 12, title: 'Css 相关' }
+      { id: 12, title: 'Css 相关' },
+      { id: 13, title: '设计和UI' },
     ]
 
     const menu = document.getElementById('menu')
@@ -85,6 +160,7 @@
         '<a style="color: #409eff;" href="https://e3.shengxinjing.cn/" title="Vue3">element3</a>',
         '<a style="color: #409eff;" href="https://element-plus.gitee.io/#/zh-CN" title="Vue3">element-Plus</a>',
         '<a style="color: rgb(48,170,105);" href="https://www.naiveui.com/zh-CN/os-theme" title="Vue3 PC端">Naïve UI</a>',
+        '<a style="color: rgb(92,156,255);" href="https://docs.soybean.pro/" title="Vue3 PC端">Soybean Admin</a>',
         '<a style="color: #36d7b7;" href="https://youzan.github.io/vant/v3/#/zh-CN/" title="Vue 移动端">Vant V3</a>',
         '<a style="color: rgb(57,109,255);" href="https://www.antdv.com/docs/vue/introduce-cn/" title="Vue3 PC端">Ant Design Vue</a>',
         '<a style="color: rgb(65,183,131);" href="https://primefaces.org/primevue/showcase/#/" title="Vue3 PC端">PRIMEVUE</a>',
@@ -112,6 +188,7 @@
       // 文档教程
       [
         '<a style="color: rgb(240,148,94);" href="https://zh.javascript.info/" title="">现代JavaScript</a>',
+        '<a style="color:rgb(228,116,0)" href="https://stackoverflow.com/" title="搜技术">stackoverflow</a>',
         '<a style="color: rgb(41,78,128);" href="https://www.tslang.cn/index.html">TypeScript</a>',
         '<a style="color: #41b883;" href="https://lxchuan12.gitee.io/" title="">若川</a>',
         '<a style="color: #41b883;" href="https://shengxinjing.cn/" title="">大圣</a>',
@@ -130,9 +207,11 @@
         '<a style="color: #3d8137;" href="https://nunjucks.bootcss.com/ ">Nunjucks</a>',
         '<a style="color: rgb(0,153,0);" href="http://nginx.org/en/download.html" title="服务器搭建">nginx</a>',
         '<a style="color: rgb(0,153,0);" href="https://lnmp.org/" title="服务器一键配置">LNMP</a>',
-        '<a style="color:rgb(228,116,0)" href="https://stackoverflow.com/" title="搜技术">stackoverflow</a>',
         '<a style="color:rgb(70,121,185)" href="https://how2j.cn/" title="学习宝藏">how2j</a>',
         '<a style="color: #000000;" href="https://itbox.cc/">电子书</a>',
+        '<a style="color: rgb(234,146,19);" href="https://pnpm.io/zh/">pnpm</a>',
+        '<a style="color: rgb(34,34,34);" href="https://ohshitgit.com/">ohshitgit</a>',
+        '<a style="color: rgb(249,222,95);" href="https://gitmoji.dev/">gitmoji</a>',
       ],
       // Vue 相关
       [
@@ -152,6 +231,7 @@
         '<a style="color: #41b883;" href="https://github.com/vuejs/awesome-vue">Vue 官方资源包</a>',
         '<a style="color: #41b883;" href="https://sfc.vuejs.org/">sfc</a>',
         '<a style="color: #41b883;" href="https://vue-next-template-explorer.netlify.app/">Template Explorer</a>',
+        '<a style="color: #41b883;" href="https://vitepress.vuejs.org/">vitepress</a>',
       ],
       // 前端常用工具
       [
@@ -284,6 +364,8 @@
         '<a style="color: rgb(70,184,85);" href="http://sicangziti.com/">字体下载</a>',
         '<a style="color: rgb(31,177,65);" href="https://icons8.com/">图标插画下载</a>',
         '<a style="color: rgb(0,123,193);" href="https://www.tiobe.com/tiobe-index/">Tiobe编程语言排行</a>',
+        '<a style="color: rgb(33,39,53);" href="https://tools-dev.jiaoyanyun.com/experiment/main/index.html?subject=physics#/edit">实验电路</a>',
+        '<a style="color: rgb(214,60,63);" href="https://ihateregex.io/">正则表达式</a>',
       ],
       // 娱乐
       [
@@ -328,8 +410,16 @@
         '<a style="color: rgb(137,224,137);" href="https://bansal.io/pattern-css">大型数据库</a>',
         '<a style="color: rgb(251,94,31);" href="https://www.shapedivider.app/">自定义形状分隔线</a>',
         '<a style="color: rgb(0,0,0);" href="https://tympanus.net/Development/MagneticButtons/index.html">动画按钮</a>',
+      ],
+      // 设计和 UI
+      [
+        '<a style="color: rgb(97,75,255);" href="https://undesign.learn.uno/">Undesign</a>',
         '<a style="color: rgb(94,100,248);" href="https://www.magicpattern.design/tools/css-backgrounds">背景图案</a>',
         '<a style="color: rgb(64,64,64);" href="https://svgwave.in/">SVG波浪生成器</a>',
+        '<a style="color: rgb(239,58,138);" href="https://squoosh.app/">谷歌图片压缩</a>',
+        '<a style="color: rgb(13,12,35);" href="https://dribbble.com/">网页设计灵感</a>',
+        '<a style="color: rgb(235,92,28);" href="https://www.shapedivider.app/">分割线</a>',
+
       ]
     ]
 
