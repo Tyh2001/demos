@@ -101,13 +101,12 @@
       { id: 4, title: '文档教程' },
       { id: 5, title: 'Vue 相关' },
       { id: 6, title: '前端常用工具' },
-      { id: 7, title: 'Github 仓库' },
-      { id: 8, title: '应用网站' },
-      { id: 9, title: '收藏类' },
-      { id: 10, title: '娱乐类' },
-      { id: 11, title: '翻墙' },
-      { id: 12, title: 'Css 相关' },
-      { id: 13, title: '设计和UI' },
+      { id: 7, title: '应用网站' },
+      { id: 8, title: '收藏类' },
+      { id: 9, title: '娱乐类' },
+      { id: 10, title: '翻墙' },
+      { id: 11, title: 'Css 相关' },
+      { id: 12, title: '设计和UI' }
     ]
 
     const menu = document.getElementById('menu')
@@ -115,7 +114,7 @@
 
     menuList.forEach(item => {
       const LI = document.createElement('li')
-      LI.setAttribute('class', 'menu_li')
+      LI.classList = 'menu_li'
       LI.setAttribute('index', item.id)
       LI.innerHTML = item.title
       UL.appendChild(LI)
@@ -134,42 +133,36 @@
         '<a style="color: #2b3137;" href="https://github.com/">Github</a>',
         '<a style="color: #96b97d;" href="https://www.runoob.com/">菜鸟教程</a>',
         '<a style="color: #24ace6;" href="https://www.bilibili.com/">哔哩哔哩</a>',
-        '<a style="color: rgb(16,174,181);" href="http://www.yiqing.com/">疫情官网</a>',
         '<a style="color: rgb(100,108,255);" href="https://cn.vitejs.dev/">Vite</a>',
         '<a style="color: rgb(74,154,242);" href="https://twitter.com/">twitter</a>',
         '<a style="color: rgb(0,0,0);" href="https://leetcode-cn.com/" title="编程技术">力扣</a>',
         '<a style="color: rgba(52,58,64);" href="https://www.hualigs.cn/">遇见图床</a>',
         '<a style="color: #0177d7;" href="https://www.zhihu.com">知乎</a>',
         '<a style="color: #006cff;" href="https://juejin.cn/">掘金</a>',
-        '<a style="color:rgb(82,185,95)" href="https://www.yuque.com/tyh2001" title="">语雀</a>',
-        '<a style="color:rgb()" href="https://github.com/markdown-it/markdown-it-emoji/blob/master/lib/data/full.json" title="">Markdown 表情</a>',
-        '<a style="color:rgb()" href="https://192.168.2.110/" title="">GitLab</a>',
-        '<a style="color:rgb()" href="http://192.168.2.28:8088/" title="tyh tyh123456">Jenkins</a>',
+        '<a style="color:rgb()" href="https://tianyuhao.cn/emoji" title="">Markdown 表情</a>',
+        '<a style="color:rgb()" href="http://git.dataqin.com/" title="">GitLab</a>',
         '<a style="color:rgb(49,120,198)" href="https://www.typescriptlang.org/zh/" title="">TypeScript</a>',
-        '<a style="color:rgb(44,44,44)" href="https://www.figma.com/file/RN9AF9S6Ajte3Y3vdCTR3u/%E8%93%9D%E6%99%AF?node-id=6%3A104" title="">蓝景</a>',
-        '<a style="color:rgb(44,44,44)" href="https://sudu.co/" title="">网站集合</a>',
       ],
       // 我的网站
       [
         '<a style="color: rgb(189,52,254);" href="https://tianyuhao.cn/v3">tyh-ui</a>',
         '<a style="color: rgb();" href="https://fighting.tianyuhao.cn/">Fighting Design</a>',
         '<a style="color: rgb();" href="https://tianyuhao.cn/mango">TsMango</a>',
-        '<a style="color: rgb(201,0,0);" href="https://www.npmjs.com/package/tyh-ui2">tyh-ui2</a>',
+        '<a style="color: rgb(201,0,0);" href="https://www.npmjs.com/package/fighting-design">fighting-design</a>',
         '<a style="color: rgb(0,0,0);" href="https://marketplace.visualstudio.com/manage/publishers/tyh-theme">tyh-theme</a>',
         '<a style="color: #333333;" href="https://tianyuhao.cn/blog">blog</a>',
-        '<a style="color: #2b3137;" href="https://tianyuhao.cn/release/phone">tyh-phone</a>',
-        '<a style="color: #2b3137;" href="https://tianyuhao.cn/release/pc">tyh-pc</a>',
         '<a style="color: #2b3137;" href="https://tianyuhao.cn/phpmyadmin/">线上数据库</a>',
         '<a style="color: #2b3137;" href="http://biaoqing.tianyuhao.cn">表情发布</a>',
       ],
       // 前端框架
       [
+        '<a style="color: rgb(48,170,105);" href="https://www.naiveui.com/zh-CN/os-theme" title="Vue3 PC端">Naïve UI</a>',
+        '<a style="color: rgb(57,109,255);" href="https://www.antdv.com/docs/vue/introduce-cn/" title="Vue3 PC端">Ant Design Vue</a>',
         '<a style="color: #409eff;" href="https://e3.shengxinjing.cn/" title="Vue3">element3</a>',
         '<a style="color: #409eff;" href="https://element-plus.gitee.io/#/zh-CN" title="Vue3">element-Plus</a>',
-        '<a style="color: rgb(48,170,105);" href="https://www.naiveui.com/zh-CN/os-theme" title="Vue3 PC端">Naïve UI</a>',
+        '<a style="color: #23282d;" href="https://ant.design/index-cn" title="Vue PC端">Ant Design</a>',
         '<a style="color: rgb(92,156,255);" href="https://docs.soybean.pro/" title="Vue3 PC端">Soybean Admin</a>',
         '<a style="color: #36d7b7;" href="https://youzan.github.io/vant/v3/#/zh-CN/" title="Vue 移动端">Vant V3</a>',
-        '<a style="color: rgb(57,109,255);" href="https://www.antdv.com/docs/vue/introduce-cn/" title="Vue3 PC端">Ant Design Vue</a>',
         '<a style="color: rgb(65,183,131);" href="https://primefaces.org/primevue/showcase/#/" title="Vue3 PC端">PRIMEVUE</a>',
         '<a style="color: #2d8cf0;" href="https://www.iviewui.com/" title="Vue PC端">iView UI</a>',
         '<a style="color: #409eff;" href="https://element.eleme.cn/#/zh-CN" title="Vue PC端">element</a>',
@@ -178,8 +171,6 @@
         '<a style="color: rgb(4,158,244);" href="http://www.yanhuangxueyuan.com/" title="Vue PC端">three.js</a>',
         '<a style="color: #2b3137;" href="https://github.com/janl/mustache.js" title="模板引擎">mustache.js</a>',
         '<a style="color: rgb(39,174,96);" href="https://www.bootcdn.cn/" title="集成文件">mustache.js</a>',
-        '<a style="color: #000000;" href="https://vux.li/" title="Vue PC端">VUX</a>',
-        '<a style="color: #23282d;" href="https://ant.design/index-cn" title="Vue PC端">Ant Design</a>',
         '<a style="color: #23282d;" href="https://vuetifyjs.com/zh-Hans/" title="Vue PC端">Vuetifyjs</a>',
         '<a style="color: #27a2ff;" href="https://mint-ui.github.io/#!/zh-cn" title="Vue 移动端">Mint UI</a>',
         '<a style="color: #23282d;" href="https://dcloud.io/" title="移动端开发">dcloud</a>',
@@ -188,7 +179,6 @@
         '<a style="color: #409eff;" href="https://developers.weixin.qq.com/doc/">微信小程序api</a>',
         '<a style="color: #409eff;" href="https://mp.weixin.qq.com/wxopen/wasysnotify?action=list&selectid=465187003&token=1326897685&lang=zh_CN">小程序后台</a>',
         '<a style="color: rgb(0,145,234);" href="https://flutterchina.club/" title="谷歌移动UI框架">Flutter</a>',
-        '<a style="color: rgb(229,57,53);" href="https://madewith.cn/293" title="这是一个交互式动画组件">vue-kinesis</a>',
         '<a style="color: rgb(43, 153, 57);" href="https://uniapp.dcloud.io/" title="">uni-app</a>',
         '<a style="color: rgb(14,131,205);" href="https://hexo.io/zh-tw/" title="模板大全">Hexo</a>',
         '<a style="color: rgb(158,233,248);" href="https://www.electronjs.org/" title="构建跨平台的桌面应用程序">electronjs</a>',
@@ -198,14 +188,11 @@
         '<a style="color: rgb(240,148,94);" href="https://zh.javascript.info/" title="">现代JavaScript</a>',
         '<a style="color:rgb(228,116,0)" href="https://stackoverflow.com/" title="搜技术">stackoverflow</a>',
         '<a style="color: rgb(41,78,128);" href="https://www.tslang.cn/index.html">TypeScript</a>',
-        '<a style="color: #41b883;" href="https://lxchuan12.gitee.io/" title="">若川</a>',
-        '<a style="color: #41b883;" href="https://shengxinjing.cn/" title="">大圣</a>',
         '<a style="color: rgb(250,137,25);" href="https://time.geekbang.org/" title="">极课时间</a>',
         '<a style="color:rgb(0,0,0)" href="https://visualgo.net/zh" title="">算法图解</a>',
         '<a style="color:rgb(0,0,0)" href="https://xiaochen1024.com/" title="">算法讲解</a>',
         '<a style="color: #bd2d30;" href="https://www.w3school.com.cn/">w3school</a>',
         '<a style="color: rgba(111,183,55);" href="https://www.kancloud.cn/manual/thinkphp5/118003">ThinkPHP</a>',
-        '<a style="color: rgba(244,100,95);" href="https://www.houdunren.com/">后盾人</a>',
         '<a style="color: #2b3a42;" href="https://webpack.docschina.org/">webpack</a>',
         '<a style="color: rgb(90,41,228);" href="https://www.axios-http.cn/">axios</a>',
         '<a style="color: rgb(203,56,55);" href="https://www.npmjs.cn/">npm 中文文档</a>',
@@ -215,11 +202,7 @@
         '<a style="color: #3d8137;" href="https://nunjucks.bootcss.com/ ">Nunjucks</a>',
         '<a style="color: rgb(0,153,0);" href="http://nginx.org/en/download.html" title="服务器搭建">nginx</a>',
         '<a style="color: rgb(0,153,0);" href="https://lnmp.org/" title="服务器一键配置">LNMP</a>',
-        '<a style="color:rgb(70,121,185)" href="https://how2j.cn/" title="学习宝藏">how2j</a>',
-        '<a style="color: #000000;" href="https://itbox.cc/">电子书</a>',
         '<a style="color: rgb(234,146,19);" href="https://pnpm.io/zh/">pnpm</a>',
-        '<a style="color: rgb(34,34,34);" href="https://ohshitgit.com/">ohshitgit</a>',
-        '<a style="color: rgb(249,222,95);" href="https://gitmoji.dev/">gitmoji</a>',
         '<a style="color: rgb(0,0,0);" href="https://www.nginx.cn/doc/">nginx</a>',
         '<a style="color: rgb(0,0,0);" href="https://rollupjs.org/guide/en/">rollupjs</a>',
         '<a style="color: rgb(0,0,0);" href="https://www.rollupjs.com/">rollupjs 中文</a>',
@@ -246,27 +229,22 @@
       ],
       // 前端常用工具
       [
-        '<a style="color: rgb(7,193,96); "href="https://mp.weixin.qq.com/cgi-bin/home?t=home/index&lang=zh_CN&token=11039487#tab=sent-panel">微信公众号</a>',
+        '<a style="color:rgb(82,185,95)" href="https://www.yuque.com/tyh2001" title="">语雀</a>',
         '<a style="color: rgb(27,193,161);" href="https://clipboardjs.com/">复制插件</a>',
         '<a style="color: rgb(61,171,83);" href="https://tool.oschina.net/codeformat/html">代码格式化</a>',
         '<a style="color: rgb(201,0,0);" href="https://www.npmjs.com/ ">NPM官网</a>',
-        '<a style="color: rgb(102,0,0);" href="https://highlightjs.org/ " title="代码高亮">highlight.js</a>',
-        '<a style="color: #ff0000;" href="https://www.iconfont.cn/ ">阿里图标</a>',
+        '<a style="color: #ff0000;" href="https://www.iconfont.cn/">阿里图标</a>',
         '<a style="color: rgb(203,56,55)" href="https://www.npmjs.com/package/vue-json-excel">Excel 导出</a>',
         '<a style="color: #010101;" href="https://www.fastmock.site/#/" title="模拟接口">fastmock</a>',
         '<a style="color: #aa314d;" href="https://echarts.apache.org/zh/index.html" title="可视化图表">Echarts</a>',
         '<a style="color: rgb(249,155,64);" href="https://d3js.org/" title="可视化图表">D3</a>',
         '<a style="color: rgb(52,146,255);" href="https://www.lodashjs.com/" title="JS库">Lodash</a>',
-        '<a style="color: rgb(39, 38, 43);" href="https://www.erupt.xyz/#!/" title="后台开发">Erupt</a>',
         '<a style="color: #6332f6;" href="https://www.swiper.com.cn/" title="触摸滑动插件">Swiper</a>',
         '<a style="color: #aa0000;" href="https://standardjs.com/rules.html">JavaScript书写规范</a>',
         '<a style="color: #463fd4;" href="https://eslint.bootcss.com/">ESlint</a>',
-        '<a style="color: #000000;" href="https://icomoon.io/">Icomoon</a>',
         '<a style="color: #ff5f4c;" href="https://day.js.org/zh-CN/" title="时间处理">Day.js</a>',
         '<a style="color: rgb(97,178,167);" href="http://momentjs.cn/" title="时间处理">Moment.js</a>',
-        '<a style="color: #f5da55;" href="https://www.babeljs.cn/" title="JS编译器">Babel</a>',
         '<a style="color: rgb(249,113,71);" href="https://www.jsdelivr.com/" title="免费的CDN开源">JSDelivr</a>',
-        '<a style="color: rgb(54,159,255);" href="https://www.showdoc.com.cn/" title="接口文档制作">ShowDoc</a>',
         '<a style="color: rgba(25,77,224);" href="https://www.swiper.com.cn/" title="触摸滑动插件">wiper.js</a>',
         '<a style="color: rgba(0,186,255);" href="https://data.avuejs.com/" title="可视化数据大屏">可视化数据大屏</a>',
         '<a style="color: rgb(45,144,222);" href="https://winscp.net/eng/docs/lang:chs">winSCP</a>',
@@ -292,16 +270,6 @@
         '<a style="color: rgb(92,156,255);" href="http://rcode.rbtree.cn/">规范命名</a>',
         '<a style="color: #96b97d;" href="https://c.runoob.com/front-end/52/">压缩css</a>',
       ],
-      // Github 仓库
-      [
-        '<a style="color: #2b3137;" href="https://github.com/fengyuanchen/cropperjs" title="头像裁切器">cropperjs</a>',
-        '<a style="color: #2b3137;" href="https://github.com/Leecason/element-tiptap" title="富文本编辑器">element-tiptap</a>',
-        '<a style="color: #2b3137;" href="https://github.com/hinesboy/mavonEditor" title="富文本编辑器">mavonEditor</a>',
-        '<a style="color: #2b3137;" href="https://github.com/sidorares/json-bigint" title="JS安全整数范围">json-bigint</a>',
-        '<a style="color: #2b3137;" href="https://github.com/browserslist/browserslist">browserslist</a>',
-        '<a style="color: #2b3137;" href="https://github.com/videojs/video.js" title="视频播放">Video.js</a>',
-        '<a style="color: #2b3137;" href="https://github.com/ecomfe/echarts-for-weixin" title="视频播放">微信小程序 echarts</a>',
-      ],
       // 应用网站
       [
         '<a style="color: #ff7700;" href="https://mail.qq.com/">球球邮箱</a>',
@@ -311,8 +279,7 @@
         '<a style="color: rgb(0,82,217);" href="https://console.cloud.tencent.com/cvm/instance/index?rid=4">腾讯云服务器</a>',
         '<a style="color: #be0c25;" href="https://www.jd.com/">京东</a>',
         '<a style="color: #fd5433;" href="https://www.taobao.com/">淘宝</a>',
-        '<a style="color: #2319dc;" href="https://map.baidu.com/ ">百度地图</a>',
-        '<a style="color: rgb(61,68,76);" href="https://www.nowcoder.com/">牛客网</a>',
+        '<a style="color: #2319dc;" href="https://map.baidu.com/">百度地图</a>',
         '<a style="color: #2577e3;" href="https://www.ctrip.com/">携程</a>',
         '<a style="color: rgb(0,141,86);" href="http://rsrc.mohrss.gov.cn/jxxxcx/Omp.do?method=fwdPageJgyxStuInfoEntry">学籍查询</a>',
         '<a style="color: rgb(93,142,199);" href="http://rsrc.mohrss.gov.cn/jxxxcx/Omp.do?method=fwdPageJgyxCertInfoEntry">毕业证查询</a>',
@@ -321,13 +288,9 @@
         '<a style="color: rgb(13,45,97);" href="https://degree.qingshuxuetang.com/hdxy/Home">成高刷课时</a>',
         '<a style="color: rgb(60,176,103);" href="https://cli.im/">草料生成二维码</a>',
         '<a style="color: rgb(66,127,228);" href="https://opensea.io/">opensea</a>',
-        '<a style="color: rgb(31,53,110);" href="https://codemart.com/">码市</a>',
-        '<a style="color: rgb(239,101,0);" href="https://www.epub360.com/">意派</a>',
         '<a style="color: rgb(101,71,240);" href="https://www.mujicv.com/">木及简历</a>',
-        '<a style="color: rgb(84,86,82);" href="https://book.douban.com/">豆瓣读书</a>',
-        '<a style="color:rgb(55,117,230)" href="https://www.proginn.com/" title="">程序员客栈</a>',
-        '<a style="color:rgb(240,150,19)" href="https://hangzhou.zbj.com/" title="">猪八戒</a>',
         '<a style="color:rgb(128,19,204)" href="http://bitdock.cn/" title="">Dock 菜单</a>',
+        '<a style="color: rgb(16,174,181);" href="http://www.yiqing.com/">疫情官网</a>',
       ],
       // 收藏
       [
@@ -360,16 +323,12 @@
         '<a style="color: #000;" href="https://api.wod.xyz/Image/GetImage?type=3">调接口拿图片</a>',
         '<a style="color: #000;" href="https://api.wod.xyz/#2708245">免费接口</a>',
         '<a style="color: rgb(25, 25, 32);" href="https://vscodethemes.com/">VS code 主题</a>',
-        '<a style="color: rgb(85, 85, 85);" href="http://tmtheme-editor.herokuapp.com/#!/editor/theme/Monokai">VScode主题订制</a>',
         '<a style="color: rgb(232,66,52);" href="https://www.google.cn/chrome/">谷歌浏览器下载</a>',
         '<a style="color: rgb(88,81,144);" href="https://photokit.com/tools/cutout/?lang=zh">抠图网站</a>',
         '<a style="color: rgb(10,10,10);" href="https://webrename.cn/">批量重命名工具</a>',
         '<a style="color: rgb(100,5,253);" href="https://app.haikei.app/">惊艳背景生成器</a>',
-        '<a style="color: rgb(29,8,223);" href="https://aotu.io/">凹凸实验室</a>',
-        '<a style="color: rgb(255,69,61);" href="https://www.wondercv.com">超级简历</a>',
         '<a style="color: rgb(20,204,143);" href="http://www.somode.com/Windows/w10zybjxb/">win10镜像下载</a>',
         '<a style="color: rgb(57,130,193);" href="https://msdn.itellyou.cn/">win10镜像</a>',
-        '<a style="color: rgb(70,184,85);" href="http://sicangziti.com/">字体下载</a>',
         '<a style="color: rgb(31,177,65);" href="https://icons8.com/">图标插画下载</a>',
         '<a style="color: rgb(0,123,193);" href="https://www.tiobe.com/tiobe-index/">Tiobe编程语言排行</a>',
         '<a style="color: rgb(33,39,53);" href="https://tools-dev.jiaoyanyun.com/experiment/main/index.html?subject=physics#/edit">实验电路</a>',
@@ -409,15 +368,10 @@
         '<a style="color: rgba(34,40,49);" href="https://qishaoxuan.github.io/css_tricks/">神奇 CSS</a>',
         '<a style="color: rgba(211,84,0);" href="https://tobiasahlin.com/spinkit/">CSS 加载过度</a>',
         '<a style="color: rgba(255,96,96);" href="https://animista.net/">CSS 动画</a>',
-        '<a style="color: #dd3a0a;" href="https://www.postcss.com.cn/" title="CSS 单位转换">PostCSS</a>',
         '<a style="color: #2673e7;" href="https://webgradients.com/">CSS样式渐变库</a>',
         '<a style="color: rgb(0,31,63);" href="https://neumorphism.io/">调试UI风格</a>',
         '<a style="color: rgb(222,51,205);" href="https://www.iconshock.com/svg-icons/">渐变图标</a>',
-        '<a style="color: rgb(223,56,201);" href="https://www.iconshock.com/svg-icons/">渐变图标</a>',
-        '<a style="color: rgb(17,17,26);" href="https://easings.co/">生成贝塞尔曲线</a>',
-        '<a style="color: rgb(137,224,137);" href="https://bansal.io/pattern-css">大型数据库</a>',
         '<a style="color: rgb(251,94,31);" href="https://www.shapedivider.app/">自定义形状分隔线</a>',
-        '<a style="color: rgb(0,0,0);" href="https://tympanus.net/Development/MagneticButtons/index.html">动画按钮</a>',
       ],
       // 设计和 UI
       [
@@ -427,10 +381,10 @@
         '<a style="color: rgb(239,58,138);" href="https://squoosh.app/">谷歌图片压缩</a>',
         '<a style="color: rgb(13,12,35);" href="https://dribbble.com/">网页设计灵感</a>',
         '<a style="color: rgb(235,92,28);" href="https://www.shapedivider.app/">分割线</a>',
-
       ]
     ]
 
+    console.log(web)
     // 点击渲染不同的内容
     const menuLi = document.querySelectorAll('.menu_li')
     const webList = document.querySelector('.webList')
@@ -438,7 +392,7 @@
 
     // 初次渲染内容
     crumbsItem.innerHTML = menuList[0].title
-    menuLi[0].setAttribute('class', 'clickItem')
+    menuLi[0].classList = 'clickItem'
     web[0].forEach(item => {
       webList.innerHTML += item
     })
@@ -450,14 +404,14 @@
 
         // 点击的时候先将所有的列表标签的 class 清除
         menuLi.forEach(itemLi => {
-          itemLi.setAttribute('class', '')
+          itemLi.classList = ''
         })
 
         // 获取到每个列表的 index 属性
         const dom_index = this.getAttribute('index')
 
         // 给点击的列表标签添加高亮显示
-        this.setAttribute('class', 'clickItem')
+        this.classList = 'clickItem'
 
         // 点击渲染不同的面包屑
         crumbsItem.innerHTML = menuList[dom_index - 1].title
@@ -468,7 +422,6 @@
         })
       })
     })
-
   </script>
 </body>
 
