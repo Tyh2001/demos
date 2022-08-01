@@ -1,233 +1,225 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
 
-<head>
-	<meta charset="utf-8">
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
 
-	<style>
-		* {
-			margin: 0;
-			padding: 0;
-		}
+      html,
+      body {
+        background: url(https://api.wod.xyz/Image/GetImage?type=1) no-repeat;
+      }
 
-		html,
-		body {
-			background: url(https://api.wod.xyz/Image/GetImage?type=1) no-repeat;
-		}
+      .min {
+        width: 100px;
+        height: 100px;
+        margin: 200px auto;
+        transform: rotateX(30deg) rotateY(30deg);
+        transform-style: preserve-3d;
+        position: absolute;
+        top: 50px;
+        left: 50px;
+      }
 
-		.min {
-			width: 100px;
-			height: 100px;
-			margin: 200px auto;
-			transform: rotateX(30deg) rotateY(30deg);
-			transform-style: preserve-3d;
-			position: absolute;
-			top: 50px;
-			left: 50px;
-		}
+      .min div:nth-child(1) {
+        width: 100px;
+        height: 100px;
+        background: url('./img/兔玩 (1).jpg') no-repeat;
+        background-size: 200px 200px;
+        transform: translateZ(50px);
+      }
 
-		.min div:nth-child(1) {
-			width: 100px;
-			height: 100px;
-			background: url("./img/兔玩 (1).jpg") no-repeat;
-			background-size: 200px 200px;
-			transform: translateZ(50px);
-		}
+      .min div:nth-child(2) {
+        width: 100px;
+        height: 100px;
+        background: url('./img/兔玩 (2).jpg') no-repeat;
+        background-size: 200px 200px;
+        transform: rotateX(180deg) translateZ(50px);
+      }
 
-		.min div:nth-child(2) {
-			width: 100px;
-			height: 100px;
-			background: url("./img/兔玩 (2).jpg") no-repeat;
-			background-size: 200px 200px;
-			transform: rotateX(180deg) translateZ(50px);
-		}
+      .min div:nth-child(3) {
+        width: 100px;
+        height: 100px;
+        background: url('./img/兔玩 (3).jpg') no-repeat;
+        background-size: 200px 200px;
+        transform: rotateY(-90deg) translateZ(50px);
+      }
 
-		.min div:nth-child(3) {
-			width: 100px;
-			height: 100px;
-			background: url("./img/兔玩 (3).jpg") no-repeat;
-			background-size: 200px 200px;
-			transform: rotateY(-90deg) translateZ(50px);
-		}
+      .min div:nth-child(4) {
+        width: 100px;
+        height: 100px;
+        background: url('./img/兔玩 (4).jpg') no-repeat;
+        background-size: 200px 200px;
+        transform: rotateY(90deg) translateZ(50px);
+      }
 
-		.min div:nth-child(4) {
-			width: 100px;
-			height: 100px;
-			background: url("./img/兔玩 (4).jpg") no-repeat;
-			background-size: 200px 200px;
-			transform: rotateY(90deg) translateZ(50px);
-		}
+      .min div:nth-child(5) {
+        width: 100px;
+        height: 100px;
+        background: url('./img/兔玩 (5).jpg') no-repeat;
+        background-size: 200px 200px;
+        transform: rotateX(90deg) translateZ(50px);
+      }
 
-		.min div:nth-child(5) {
-			width: 100px;
-			height: 100px;
-			background: url("./img/兔玩 (5).jpg") no-repeat;
-			background-size: 200px 200px;
-			transform: rotateX(90deg) translateZ(50px);
-		}
+      .min div:nth-child(6) {
+        width: 100px;
+        height: 100px;
+        background: url('./img/兔玩 (6).jpg') no-repeat;
+        background-size: 200px 200px;
+        transform: rotateX(-90deg) translateZ(50px);
+      }
 
-		.min div:nth-child(6) {
-			width: 100px;
-			height: 100px;
-			background: url("./img/兔玩 (6).jpg") no-repeat;
-			background-size: 200px 200px;
-			transform: rotateX(-90deg) translateZ(50px);
-		}
+      .min div {
+        position: absolute;
+      }
 
-		.min div {
-			position: absolute;
-		}
+      .max {
+        width: 200px;
+        height: 200px;
+        margin: 200px auto;
+        transform: rotateX(30deg) rotateY(30deg);
+        transform-style: preserve-3d;
+        position: absolute;
+      }
 
-		.max {
-			width: 200px;
-			height: 200px;
-			margin: 200px auto;
-			transform: rotateX(30deg) rotateY(30deg);
-			transform-style: preserve-3d;
-			position: absolute;
-		}
+      .max div:nth-child(1) {
+        width: 200px;
+        height: 200px;
+        background: url('./img/兔玩 (7).jpg') no-repeat;
+        background-size: 200px 200px;
+        opacity: 0.3;
+        transform: translateZ(100px);
+        transition: all 1s;
+      }
 
-		.max div:nth-child(1) {
-			width: 200px;
-			height: 200px;
-			background: url("./img/兔玩 (7).jpg") no-repeat;
-			background-size: 200px 200px;
-			opacity: 0.3;
-			transform: translateZ(100px);
-			transition: all 1s;
-		}
+      .max div:nth-child(2) {
+        width: 200px;
+        height: 200px;
+        background: url('./img/兔玩 (8).jpg') no-repeat;
+        background-size: 200px 200px;
+        opacity: 0.3;
+        transform: rotateX(180deg) translateZ(100px);
+        transition: all 1s;
+      }
 
-		.max div:nth-child(2) {
-			width: 200px;
-			height: 200px;
-			background: url("./img/兔玩 (8).jpg") no-repeat;
-			background-size: 200px 200px;
-			opacity: 0.3;
-			transform: rotateX(180deg) translateZ(100px);
-			transition: all 1s;
-		}
+      .max div:nth-child(3) {
+        width: 200px;
+        height: 200px;
+        background: url('./img/兔玩 (9).jpg') no-repeat;
+        background-size: 200px 200px;
+        opacity: 0.3;
+        transform: rotateY(90deg) translateZ(100px);
+        transition: all 1s;
+      }
 
-		.max div:nth-child(3) {
-			width: 200px;
-			height: 200px;
-			background: url("./img/兔玩 (9).jpg") no-repeat;
-			background-size: 200px 200px;
-			opacity: 0.3;
-			transform: rotateY(90deg) translateZ(100px);
-			transition: all 1s;
-		}
+      .max div:nth-child(4) {
+        width: 200px;
+        height: 200px;
+        background: url('./img/兔玩 (10).jpg') no-repeat;
+        background-size: 200px 200px;
+        opacity: 0.3;
+        transform: rotateY(90deg) translateZ(100px);
+        transition: all 1s;
+      }
 
-		.max div:nth-child(4) {
-			width: 200px;
-			height: 200px;
-			background: url("./img/兔玩 (10).jpg") no-repeat;
-			background-size: 200px 200px;
-			opacity: 0.3;
-			transform: rotateY(90deg) translateZ(100px);
-			transition: all 1s;
-		}
+      .max div:nth-child(5) {
+        width: 200px;
+        height: 200px;
+        background: url('./img/兔玩 (11).jpg') no-repeat;
+        background-size: 200px 200px;
+        opacity: 0.3;
+        transform: rotateX(90deg) translateZ(100px);
+        transition: all 1s;
+      }
 
-		.max div:nth-child(5) {
-			width: 200px;
-			height: 200px;
-			background: url("./img/兔玩 (11).jpg") no-repeat;
-			background-size: 200px 200px;
-			opacity: 0.3;
-			transform: rotateX(90deg) translateZ(100px);
-			transition: all 1s;
-		}
+      .max div:nth-child(6) {
+        width: 200px;
+        height: 200px;
+        background: url('./img/兔玩 (12).jpg') no-repeat;
+        background-size: 200px 200px;
+        opacity: 0.3;
+        transform: rotateX(90deg) translateZ(100px);
+        transition: all 1s;
+      }
 
-		.max div:nth-child(6) {
-			width: 200px;
-			height: 200px;
-			background: url("./img/兔玩 (12).jpg") no-repeat;
-			background-size: 200px 200px;
-			opacity: 0.3;
-			transform: rotateX(90deg) translateZ(100px);
-			transition: all 1s;
-		}
+      .max div {
+        position: absolute;
+      }
 
-		.max div {
-			position: absolute;
-		}
+      .box {
+        width: 200px;
+        margin: auto;
+        position: relative;
+        transform-style: preserve-3d;
+        animation: name 3s infinite linear;
+        background: url(0000.jpg);
+        background-size: 200px 200px;
+      }
 
-		.box {
-			width: 200px;
-			margin: auto;
-			position: relative;
-			transform-style: preserve-3d;
-			animation: name 3s infinite linear;
-			background: url(0000.jpg );
-			background-size: 200px 200px;
-		}
+      @keyframes name {
+        from {
+          transform: rotateY(0deg);
+        }
 
-		@keyframes name {
-			from {
-				transform: rotateY(0deg);
-			}
+        to {
+          transform: rotateY(360deg);
+        }
+      }
 
-			to {
-				transform: rotateY(360deg);
-			}
-		}
+      .box:hover .max div:nth-child(1) {
+        transform: translateZ(250px) scale(1.5);
+        opacity: 0.8;
+      }
 
-		.box:hover .max div:nth-child(1) {
-			transform: translateZ(250px) scale(1.5);
-			opacity: .8;
+      .box:hover .max div:nth-child(2) {
+        transform: rotateX(180deg) translateZ(250px) scale(1.5);
+        opacity: 0.8;
+      }
 
-		}
+      .box:hover .max div:nth-child(3) {
+        transform: rotateY(-90deg) translateZ(250px) scale(1.5);
+        opacity: 0.8;
+      }
 
-		.box:hover .max div:nth-child(2) {
-			transform: rotateX(180deg) translateZ(250px) scale(1.5);
-			opacity: .8;
-		}
+      .box:hover .max div:nth-child(4) {
+        transform: rotateY(90deg) translateZ(250px) scale(1.5);
+        opacity: 0.8;
+      }
 
-		.box:hover .max div:nth-child(3) {
-			transform: rotateY(-90deg) translateZ(250px) scale(1.5);
-			opacity: .8;
+      .box:hover .max div:nth-child(5) {
+        transform: rotateX(90deg) translateZ(250px) scale(1.5);
+        opacity: 0.8;
+      }
 
-		}
+      .box:hover .max div:nth-child(6) {
+        transform: rotateX(-90deg) translateZ(250px) scale(1.5);
+        opacity: 0.8;
+      }
+    </style>
+  </head>
 
-		.box:hover .max div:nth-child(4) {
-			transform: rotateY(90deg) translateZ(250px) scale(1.5);
-			opacity: .8;
-
-		}
-
-		.box:hover .max div:nth-child(5) {
-			transform: rotateX(90deg) translateZ(250px) scale(1.5);
-			opacity: .8;
-
-		}
-
-		.box:hover .max div:nth-child(6) {
-			transform: rotateX(-90deg) translateZ(250px) scale(1.5);
-			opacity: .8;
-		}
-	</style>
-</head>
-
-<body>
-	<div class="box">
-		<div class="min">
-			<div></div>
-			<div></div>
-			<div></div>
-			<div></div>
-			<div></div>
-			<div></div>
-		</div>
-		<div class="max">
-			<div></div>
-			<div></div>
-			<div></div>
-			<div></div>
-			<div></div>
-			<div></div>
-		</div>
-	</div>
-</body>
-
-</html>
-
+  <body>
+    <div class="box">
+      <div class="min">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <div class="max">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  </body>
 </html>

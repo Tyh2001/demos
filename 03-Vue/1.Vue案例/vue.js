@@ -2672,8 +2672,7 @@
         res && typeof res === 'object' && !Array.isArray(res)
           ? [res] // single vnode
           : normalizeChildren(res)
-      return res &&
-        (res.length === 0 || (res.length === 1 && res[0].isComment)) // #9658
+      return res && (res.length === 0 || (res.length === 1 && res[0].isComment)) // #9658
         ? undefined
         : res
     }

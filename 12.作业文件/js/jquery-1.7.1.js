@@ -5313,7 +5313,6 @@
       // release memory in IE
       root = form = null
     })()
-
     ;(function () {
       // Check to see if the browser returns only elements
       // when doing getElementsByTagName("*")
@@ -5538,7 +5537,6 @@
         }
       }
     })()
-
     ;(function () {
       var div = document.createElement('div')
 

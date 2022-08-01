@@ -853,7 +853,6 @@
       ? (module.exports = j)
       : D.startOnPageLoad && j.start()
 }.call(this))
-
 ;(function (f) {
   if (typeof exports === 'object' && typeof module !== 'undefined') {
     module.exports = f()
@@ -10328,13 +10327,11 @@
                   ? e(this.mainIndex.getWidgetUiState({}))
                   : e
               !(function e(t) {
-                t
-                  .getHelper()
-                  .setState(
-                    t.getWidgetSearchParameters(t.getHelper().state, {
-                      uiState: n[t.getIndexId()]
-                    })
-                  ),
+                t.getHelper().setState(
+                  t.getWidgetSearchParameters(t.getHelper().state, {
+                    uiState: n[t.getIndexId()]
+                  })
+                ),
                   t.getWidgets().filter(mt).forEach(e)
               })(this.mainIndex),
                 this.scheduleSearch()
@@ -10742,15 +10739,13 @@
             var n = t.uiState,
               r = n.hierarchicalMenu && n.hierarchicalMenu[R]
             if (e.isHierarchicalFacet(R)) e.getHierarchicalFacetByName(R)
-            var i = e
-                .removeHierarchicalFacet(R)
-                .addHierarchicalFacet({
-                  name: R,
-                  attributes: c,
-                  separator: u,
-                  rootPath: l,
-                  showParentLevel: h
-                }),
+            var i = e.removeHierarchicalFacet(R).addHierarchicalFacet({
+                name: R,
+                attributes: c,
+                separator: u,
+                rootPath: l,
+                showParentLevel: h
+              }),
               a = i.maxValuesPerFacet || 0,
               s = Math.max(a, m ? p : f),
               o = i.setQueryParameter('maxValuesPerFacet', s)
@@ -12627,15 +12622,13 @@
           },
           getWidgetSearchParameters: function (e, t) {
             var n = t.uiState,
-              r = e
-                .addDisjunctiveFacet(w)
-                .setQueryParameters({
-                  numericRefinements: D(
-                    D({}, e.numericRefinements),
-                    {},
-                    j({}, w, {})
-                  )
-                })
+              r = e.addDisjunctiveFacet(w).setQueryParameters({
+                numericRefinements: D(
+                  D({}, e.numericRefinements),
+                  {},
+                  j({}, w, {})
+                )
+              })
             Te(P) && (r = r.addNumericRefinement(w, '>=', P)),
               Te(x) && (r = r.addNumericRefinement(w, '<=', x))
             var i = n.range && n.range[w]

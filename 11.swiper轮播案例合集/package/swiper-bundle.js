@@ -476,7 +476,6 @@
     )
     this.forEach(function (el) {
       var _el$classList
-
       ;(_el$classList = el.classList).add.apply(_el$classList, classNames)
     })
     return this
@@ -498,7 +497,6 @@
     )
     this.forEach(function (el) {
       var _el$classList2
-
       ;(_el$classList2 = el.classList).remove.apply(_el$classList2, classNames)
     })
     return this
