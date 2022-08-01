@@ -4,6 +4,6 @@
  * @returns 被冻结的原对象
  */
 
-export const freezeObj = obj => {
+export const freezeObj = (obj) => {
   return Object.freeze(obj)
 }

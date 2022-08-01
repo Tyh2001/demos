@@ -1,37 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+      canvas {
+        border: 1px solid red;
+      }
+    </style>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <title>Document</title>
-  <style type="text/css">
-    canvas {
-      border: 1px solid red;
-    }
-  </style>
-</head>
+  <body>
+    <canvas width="600" height="400"></canvas>
+    <script type="text/javascript">
+      //获取canvas画布对象
+      var canvas = document.querySelector('canvas')
+      //获取绘图上下文
+      var ctx = canvas.getContext('2d')
 
-<body>
-  <canvas width="600" height="400"></canvas>
-  <script type="text/javascript">
-    //获取canvas画布对象
-    var canvas = document.querySelector("canvas");
-    //获取绘图上下文
-    var ctx = canvas.getContext("2d");
+      var rgd = ctx.createRadialGradient(200, 150, 50, 200, 150, 100)
 
-    var rgd = ctx.createRadialGradient(200, 150, 50, 200, 150, 100);
-
-    rgd.addColorStop(0, "red");
-    rgd.addColorStop(1, "pink");
-    ctx.fillStyle = rgd;
-    ctx.moveTo(100, 50);
-    ctx.lineTo(300, 50);
-    ctx.lineTo(300, 300);
-    ctx.lineTo(100, 300);
-    ctx.closePath();
-    ctx.fill();
-
-  </script>
-</body>
-
+      rgd.addColorStop(0, 'red')
+      rgd.addColorStop(1, 'pink')
+      ctx.fillStyle = rgd
+      ctx.moveTo(100, 50)
+      ctx.lineTo(300, 50)
+      ctx.lineTo(300, 300)
+      ctx.lineTo(100, 300)
+      ctx.closePath()
+      ctx.fill()
+    </script>
+  </body>
 </html>

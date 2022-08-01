@@ -1,26 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <title>Document</title>
-</head>
-
-<body>
-  <script>
-    var name = "11";
-    var obj = {
-      name: "xiaomao",
-      sayName: function () {
-        setTimeout(() => {
-          console.log(this.name)
-        }, 1000)
+  <body>
+    <script>
+      var name = '11'
+      var obj = {
+        name: 'xiaomao',
+        sayName: function () {
+          setTimeout(() => {
+            console.log(this.name)
+          }, 1000)
+        }
       }
-    }
-    // 箭头函数中  this,指向的是在函数声明的时候离他最近的对象
-    // 普通函数  this,指向在函数调用的时候离他最近的对象
-
-  </script>
-</body>
-
+      // 箭头函数中  this,指向的是在函数声明的时候离他最近的对象
+      // 普通函数  this,指向在函数调用的时候离他最近的对象
+    </script>
+  </body>
 </html>

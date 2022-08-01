@@ -1,44 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>console 相关</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>console 相关</title>
-</head>
+  <body>
+    <script>
+      // 一、显示信息的命令
+      console.info('这是info')
+      console.debug('这是debug')
+      console.warn('这是warn')
+      console.error('这是error')
 
-<body>
-  <script>
-    // 一、显示信息的命令
-    console.info('这是info')
-    console.debug('这是debug')
-    console.warn('这是warn')
-    console.error('这是error')
+      // 二、占位符
+      console.log('%d年%d月%d日', 2011, 3, 26)
+      console.log('圆周率是%f', 3.1415926)
 
-    // 二、占位符
-    console.log('%d年%d月%d日', 2011, 3, 26)
-    console.log('圆周率是%f', 3.1415926)
+      var dog = {}
+      dog.name = '大毛'
+      dog.color = '黄色'
+      console.log('%o', dog)
 
-    var dog = {}
-    dog.name = '大毛'
-    dog.color = '黄色'
-    console.log('%o', dog)
+      // 三、分组显示
+      console.group('第一组信息')
+      console.log('第一组第一条')
+      console.log('第一组第二条')
+      console.groupEnd()
+      console.group('第二组信息')
+      console.log('第二组第一条')
+      console.log('第二组第二条')
+      console.groupEnd()
 
-    // 三、分组显示
-    console.group('第一组信息')
-    console.log('第一组第一条')
-    console.log('第一组第二条')
-    console.groupEnd()
-    console.group('第二组信息')
-    console.log('第二组第一条')
-    console.log('第二组第二条')
-    console.groupEnd()
-
-    // 四、换行显示和插入图片+字体颜色
-    console.log("%c\n       ", "font-size:41px;background:url('http://cdn.iknow.bdimg.com/static/common/pkg/module_zed9cd9fd.png') no-repeat -135px -1px")
-    console.log('%c想和我们共同打造世界最大中文互动问答平台吗？\n想让自己的成就在亿万用户面前展现吗？想让世界看得你的光芒吗？\n加入我们，在这里不仅是工作，投入你的时间和热情，滴滴汗水终会汇聚成不平凡的成果。\n期待你的加盟。（投简历地址被我砍了）', 'color:skyblue')
-    console.log('请在邮件中注明%c来自:console', 'color:blue;font-weight:bold;')
-  </script>
-</body>
-
+      // 四、换行显示和插入图片+字体颜色
+      console.log(
+        '%c\n       ',
+        "font-size:41px;background:url('http://cdn.iknow.bdimg.com/static/common/pkg/module_zed9cd9fd.png') no-repeat -135px -1px"
+      )
+      console.log(
+        '%c想和我们共同打造世界最大中文互动问答平台吗？\n想让自己的成就在亿万用户面前展现吗？想让世界看得你的光芒吗？\n加入我们，在这里不仅是工作，投入你的时间和热情，滴滴汗水终会汇聚成不平凡的成果。\n期待你的加盟。（投简历地址被我砍了）',
+        'color:skyblue'
+      )
+      console.log(
+        '请在邮件中注明%c来自:console',
+        'color:blue;font-weight:bold;'
+      )
+    </script>
+  </body>
 </html>

@@ -1,103 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>原生图片滚动</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
 
-<head>
-  <meta charset="UTF-8">
-  <title>原生图片滚动</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-    }
+      body {
+        background-color: #000;
+      }
 
-    body {
-      background-color: #000;
-    }
+      .box {
+        width: 600px;
+        height: 400px;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        margin: auto;
+        overflow: hidden;
+      }
 
-    .box {
-      width: 600px;
-      height: 400px;
-      position: absolute;
-      top: 0px;
-      left: 0px;
-      right: 0px;
-      bottom: 0px;
-      margin: auto;
-      overflow: hidden;
-    }
+      .box .top {
+        width: 600px;
+        height: 200px;
+        position: absolute;
+        top: 0px;
+        cursor: pointer;
+      }
 
-    .box .top {
-      width: 600px;
-      height: 200px;
-      position: absolute;
-      top: 0px;
-      cursor: pointer;
-    }
+      .box .bottom {
+        width: 600px;
+        height: 200px;
+        position: absolute;
+        top: 200px;
+        cursor: pointer;
+      }
 
-    .box .bottom {
-      width: 600px;
-      height: 200px;
-      position: absolute;
-      top: 200px;
-      cursor: pointer;
-    }
+      .box img {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        width: 600px;
+        height: 3333px;
+      }
+    </style>
+  </head>
 
-    .box img {
-      position: absolute;
-      top: 0px;
-      left: 0px;
-      right: 0px;
-      width: 600px;
-      height: 3333px;
-    }
-  </style>
-</head>
+  <body>
+    <div class="box">
+      <img src="./图片/图片滚动/我的朋友圈.jpg" alt="" />
+      <div class="top"></div>
+      <div class="bottom"></div>
+    </div>
 
-<body>
-  <div class="box">
-    <img src="./图片/图片滚动/我的朋友圈.jpg" alt="">
-    <div class="top"></div>
-    <div class="bottom"></div>
-  </div>
+    <script>
+      let num = 0
+      let timer = null
 
-  <script>
-    let num = 0
-    let timer = null
-    
-    // 让图片向上滚动
-    const img = document.querySelector('img')
-    document.querySelector('.top').addEventListener('mouseover', () => {
-      clearInterval(timer)
-      timer = setInterval(() => {
-        num -= 4;
-        // 图片3333高  盒子高度400
-        // 那么图片在距上-2933时要清除计时器
-        if (num >= -2933) {
-          img.style.top = `${num}px`
-        } else {
-          clearInterval(timer)
-        }
-      }, 15)
-    })
+      // 让图片向上滚动
+      const img = document.querySelector('img')
+      document.querySelector('.top').addEventListener('mouseover', () => {
+        clearInterval(timer)
+        timer = setInterval(() => {
+          num -= 4
+          // 图片3333高  盒子高度400
+          // 那么图片在距上-2933时要清除计时器
+          if (num >= -2933) {
+            img.style.top = `${num}px`
+          } else {
+            clearInterval(timer)
+          }
+        }, 15)
+      })
 
-    // 向下滚动
-    document.querySelector('.bottom').addEventListener('mouseover', () => {
-      clearInterval(timer)
-      timer = setInterval(() => {
-        num += 4;
-        if (num <= -0) {
-          img.style.top = `${num}px`
-        } else {
-          clearInterval(timer)
-        }
-      }, 15)
-    })
+      // 向下滚动
+      document.querySelector('.bottom').addEventListener('mouseover', () => {
+        clearInterval(timer)
+        timer = setInterval(() => {
+          num += 4
+          if (num <= -0) {
+            img.style.top = `${num}px`
+          } else {
+            clearInterval(timer)
+          }
+        }, 15)
+      })
 
-    document.querySelector('.box').addEventListener('mouseout', () => {
-      clearInterval(timer)
-    })
-
-  </script>
-</body>
-
+      document.querySelector('.box').addEventListener('mouseout', () => {
+        clearInterval(timer)
+      })
+    </script>
+  </body>
 </html>

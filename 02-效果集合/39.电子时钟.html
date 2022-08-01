@@ -1,28 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>电子时钟</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>电子时钟</title>
-</head>
-
-<body>
-  <span class="hours"></span>:
-  <span class="minutes"></span>:
-  <span class="seconds"></span>
-  <script src="jquery.js"></script>
-  <script>
-    setInterval(() => {
-      let date = new Date();
-      let hours = date.getHours();
-      let minutes = date.getMinutes();
-      let seconds = date.getSeconds();
-      $(".hours").text(hours);
-      $(".minutes").text(minutes);
-      $(".seconds").text(seconds);
-    }, 1000)
-  </script>
-</body>
-
+  <body>
+    <span class="hours"></span>: <span class="minutes"></span>:
+    <span class="seconds"></span>
+    <script src="jquery.js"></script>
+    <script>
+      setInterval(() => {
+        let date = new Date()
+        let hours = date.getHours()
+        let minutes = date.getMinutes()
+        let seconds = date.getSeconds()
+        $('.hours').text(hours)
+        $('.minutes').text(minutes)
+        $('.seconds').text(seconds)
+      }, 1000)
+    </script>
+  </body>
 </html>

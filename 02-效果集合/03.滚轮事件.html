@@ -1,51 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <title>滚轮事件</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-    }
-
-    html,
-    body {
-      width: 100%;
-      height: 5000px;
-    }
-
-    div {
-      width: 90px;
-      height: 90px;
-      border: 1px solid black;
-      position: fixed;
-      top: 450px;
-      left: 1100px;
-      display: none;
-    }
-  </style>
-</head>
-
-<body>
-  <div>返回顶部</div>
-  <script src="jquery.js"></script>
-  <script>
-    $(window).scroll(function () {
-      var a = $(this).scrollTop()
-      if (a > 0) {
-        $("div").css("display", "block");
-      } else {
-        $("div").css("display", "none");
+  <head>
+    <meta charset="UTF-8" />
+    <title>滚轮事件</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
       }
-    })
-    $("div").click(function () {
-      $("html,body").animate({
-        scrollTop: 0
-      }, 500)
-    })
-  </script>
-</body>
 
+      html,
+      body {
+        width: 100%;
+        height: 5000px;
+      }
+
+      div {
+        width: 90px;
+        height: 90px;
+        border: 1px solid black;
+        position: fixed;
+        top: 450px;
+        left: 1100px;
+        display: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div>返回顶部</div>
+    <script src="jquery.js"></script>
+    <script>
+      $(window).scroll(function () {
+        var a = $(this).scrollTop()
+        if (a > 0) {
+          $('div').css('display', 'block')
+        } else {
+          $('div').css('display', 'none')
+        }
+      })
+      $('div').click(function () {
+        $('html,body').animate(
+          {
+            scrollTop: 0
+          },
+          500
+        )
+      })
+    </script>
+  </body>
 </html>

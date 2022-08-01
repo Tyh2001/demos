@@ -1,82 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
+  <body>
+    <script>
+      /**
+       * 这里的需求是：
+       * 目前有多个不规则的数组
+       * 数组内部是一个一个的对象，对象的键值也是不对应的
+       *
+       * 需要将所有的数组合并起来，最后变成一个新的数组
+       * 新数组中每个对象的键是包含所有对象的键
+       * 之前该对象有该键值则显示对应键值 否则显示为空
+       */
 
-<body>
+      const list1 = [
+        { name: '小明1', age: '12岁', cname: '打游戏1' },
+        { name: '小明2', age: '13岁', cname: '打游戏3' },
+        { name: '小明3', age: '14岁', cname: '打游戏5' }
+      ]
 
-  <script>
-    /**
-      * 这里的需求是：
-      * 目前有多个不规则的数组
-      * 数组内部是一个一个的对象，对象的键值也是不对应的
-      * 
-      * 需要将所有的数组合并起来，最后变成一个新的数组
-      * 新数组中每个对象的键是包含所有对象的键
-      * 之前该对象有该键值则显示对应键值 否则显示为空
-      */
+      const list2 = [
+        { name: '张三1', num: 12 },
+        { name: '张三2', num: 13 },
+        { name: '张三3', num: 14 },
+        { name: '张三4', num: 15 }
+      ]
 
-    const list1 = [
-      { name: '小明1', age: '12岁', cname: '打游戏1' },
-      { name: '小明2', age: '13岁', cname: '打游戏3' },
-      { name: '小明3', age: '14岁', cname: '打游戏5' },
-    ]
+      const list3 = [
+        { aaa: 'dada', num: 12 },
+        { aaa: 'dada', num: 13 },
+        { aaa: 'dad', num: 14 },
+        { aaa: 'dadadada', num: 15 }
+      ]
 
-    const list2 = [
-      { name: '张三1', num: 12 },
-      { name: '张三2', num: 13 },
-      { name: '张三3', num: 14 },
-      { name: '张三4', num: 15 },
-    ]
+      const list4 = [{ a: 1, b: 2, c: 3, d: 4, e: 5, g: 11 }]
 
-    const list3 = [
-      { aaa: 'dada', num: 12 },
-      { aaa: 'dada', num: 13 },
-      { aaa: 'dad', num: 14 },
-      { aaa: 'dadadada', num: 15 },
-    ]
+      const AllArray = [...list1, ...list2, ...list3, ...list4]
 
-    const list4 = [
-      { a: 1, b: 2, c: 3, d: 4, e: 5, g: 11 }
-    ]
-
-    const AllArray = [...list1, ...list2, ...list3, ...list4]
-
-    // 获取到所有的键名 全部都统一放到数组中
-    const isKey = []
-    for (const value of AllArray) {
-      for (const key in value) {
-        // 数组去重
-        if (isKey.indexOf(key) === -1) {
-          isKey.push(key)
+      // 获取到所有的键名 全部都统一放到数组中
+      const isKey = []
+      for (const value of AllArray) {
+        for (const key in value) {
+          // 数组去重
+          if (isKey.indexOf(key) === -1) {
+            isKey.push(key)
+          }
         }
       }
-    }
 
-    // 新建一个数组 将所有对象的键值都放在里面
-    const res = []
+      // 新建一个数组 将所有对象的键值都放在里面
+      const res = []
 
-    // 遍历所有数组中的对象，如果有键对值就直接显示该键值
-    // 否则就显示为键对空值
-    AllArray.forEach((item, index) => {
-      const newObj = new Object
-      for (let i = 0; i < isKey.length; i++) {
+      // 遍历所有数组中的对象，如果有键对值就直接显示该键值
+      // 否则就显示为键对空值
+      AllArray.forEach((item, index) => {
+        const newObj = new Object()
+        for (let i = 0; i < isKey.length; i++) {
+          // 在对象中添加键值
+          // 如果这个键值存在就使用 否则就为空
+          newObj[isKey[i]] = item[isKey[i]] ? item[isKey[i]] : ''
+        }
+        res.push(newObj)
+      })
 
-        // 在对象中添加键值
-        // 如果这个键值存在就使用 否则就为空
-        newObj[isKey[i]] = item[isKey[i]] ? item[isKey[i]] : ''
-      }
-      res.push(newObj)
-    })
-
-    console.log(res)
-
-  </script>
-</body>
-
+      console.log(res)
+    </script>
+  </body>
 </html>

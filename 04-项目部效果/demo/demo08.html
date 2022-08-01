@@ -1,42 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-</head>
-
-<body>
-  <span class="day"></span>天
-  <span class="hours"></span>小时
-  <span class="minutes"></span>分钟
-  <span class="seconds"></span>秒
-  <script src="script/jquery.js"></script>
-  <script>
-    // <span>从2020年8月25日12:27</span>
-    let target = new Date("2020-8-25-12:27").getTime(); //获取目标时间戳  
-    console.log(target)
-    setInterval(() => {
-      let now = new Date().getTime(); //获取当前时间戳
-      let difference = target - now;
-      let allSeconds = Math.floor(difference / 1000); //计算距离目标时间总计有多少秒
-      let allMinutes = Math.floor(allSeconds / 60);
-      let seconds = allSeconds % 60;
-      let allHours = Math.floor(allMinutes / 60);
-      let minutes = allMinutes % 60;
-      let day = Math.floor(allHours / 24);
-      let hours = allHours % 24;
-      $(".day").text(day);
-      $(".hours").text(hours);
-      $(".minutes").text(minutes);
-      $(".seconds").text(seconds);
-    }, 1000);
-        // 获取当前时间戳
-        // var timestamp = Date.parse(new Date());
-        // console.log(timestamp)
-  </script>
-</body>
-
+  <body>
+    <span class="day"></span>天 <span class="hours"></span>小时
+    <span class="minutes"></span>分钟 <span class="seconds"></span>秒
+    <script src="script/jquery.js"></script>
+    <script>
+      // <span>从2020年8月25日12:27</span>
+      let target = new Date('2020-8-25-12:27').getTime() //获取目标时间戳
+      console.log(target)
+      setInterval(() => {
+        let now = new Date().getTime() //获取当前时间戳
+        let difference = target - now
+        let allSeconds = Math.floor(difference / 1000) //计算距离目标时间总计有多少秒
+        let allMinutes = Math.floor(allSeconds / 60)
+        let seconds = allSeconds % 60
+        let allHours = Math.floor(allMinutes / 60)
+        let minutes = allMinutes % 60
+        let day = Math.floor(allHours / 24)
+        let hours = allHours % 24
+        $('.day').text(day)
+        $('.hours').text(hours)
+        $('.minutes').text(minutes)
+        $('.seconds').text(seconds)
+      }, 1000)
+      // 获取当前时间戳
+      // var timestamp = Date.parse(new Date());
+      // console.log(timestamp)
+    </script>
+  </body>
 </html>

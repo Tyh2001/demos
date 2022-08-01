@@ -3,6 +3,6 @@
  * @param { String } name 本地存储名称
  */
 
-export const removeStorage = name => {
-    return window.localStorage.removeItem(name)
+export const removeStorage = (name) => {
+  return window.localStorage.removeItem(name)
 }

@@ -1,229 +1,222 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>百度音乐</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
 
-<head>
-  <meta charset="UTF-8">
-  <title>百度音乐</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-    }
+      ul {
+        list-style: none;
+      }
 
-    ul {
-      list-style: none;
-    }
+      a {
+        text-decoration: none;
+        color: #222;
+      }
 
-    a {
-      text-decoration: none;
-      color: #222;
-    }
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+      }
 
-    html,
-    body {
-      width: 100%;
-      height: 100%;
-    }
+      .wrap {
+        width: 100%;
+        height: 100%;
+        background-image: url(img/bg1.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        overflow: hidden;
+      }
 
-    .wrap {
-      width: 100%;
-      height: 100%;
-      background-image: url(img/bg1.jpg);
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
-      overflow: hidden;
-    }
+      .baidu {
+        width: 600px;
+        height: 400px;
+        margin: 50px auto;
+        background-color: #fff;
+        position: relative;
+      }
 
-    .baidu {
-      width: 600px;
-      height: 400px;
-      margin: 50px auto;
-      background-color: #fff;
-      position: relative;
-    }
+      .list li {
+        display: flex;
+        justify-content: space-around;
+        line-height: 3em;
+      }
 
-    .list li {
-      display: flex;
-      justify-content: space-around;
-      line-height: 3em;
+      .list-head {
+        background-color: rgba(230, 50, 110, 0.5);
+      }
 
-    }
+      .list li div {
+        flex: 0 0 150px;
+        text-align: center;
+      }
 
-    .list-head {
-      background-color: rgba(230, 50, 110, 0.5);
-    }
+      .list li span {
+        flex: 1 1 150px;
+        text-align: center;
+      }
 
-    .list li div {
-      flex: 0 0 150px;
-      text-align: center;
-    }
+      .list-body li {
+        display: flex;
+        justify-content: space-around;
+        line-height: 3em;
+      }
 
-    .list li span {
-      flex: 1 1 150px;
-      text-align: center;
-    }
+      .list-body li:hover {
+        background-color: rgba(0, 0, 0, 0.1);
+      }
 
-    .list-body li {
-      display: flex;
-      justify-content: space-around;
-      line-height: 3em;
-    }
+      .select {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        line-height: 3em;
+        width: 100%;
+        display: flex;
+        background-color: rgba(230, 50, 110, 0.5);
+      }
 
-    .list-body li:hover {
-      background-color: rgba(0, 0, 0, 0.1);
-    }
+      .select .selectall {
+        flex: 0 0 150px;
+        text-align: center;
+      }
 
-    .select {
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      line-height: 3em;
-      width: 100%;
-      display: flex;
-      background-color: rgba(230, 50, 110, 0.5);
-    }
+      .select .others {
+        flex: 0 0 450px;
+        display: flex;
+        justify-content: space-between;
+      }
 
-    .select .selectall {
-      flex: 0 0 150px;
-      text-align: center;
-    }
+      .select .others span {
+        flex-grow: 1;
+        text-align: center;
+      }
+    </style>
 
-    .select .others {
-      flex: 0 0 450px;
-      display: flex;
-      justify-content: space-between;
-    }
+    <script src="./vue.js"></script>
+    <script>
+      let data = [
+        {
+          id: Date.now() + Math.random(),
+          name: '王杰',
+          song: '泡沫',
+          checked: true,
+          album: 10
+        },
+        {
+          id: Date.now() + Math.random(),
+          name: '邓紫棋',
+          song: '泡沫',
+          checked: true,
+          album: 10
+        },
+        {
+          id: Date.now() + Math.random(),
+          name: '南拳妈妈',
+          song: '泡沫',
+          checked: true,
+          album: 10
+        },
+        {
+          id: Date.now() + Math.random(),
+          name: '南拳妈妈',
+          song: '泡沫',
+          checked: true,
+          album: 10
+        }
+      ]
+    </script>
+  </head>
 
-    .select .others span {
-      flex-grow: 1;
-      text-align: center;
-    }
-  </style>
-
-  <script src="./vue.js"></script>
-  <script>
-    let data = [
-      {
-        id: Date.now() + Math.random(),
-        name: "王杰",
-        song: "泡沫",
-        checked: true,
-        album: 10
-      },
-      {
-        id: Date.now() + Math.random(),
-        name: "邓紫棋",
-        song: "泡沫",
-        checked: true,
-        album: 10
-      },
-      {
-        id: Date.now() + Math.random(),
-        name: "南拳妈妈",
-        song: "泡沫",
-        checked: true,
-        album: 10
-      },
-      {
-        id: Date.now() + Math.random(),
-        name: "南拳妈妈",
-        song: "泡沫",
-        checked: true,
-        album: 10
-      },
-    ]
-  </script>
-</head>
-
-<body>
-  <div class="wrap" id="app">
-    <div class="baidu">
-      <ul class="list list-head">
-        <li>
-          <div>
-            <input type="checkbox" v-model="isCheckedAll"> 全选
+  <body>
+    <div class="wrap" id="app">
+      <div class="baidu">
+        <ul class="list list-head">
+          <li>
+            <div><input type="checkbox" v-model="isCheckedAll" /> 全选</div>
+            <span>歌曲</span>
+            <span>歌手</span>
+            <span>专辑</span>
+          </li>
+        </ul>
+        <ul class="list list-body">
+          <li class="checkedColor" v-for="item in songList">
+            <div>
+              <input type="checkbox" v-model="item.checked" />
+            </div>
+            <span>{{item.song}}</span>
+            <span>{{item.name}}</span>
+            <span>{{item.album}}</span>
+          </li>
+        </ul>
+        <div class="select">
+          <span class="selectall item"> 统计：<span></span> </span>
+          <div class="others item">
+            <span><em></em>歌手有：{{selecteSongerLength}}位</span>
+            <span><em></em>专辑有：{{selectAlbum}}张</span>
           </div>
-          <span>歌曲</span>
-          <span>歌手</span>
-          <span>专辑</span>
-        </li>
-      </ul>
-      <ul class="list list-body">
-        <li class="checkedColor" v-for="item in songList">
-          <div>
-            <input type="checkbox" v-model="item.checked">
-          </div>
-          <span>{{item.song}}</span>
-          <span>{{item.name}}</span>
-          <span>{{item.album}}</span>
-        </li>
-      </ul>
-      <div class="select">
-        <span class="selectall item">
-          统计：<span></span>
-        </span>
-        <div class="others item">
-          <span><em></em>歌手有：{{selecteSongerLength}}位</span>
-          <span><em></em>专辑有：{{selectAlbum}}张</span>
         </div>
       </div>
     </div>
-  </div>
 
-  <script>
-
-    new Vue({
-      el: "#app",
-      data: {
-        songList: data
-      },
-      computed: {
-        isCheckedAll: {
-          get() {
-            let bl = this.songList.every(function (item) {
-              return item.checked;
-            })
-            return bl;
+    <script>
+      new Vue({
+        el: '#app',
+        data: {
+          songList: data
+        },
+        computed: {
+          isCheckedAll: {
+            get() {
+              let bl = this.songList.every(function (item) {
+                return item.checked
+              })
+              return bl
+            },
+            set(newValue) {
+              console.log(newValue)
+              this.songList.forEach((item) => (item.checked = newValue))
+            }
           },
-          set(newValue) {
-            console.log(newValue)
-            this.songList.forEach(item => item.checked = newValue)
+          selecteSongerLength() {
+            // filter 返回的是一个数组
+            var arr = this.songList.filter(function (item) {
+              return item.checked
+            })
+            return removeDouble(arr).length
+          },
+          selectAlbum() {
+            //reduce() 方法接收一个函数作为累加器，数组中的每个值（从左到右）开始缩减，最终计算为一个值。
+            // return this.songList.filter(item=>item.checked).reduce( (total,item)=>{return total + item.album},0 )
+
+            let total = 0
+            this.songList
+              .filter((item) => item.checked)
+              .forEach((item) => (total += item.album))
+            return total
           }
-        },
-        selecteSongerLength() {
-          // filter 返回的是一个数组
-          var arr = this.songList.filter(function (item) {
-            return item.checked;
-          })
-          return removeDouble(arr).length;
-        },
-        selectAlbum() {
-          //reduce() 方法接收一个函数作为累加器，数组中的每个值（从左到右）开始缩减，最终计算为一个值。
-          // return this.songList.filter(item=>item.checked).reduce( (total,item)=>{return total + item.album},0 )
-
-          let total = 0;
-          this.songList.filter(item => item.checked).forEach(item => total += item.album)
-          return total;
         }
+      })
+
+      // 数组去重
+      function removeDouble(option) {
+        var json = {}
+        var newArr = []
+        option.forEach((item) => {
+          if (!json[item.name]) {
+            json[item.name] = true
+            newArr.push(item)
+          }
+        })
+
+        return newArr
       }
-    })
-
-    // 数组去重
-    function removeDouble(option) {
-      var json = {};
-      var newArr = [];
-      option.forEach(item => {
-        if (!json[item.name]) {
-          json[item.name] = true;
-          newArr.push(item);
-        }
-      });
-
-      return newArr;
-    }
-  </script>
-
-</body>
-
+    </script>
+  </body>
 </html>

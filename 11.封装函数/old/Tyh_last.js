@@ -4,6 +4,6 @@
  * @returns 数组的最后一个元素
  */
 
-export const last = arr => {
+export const last = (arr) => {
   return arr[arr.length - 1]
 }

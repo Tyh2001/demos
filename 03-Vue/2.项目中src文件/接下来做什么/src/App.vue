@@ -6,20 +6,16 @@
   </div>
 </template>
 <script>
-import Shang from "./components/shang.vue";
-import Zhong from "./components/zhong.vue";
-import Xia from "./components/xia.vue";
-export default {
-  components: {
-    Shang,
-    Zhong,
-    Xia
+  import Shang from './components/shang.vue'
+  import Zhong from './components/zhong.vue'
+  import Xia from './components/xia.vue'
+  export default {
+    components: {
+      Shang,
+      Zhong,
+      Xia
+    }
   }
-};
 </script>
 
-<style scoped>
-</style>
-
-
-
+<style scoped></style>

@@ -1,61 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <title></title>
-  <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
-  <script>
-    $(function () {
-      var w, h;
-      $(".list img").hover(function () {
-        w = $(this).width();
-        h = $(this).height();
-        $(this).stop().animate({
-          "width": 1.5 * w, "height": 1.5 * h,
-          "left": 50 - 0.25 * w, "top": 200 - 0.25 * h
-        });
-      }, function () {
-        $(this).stop().animate({
-          "width": w, "height": h,
-          "left": "50px", "top": "200px"
-        });
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+    <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+    <script>
+      $(function () {
+        var w, h
+        $('.list img').hover(
+          function () {
+            w = $(this).width()
+            h = $(this).height()
+            $(this)
+              .stop()
+              .animate({
+                width: 1.5 * w,
+                height: 1.5 * h,
+                left: 50 - 0.25 * w,
+                top: 200 - 0.25 * h
+              })
+          },
+          function () {
+            $(this).stop().animate({
+              width: w,
+              height: h,
+              left: '50px',
+              top: '200px'
+            })
+          }
+        )
       })
-    })
-  </script>
-  <style>
-    .list {
-      list-style: none;
-      width: 1440px;
-    }
+    </script>
+    <style>
+      .list {
+        list-style: none;
+        width: 1440px;
+      }
 
-    .list li {
-      width: 300px;
-      height: 450px;
-      background-color: #04b3e2;
-      float: left;
-      margin: 30px;
-      position: relative;
-    }
+      .list li {
+        width: 300px;
+        height: 450px;
+        background-color: #04b3e2;
+        float: left;
+        margin: 30px;
+        position: relative;
+      }
 
-    .list li img {
-      position: absolute;
-      left: 50px;
-      top: 200px;
-    }
-  </style>
+      .list li img {
+        position: absolute;
+        left: 50px;
+        top: 200px;
+      }
+    </style>
+  </head>
 
-</head>
-
-<body>
-  <ul class="list">
-    <li>
-      <img src="images/pic1.jpg" alt="" class="list_i_1" />
-    </li>
-    <li><img src="images/title_login_2.gif" alt="" /></li>
-    <li><img src="images/read.gif" alt="" /></li>
-    <li><img src="images/pic1.jpg" alt="" /></li>
-  </ul>
-</body>
-
+  <body>
+    <ul class="list">
+      <li>
+        <img src="images/pic1.jpg" alt="" class="list_i_1" />
+      </li>
+      <li><img src="images/title_login_2.gif" alt="" /></li>
+      <li><img src="images/read.gif" alt="" /></li>
+      <li><img src="images/pic1.jpg" alt="" /></li>
+    </ul>
+  </body>
 </html>

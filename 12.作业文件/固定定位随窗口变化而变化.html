@@ -1,58 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+    <style>
+      .main {
+        width: 1000px;
+        height: 2300px;
+        margin: 0 auto;
+        background-color: blueviolet;
+      }
 
-<head>
-  <meta charset="UTF-8">
-  <title></title>
-  <style>
-    .main {
-      width: 1000px;
-      height: 2300px;
-      margin: 0 auto;
-      background-color: blueviolet;
-    }
+      .fix_box {
+        width: 50px;
+        height: 300px;
+        position: fixed;
+        background-color: green;
+        top: 100px;
+        right: 100px;
+      }
+    </style>
+    <script type="text/javascript" src="js/jquery-1.7.1.js"></script>
+    <script>
+      $(function () {
+        //            设定固定定位元素的位置
+        var window_w = $(window).width()
+        var main_w = $('.main').width()
+        var fix_w = $('.fix_box').width()
+        var fix_right = (window_w - main_w) / 2
 
-    .fix_box {
-      width: 50px;
-      height: 300px;
-      position: fixed;
-      background-color: green;
-      top: 100px;
-      right: 100px;
-    }
-  </style>
-  <script type="text/javascript" src="js/jquery-1.7.1.js"></script>
-  <script>
-    $(function () {
-      //            设定固定定位元素的位置
-      var window_w = $(window).width();
-      var main_w = $(".main").width();
-      var fix_w = $(".fix_box").width();
-      var fix_right = (window_w - main_w) / 2;
-
-      $(".fix_box").css("right", fix_right - fix_w);
-      //            定定位元素的位置结束
-      $(window).resize(function () {
-        window_w = $(window).width();
-        main_w = $(".main").width();
-        fix_w = $(".fix_box").width();
-        fix_right = (window_w - main_w) / 2;
-        if (window_w > main_w + fix_w) {
-          $(".fix_box").css("right", fix_right - fix_w);
-        }
-        else {
-          $(".fix_box").css("right", 0);
-        }
+        $('.fix_box').css('right', fix_right - fix_w)
+        //            定定位元素的位置结束
+        $(window).resize(function () {
+          window_w = $(window).width()
+          main_w = $('.main').width()
+          fix_w = $('.fix_box').width()
+          fix_right = (window_w - main_w) / 2
+          if (window_w > main_w + fix_w) {
+            $('.fix_box').css('right', fix_right - fix_w)
+          } else {
+            $('.fix_box').css('right', 0)
+          }
+        })
       })
-    })
-  </script>
-</head>
+    </script>
+  </head>
 
-<body>
-  <div class="main">
-
-  </div>
-  <div class="fix_box"></div>
-</body>
-
+  <body>
+    <div class="main"></div>
+    <div class="fix_box"></div>
+  </body>
 </html>

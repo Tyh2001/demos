@@ -1,33 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+    <style type="text/css">
+      canvas {
+        border: 1px solid red;
+      }
+    </style>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <title></title>
-  <style type="text/css">
-    canvas {
-      border: 1px solid red;
-    }
-  </style>
-</head>
+  <body>
+    <canvas width="600" height="400"></canvas>
 
-<body>
-  <canvas width="600" height="400"></canvas>
+    <script type="text/javascript">
+      var cans = document.querySelector('canvas')
+      var ctx = cans.getContext('2d')
 
-  <script type="text/javascript">
-    var cans = document.querySelector("canvas");
-    var ctx = cans.getContext("2d");
+      //绘制一条线宽为10像素的红色直线
 
-    //绘制一条线宽为10像素的红色直线
+      ctx.strokeStyle = 'red'
+      ctx.lineWidth = '10'
 
-    ctx.strokeStyle = "red";
-    ctx.lineWidth = "10";
-
-    ctx.moveTo(100, 100);
-    ctx.lineTo(300, 100);
-    ctx.stroke();
-
-  </script>
-</body>
-
+      ctx.moveTo(100, 100)
+      ctx.lineTo(300, 100)
+      ctx.stroke()
+    </script>
+  </body>
 </html>

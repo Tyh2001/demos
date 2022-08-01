@@ -1,106 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <title>下拉框</title>
-  <style>
-    * {
-      margin: 0px;
-      padding: 0px;
-    }
-
-    .a {
-      width: 200px;
-      height: 50px;
-      border: 3px solid black;
-      float: left;
-      list-style: none;
-      text-align: center;
-      line-height: 50px;
-      font-size: 30px;
-    }
-
-    .b {
-      display: none;
-    }
-
-    .b1 {
-      position: absolute;
-      left: 65px;
-      top: 40px;
-      list-style: none;
-    }
-
-    .b2 {
-      position: absolute;
-      left: 260px;
-      top: 40px;
-      list-style: none;
-    }
-
-    .b3 {
-      position: absolute;
-      left: 475px;
-      top: 40px;
-      list-style: none;
-    }
-
-    .c {
-      margin-top: 50px;
-      font-size: 20px;
-    }
-  </style>
-</head>
-
-<body>
-  <ul>
-    <li class="a">书籍</li>
-    <li class="a">书籍</li>
-    <li class="a">书籍</li>
-  </ul>
-  <div>
-    <ul class="b b1">
-      <li class="c">11111</li>
-      <li class="c">22222</li>
-      <li class="c">33333</li>
-    </ul>
-    <ul class="b b2">
-      <li class="c">11111</li>
-      <li class="c">22222</li>
-      <li class="c">33333</li>
-    </ul>
-    <ul class="b b3">
-      <li class="c">11111</li>
-      <li class="c">22222</li>
-      <li class="c">33333</li>
-    </ul>
-  </div>
-
-
-  <script src="jquery.js"></script>
-  <script>
-    var a = $(".a")
-    var b = $(".b")
-    a.mouseenter(function () {
-      var d = $(this).index()
-      for (var i = 0; i < b.length; i++) {
-        var e = $(b[i]).index()
-        if (d === e) {
-          $(b[i]).slideDown(500)
-        }
+  <head>
+    <meta charset="UTF-8" />
+    <title>下拉框</title>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
       }
-    })
-    a.mouseleave(function () {
-      var d = $(this).index()
-      for (var i = 0; i < b.length; i++) {
-        var e = $(b[i]).index()
-        if (d === e) {
-          $(b[i]).slideUp(500)
-        }
-      }
-    })
-  </script>
-</body>
 
+      .a {
+        width: 200px;
+        height: 50px;
+        border: 3px solid black;
+        float: left;
+        list-style: none;
+        text-align: center;
+        line-height: 50px;
+        font-size: 30px;
+      }
+
+      .b {
+        display: none;
+      }
+
+      .b1 {
+        position: absolute;
+        left: 65px;
+        top: 40px;
+        list-style: none;
+      }
+
+      .b2 {
+        position: absolute;
+        left: 260px;
+        top: 40px;
+        list-style: none;
+      }
+
+      .b3 {
+        position: absolute;
+        left: 475px;
+        top: 40px;
+        list-style: none;
+      }
+
+      .c {
+        margin-top: 50px;
+        font-size: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <ul>
+      <li class="a">书籍</li>
+      <li class="a">书籍</li>
+      <li class="a">书籍</li>
+    </ul>
+    <div>
+      <ul class="b b1">
+        <li class="c">11111</li>
+        <li class="c">22222</li>
+        <li class="c">33333</li>
+      </ul>
+      <ul class="b b2">
+        <li class="c">11111</li>
+        <li class="c">22222</li>
+        <li class="c">33333</li>
+      </ul>
+      <ul class="b b3">
+        <li class="c">11111</li>
+        <li class="c">22222</li>
+        <li class="c">33333</li>
+      </ul>
+    </div>
+
+    <script src="jquery.js"></script>
+    <script>
+      var a = $('.a')
+      var b = $('.b')
+      a.mouseenter(function () {
+        var d = $(this).index()
+        for (var i = 0; i < b.length; i++) {
+          var e = $(b[i]).index()
+          if (d === e) {
+            $(b[i]).slideDown(500)
+          }
+        }
+      })
+      a.mouseleave(function () {
+        var d = $(this).index()
+        for (var i = 0; i < b.length; i++) {
+          var e = $(b[i]).index()
+          if (d === e) {
+            $(b[i]).slideUp(500)
+          }
+        }
+      })
+    </script>
+  </body>
 </html>

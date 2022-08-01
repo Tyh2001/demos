@@ -1,117 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>加入商品价格结算</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
 
-<head>
-  <meta charset="UTF-8">
-  <title>加入商品价格结算</title>
-</head>
-<style>
-  * {
-    margin: 0;
-    padding: 0;
-  }
+    td {
+      width: 200px;
+      height: 50px;
+      background-color: cornflowerblue;
+    }
 
-  td {
-    width: 200px;
-    height: 50px;
-    background-color: cornflowerblue;
-  }
+    th {
+      width: 200px;
+      height: 50px;
+      background-color: darksalmon;
+    }
 
-  th {
-    width: 200px;
-    height: 50px;
-    background-color: darksalmon;
-  }
+    button {
+      width: 26px;
+      height: 23px;
+    }
+  </style>
 
-  button {
-    width: 26px;
-    height: 23px;
-  }
-</style>
+  <body>
+    <div id="app">
+      <h1>总价:{{totalPrice}}</h1>
+      <br />
+      <table>
+        <thead>
+          <tr>
+            <td>名称</td>
+            <td>单价</td>
+            <td>数量</td>
+            <td>总价</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="item,index in goods">
+            <th>{{item.name}}</th>
+            <th>{{item.price}}</th>
+            <th>
+              <button v-on:click="jian(index)">-</button>
+              <span>{{item.count}}</span>
+              <button v-on:click="jia(index)">+</button>
+            </th>
+            <th>{{item.sumPrice}}</th>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
-<body>
-  <div id="app">
-    <h1>总价:{{totalPrice}}</h1>
-    <br>
-    <table>
-      <thead>
-        <tr>
-          <td>名称</td>
-          <td>单价</td>
-          <td>数量</td>
-          <td>总价</td>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="item,index in goods">
-          <th>{{item.name}}</th>
-          <th>{{item.price}}</th>
-          <th>
-            <button v-on:click="jian(index)">-</button>
-            <span>{{item.count}}</span>
-            <button v-on:click="jia(index)">+</button>
-          </th>
-          <th>{{item.sumPrice}}</th>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <script src="./vue.js"></script>
-  <script>
-    new Vue({
-      el: "#app",
-      data: {
-        totalPrice: 0,
-        goods: [{
-          name: "香蕉",
-          price: "3",
-          count: 0,
-          sumPrice: 0,
+    <script src="./vue.js"></script>
+    <script>
+      new Vue({
+        el: '#app',
+        data: {
+          totalPrice: 0,
+          goods: [
+            {
+              name: '香蕉',
+              price: '3',
+              count: 0,
+              sumPrice: 0
+            },
+            {
+              name: '苹果',
+              price: '4',
+              count: 0,
+              sumPrice: 0
+            },
+            {
+              name: '橘子',
+              price: '6',
+              count: 0,
+              sumPrice: 0
+            }
+          ]
         },
-        {
-          name: "苹果",
-          price: "4",
-          count: 0,
-          sumPrice: 0,
-        },
-        {
-          name: "橘子",
-          price: "6",
-          count: 0,
-          sumPrice: 0,
+        methods: {
+          jia(i) {
+            // 形参i代表数组的索引
+            this.goods[i].count++
+            // 将data数据中goods数组对应的对象里面数量(count)加1
+            this.goods[i].sumPrice = (
+              this.goods[i].price * this.goods[i].count
+            ).toFixed(2)
+            //单个商品总价格
+            //number.toFxed() 数字保留几位小数,括号里表示保留几位小数
+            this.totalPrice = 0 //累加前初始化总价钱变成0
+            //总价钱
+            for (var y = 0; y < this.goods.length; y++) {
+              this.totalPrice =
+                Number(this.totalPrice) + Number(this.goods[y].sumPrice)
+            }
+          },
+          jian(i) {
+            //数量不能是负数,大于0时才进行数量的减法
+            if (this.goods[i].count > 0) {
+              this.goods[i].count--
+            }
+            this.goods[i].sumPrice = (
+              this.goods[i].price * this.goods[i].count
+            ).toFixed(2)
+            //点击减时减少总价
+            this.totalPrice = 0
+            for (var y = 0; y < this.goods.length; y++) {
+              this.totalPrice =
+                Number(this.totalPrice) + Number(this.goods[y].sumPrice)
+            }
+          }
         }
-        ]
-      },
-      methods: {
-        jia(i) {
-          // 形参i代表数组的索引
-          this.goods[i].count++;
-          // 将data数据中goods数组对应的对象里面数量(count)加1
-          this.goods[i].sumPrice = (this.goods[i].price * this.goods[i].count).toFixed(2);
-          //单个商品总价格
-          //number.toFxed() 数字保留几位小数,括号里表示保留几位小数
-          this.totalPrice = 0; //累加前初始化总价钱变成0
-          //总价钱
-          for (var y = 0; y < this.goods.length; y++) {
-            this.totalPrice = Number(this.totalPrice) + Number(this.goods[y].sumPrice)
-          }
-        },
-        jian(i) {
-          //数量不能是负数,大于0时才进行数量的减法
-          if (this.goods[i].count > 0) {
-            this.goods[i].count--;
-          }
-          this.goods[i].sumPrice = (this.goods[i].price * this.goods[i].count).toFixed(2);
-          //点击减时减少总价
-          this.totalPrice = 0;
-          for (var y = 0; y < this.goods.length; y++) {
-            this.totalPrice = Number(this.totalPrice) + Number(this.goods[y].sumPrice)
-          }
-        }
-      }
-    })
-  </script>
-</body>
-
+      })
+    </script>
+  </body>
 </html>

@@ -1,42 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Document</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Document</title>
-</head>
+  <body>
+    <!-- 计算器 -->
+    <form oninput="x.value=parseInt(a.value) * parseInt(b.value)">
+      <input type="number" id="a" value="0" />
+      * <input type="number" id="b" value="0" /> =
+      <output name="x" for="a b"></output>
+    </form>
 
-<body>
-  <!-- 计算器 -->
-  <form oninput="x.value=parseInt(a.value) * parseInt(b.value)">
-    <input type="number" id="a" value="0">
-    * <input type="number" id="b" value="0">
-    = <output name="x" for="a b"></output>
-  </form>
+    <!-- 滑块 -->
+    <form method="post">
+      <input
+        type="range"
+        name="range"
+        min="0"
+        max="100"
+        step="1"
+        value=""
+        onchange="changeValue(event)"
+      />
+    </form>
 
-  <!-- 滑块 -->
-  <form method="post">
-    <input type="range" name="range" min="0" max="100" step="1" value="" onchange="changeValue(event)" />
-  </form>
+    <!-- 颜色选择器 -->
+    <input type="color" onchange="showColor(event)" />
 
-  <!-- 颜色选择器 -->
-  <input type="color" onchange="showColor(event)">
+    <br />
+    <meter value="4" min="0" max="10"></meter>
+    <br />
+    <meter value="0.6">60%</meter><br />
 
-
-  <br>
-  <meter value="4" min="0" max="10"></meter>
-  <br>
-  <meter value="0.6">60%</meter><br>
-
-  <script>
-    function changeValue(e) {
-      console.log(e)
-    }
-    function showColor(e) {
-      console.log(e)
-    }
-  </script>
-</body>
-
+    <script>
+      function changeValue(e) {
+        console.log(e)
+      }
+      function showColor(e) {
+        console.log(e)
+      }
+    </script>
+  </body>
 </html>

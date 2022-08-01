@@ -1,140 +1,116 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+      #containes {
+        width: 480px;
+        height: 320px;
+        border: 1px solid;
+        position: relative;
+      }
 
-<head>
-  <meta charset="UTF-8">
-  <title>Document</title>
-  <style type="text/css">
-    #containes {
-      width: 480px;
-      height: 320px;
-      border: 1px solid;
-      position: relative;
-    }
+      #list {
+        padding: 0px;
+        list-style: none;
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+        margin: 0;
+      }
 
-    #list {
+      #list li {
+        float: left;
+        width: 20px;
+        height: 20px;
+        text-align: center;
+        line-height: 20px;
+        background-color: white;
+        margin-left: 10px;
+        /*鼠标指针的样式*/
+        cursor: pointer;
+      }
+    </style>
 
-      padding: 0px;
-      list-style: none;
-      position: absolute;
-      right: 10px;
-      bottom: 10px;
-      margin: 0;
+    <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+  </head>
 
-    }
+  <body>
+    <div id="containes">
+      <img src="images/1.jpg" alt="" id="pic" />
 
-    #list li {
-      float: left;
-      width: 20px;
-      height: 20px;
-      text-align: center;
-      line-height: 20px;
-      background-color: white;
-      margin-left: 10px;
-      /*鼠标指针的样式*/
-      cursor: pointer;
-    }
-  </style>
+      <ul id="list">
+        <li id="num1">1</li>
+        <li id="num2">2</li>
+        <li id="num3">3</li>
+        <li id="num4">4</li>
+      </ul>
+    </div>
 
-  <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+      $('#list li:first')
+        .css('background-color', 'red')
+        .siblings()
+        .css('background-color', 'white')
+      $('#list li').click(function () {
+        var i = $(this).text()
 
+        var path = 'images/' + i + '.jpg'
 
-</head>
+        $('#pic').attr('src', path)
 
-<body>
+        // 链式编程
+        $(this)
+          .css('background-color', 'red')
+          .siblings()
+          .css('background-color', 'white')
 
-  <div id="containes">
-    <img src="images/1.jpg" alt="" id="pic">
+        //$(this).css("background-color","red");
 
-    <ul id="list">
-      <li id="num1">1</li>
-      <li id="num2">2</li>
-      <li id="num3">3</li>
-      <li id="num4">4</li>
-    </ul>
-
-  </div>
-
-
-  <script type="text/javascript">
-      $("#list li:first").css("background-color", "red").siblings().css("background-color", "white");
-      $("#list li").click(function () {
-
-         var i = $(this).text();
-
-         var path = "images/" + i + ".jpg";
-
-         $("#pic").attr("src", path);
-
-         // 链式编程
-         $(this).css("background-color", "red").siblings().css("background-color", "white");
-
-
-
-         //$(this).css("background-color","red");
-
-         // $(this).siblings().css("background-color","white");
-
+        // $(this).siblings().css("background-color","white");
       })
 
+      //   /*第一个li 单击*/
+      //   $("#num1").click(function(){
+      //        //1.图片 src
+      //        $("#pic").attr("src","images/1.jpg");
+      //        //2.自己的背景
+      //        $("#num1").css("background-color","red");
+      //        $("#num2").css("background-color","white");
+      //        $("#num3").css("background-color","white");
+      //        $("#num4").css("background-color","white");
+      //   })
 
+      //   /*第二li*/
+      //  $("#num2").click(function(){
 
+      //  	 $("#pic").attr("src","images/2.jpg");
+      //  	 $("#num2").css("background-color","red");
+      //  	  $("#num1").css("background-color","white");
+      //     $("#num3").css("background-color","white");
+      //     $("#num4").css("background-color","white");
+      //  })
 
+      // $("#num3").click(function(){
+      //        //1.图片 src
+      //        $("#pic").attr("src","images/1.jpg");
+      //        //2.自己的背景
+      //        $("#num1").css("background-color","red");
+      //        $("#num2").css("background-color","white");
+      //        $("#num3").css("background-color","white");
+      //        $("#num4").css("background-color","white");
+      //   })
 
+      //   /*第二li*/
+      //  $("#num4").click(function(){
 
-
-
-
-  //   /*第一个li 单击*/
-  //   $("#num1").click(function(){
-  //        //1.图片 src
-  //        $("#pic").attr("src","images/1.jpg");
-  //        //2.自己的背景
-  //        $("#num1").css("background-color","red");
-  //        $("#num2").css("background-color","white");
-  //        $("#num3").css("background-color","white");
-  //        $("#num4").css("background-color","white");
-  //   })
-
-  //   /*第二li*/
-  //  $("#num2").click(function(){
-
-  //  	 $("#pic").attr("src","images/2.jpg");
-  //  	 $("#num2").css("background-color","red");
-  //  	  $("#num1").css("background-color","white");
-  //     $("#num3").css("background-color","white");
-  //     $("#num4").css("background-color","white");
-  //  })
-
-
-  // $("#num3").click(function(){
-  //        //1.图片 src
-  //        $("#pic").attr("src","images/1.jpg");
-  //        //2.自己的背景
-  //        $("#num1").css("background-color","red");
-  //        $("#num2").css("background-color","white");
-  //        $("#num3").css("background-color","white");
-  //        $("#num4").css("background-color","white");
-  //   })
-
-  //   /*第二li*/
-  //  $("#num4").click(function(){
-
-  //  	 $("#pic").attr("src","images/2.jpg");
-  //  	 $("#num2").css("background-color","red");
-  //  	  $("#num1").css("background-color","white");
-  //     $("#num3").css("background-color","white");
-  //     $("#num4").css("background-color","white");
-  //  })
-
-
-
-
-
-  </script>
-
-
-
-</body>
-
+      //  	 $("#pic").attr("src","images/2.jpg");
+      //  	 $("#num2").css("background-color","red");
+      //  	  $("#num1").css("background-color","white");
+      //     $("#num3").css("background-color","white");
+      //     $("#num4").css("background-color","white");
+      //  })
+    </script>
+  </body>
 </html>

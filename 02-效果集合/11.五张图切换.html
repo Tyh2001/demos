@@ -1,88 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>五张图切换</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
 
-<head>
-  <meta charset="UTF-8">
-  <title>五张图切换</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-    }
+      .tu {
+        width: 400px;
+        height: 250px;
+      }
 
-    .tu {
-      width: 400px;
-      height: 250px;
-    }
+      ul {
+        width: 2000px;
+        height: 250px;
+      }
 
-    ul {
-      width: 2000px;
-      height: 250px;
-    }
+      ul li {
+        float: left;
+        list-style: none;
+      }
 
-    ul li {
-      float: left;
-      list-style: none;
-    }
+      .box {
+        width: 400px;
+        height: 250px;
+        overflow: hidden;
+      }
 
-    .box {
-      width: 400px;
-      height: 250px;
-      overflow: hidden;
-    }
+      .dian {
+        width: 74px;
+        height: 74px;
+        border: 3px solid black;
+        float: left;
+        text-align: center;
+        line-height: 74px;
+        font-size: 30px;
+        color: blue;
+      }
+    </style>
+  </head>
 
-    .dian {
-      width: 74px;
-      height: 74px;
-      border: 3px solid black;
-      float: left;
-      text-align: center;
-      line-height: 74px;
-      font-size: 30px;
-      color: blue;
-      ;
-    }
-  </style>
-</head>
+  <body>
+    <div class="box">
+      <ul>
+        <li>
+          <img class="tu a" src="图片/牌子1.jpg" alt="" />
+        </li>
 
-<body>
-  <div class="box">
-    <ul>
-      <li>
-        <img class="tu a" src="图片/牌子1.jpg" alt="">
-      </li>
+        <li>
+          <img class="tu b" src="图片/牌子2.jpg" alt="" />
+        </li>
+        <li>
+          <img class="tu c" src="图片/牌子3.jpg" alt="" />
+        </li>
+        <li>
+          <img class="tu d" src="图片/牌子4.jpg" alt="" />
+        </li>
+        <li>
+          <img class="tu e" src="图片/牌子5.jpg" alt="" />
+        </li>
+      </ul>
+    </div>
+    <div>
+      <div class="dian aa">1</div>
+      <div class="dian bb">2</div>
+      <div class="dian cc">3</div>
+      <div class="dian dd">4</div>
+      <div class="dian ee">5</div>
+    </div>
 
-      <li>
-        <img class="tu b" src="图片/牌子2.jpg" alt="">
-      </li>
-      <li>
-        <img class="tu c" src="图片/牌子3.jpg" alt="">
-      </li>
-      <li>
-        <img class="tu d" src="图片/牌子4.jpg" alt="">
-      </li>
-      <li>
-        <img class="tu e" src="图片/牌子5.jpg" alt="">
-      </li>
-    </ul>
-  </div>
-  <div>
-    <div class="dian aa">1</div>
-    <div class="dian bb">2</div>
-    <div class="dian cc">3</div>
-    <div class="dian dd">4</div>
-    <div class="dian ee">5</div>
-  </div>
-
-  <script src="jquery.js"></script>
-  <script>
-    $(".dian").click(function () {
-      var www = $(this).index();
-      $("ul").animate({
-        "margin-left": -www * 400
-      }, 600)
-    })
-  </script>
-</body>
-
+    <script src="jquery.js"></script>
+    <script>
+      $('.dian').click(function () {
+        var www = $(this).index()
+        $('ul').animate(
+          {
+            'margin-left': -www * 400
+          },
+          600
+        )
+      })
+    </script>
+  </body>
 </html>

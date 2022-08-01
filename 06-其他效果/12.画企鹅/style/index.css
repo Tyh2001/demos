@@ -4,7 +4,6 @@ div,
 strong {
   margin: 0;
   padding: 0;
-
 }
 
 body {
@@ -122,7 +121,7 @@ h1 {
 .mouth {
   width: 158px;
   height: 56px;
-  background: #FFA600;
+  background: #ffa600;
   border-radius: 50%;
   position: absolute;
   top: 106px;
@@ -140,7 +139,6 @@ h1 {
   z-index: 2;
   border-bottom-left-radius: 76px 96px;
   border-bottom-right-radius: 76px 96px;
-
 }
 
 .mouth_bar1 {
@@ -151,12 +149,10 @@ h1 {
   z-index: 3;
   border-bottom-left-radius: 104px 32px;
   border-bottom-right-radius: 104px 32px;
-
 }
 
 /*嘴巴*/
 /* ……………………………………………………………………end  企鹅头部…………………………………………………………………… */
-
 
 /* ……………………………………………………………………star 企鹅身体…………………………………………………………………… */
 
@@ -190,7 +186,6 @@ h1 {
   position: absolute;
   bottom: 159px;
   left: 0px;
-
 }
 
 .body_2 {
@@ -228,7 +223,6 @@ h1 {
 }
 
 /* 白色企鹅肚子 */
-
 
 /* 企鹅口袋 */
 .pocket {
@@ -283,7 +277,6 @@ h1 {
   height: 160px;
   background: #000;
   position: absolute;
-
 }
 
 .lefthand {
@@ -337,8 +330,6 @@ h1 {
 /* 企鹅左右手 */
 /* ……………………………………………………………………end 企鹅身体…………………………………………………………………… */
 
-
-
 /* ……………………………………………………………………star 企鹅脚部…………………………………………………………………… */
 .footer .left_footer,
 .footer .right_footer {
@@ -356,15 +347,12 @@ h1 {
   left: 163px;
 }
 
-
 .footer .right_footer {
   top: 347px;
   left: 320px;
 }
 
 /* ……………………………………………………………………end 企鹅脚部…………………………………………………………………… */
-
-
 
 @keyframes left_rotate {
   from {
@@ -376,7 +364,6 @@ h1 {
     -webkit-transform-origin: right 30%;
     -webkit-transform: rotateZ(30deg);
   }
-
 }
 
 @keyframes right_rotate {
@@ -389,7 +376,6 @@ h1 {
     -webkit-transform-origin: left 30%;
     -webkit-transform: rotateZ(-30deg);
   }
-
 }
 
 @-webkit-keyframes left_rotate {
@@ -402,7 +388,6 @@ h1 {
     -webkit-transform-origin: right 30%;
     -webkit-transform: rotateZ(30deg);
   }
-
 }
 
 @-webkit-keyframes right_rotate {
@@ -415,7 +400,6 @@ h1 {
     -webkit-transform-origin: left 30%;
     -webkit-transform: rotateZ(-30deg);
   }
-
 }
 
 @-moz-keyframes left_rotate {
@@ -428,7 +412,6 @@ h1 {
     transform-origin: right 30%;
     transform: rotateZ(30deg);
   }
-
 }
 
 @-moz-keyframes right_rotate {
@@ -441,7 +424,6 @@ h1 {
     transform-origin: left 30%;
     transform: rotateZ(-30deg);
   }
-
 }
 
 @-ms-keyframes left_rotate {
@@ -454,7 +436,6 @@ h1 {
     transform-origin: right 30%;
     transform: rotateZ(30deg);
   }
-
 }
 
 @-ms-keyframes right_rotate {
@@ -467,7 +448,6 @@ h1 {
     transform-origin: left 30%;
     transform: rotateZ(-30deg);
   }
-
 }
 
 @-o-keyframes left_rotate {
@@ -480,7 +460,6 @@ h1 {
     transform-origin: right 30%;
     transform: rotateZ(30deg);
   }
-
 }
 
 @-o-keyframes right_rotate {
@@ -493,5 +472,4 @@ h1 {
     transform-origin: left 30%;
     transform: rotateZ(-30deg);
   }
-
 }

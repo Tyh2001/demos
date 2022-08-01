@@ -13,43 +13,43 @@
 </template>
 
 <script>
-export default {
-  methods: {
-    goUser () {
-      // push方法,相当于a标签里面的href
-      this.$router.push("/user");
+  export default {
+    methods: {
+      goUser() {
+        // push方法,相当于a标签里面的href
+        this.$router.push('/user')
+      }
     }
   }
-};
 </script>
 <style scoped>
-.header {
-  height: 40px;
-  background-color: yellowgreen;
-}
-.footer {
-  height: 100px;
-  background-color: skyblue;
-  overflow: hidden;
-}
-.box {
-  height: 200px;
-  background-color: pink;
-  overflow: hidden;
-}
-a {
-  margin-left: 20px;
-  color: aliceblue;
-  font-size: 30px;
-}
-.header .router-link-active {
-  background-color: rgb(118, 134, 87);
-  color: #000;
-}
-span {
-  margin-left: 20px;
-  color: aliceblue;
-  font-size: 30px;
-  text-decoration: underline;
-}
+  .header {
+    height: 40px;
+    background-color: yellowgreen;
+  }
+  .footer {
+    height: 100px;
+    background-color: skyblue;
+    overflow: hidden;
+  }
+  .box {
+    height: 200px;
+    background-color: pink;
+    overflow: hidden;
+  }
+  a {
+    margin-left: 20px;
+    color: aliceblue;
+    font-size: 30px;
+  }
+  .header .router-link-active {
+    background-color: rgb(118, 134, 87);
+    color: #000;
+  }
+  span {
+    margin-left: 20px;
+    color: aliceblue;
+    font-size: 30px;
+    text-decoration: underline;
+  }
 </style>

@@ -1,70 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <title>Document</title>
-  <style>
-    canvas {
-      border: 1px solid red;
-      margin: 0 auto;
-    }
-  </style>
-</head>
-
-<body>
-  <div></div>
-
-  <script>
-    var imgList = ["http://fuss10.elemecdn.com/f/96/3d608c5811bc2d902fc9ab9a5baa7jpeg.jpeg?imageView2/1/w/180/h/180", "http://static.galileo.xiaojukeji.com/static/tms/seller_avatar_256px.jpg", "http://fuss10.elemecdn.com/c/6b/29e3d29b0db63d36f7c500bca31d8jpeg.jpeg?imageView2/1/w/114/h/114"]
-    //获取canvas画布对象
-    var radius = 100;
-    var num = 15;
-    //获取绘图上下文
-    for (var i = 0; i < imgList.length; i++) {
-      var canvas = document.createElement("canvas");
-      var ctx = canvas.getContext("2d");
-      var w = canvas.width = 300;
-      var h = canvas.height = 300;
-      // 内切圆半径
-      var nr = Math.cos(Math.PI / num) * radius
-      // 图片在x、y移动距离
-      var imgX = nr * Math.cos(Math.PI / 4);
-      var imgY = nr * Math.sin(Math.PI / 4);
-
-      // 绘制多边形函数
-      drawPolygons(ctx, num, radius, i);
-      document.querySelector("div").appendChild(canvas)
-    }
-
-    // 绘制正多边形
-    function drawPolygons(ctx, num, radius, i) {
-      // 插入图片
-      var Img = new Image();
-      Img.onload = function () {
-        ctx.drawImage(Img, w / 2 - imgX, h / 2 - imgY, 2 * imgX, 2 * imgY)
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+      canvas {
+        border: 1px solid red;
+        margin: 0 auto;
       }
-      Img.src = imgList[i];
-      ctx.clearRect(0, 0, w, h);
-      ctx.save();
-      // 开始绘制六边形 
-      ctx.beginPath();
-      ctx.moveTo(w / 2, h / 2 - radius);
-      for (var i = 0; i < num; i++) {
-        angle = (360 / num) * (i + 1) * Math.PI / 180;
-        actAngle = angle - Math.PI / 2;
-        x = w / 2 + Math.cos(actAngle) * radius;
-        y = h / 2 + Math.sin(actAngle) * radius;
-        ctx.lineTo(x, y);
+    </style>
+  </head>
+
+  <body>
+    <div></div>
+
+    <script>
+      var imgList = [
+        'http://fuss10.elemecdn.com/f/96/3d608c5811bc2d902fc9ab9a5baa7jpeg.jpeg?imageView2/1/w/180/h/180',
+        'http://static.galileo.xiaojukeji.com/static/tms/seller_avatar_256px.jpg',
+        'http://fuss10.elemecdn.com/c/6b/29e3d29b0db63d36f7c500bca31d8jpeg.jpeg?imageView2/1/w/114/h/114'
+      ]
+      //获取canvas画布对象
+      var radius = 100
+      var num = 15
+      //获取绘图上下文
+      for (var i = 0; i < imgList.length; i++) {
+        var canvas = document.createElement('canvas')
+        var ctx = canvas.getContext('2d')
+        var w = (canvas.width = 300)
+        var h = (canvas.height = 300)
+        // 内切圆半径
+        var nr = Math.cos(Math.PI / num) * radius
+        // 图片在x、y移动距离
+        var imgX = nr * Math.cos(Math.PI / 4)
+        var imgY = nr * Math.sin(Math.PI / 4)
+
+        // 绘制多边形函数
+        drawPolygons(ctx, num, radius, i)
+        document.querySelector('div').appendChild(canvas)
       }
-      ctx.closePath();
-      // ctx.fill();
-      ctx.stroke();
-    }
 
-
-
-  </script>
-</body>
-
+      // 绘制正多边形
+      function drawPolygons(ctx, num, radius, i) {
+        // 插入图片
+        var Img = new Image()
+        Img.onload = function () {
+          ctx.drawImage(Img, w / 2 - imgX, h / 2 - imgY, 2 * imgX, 2 * imgY)
+        }
+        Img.src = imgList[i]
+        ctx.clearRect(0, 0, w, h)
+        ctx.save()
+        // 开始绘制六边形
+        ctx.beginPath()
+        ctx.moveTo(w / 2, h / 2 - radius)
+        for (var i = 0; i < num; i++) {
+          angle = ((360 / num) * (i + 1) * Math.PI) / 180
+          actAngle = angle - Math.PI / 2
+          x = w / 2 + Math.cos(actAngle) * radius
+          y = h / 2 + Math.sin(actAngle) * radius
+          ctx.lineTo(x, y)
+        }
+        ctx.closePath()
+        // ctx.fill();
+        ctx.stroke()
+      }
+    </script>
+  </body>
 </html>

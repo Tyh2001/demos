@@ -1,46 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>生命周期钩子</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <title>生命周期钩子</title>
-</head>
+  <body>
+    <div id="app">
+      <h1>水果列表</h1>
+      <p v-if="loding">loding...</p>
+      <ul v-if="!loding">
+        <li v-for="(fruit,index) of fruitList" :key="index">{{fruit}}</li>
+      </ul>
+    </div>
 
-<body>
-  <div id="app">
-    <h1>水果列表</h1>
-    <p v-if="loding">loding...</p>
-    <ul v-if="!loding">
-      <li v-for="(fruit,index) of fruitList" :key="index">
-        {{fruit}}
-      </li>
-    </ul>
-  </div>
-
-  <script src="./vue.js"></script>
-  <script>
-    new Vue({
-      el: "#app",
-      data() {
-        return {
-          fruitList: [],
-          loding: true,
-        }
-      },
-      // 页面优先加载created()
-      created() {
-        this.data()
-      },
-      methods: {
+    <script src="./vue.js"></script>
+    <script>
+      new Vue({
+        el: '#app',
         data() {
-          setTimeout(() => {
-            this.fruitList = ["香蕉", "苹果", "鸭梨"];
-            this.loding = false
-          }, 2000)
+          return {
+            fruitList: [],
+            loding: true
+          }
+        },
+        // 页面优先加载created()
+        created() {
+          this.data()
+        },
+        methods: {
+          data() {
+            setTimeout(() => {
+              this.fruitList = ['香蕉', '苹果', '鸭梨']
+              this.loding = false
+            }, 2000)
+          }
         }
-      }
-    })
-  </script>
-</body>
-
+      })
+    </script>
+  </body>
 </html>

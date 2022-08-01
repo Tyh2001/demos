@@ -1,34 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+      canvas {
+        border: 1px solid red;
+      }
+    </style>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <title>Document</title>
-  <style type="text/css">
-    canvas {
-      border: 1px solid red;
-    }
-  </style>
-</head>
+  <body>
+    <canvas width="600" height="400"></canvas>
 
-<body>
-  <canvas width="600" height="400"></canvas>
+    <script type="text/javascript">
+      //获取画布
+      var canvas = document.querySelector('canvas')
 
-  <script type="text/javascript">
+      //获取画布上下文对象
+      var ctx = canvas.getContext('2d')
 
-    //获取画布
-    var canvas = document.querySelector("canvas");
+      //绘图步骤： 落笔点->连线->描边
 
-    //获取画布上下文对象
-    var ctx = canvas.getContext("2d");
-
-    //绘图步骤： 落笔点->连线->描边
-
-    ctx.moveTo(100, 100);  //落笔
-    ctx.lineTo(100, 300);  //连线
-    ctx.stroke();		   //描边
-
-  </script>
-</body>
-
+      ctx.moveTo(100, 100) //落笔
+      ctx.lineTo(100, 300) //连线
+      ctx.stroke() //描边
+    </script>
+  </body>
 </html>

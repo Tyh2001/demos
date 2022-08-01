@@ -16,31 +16,31 @@
 </template>
 
 <script>
-// import home from "./components/home.vue";
-export default {};
+  // import home from "./components/home.vue";
+  export default {}
 </script>
 <style scoped>
-.header {
-  height: 40px;
-  background-color: yellowgreen;
-}
-.footer {
-  height: 100px;
-  background-color: skyblue;
-  overflow: hidden;
-}
-.box {
-  height: 200px;
-  background-color: pink;
-  overflow: hidden;
-}
-a {
-  margin-left: 20px;
-  color: aliceblue;
-  font-size: 30px;
-}
-.header .router-link-active {
-  background-color: rgb(118, 134, 87);
-  color: #000;
-}
+  .header {
+    height: 40px;
+    background-color: yellowgreen;
+  }
+  .footer {
+    height: 100px;
+    background-color: skyblue;
+    overflow: hidden;
+  }
+  .box {
+    height: 200px;
+    background-color: pink;
+    overflow: hidden;
+  }
+  a {
+    margin-left: 20px;
+    color: aliceblue;
+    font-size: 30px;
+  }
+  .header .router-link-active {
+    background-color: rgb(118, 134, 87);
+    color: #000;
+  }
 </style>

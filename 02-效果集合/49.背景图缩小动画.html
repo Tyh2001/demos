@@ -1,44 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
 
-<head>
-  <meta charset="UTF-8">
-  <title>Document</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-    }
-
-    div {
-      background-image: url("./图片/资料卡背景.jpg");
-      width: 920px;
-      height: 280px;
-      margin: auto;
-      border: 3px solid black;
-      background-size: cover;
-      background-position: center;
-      animation-name: image;
-      animation-duration: 5s;
-      animation-fill-mode: forwards;
-      background-size: auto 320px;
-    }
-
-    @keyframes image {
-      0% {
+      div {
+        background-image: url('./图片/资料卡背景.jpg');
+        width: 920px;
+        height: 280px;
+        margin: auto;
+        border: 3px solid black;
+        background-size: cover;
+        background-position: center;
+        animation-name: image;
+        animation-duration: 5s;
+        animation-fill-mode: forwards;
         background-size: auto 320px;
       }
 
-      100% {
-        background-size: auto 285px;
+      @keyframes image {
+        0% {
+          background-size: auto 320px;
+        }
+
+        100% {
+          background-size: auto 285px;
+        }
       }
-    }
-  </style>
-</head>
+    </style>
+  </head>
 
-<body>
-  <div>
-  </div>
-</body>
-
+  <body>
+    <div></div>
+  </body>
 </html>

@@ -17,7 +17,7 @@ export const DelAllArrayRepeat = () => {
  * @param { Array } arr 需要去重的数组
  * @returns 去重后的数组 如果传入的不是数组则返回空数组
  */
-export const DelArrayRepeat = arr => {
+export const DelArrayRepeat = (arr) => {
   const newArr = []
   for (let i = 0; i < arr.length; i++) {
     if (newArr.indexOf(arr[i]) === -1) {
@@ -43,7 +43,7 @@ export const setStorage = (name, data) => {
  * 获取本地存储
  * @param { String } name 本地存储名称
  */
-export const getStorage = name => {
+export const getStorage = (name) => {
   const data = window.localStorage.getItem(name)
   try {
     return JSON.parse(data)
@@ -56,7 +56,7 @@ export const getStorage = name => {
  * 删除本地存储数据
  * @param { String } name 本地存储名称
  */
-export const removeStorage = name => {
+export const removeStorage = (name) => {
   return window.localStorage.removeItem(name)
 }
 
@@ -65,7 +65,7 @@ export const removeStorage = name => {
  * @param { Array } arr 需要获取最后一个的数组
  * @returns 数组的最后一个元素
  */
-export const last = arr => {
+export const last = (arr) => {
   return arr[arr.length - 1]
 }
 
@@ -75,7 +75,7 @@ export const last = arr => {
  * @param { String } time 开始时间 格式为：'2021-01-28 00:00'
  * @returns xxx天xx小时xx分钟xx秒
  */
-export const onTime = time => {
+export const onTime = (time) => {
   const nowStamp = new Date().getTime()
   const targetStamp = new Date(time).getTime()
   const difference = nowStamp - targetStamp
@@ -94,14 +94,16 @@ export const onTime = time => {
  * @param { string } times 时间戳
  * @returns xxxx年 xx月 xx日 xx时 xx分 xx秒
  */
-export const toDates = times => {
+export const toDates = (times) => {
   const date = new Date(parseInt(times))
   const Y = date.getFullYear()
-  const M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1)
-  const D = (date.getDate() < 10 ? '0' + date.getDate() : date.getDate())
+  const M =
+    date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1
+  const D = date.getDate() < 10 ? '0' + date.getDate() : date.getDate()
   const H = date.getHours() < 10 ? '0' + date.getHours() : date.getHours()
-  const Mi = (date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes())
-  const S = (date.getSeconds() < 10 ? '0' + date.getSeconds() : date.getSeconds())
+  const Mi =
+    date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes()
+  const S = date.getSeconds() < 10 ? '0' + date.getSeconds() : date.getSeconds()
   return `${Y}年 ${M}月 ${D}日 ${H}时 ${Mi}分 ${S}秒`
 }
 
@@ -137,7 +139,7 @@ export const randomNum = (max, min) => {
  * @param { Object } obj 需要克隆的对象
  * @returns 克隆好的新对象
  */
-export const shallowClone = obj => {
+export const shallowClone = (obj) => {
   const newObj = {}
   for (const key in obj) {
     newObj[key] = obj[key]
@@ -158,14 +160,14 @@ export const shallowClone = obj => {
  */
 export const subArr = (arr1, arr2) => {
   if (arr1.length > arr2.length) {
-    return arr1.filter(item1 => {
-      return !arr2.find(item2 => {
+    return arr1.filter((item1) => {
+      return !arr2.find((item2) => {
         return item1 === item2
       })
     })
   } else {
-    return arr2.filter(item1 => {
-      return !arr1.find(item2 => {
+    return arr2.filter((item1) => {
+      return !arr1.find((item2) => {
         return item1 === item2
       })
     })
@@ -190,14 +192,12 @@ export const cutNumber = (number, no = 2) => {
  * @param { object } object 需要转换的对象
  * @returns formData 对象
  */
-export const getFormData = object => {
+export const getFormData = (object) => {
   const formData = new FormData()
-  Object.keys(object).forEach(key => {
+  Object.keys(object).forEach((key) => {
     const value = object[key]
     if (Array.isArray(value)) {
-      value.forEach((subValue, i) =>
-        formData.append(key + `[${i}]`, subValue)
-      )
+      value.forEach((subValue, i) => formData.append(key + `[${i}]`, subValue))
     } else {
       formData.append(key, object[key])
     }
@@ -210,7 +210,7 @@ export const getFormData = object => {
  * @param { array } arr 需要去重的数组
  * @returns 去重后的数组
  */
-export const uniqueArray = arr => {
+export const uniqueArray = (arr) => {
   if (!Array.isArray(arr)) {
     throw new Error('第一个参数必须是数组')
   }
@@ -224,10 +224,11 @@ export const uniqueArray = arr => {
  * 生成随机字符串
  * @param { number } length 指定位数
  * @param { string } chars 字符串指定字符
- * @returns 
+ * @returns
  */
 export const uuid = (length, chars) => {
-  chars = chars || '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+  chars =
+    chars || '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
   length = length || 8
   var result = ''
   for (var i = length; i > 0; --i)
@@ -240,7 +241,7 @@ export const uuid = (length, chars) => {
  * @param { object } obj 需要拷贝的对象
  * @returns 拷贝完成的对象
  */
-export const deepCopy = obj => {
+export const deepCopy = (obj) => {
   if (typeof obj != 'object') {
     return obj
   }
@@ -255,12 +256,9 @@ export const deepCopy = obj => {
  * @param { string } filename 文件名
  * @returns 文件的扩展名
  */
-export const getExt = filename => {
+export const getExt = (filename) => {
   if (typeof filename == 'string') {
-    return filename
-      .split('.')
-      .pop()
-      .toLowerCase()
+    return filename.split('.').pop().toLowerCase()
   } else {
     throw new Error('文件名必须是字符串类型')
   }
@@ -272,7 +270,14 @@ export const getExt = filename => {
  */
 export const equipment = () => {
   const userAgentInfo = navigator.userAgent
-  const Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod")
+  const Agents = new Array(
+    'Android',
+    'iPhone',
+    'SymbianOS',
+    'Windows Phone',
+    'iPad',
+    'iPod'
+  )
   const flag = false
   for (let v = 0; v < Agents.length; v++) {
     if (userAgentInfo.indexOf(Agents[v]) > 0) {

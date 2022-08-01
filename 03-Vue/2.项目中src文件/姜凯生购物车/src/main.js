@@ -1,12 +1,12 @@
-// 引入 vue 
-import Vue from "vue"
+// 引入 vue
+import Vue from 'vue'
 
 // 引入app组件
-import app from "./app"
+import app from './app'
 new Vue({
-  el: "#app",
+  el: '#app',
   components: {
-    app,
+    app
   },
-  render: (h) => h(app),
+  render: (h) => h(app)
 })

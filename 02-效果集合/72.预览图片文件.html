@@ -1,33 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <title>Document</title>
-</head>
+  <body>
+    <img
+      height="500px"
+      src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2853553659,1775735885&fm=26&gp=0.jpg"
+      alt=""
+    />
+    <input type="file" hidden />
 
-<body>
-  <img height="500px"
-    src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2853553659,1775735885&fm=26&gp=0.jpg" alt="">
-  <input type="file" hidden>
+    <script>
+      let input = document.querySelector('input')
+      let img = document.querySelector('img')
 
-  <script>
-    let input = document.querySelector("input");
-    let img = document.querySelector("img");
-
-    img.onclick = function () {
-      input.click()
-      input.onchange = function () {
-        // console.log(input.files[0])
-        // console.log("文本框被改变了！")
-        const blobData = window.URL.createObjectURL(input.files[0]);
-        img.setAttribute("src", blobData);
-        // 将 value 清空 解决相同文件不触发 onchange 事件问题
-        input.value = "";
+      img.onclick = function () {
+        input.click()
+        input.onchange = function () {
+          // console.log(input.files[0])
+          // console.log("文本框被改变了！")
+          const blobData = window.URL.createObjectURL(input.files[0])
+          img.setAttribute('src', blobData)
+          // 将 value 清空 解决相同文件不触发 onchange 事件问题
+          input.value = ''
+        }
       }
-    }
-
-  </script>
-</body>
-
+    </script>
+  </body>
 </html>

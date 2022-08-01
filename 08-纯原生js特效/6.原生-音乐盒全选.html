@@ -1,81 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <title>原生音乐盒全选</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-    }
-
-    .box {
-      width: 500px;
-      border: 1px solid #ccc;
-      margin: 50px auto;
-    }
-
-    .box ul {
-      list-style: none;
-    }
-  </style>
-</head>
-
-<body>
-  <div class="box">
-    <h3>音乐盒</h3>
-    <hr>
-    <ul>
-      <li><input type="checkbox">后来</li>
-      <li><input type="checkbox">感谢你曾经来过</li>
-      <li><input type="checkbox">像鱼</li>
-      <li><input type="checkbox">偏偏遇见你</li>
-      <li><input type="checkbox">勉为其难</li>
-      <li><input type="checkbox">江南月色</li>
-      <li><input type="checkbox">追光者</li>
-      <li><input type="checkbox">芊芊</li>
-    </ul>
-    <hr>
-    <button class="whole">全选</button>
-    <button class="cancelAll">取消选中</button>
-    <button class="AntiElection">反选</button>
-  </div>
-
-  <script>
-    // 封装获取class
-    function $(Class) {
-      return typeof Class === "string" ? document.querySelector(Class) : null;
-    }
-    let Input = document.querySelectorAll("input");
-
-    // 全选
-    $('.whole').onclick = function () {
-      for (let i = 0; i < Input.length; i++) {
-        Input[i].checked = true;
+  <head>
+    <meta charset="UTF-8" />
+    <title>原生音乐盒全选</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
       }
-    }
 
-    // 全部取消
-    $('.cancelAll').onclick = function () {
-      for (let i = 0; i < Input.length; i++) {
-        Input[i].checked = false;
+      .box {
+        width: 500px;
+        border: 1px solid #ccc;
+        margin: 50px auto;
       }
-    }
 
-    // 反选
-    $('.AntiElection').onclick = function () {
-      for (let i = 0; i < Input.length; i++) {
-        // 反选时 直接将checked值取为反值即可
-        Input[i].checked = !Input[i].checked;
-        // if (Input[i].checked) {
-        //     Input[i].checked = false;
-        // } else {
-        //     Input[i].checked = true;
-        // }
+      .box ul {
+        list-style: none;
       }
-    }
-  </script>
-</body>
+    </style>
+  </head>
 
+  <body>
+    <div class="box">
+      <h3>音乐盒</h3>
+      <hr />
+      <ul>
+        <li><input type="checkbox" />后来</li>
+        <li><input type="checkbox" />感谢你曾经来过</li>
+        <li><input type="checkbox" />像鱼</li>
+        <li><input type="checkbox" />偏偏遇见你</li>
+        <li><input type="checkbox" />勉为其难</li>
+        <li><input type="checkbox" />江南月色</li>
+        <li><input type="checkbox" />追光者</li>
+        <li><input type="checkbox" />芊芊</li>
+      </ul>
+      <hr />
+      <button class="whole">全选</button>
+      <button class="cancelAll">取消选中</button>
+      <button class="AntiElection">反选</button>
+    </div>
+
+    <script>
+      // 封装获取class
+      function $(Class) {
+        return typeof Class === 'string' ? document.querySelector(Class) : null
+      }
+      let Input = document.querySelectorAll('input')
+
+      // 全选
+      $('.whole').onclick = function () {
+        for (let i = 0; i < Input.length; i++) {
+          Input[i].checked = true
+        }
+      }
+
+      // 全部取消
+      $('.cancelAll').onclick = function () {
+        for (let i = 0; i < Input.length; i++) {
+          Input[i].checked = false
+        }
+      }
+
+      // 反选
+      $('.AntiElection').onclick = function () {
+        for (let i = 0; i < Input.length; i++) {
+          // 反选时 直接将checked值取为反值即可
+          Input[i].checked = !Input[i].checked
+          // if (Input[i].checked) {
+          //     Input[i].checked = false;
+          // } else {
+          //     Input[i].checked = true;
+          // }
+        }
+      }
+    </script>
+  </body>
 </html>

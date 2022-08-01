@@ -1,76 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <title>原生表单验证</title>
-  <style>
-    .error {
-      /* !important 通过这个属性 可以将class权重大于id*/
-      color: red !important;
-    }
-
-    /* 正确 */
-    .correct {
-      color: yellowgreen !important;
-    }
-  </style>
-</head>
-
-<body>
-  <span>你的成绩：</span>
-  <input type="text" placeholder="请输入你的分数">
-  <span id="result">请输入你的成绩</span>
-
-  <script>
-    // 封装获取class
-    function $(Class) {
-      return typeof Class === "string" ? document.querySelector(Class) : null;
-    }
-
-    // 封装获取id
-    function $d(id) {
-      return typeof id === "string" ? document.getElementById(id) : null;
-    }
-
-
-    // 失去焦点的时候
-    $("input").onblur = function () {
-      // 1.获取输入的内容
-      // 将字符串转换成数字
-      let value = parseFloat(this.value)
-      // console.log(value)
-      // 2.验证
-      // 验证格式是否为NaN
-      console.log(isNaN(value));
-      if (isNaN(value)) {
-        // 为真，说明不是一个数字
-        $d("result").innerHTML = "输入成绩格式错误";
-
-        // 两种给元素添加class的方法
-        // $d("result").setAttribute("class", "error");
-        $d("result").className = "error";
-        $("input").style = `border:1px solid red`;
-      } else if (value >= 0 && value <= 100) {
-        // 说明成绩输入正确
-        $d("result").innerHTML = "输入成绩正确";
-        $d("result").className = "correct";
-        $("input").style = `border:1px solid yellowgreen`;
-      } else {
-        // 当成绩超出时候
-        $d("result").innerHTML = "输入0~100的成绩";
-        $d("result").className = "error";
-        $("input").style = `border:1px solid red`;
+  <head>
+    <meta charset="UTF-8" />
+    <title>原生表单验证</title>
+    <style>
+      .error {
+        /* !important 通过这个属性 可以将class权重大于id*/
+        color: red !important;
       }
-    }
 
-    // 获取到焦点的时候
-    $("input").onfocus = function () {
-      $d("result").className = "";
-      $d("result").innerHTML = "请输入你的成绩";
-      this.value = "";
-    }
-  </script>
-</body>
+      /* 正确 */
+      .correct {
+        color: yellowgreen !important;
+      }
+    </style>
+  </head>
 
+  <body>
+    <span>你的成绩：</span>
+    <input type="text" placeholder="请输入你的分数" />
+    <span id="result">请输入你的成绩</span>
+
+    <script>
+      // 封装获取class
+      function $(Class) {
+        return typeof Class === 'string' ? document.querySelector(Class) : null
+      }
+
+      // 封装获取id
+      function $d(id) {
+        return typeof id === 'string' ? document.getElementById(id) : null
+      }
+
+      // 失去焦点的时候
+      $('input').onblur = function () {
+        // 1.获取输入的内容
+        // 将字符串转换成数字
+        let value = parseFloat(this.value)
+        // console.log(value)
+        // 2.验证
+        // 验证格式是否为NaN
+        console.log(isNaN(value))
+        if (isNaN(value)) {
+          // 为真，说明不是一个数字
+          $d('result').innerHTML = '输入成绩格式错误'
+
+          // 两种给元素添加class的方法
+          // $d("result").setAttribute("class", "error");
+          $d('result').className = 'error'
+          $('input').style = `border:1px solid red`
+        } else if (value >= 0 && value <= 100) {
+          // 说明成绩输入正确
+          $d('result').innerHTML = '输入成绩正确'
+          $d('result').className = 'correct'
+          $('input').style = `border:1px solid yellowgreen`
+        } else {
+          // 当成绩超出时候
+          $d('result').innerHTML = '输入0~100的成绩'
+          $d('result').className = 'error'
+          $('input').style = `border:1px solid red`
+        }
+      }
+
+      // 获取到焦点的时候
+      $('input').onfocus = function () {
+        $d('result').className = ''
+        $d('result').innerHTML = '请输入你的成绩'
+        this.value = ''
+      }
+    </script>
+  </body>
 </html>

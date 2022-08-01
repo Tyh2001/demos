@@ -1,35 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-</head>
+  <body>
+    <script>
+      let arr = [5, 10, 6, 11, 18, 22, 11, 31, 6, 52, 19]
+      let newArr = []
 
-<body>
-  <script>
-    let arr = [5, 10, 6, 11, 18, 22, 11, 31, 6, 52, 19];
-    let newArr = [];
-
-    for (let i = 0; i < arr.length; i++) {
-      if (!checkRepeat(arr[i], newArr)) {
-        newArr.push(arr[i])
-      }
-    }
-
-    console.log(newArr);
-
-    function checkRepeat(element, arr) {
       for (let i = 0; i < arr.length; i++) {
-        if (arr[i] === element) {
-          return true
+        if (!checkRepeat(arr[i], newArr)) {
+          newArr.push(arr[i])
         }
       }
-      return false;
-    }
-  </script>
-</body>
 
+      console.log(newArr)
+
+      function checkRepeat(element, arr) {
+        for (let i = 0; i < arr.length; i++) {
+          if (arr[i] === element) {
+            return true
+          }
+        }
+        return false
+      }
+    </script>
+  </body>
 </html>

@@ -1,16 +1,16 @@
 // 获取 class
 function $(Class) {
-  return typeof Class === "string" ? document.querySelector(Class) : null;
+  return typeof Class === 'string' ? document.querySelector(Class) : null
 }
 
 // 获取全部
 function $Al(ClassAll) {
-  return typeof ClassAll === "string"
+  return typeof ClassAll === 'string'
     ? document.querySelectorAll(ClassAll)
-    : null;
+    : null
 }
 
 // 获取id
 function $D(id) {
-  return typeof id === "string" ? document.getElementById(id) : null;
+  return typeof id === 'string' ? document.getElementById(id) : null
 }

@@ -6,7 +6,6 @@
   <button id="restart" value="重新开始">重新开始</button>
 </div>
 
-
 <style>
   @keyframes mymove {
     0% {
@@ -56,35 +55,34 @@
   }
 </style>
 
-
 <script>
   var play = document.getElementById('play'),
     pause = document.getElementById('pause'),
     restart = document.getElementById('restart'),
     text = document.getElementById('text'),
-    box = document.getElementById('box');
+    box = document.getElementById('box')
   pause.addEventListener('click', function () {
     if (box.classList.contains('play')) {
-      box.className = 'pause play box';
+      box.className = 'pause play box'
     } else {
-      box.className = 'pause restart box';
+      box.className = 'pause restart box'
     }
-    text.innerHTML = this.value;
-  });
+    text.innerHTML = this.value
+  })
   play.addEventListener('click', function () {
     if (box.classList.contains('play')) {
-      box.className = 'play box';
+      box.className = 'play box'
     } else {
-      box.className = 'restart box';
+      box.className = 'restart box'
     }
-    text.innerHTML = this.value;
-  });
+    text.innerHTML = this.value
+  })
   restart.addEventListener('click', function () {
     if (box.classList.contains('play')) {
-      box.className = 'restart box';
+      box.className = 'restart box'
     } else {
-      box.className = 'play box';
+      box.className = 'play box'
     }
-    text.innerHTML = this.value;
-  });
+    text.innerHTML = this.value
+  })
 </script>

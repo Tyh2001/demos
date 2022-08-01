@@ -12,14 +12,14 @@
 
 export const subArr = (arr1, arr2) => {
   if (arr1.length > arr2.length) {
-    return arr1.filter(item1 => {
-      return !arr2.find(item2 => {
+    return arr1.filter((item1) => {
+      return !arr2.find((item2) => {
         return item1 === item2
       })
     })
   } else {
-    return arr2.filter(item1 => {
-      return !arr1.find(item2 => {
+    return arr2.filter((item1) => {
+      return !arr1.find((item2) => {
         return item1 === item2
       })
     })

@@ -1,33 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Css3-transform回顾</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
 
-<head>
-  <meta charset="UTF-8">
-  <title>Css3-transform回顾</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-    }
+      .box {
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        /* translate位移 里面有两个参数 第一个是水平的距离 第二是垂直距离 */
+        /* transform: translate(20px,50px); */
+        /* rotate 旋转 默认顺时针旋转 里面写旋转度数 */
+        /* transform: rotate(30deg); */
+        /* scale 缩放比例 */
+        /* transform: scale(2.0); */
+        /* skew 倾斜 */
+        transform: skew(10deg);
+      }
+    </style>
+  </head>
 
-    .box {
-      width: 200px;
-      height: 200px;
-      background-color: red;
-      /* translate位移 里面有两个参数 第一个是水平的距离 第二是垂直距离 */
-      /* transform: translate(20px,50px); */
-      /* rotate 旋转 默认顺时针旋转 里面写旋转度数 */
-      /* transform: rotate(30deg); */
-      /* scale 缩放比例 */
-      /* transform: scale(2.0); */
-      /* skew 倾斜 */
-      transform: skew(10deg);
-    }
-  </style>
-</head>
-
-<body>
-  <div class="box"></div>
-</body>
-
+  <body>
+    <div class="box"></div>
+  </body>
 </html>

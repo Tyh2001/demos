@@ -1,29 +1,27 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>text-stroke-文字描边</title>
+    <style>
+      .demo {
+        color: mistyrose;
+        text-align: center;
+        font-family: Verdana;
+        font-size: 30px;
+        font-weight: bold;
+      }
 
-<head>
-  <meta charset="UTF-8">
-  <title>text-stroke-文字描边</title>
-  <style>
-    .demo {
-      color: mistyrose;
-      text-align: center;
-      font-family: Verdana;
-      font-size: 30px;
-      font-weight: bold;
-    }
+      .stroke {
+        -webkit-text-stroke: 1px greenyellow;
+      }
+    </style>
+  </head>
 
-    .stroke {
-      -webkit-text-stroke: 1px greenyellow;
-    }
-  </style>
-</head>
-
-<body>
-  <div class="demo">
-    <p>没有添加描边</p>
-    <p class="stroke">添加了字体描边</p>
-  </div>
-</body>
-
+  <body>
+    <div class="demo">
+      <p>没有添加描边</p>
+      <p class="stroke">添加了字体描边</p>
+    </div>
+  </body>
 </html>

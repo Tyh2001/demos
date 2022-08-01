@@ -1,122 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>元素哔哩哔哩冬季头图</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
 
-<head>
-  <meta charset="UTF-8">
-  <title>元素哔哩哔哩冬季头图</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-    }
+      .box {
+        height: 160px;
+        position: relative;
+        overflow: hidden;
+      }
 
-    .box {
-      height: 160px;
-      position: relative;
-      overflow: hidden;
-    }
+      .view,
+      .tree {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        left: 0px;
+        bottom: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
 
-    .view,
-    .tree {
-      position: absolute;
-      top: 0px;
-      right: 0px;
-      left: 0px;
-      bottom: 0px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+      img {
+        position: absolute;
+        display: block;
+        width: 120%;
+        height: 100%;
+        object-fit: cover;
+      }
 
-    img {
-      position: absolute;
-      display: block;
-      width: 120%;
-      height: 100%;
-      object-fit: cover;
-    }
+      /* 将早上设置为最上方 */
+      .morning {
+        z-index: 20;
+        /* opacity: calc(var(--percentage)); */
+      }
 
-    /* 将早上设置为最上方 */
-    .morning {
-      z-index: 20;
-      /* opacity: calc(var(--percentage)); */
-    }
+      .afternoon {
+        z-index: 10;
+      }
 
-    .afternoon {
-      z-index: 10;
-    }
+      .evening {
+        z-index: 0;
+      }
 
-    .evening {
-      z-index: 0;
-    }
+      .view {
+        transform: translateX(calc(var(--percentage) * 100px));
+      }
 
-    .view {
-      transform: translateX(calc(var(--percentage)*100px));
-    }
+      .tree {
+        transform: translateX(calc(var(--percentage) * 50px));
+        /* filter: blur(3px); */
+      }
+    </style>
+  </head>
 
-    .tree {
-      transform: translateX(calc(var(--percentage)*50px));
-      /* filter: blur(3px); */
-    }
-  </style>
-</head>
+  <body>
+    <div class="box">
+      <div class="view">
+        <!-- 早中晚 背景图 -->
+        <img
+          class="morning"
+          src="./图片/哔哩哔哩头图/哔哩哔哩冬季头图早上.jpg"
+          alt=""
+        />
+        <img
+          class="afternoon"
+          src="./图片/哔哩哔哩头图/哔哩哔哩冬季头图下午.jpg"
+          alt=""
+        />
+        <img
+          class="evening"
+          src="./图片/哔哩哔哩头图/哔哩哔哩冬季头图晚上.jpg"
+          alt=""
+        />
 
-<body>
-  <div class="box">
-    <div class="view">
-      <!-- 早中晚 背景图 -->
-      <img class="morning" src="./图片/哔哩哔哩头图/哔哩哔哩冬季头图早上.jpg" alt="">
-      <img class="afternoon" src="./图片/哔哩哔哩头图/哔哩哔哩冬季头图下午.jpg" alt="">
-      <img class="evening" src="./图片/哔哩哔哩头图/哔哩哔哩冬季头图晚上.jpg" alt="">
+        <!-- 积雪 -->
+        <!-- <img src="./图片/哔哩哔哩头图/哔哩哔哩积雪.png" alt=""> -->
+      </div>
 
-      <!-- 积雪 -->
-      <!-- <img src="./图片/哔哩哔哩头图/哔哩哔哩积雪.png" alt=""> -->
+      <div class="tree">
+        <!-- 早中晚 树的变化 -->
+        <img
+          class="morning"
+          src="./图片/哔哩哔哩头图/哔哩哔哩头图树的变化 (1).png"
+          alt=""
+        />
+        <img
+          class="afternoon"
+          src="./图片/哔哩哔哩头图/哔哩哔哩头图树的变化 (2).png"
+          alt=""
+        />
+        <img
+          class="evening"
+          src="./图片/哔哩哔哩头图/哔哩哔哩头图树的变化 (3).png"
+          alt=""
+        />
+      </div>
     </div>
 
-    <div class="tree">
-      <!-- 早中晚 树的变化 -->
-      <img class="morning" src="./图片/哔哩哔哩头图/哔哩哔哩头图树的变化 (1).png" alt="">
-      <img class="afternoon" src="./图片/哔哩哔哩头图/哔哩哔哩头图树的变化 (2).png" alt="">
-      <img class="evening" src="./图片/哔哩哔哩头图/哔哩哔哩头图树的变化 (3).png" alt="">
-    </div>
-  </div>
+    <script>
+      let box = document.querySelector('.box')
+      let view = document.querySelector('.view') // 早中晚背景
+      let tree = document.querySelector('.tree') // 树
 
-  <script>
-    let box = document.querySelector(".box");
-    let view = document.querySelector(".view"); // 早中晚背景
-    let tree = document.querySelector(".tree"); // 树
+      let morning = document.querySelectorAll('.morning')
+      let afternoon = document.querySelectorAll('.afternoon')
+      let evening = document.querySelectorAll('.evening')
 
-    let morning = document.querySelectorAll(".morning");
-    let afternoon = document.querySelectorAll(".afternoon");
-    let evening = document.querySelectorAll(".evening");
+      box.addEventListener('mousemove', (e) => {
+        // 鼠标移动到最左边是0 移动到最右边是1
+        let percentage = e.clientX / window.outerWidth
+        // console.log(percentage)
 
-    box.addEventListener("mousemove", (e) => {
-      // 鼠标移动到最左边是0 移动到最右边是1
-      let percentage = e.clientX / window.outerWidth;
-      // console.log(percentage)
+        // view.style.translateX = percentage * 100;
+        // tree.style.translateX = percentage * 50;
 
-      // view.style.translateX = percentage * 100;
-      // tree.style.translateX = percentage * 50;
+        view.style = `translateX(${percentage})`
 
-      view.style = `translateX(${percentage})`
-
-      // css 的变量名是 --percentage 就可以在 css 中使用这个动态的值了
-      // 所以通过调整透明度就可以实现效果了
-      box.style.setProperty("--percentage", percentage)
-      if (percentage <= 0.33) {
-        // console.log("早上")
-        console.log(1 - percentage)
-        // morning[0].style.opacity = "1";
-
-      }
-      if (percentage >= 0.33 && percentage <= 0.66) {
-        // console.log("中午")
-      }
-      if (percentage >= 0.66 && percentage <= 0.99) {
-        // console.log("晚上")
-      }
-    })
-  </script>
-</body>
-
+        // css 的变量名是 --percentage 就可以在 css 中使用这个动态的值了
+        // 所以通过调整透明度就可以实现效果了
+        box.style.setProperty('--percentage', percentage)
+        if (percentage <= 0.33) {
+          // console.log("早上")
+          console.log(1 - percentage)
+          // morning[0].style.opacity = "1";
+        }
+        if (percentage >= 0.33 && percentage <= 0.66) {
+          // console.log("中午")
+        }
+        if (percentage >= 0.66 && percentage <= 0.99) {
+          // console.log("晚上")
+        }
+      })
+    </script>
+  </body>
 </html>

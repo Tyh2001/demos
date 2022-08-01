@@ -1,42 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>双向绑定</title>
+  </head>
+  <style></style>
 
-<head>
-  <meta charset="UTF-8">
-  <title>双向绑定</title>
-</head>
-<style>
-
-</style>
-
-<body>
-  <div id="app">
-    <!-- v-model作用于表单控件input 改变表单的内容会同时改变
+  <body>
+    <div id="app">
+      <!-- v-model作用于表单控件input 改变表单的内容会同时改变
         data数据中对应的内容，从而实现dom元素的渲染 -->
-    <input type="text" v-model="a">
-    <button v-on:click="b">添加</button>
-    <h2>水果列表</h2>
-    <ul>
-      <li v-for="guo in c">{{guo}}</li>
-    </ul>
-  </div>
+      <input type="text" v-model="a" />
+      <button v-on:click="b">添加</button>
+      <h2>水果列表</h2>
+      <ul>
+        <li v-for="guo in c">{{guo}}</li>
+      </ul>
+    </div>
 
-  <script src="./vue.js"></script>
-  <script>
-    new Vue({
-      el: "#app",
-      data: {
-        a: "",
-        c: ["香蕉", "南瓜"]
-      },
-      methods: {
-        b() {
-          this.c.push(this.a)
-          this.a = ""
+    <script src="./vue.js"></script>
+    <script>
+      new Vue({
+        el: '#app',
+        data: {
+          a: '',
+          c: ['香蕉', '南瓜']
+        },
+        methods: {
+          b() {
+            this.c.push(this.a)
+            this.a = ''
+          }
         }
-      }
-    })
-  </script>
-</body>
-
+      })
+    </script>
+  </body>
 </html>

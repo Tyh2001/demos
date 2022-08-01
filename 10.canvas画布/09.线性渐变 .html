@@ -1,42 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+      canvas {
+        border: 1px solid red;
+      }
+    </style>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <title>Document</title>
-  <style type="text/css">
-    canvas {
-      border: 1px solid red;
-    }
-  </style>
-</head>
+  <body>
+    <canvas width="600" height="400"></canvas>
+    <script type="text/javascript">
+      //获取canvas画布对象
+      var canvas = document.querySelector('canvas')
+      //获取绘图上下文
+      var ctx = canvas.getContext('2d')
 
-<body>
-  <canvas width="600" height="400"></canvas>
-  <script type="text/javascript">
-    //获取canvas画布对象
-    var canvas = document.querySelector("canvas");
-    //获取绘图上下文
-    var ctx = canvas.getContext("2d");
+      //创建渐变方案
 
-    //创建渐变方案
+      var lgd = ctx.createLinearGradient(100, 50, 300, 50)
 
-    var lgd = ctx.createLinearGradient(100, 50, 300, 50);
+      //添加开始颜色
+      lgd.addColorStop(0, 'red')
 
-    //添加开始颜色
-    lgd.addColorStop(0, "red");
+      //添加结束颜色
+      lgd.addColorStop(1, 'blue')
 
-    //添加结束颜色
-    lgd.addColorStop(1, "blue");
+      ctx.strokeStyle = lgd
 
-    ctx.strokeStyle = lgd;
-
-    ctx.lineWidth = "50";
-    ctx.moveTo(100, 50);
-    ctx.lineTo(300, 50);
-    ctx.stroke();
-
-  </script>
-</body>
-
+      ctx.lineWidth = '50'
+      ctx.moveTo(100, 50)
+      ctx.lineTo(300, 50)
+      ctx.stroke()
+    </script>
+  </body>
 </html>

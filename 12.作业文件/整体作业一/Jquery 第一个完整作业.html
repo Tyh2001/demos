@@ -1,198 +1,216 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <link type="text/css" href="jquery.css" rel="stylesheet" />
+    <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+    <script>
+      $(function () {
+        $('.top-ul li').hover(
+          function () {
+            $(this).stop().animate({ marginTop: '-20px' })
+          },
+          function () {
+            $(this).stop().animate({ marginTop: '0px' })
+          }
+        )
+        $('.zu').hide()
+        $('.r-t').hover(
+          function () {
+            $('.zu').show()
+          },
+          function () {}
+        )
+        $('.zu').hover(
+          function () {},
+          function () {
+            $('.zu').hide()
+          }
+        )
+        //            <!--头部完-->
+        $('.main-ul li:eq(1)').addClass('img')
+        $('.main-ul li').click(function () {
+          i = $(this).index()
+          $(this).addClass('img')
+          $(this).siblings().removeClass('img')
+          $('.big').animate({ marginLeft: i * -1280 })
+          //                轮播结束
+        })
+        $('.center li').hover(
+          function () {
+            $(this).children().eq(1).stop().animate({ top: '0' })
+          },
+          function () {
+            $(this).children().eq(1).stop().animate({ top: '322px' })
+          }
+        )
 
-<head>
-  <meta charset="UTF-8">
-  <title>Title</title>
-  <link type="text/css" href="jquery.css" rel="stylesheet">
-  <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
-  <script>
-    $(function () {
-      $(".top-ul li").hover(function () {
-        $(this).stop().animate({ "marginTop": "-20px" })
-      }, function () {
-        $(this).stop().animate({ "marginTop": "0px" })
+        $('.footer li').hover(
+          function () {
+            $(this).children().eq(1).stop().animate({ opacity: '0.5' }, 500)
+          },
+          function () {
+            $(this).children().eq(1).stop().animate({ opacity: '0' }, 500)
+          }
+        )
+        $('.footer div').hover(
+          function () {
+            $(this).children().eq(1).stop().animate({ opacity: '0.5' }, 500)
+          },
+          function () {
+            $(this).children().eq(1).stop().animate({ opacity: '0' }, 500)
+          }
+        )
       })
-      $(".zu").hide()
-      $(".r-t").hover(function () {
-        $(".zu").show()
-      }, function () {
+    </script>
+  </head>
 
-      })
-      $(".zu").hover(function () {
-
-      }, function () {
-        $(".zu").hide()
-      })
-      //            <!--头部完-->
-      $(".main-ul li:eq(1)").addClass("img");
-      $(".main-ul li").click(function () {
-        i = $(this).index()
-        $(this).addClass("img")
-        $(this).siblings().removeClass("img")
-        $(".big").animate({ "marginLeft": i * -1280 })
-        //                轮播结束
-      })
-      $(".center li").hover(function () {
-        $(this).children().eq(1).stop().animate({ "top": "0" })
-      }, function () {
-        $(this).children().eq(1).stop().animate({ "top": "322px" })
-      })
-
-      $(".footer li").hover(function () {
-        $(this).children().eq(1).stop().animate({ "opacity": "0.5" }, 500)
-      }, function () {
-        $(this).children().eq(1).stop().animate({ "opacity": "0" }, 500)
-      })
-      $(".footer div").hover(function () {
-        $(this).children().eq(1).stop().animate({ "opacity": "0.5" }, 500)
-      }, function () {
-        $(this).children().eq(1).stop().animate({ "opacity": "0" }, 500)
-      })
-    })
-  </script>
-</head>
-
-<body>
-  <div class="zong">
-    <div id="top">
-      <ul class="top-ul">
-        <li>
-          <p>定制</p>
-          <a href="#">定制</a>
-        </li>
-        <li>
-          <p>市集</p>
-          <a href="#">市集</a>
-        </li>
-        <li>
-          <p>新品</p>
-          <a href="#">新品</a>
-        </li>
-        <li>
-          <p>热卖</p>
-          <a href="#">热卖</a>
-        </li>
-        <li>
-          <p>闪购</p>
-          <a href="#">闪购</a>
-        </li>
-      </ul>
-      <img src="images/top-img_03.jpg" class="ul-img-1">
-      <div class="r-t">
-        <img src="images/top-top_06.gif">
-      </div>
-
-
-      <div class="zu">
-        <img src="images/page_flip.png" class="img_left">
-        <img src="images/subscribe.png" class="img-r">
-      </div>
-    </div>
-    <div class="main">
-      <div class="ct">
-        <ul class="main-ul">
+  <body>
+    <div class="zong">
+      <div id="top">
+        <ul class="top-ul">
           <li>
-            <img src="images/bullets.png">
+            <p>定制</p>
+            <a href="#">定制</a>
           </li>
           <li>
-            <img src="images/bullets.png">
+            <p>市集</p>
+            <a href="#">市集</a>
           </li>
           <li>
-            <img src="images/bullets.png">
+            <p>新品</p>
+            <a href="#">新品</a>
+          </li>
+          <li>
+            <p>热卖</p>
+            <a href="#">热卖</a>
+          </li>
+          <li>
+            <p>闪购</p>
+            <a href="#">闪购</a>
           </li>
         </ul>
-        <div class="big">
-          <img src="images/toystory.jpg">
-          <img src="images/walle.jpg">
-          <img src="images/up.jpg">
+        <img src="images/top-img_03.jpg" class="ul-img-1" />
+        <div class="r-t">
+          <img src="images/top-top_06.gif" />
+        </div>
+
+        <div class="zu">
+          <img src="images/page_flip.png" class="img_left" />
+          <img src="images/subscribe.png" class="img-r" />
         </div>
       </div>
-    </div>
-    <div class="center">
-      <h2>当日精选</h2>
-      <ul>
-        <li>
-          <img src="images/images/pc1_03.gif">
-          <div>
-            我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱
-            我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱
-            我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱
-            我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱
+      <div class="main">
+        <div class="ct">
+          <ul class="main-ul">
+            <li>
+              <img src="images/bullets.png" />
+            </li>
+            <li>
+              <img src="images/bullets.png" />
+            </li>
+            <li>
+              <img src="images/bullets.png" />
+            </li>
+          </ul>
+          <div class="big">
+            <img src="images/toystory.jpg" />
+            <img src="images/walle.jpg" />
+            <img src="images/up.jpg" />
           </div>
-        </li>
-        <li>
-          <img src="images/images/pc2_03.gif">
-          <div>
-            我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱
-            我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱
-            我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱
-            我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱
-          </div>
-        </li>
-        <li>
-          <img src="images/images/pc3_03.gif">
-          <div>
-            我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱
-            我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱
-            我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱
-            我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱
-          </div>
-        </li>
-        <li>
-          <img src="images/images/pc4_03.gif">
-          <div>
-            我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱
-            我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱
-            我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱
-            我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱
-          </div>
-        </li>
-      </ul>
-    </div>
-    <div class="footer">
-      <h2>创意画报</h2>
-      <div class="f-div">
-        <img src="images/images/pc9_03.gif">
-        <a href="#">
-          忽闪忽现 忽闪忽现 忽闪忽现 忽闪忽现 忽闪忽现
-          忽闪忽现 忽闪忽现 忽闪忽现 忽闪忽现
-        </a>
+        </div>
       </div>
-      <ul class="f-ul">
-        <li>
-          <img src="images/images/pc5_03.gif">
+      <div class="center">
+        <h2>当日精选</h2>
+        <ul>
+          <li>
+            <img src="images/images/pc1_03.gif" />
+            <div>
+              我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱
+              我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱
+              我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱
+              我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱
+              我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱
+              我是面纱 我是面纱 我是面纱 我是面纱 我是面纱
+            </div>
+          </li>
+          <li>
+            <img src="images/images/pc2_03.gif" />
+            <div>
+              我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱
+              我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱
+              我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱
+              我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱
+              我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱
+              我是面纱 我是面纱 我是面纱 我是面纱 我是面纱
+            </div>
+          </li>
+          <li>
+            <img src="images/images/pc3_03.gif" />
+            <div>
+              我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱
+              我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱
+              我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱
+              我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱
+              我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱
+              我是面纱 我是面纱 我是面纱 我是面纱 我是面纱
+            </div>
+          </li>
+          <li>
+            <img src="images/images/pc4_03.gif" />
+            <div>
+              我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱
+              我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱
+              我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱
+              我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱
+              我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱 我是面纱
+              我是面纱 我是面纱 我是面纱 我是面纱 我是面纱
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="footer">
+        <h2>创意画报</h2>
+        <div class="f-div">
+          <img src="images/images/pc9_03.gif" />
           <a href="#">
-            忽闪忽现忽闪忽现忽闪忽现忽闪忽现忽闪忽现
-            忽闪忽现 忽闪忽现 忽闪忽现 忽闪忽现
+            忽闪忽现 忽闪忽现 忽闪忽现 忽闪忽现 忽闪忽现 忽闪忽现 忽闪忽现
+            忽闪忽现 忽闪忽现
           </a>
-        </li>
-        <li>
-          <img src="images/images/pc6_03.gif">
-          <a href="#">
-            忽闪忽现 忽闪忽现 忽闪忽现 忽闪忽现 忽闪忽现
-            忽闪忽现 忽闪忽现 忽闪忽现 忽闪忽现
-          </a>
-        </li>
-        <li>
-          <img src="images/images/pc7_03.gif">
-          <a href="#">
-            忽闪忽现 忽闪忽现 忽闪忽现 忽闪忽现 忽闪忽现
-            忽闪忽现 忽闪忽现 忽闪忽现 忽闪忽现
-          </a>
-        </li>
-        <li>
-          <img src="images/images/pc8_03.gif">
-          <a href="#">
-            忽闪忽现 忽闪忽现 忽闪忽现 忽闪忽现 忽闪忽现
-            忽闪忽现 忽闪忽现 忽闪忽现 忽闪忽现
-          </a>
-        </li>
-      </ul>
-      <div class="clearfix"></div>
+        </div>
+        <ul class="f-ul">
+          <li>
+            <img src="images/images/pc5_03.gif" />
+            <a href="#">
+              忽闪忽现忽闪忽现忽闪忽现忽闪忽现忽闪忽现 忽闪忽现 忽闪忽现
+              忽闪忽现 忽闪忽现
+            </a>
+          </li>
+          <li>
+            <img src="images/images/pc6_03.gif" />
+            <a href="#">
+              忽闪忽现 忽闪忽现 忽闪忽现 忽闪忽现 忽闪忽现 忽闪忽现 忽闪忽现
+              忽闪忽现 忽闪忽现
+            </a>
+          </li>
+          <li>
+            <img src="images/images/pc7_03.gif" />
+            <a href="#">
+              忽闪忽现 忽闪忽现 忽闪忽现 忽闪忽现 忽闪忽现 忽闪忽现 忽闪忽现
+              忽闪忽现 忽闪忽现
+            </a>
+          </li>
+          <li>
+            <img src="images/images/pc8_03.gif" />
+            <a href="#">
+              忽闪忽现 忽闪忽现 忽闪忽现 忽闪忽现 忽闪忽现 忽闪忽现 忽闪忽现
+              忽闪忽现 忽闪忽现
+            </a>
+          </li>
+        </ul>
+        <div class="clearfix"></div>
+      </div>
     </div>
-  </div>
-
-</body>
-
+  </body>
 </html>

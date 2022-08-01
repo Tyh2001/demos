@@ -1,165 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <title>原生九宫格布局</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-    }
-
-    button {
-      width: 100px;
-    }
-
-    #box .item {
-      width: 300px;
-      border: 2px solid rgb(1, 179, 250);
-      margin-top: 10px;
-    }
-
-    #box .item img {
-      width: 300px;
-    }
-  </style>
-</head>
-
-<body>
-  <div>
-    <button>3列</button>
-    <button>4列</button>
-    <button>5列</button>
-  </div>
-  <div id="box">
-    <div class="item">
-      <img src="./图片/九宫格素材/我凭本事单身 (1).jpg" alt="">
-      <p class="title">我凭本事单身剧照1</p>
-    </div>
-    <div class="item">
-      <img src="./图片/九宫格素材/我凭本事单身 (2).jpg" alt="">
-      <p class="title">我凭本事单身剧照2</p>
-    </div>
-    <div class="item">
-      <img src="./图片/九宫格素材/我凭本事单身 (3).jpg" alt="">
-      <p class="title">我凭本事单身剧照3</p>
-    </div>
-    <div class="item">
-      <img src="./图片/九宫格素材/我凭本事单身 (4).jpg" alt="">
-      <p class="title">我凭本事单身剧照4</p>
-    </div>
-    <div class="item">
-      <img src="./图片/九宫格素材/我凭本事单身 (5).jpg" alt="">
-      <p class="title">我凭本事单身剧照5</p>
-    </div>
-    <div class="item">
-      <img src="./图片/九宫格素材/我凭本事单身 (6).jpg" alt="">
-      <p class="title">我凭本事单身剧照6</p>
-    </div>
-    <div class="item">
-      <img src="./图片/九宫格素材/我凭本事单身 (7).jpg" alt="">
-      <p class="title">我凭本事单身剧照7</p>
-    </div>
-    <div class="item">
-      <img src="./图片/九宫格素材/我凭本事单身 (8).jpg" alt="">
-      <p class="title">我凭本事单身剧照8</p>
-    </div>
-    <div class="item">
-      <img src="./图片/九宫格素材/我凭本事单身 (9).jpg" alt="">
-      <p class="title">我凭本事单身剧照9</p>
-    </div>
-    <div class="item">
-      <img src="./图片/九宫格素材/我凭本事单身 (10).jpg" alt="">
-      <p class="title">我凭本事单身剧照10</p>
-    </div>
-    <div class="item">
-      <img src="./图片/九宫格素材/我凭本事单身 (11).jpg" alt="">
-      <p class="title">我凭本事单身剧照11</p>
-    </div>
-    <div class="item">
-      <img src="./图片/九宫格素材/我凭本事单身 (12).jpg" alt="">
-      <p class="title">我凭本事单身剧照12</p>
-    </div>
-    <div class="item">
-      <img src="./图片/九宫格素材/我凭本事单身 (13).jpg" alt="">
-      <p class="title">我凭本事单身剧照13</p>
-    </div>
-    <div class="item">
-      <img src="./图片/九宫格素材/我凭本事单身 (14).jpg" alt="">
-      <p class="title">我凭本事单身剧照14</p>
-    </div>
-    <div class="item">
-      <img src="./图片/九宫格素材/我凭本事单身 (15).jpg" alt="">
-      <p class="title">我凭本事单身剧照15</p>
-    </div>
-    <div class="item">
-      <img src="./图片/九宫格素材/我凭本事单身 (16).jpg" alt="">
-      <p class="title">我凭本事单身剧照16</p>
-    </div>
-    <div class="item">
-      <img src="./图片/九宫格素材/我凭本事单身 (17).jpg" alt="">
-      <p class="title">我凭本事单身剧照17</p>
-    </div>
-    <div class="item">
-      <img src="./图片/九宫格素材/我凭本事单身 (18).jpg" alt="">
-      <p class="title">我凭本事单身剧照18</p>
-    </div>
-    <div class="item">
-      <img src="./图片/九宫格素材/我凭本事单身 (19).jpg" alt="">
-      <p class="title">我凭本事单身剧照19</p>
-    </div>
-    <div class="item">
-      <img src="./图片/九宫格素材/我凭本事单身 (20).jpg" alt="">
-      <p class="title">我凭本事单身剧照20</p>
-    </div>
-  </div>
-
-  <script>
-    let btn = document.querySelectorAll("button");
-    let items = document.querySelectorAll(".item");
-    let Box = document.getElementById("box");
-    // 封装函数
-    function Tyh_flex(column) {
-      for (let i = 0; i < items.length; i++) {
-        items[i].style.float = "left";
-        items[i].parentNode.style.width = (column * items[0].offsetWidth) + "px";
+  <head>
+    <meta charset="UTF-8" />
+    <title>原生九宫格布局</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
       }
-    }
 
-    // 三列
-    btn[0].onclick = function () {
-      Tyh_flex(3);
-    }
+      button {
+        width: 100px;
+      }
 
-    // 四列
-    btn[1].onclick = function () {
-      Tyh_flex(4);
-    }
+      #box .item {
+        width: 300px;
+        border: 2px solid rgb(1, 179, 250);
+        margin-top: 10px;
+      }
 
-    // 五列
-    btn[2].onclick = function () {
-      Tyh_flex(5);
-    }
+      #box .item img {
+        width: 300px;
+      }
+    </style>
+  </head>
 
+  <body>
+    <div>
+      <button>3列</button>
+      <button>4列</button>
+      <button>5列</button>
+    </div>
+    <div id="box">
+      <div class="item">
+        <img src="./图片/九宫格素材/我凭本事单身 (1).jpg" alt="" />
+        <p class="title">我凭本事单身剧照1</p>
+      </div>
+      <div class="item">
+        <img src="./图片/九宫格素材/我凭本事单身 (2).jpg" alt="" />
+        <p class="title">我凭本事单身剧照2</p>
+      </div>
+      <div class="item">
+        <img src="./图片/九宫格素材/我凭本事单身 (3).jpg" alt="" />
+        <p class="title">我凭本事单身剧照3</p>
+      </div>
+      <div class="item">
+        <img src="./图片/九宫格素材/我凭本事单身 (4).jpg" alt="" />
+        <p class="title">我凭本事单身剧照4</p>
+      </div>
+      <div class="item">
+        <img src="./图片/九宫格素材/我凭本事单身 (5).jpg" alt="" />
+        <p class="title">我凭本事单身剧照5</p>
+      </div>
+      <div class="item">
+        <img src="./图片/九宫格素材/我凭本事单身 (6).jpg" alt="" />
+        <p class="title">我凭本事单身剧照6</p>
+      </div>
+      <div class="item">
+        <img src="./图片/九宫格素材/我凭本事单身 (7).jpg" alt="" />
+        <p class="title">我凭本事单身剧照7</p>
+      </div>
+      <div class="item">
+        <img src="./图片/九宫格素材/我凭本事单身 (8).jpg" alt="" />
+        <p class="title">我凭本事单身剧照8</p>
+      </div>
+      <div class="item">
+        <img src="./图片/九宫格素材/我凭本事单身 (9).jpg" alt="" />
+        <p class="title">我凭本事单身剧照9</p>
+      </div>
+      <div class="item">
+        <img src="./图片/九宫格素材/我凭本事单身 (10).jpg" alt="" />
+        <p class="title">我凭本事单身剧照10</p>
+      </div>
+      <div class="item">
+        <img src="./图片/九宫格素材/我凭本事单身 (11).jpg" alt="" />
+        <p class="title">我凭本事单身剧照11</p>
+      </div>
+      <div class="item">
+        <img src="./图片/九宫格素材/我凭本事单身 (12).jpg" alt="" />
+        <p class="title">我凭本事单身剧照12</p>
+      </div>
+      <div class="item">
+        <img src="./图片/九宫格素材/我凭本事单身 (13).jpg" alt="" />
+        <p class="title">我凭本事单身剧照13</p>
+      </div>
+      <div class="item">
+        <img src="./图片/九宫格素材/我凭本事单身 (14).jpg" alt="" />
+        <p class="title">我凭本事单身剧照14</p>
+      </div>
+      <div class="item">
+        <img src="./图片/九宫格素材/我凭本事单身 (15).jpg" alt="" />
+        <p class="title">我凭本事单身剧照15</p>
+      </div>
+      <div class="item">
+        <img src="./图片/九宫格素材/我凭本事单身 (16).jpg" alt="" />
+        <p class="title">我凭本事单身剧照16</p>
+      </div>
+      <div class="item">
+        <img src="./图片/九宫格素材/我凭本事单身 (17).jpg" alt="" />
+        <p class="title">我凭本事单身剧照17</p>
+      </div>
+      <div class="item">
+        <img src="./图片/九宫格素材/我凭本事单身 (18).jpg" alt="" />
+        <p class="title">我凭本事单身剧照18</p>
+      </div>
+      <div class="item">
+        <img src="./图片/九宫格素材/我凭本事单身 (19).jpg" alt="" />
+        <p class="title">我凭本事单身剧照19</p>
+      </div>
+      <div class="item">
+        <img src="./图片/九宫格素材/我凭本事单身 (20).jpg" alt="" />
+        <p class="title">我凭本事单身剧照20</p>
+      </div>
+    </div>
 
+    <script>
+      let btn = document.querySelectorAll('button')
+      let items = document.querySelectorAll('.item')
+      let Box = document.getElementById('box')
+      // 封装函数
+      function Tyh_flex(column) {
+        for (let i = 0; i < items.length; i++) {
+          items[i].style.float = 'left'
+          items[i].parentNode.style.width = column * items[0].offsetWidth + 'px'
+        }
+      }
 
+      // 三列
+      btn[0].onclick = function () {
+        Tyh_flex(3)
+      }
 
+      // 四列
+      btn[1].onclick = function () {
+        Tyh_flex(4)
+      }
 
+      // 五列
+      btn[2].onclick = function () {
+        Tyh_flex(5)
+      }
 
-
-        // btn[0].onclick = function () {
-        //     // let itemW = 304;
-        //     for (let i = 0; i < items.length; i++) {
-        //         items[i].style.float = "left";
-        //         // items[i].parentNode.style.width = (3 * itemW) + "px";
-        //         // 下面代码避免宽度规定死 可以获取一个 灵活的宽度
-        //         // offsetWidth
-        //         items[i].parentNode.style.width = (3 * items[i].offsetWidth) + "px";
-        //     }
-        //     // Box.style.width = "912px";
-        // }
-  </script>
-</body>
-
+      // btn[0].onclick = function () {
+      //     // let itemW = 304;
+      //     for (let i = 0; i < items.length; i++) {
+      //         items[i].style.float = "left";
+      //         // items[i].parentNode.style.width = (3 * itemW) + "px";
+      //         // 下面代码避免宽度规定死 可以获取一个 灵活的宽度
+      //         // offsetWidth
+      //         items[i].parentNode.style.width = (3 * items[i].offsetWidth) + "px";
+      //     }
+      //     // Box.style.width = "912px";
+      // }
+    </script>
+  </body>
 </html>

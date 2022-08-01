@@ -1,100 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+      * {
+        margin: 0;
+        padding: 0;
+      }
 
-<head>
-  <meta charset="UTF-8">
-  <title>Document</title>
-  <style type="text/css">
-    * {
-      margin: 0;
-      padding: 0
-    }
+      ul {
+        list-style: none;
+      }
 
-    ul {
-      list-style: none;
-    }
+      a {
+        text-decoration: none;
+      }
 
-    a {
-      text-decoration: none;
-    }
+      #menu {
+        width: 500px;
+        margin: 10px auto;
+      }
 
-    #menu {
+      #menu > li {
+        float: left;
+      }
 
-      width: 500px;
-      margin: 10px auto;
-    }
+      #menu a {
+        display: block;
+        width: 80px;
+        height: 30px;
+        border: 1px red solid;
+        text-align: center;
+        line-height: 30px;
+        background: yellow;
+        color: blue;
+      }
 
-    #menu>li {
-      float: left;
-    }
+      #menu .submenu a {
+        background: pink;
+        color: white;
+      }
 
-    #menu a {
-      display: block;
-      width: 80px;
-      height: 30px;
-      border: 1px red solid;
-      text-align: center;
-      ;
-      line-height: 30px;
-      background: yellow;
-      color: blue;
-    }
+      .submenu {
+        display: none;
+      }
+    </style>
+  </head>
 
-    #menu .submenu a {
+  <body>
+    <ul id="menu">
+      <li>
+        <a href="">新闻</a>
+        <ul class="submenu">
+          <li><a href="">社会</a></li>
+          <li><a href="">军事</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="">视频</a>
+        <ul class="submenu">
+          <li><a href="">搞笑</a></li>
+          <li><a href="">游戏</a></li>
+          <li><a href="">娱乐</a></li>
+        </ul>
+      </li>
+      <li><a href="">购物</a></li>
+    </ul>
 
-      background: pink;
-      color: white;
-    }
+    <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+      $('#menu>li').hover(
+        function () {
+          //悬停
 
-    .submenu {
-      display: none;
-    }
-  </style>
-</head>
+          $(this).find('.submenu').slideDown(300)
+        },
+        function () {
+          //离开
 
-<body>
-
-  <ul id="menu">
-    <li>
-      <a href="">新闻</a>
-      <ul class="submenu">
-        <li><a href="">社会</a></li>
-        <li><a href="">军事</a></li>
-
-      </ul>
-    </li>
-    <li>
-
-      <a href="">视频</a>
-      <ul class="submenu">
-        <li><a href="">搞笑</a></li>
-        <li><a href="">游戏</a></li>
-        <li><a href="">娱乐</a></li>
-      </ul>
-    </li>
-    <li><a href="">购物</a></li>
-  </ul>
-
-
-  <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
-  <script type="text/javascript">
-
-    $("#menu>li").hover(function () {
-      //悬停
-
-      $(this).find(".submenu").slideDown(300);
-
-    }, function () {
-      //离开
-
-      $(this).find(".submenu").slideUp(300);
-
-    })
-
-
-  </script>
-
-
-</body>
-
+          $(this).find('.submenu').slideUp(300)
+        }
+      )
+    </script>
+  </body>
 </html>

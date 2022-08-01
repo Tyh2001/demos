@@ -1,92 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>表单第二遍 练习双向绑定</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
 
-<head>
-  <meta charset="UTF-8">
-  <title>表单第二遍 练习双向绑定</title>
-</head>
-<style>
-  * {
-    margin: 0;
-    padding: 0;
-  }
+    table {
+      width: 400px;
+      border-spacing: 0;
+      /* 解决单元格边框之间的间隙 */
+    }
 
-  table {
-    width: 400px;
-    border-spacing: 0;
-    /* 解决单元格边框之间的间隙 */
-  }
+    td {
+      border-bottom: 1px solid black;
+    }
+  </style>
 
-  td {
-    border-bottom: 1px solid black;
-  }
-</style>
+  <body>
+    <div id="app">
+      用户名:
+      <input type="text" placeholder="请输入用户名" v-model="newName" /> 年龄:
+      <input type="text" placeholder="请输入年龄" v-model="newAge" />
+      <button v-on:click="addUser">提交</button>
+      <h2>当前用户:</h2>
+      <table>
+        <!-- 表格的表头 -->
+        <thead>
+          <tr>
+            <td>编号</td>
+            <td>姓名</td>
+            <td>年龄</td>
+            <td>操作</td>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- 表格主体tbody -->
+          <tr v-for="user,index in users">
+            <td>{{index+1}}</td>
+            <td>{{user.name}}</td>
+            <td>{{user.age}}</td>
+            <td><button v-on:click="shan(index)">删除</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
-<body>
-  <div id="app">
-    用户名: <input type="text" placeholder="请输入用户名" v-model="newName">
-    年龄: <input type="text" placeholder="请输入年龄" v-model="newAge">
-    <button v-on:click="addUser">提交</button>
-    <h2>当前用户:</h2>
-    <table>
-      <!-- 表格的表头 -->
-      <thead>
-        <tr>
-          <td>编号</td>
-          <td>姓名</td>
-          <td>年龄</td>
-          <td>操作</td>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- 表格主体tbody -->
-        <tr v-for="user,index in users">
-          <td>{{index+1}}</td>
-          <td>{{user.name}}</td>
-          <td>{{user.age}}</td>
-          <td><button v-on:click="shan(index)">删除</button></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <script src="./vue.js"></script>
-  <script>
-    new Vue({
-      el: "#app",
-      data: {
-        users: [{
-          name: "张三",
-          age: 12,
+    <script src="./vue.js"></script>
+    <script>
+      new Vue({
+        el: '#app',
+        data: {
+          users: [
+            {
+              name: '张三',
+              age: 12
+            },
+            {
+              name: '李四',
+              age: 15
+            }
+          ],
+          newName: '',
+          newAge: ''
         },
-        {
-          name: "李四",
-          age: 15,
+        methods: {
+          addUser() {
+            //创建一个新的对象
+            //将newName  newAge添加到对象中
+            //将对象添加到users中
+            var newObj = {}
+            newObj.name = this.newName
+            newObj.age = this.newAge
+            this.users.push(newObj)
+            this.newName = ''
+            this.newAge = ''
+          },
+          shan: function (i) {
+            // i是事件对象
+            this.users.splice(i, 1)
+          }
         }
-        ],
-        newName: "",
-        newAge: "",
-      },
-      methods: {
-        addUser() {
-          //创建一个新的对象
-          //将newName  newAge添加到对象中
-          //将对象添加到users中
-          var newObj = {};
-          newObj.name = this.newName;
-          newObj.age = this.newAge;
-          this.users.push(newObj);
-          this.newName = "";
-          this.newAge = "";
-        },
-        shan: function (i) {
-          // i是事件对象
-          this.users.splice(i, 1)
-        }
-      }
-    })
-  </script>
-
-</body>
-
+      })
+    </script>
+  </body>
 </html>

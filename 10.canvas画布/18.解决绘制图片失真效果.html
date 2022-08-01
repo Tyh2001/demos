@@ -1,36 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+      canvas {
+        border: 1px solid red;
+      }
+    </style>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <title>Document</title>
-  <style type="text/css">
-    canvas {
-      border: 1px solid red;
-    }
-  </style>
-</head>
+  <body>
+    <canvas width="600" height="400"></canvas>
+    <script type="text/javascript">
+      //获取canvas画布对象
+      var canvas = document.querySelector('canvas')
+      //获取绘图上下文
+      var ctx = canvas.getContext('2d')
 
-<body>
-  <canvas width="600" height="400"></canvas>
-  <script type="text/javascript">
-    //获取canvas画布对象
-    var canvas = document.querySelector("canvas");
-    //获取绘图上下文
-    var ctx = canvas.getContext("2d");
+      var img = document.createElement('img')
+      img.src = './images/1.jpg'
 
-    var img = document.createElement("img");
-    img.src = "./images/1.jpg";
+      img.onload = function () {
+        var img_width = img.width
+        var img_height = img.height
+        var drowHeight = (200 * img_height) / img_width
 
-
-    img.onload = function () {
-      var img_width = img.width;
-      var img_height = img.height;
-      var drowHeight = 200 * img_height / img_width;
-
-      ctx.drawImage(img, 100, 50, 200, drowHeight);
-    }
-  </script>
-</body>
-
+        ctx.drawImage(img, 100, 50, 200, drowHeight)
+      }
+    </script>
+  </body>
 </html>

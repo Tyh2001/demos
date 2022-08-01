@@ -1,131 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>七道题</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <title>七道题</title>
-</head>
+  <body>
+    <label for="">姓名：</label>
+    <input type="text" />
+    <br />
+    <label for="">年龄：</label>
+    <input type="text" />
+    <br />
+    <label for="">账号：</label>
+    <input id="a" type="text" />
+    <br />
+    <label for="">密码：</label>
+    <input id="b" type="text" />
+    <br />
+    <button>百度一下</button>
+    <br />
 
-<body>
-  <label for="">姓名：</label>
-  <input type="text">
-  <br>
-  <label for="">年龄：</label>
-  <input type="text">
-  <br>
-  <label for="">账号：</label>
-  <input id="a" type="text">
-  <br>
-  <label for="">密码：</label>
-  <input id="b" type="text">
-  <br>
-  <button>百度一下</button>
-  <br>
-
-  <script src="jquery.js"></script>
-  <script>
-    //1.四乘四表格
-    for (var a = 0; a < 4; a++) {
-      for (var b = 0; b < 4; b++) {
-        document.write("4")
+    <script src="jquery.js"></script>
+    <script>
+      //1.四乘四表格
+      for (var a = 0; a < 4; a++) {
+        for (var b = 0; b < 4; b++) {
+          document.write('4')
+        }
+        document.write('<br>')
       }
-      document.write("<br>")
-    }
 
-    //2.输出100以内所有的奇数，并让偶数加和
-    var a = 0;
-    for (var i = 1; i < 100; i++) {
-      if (i % 2 == 0) {
-        a = a + i;
-      } else {
-        console.log(i);
+      //2.输出100以内所有的奇数，并让偶数加和
+      var a = 0
+      for (var i = 1; i < 100; i++) {
+        if (i % 2 == 0) {
+          a = a + i
+        } else {
+          console.log(i)
+        }
       }
-    }
-    console.log(a);
+      console.log(a)
 
-    // 3.制作99乘法表
-    for (var a = 1; a < 10; a++) {
-      for (var b = 1; b <= a; b++) {
-        document.write(b, "*", a, "&nbsp;&nbsp")
+      // 3.制作99乘法表
+      for (var a = 1; a < 10; a++) {
+        for (var b = 1; b <= a; b++) {
+          document.write(b, '*', a, '&nbsp;&nbsp')
+        }
+        document.write('<br>')
       }
-      document.write("<br>")
-    }
 
-    // 4.遍历数组(奇数加和 偶数放到新数组里)
-    var a = [11, 22, 33, 44, 55, 66, 77, 88, 99];
-    var b = 0;
-    var c = [];
-    for (var i = 0; i < a.length; i++) {
-      if (a[i] % 2 == 0) {
-        c.push(a[i]);
-      } else {
-        b = b + a[i];
+      // 4.遍历数组(奇数加和 偶数放到新数组里)
+      var a = [11, 22, 33, 44, 55, 66, 77, 88, 99]
+      var b = 0
+      var c = []
+      for (var i = 0; i < a.length; i++) {
+        if (a[i] % 2 == 0) {
+          c.push(a[i])
+        } else {
+          b = b + a[i]
+        }
       }
-    }
-    console.log(b);
-    console.log(c);
+      console.log(b)
+      console.log(c)
 
-    //5.对象
-    var cat = {
-      name: "haha",
-      age: "12",
-      a: function () {
-        console.log(this.name)
+      //5.对象
+      var cat = {
+        name: 'haha',
+        age: '12',
+        a: function () {
+          console.log(this.name)
+        }
       }
-    }
-    cat.a();
-    // console.log(cat.name)
+      cat.a()
+      // console.log(cat.name)
 
-    //6.函数(三个形参)
-    function fun(a, b, c) {
-      switch (c) {
-        case "+":
-          return (a + b)
-          break;
-        case "-":
-          return (a - b)
-          break;
-        case "*":
-          return (a * b)
-          break;
-        case "/":
-          return (a / b)
-          break;
+      //6.函数(三个形参)
+      function fun(a, b, c) {
+        switch (c) {
+          case '+':
+            return a + b
+            break
+          case '-':
+            return a - b
+            break
+          case '*':
+            return a * b
+            break
+          case '/':
+            return a / b
+            break
+        }
       }
-    }
-    var e = fun(1, 2, "+");
-    console.log(e);
+      var e = fun(1, 2, '+')
+      console.log(e)
 
-    //7.会员注册
-    var inp = $("input");
-    var btn = $("button");
-    btn.click(function () {
-      var a = 0;
-      for (var i = 0; i < inp.length; i++) {
-        if (inp[i].value == "") {
-          switch (i) {
-            case 0:
-              alert("请输入姓名")
-              break;
-            case 1:
-              alert("请输入年龄")
-              break;
-            case 2:
-              alert("请输入账号")
-              break;
-            case 3:
-              alert("请输入密码")
-              break;
+      //7.会员注册
+      var inp = $('input')
+      var btn = $('button')
+      btn.click(function () {
+        var a = 0
+        for (var i = 0; i < inp.length; i++) {
+          if (inp[i].value == '') {
+            switch (i) {
+              case 0:
+                alert('请输入姓名')
+                break
+              case 1:
+                alert('请输入年龄')
+                break
+              case 2:
+                alert('请输入账号')
+                break
+              case 3:
+                alert('请输入密码')
+                break
+            }
+          }
+          if (inp[i].value == '') {
+            a++
           }
         }
-        if (inp[i].value == "") {
-          a++;
+        if (a == 0) {
+          alert('注册成功')
         }
-      }
-      if (a == 0) {
-        alert("注册成功")
-      }
-    })
-  </script>
-
-</body>
+      })
+    </script>
+  </body>
+</html>

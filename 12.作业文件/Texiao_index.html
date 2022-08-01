@@ -1,122 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+      #main {
+        width: 300px;
+        height: 300px;
+        background: red;
+      }
+    </style>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <title>Document</title>
-  <style type="text/css">
-    #main {
+  <body>
+    <input type="button" value="隐藏" id="btn1" />
 
-      width: 300px;
-      height: 300px;
-      background: red;
-    }
-  </style>
-</head>
+    <input type="button" value="显示" id="btn2" />
 
-<body>
+    <input type="button" value="收缩" id="btn3" />
 
-  <input type="button" value="隐藏" id="btn1">
+    <input type="button" value="下拉" id="btn4" />
 
-  <input type="button" value="显示" id="btn2">
+    <input type="button" value="淡出" id="btn5" />
 
-  <input type="button" value="收缩" id="btn3">
+    <input type="button" value="淡入" id="btn6" />
 
-  <input type="button" value="下拉" id="btn4">
+    <input type="button" value="toggle" id="btn7" />
 
-  <input type="button" value="淡出" id="btn5">
+    <input type="button" value="slideToggle" id="btn8" />
 
-  <input type="button" value="淡入" id="btn6">
+    <input type="button" value="fadeToggle" id="btn9" />
 
-  <input type="button" value="toggle" id="btn7">
+    <div id="main"></div>
 
+    <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+      $('#btn1').click(function () {
+        //hidden
+        //隐藏元素 毫秒-1000
+        $('#main').hide(500)
+      })
 
-  <input type="button" value="slideToggle" id="btn8">
+      //显示
+      $('#btn2').click(function () {
+        //显示 width height  opacity
+        $('#main').show(500)
+      })
 
-  <input type="button" value="fadeToggle" id="btn9">
+      //收缩
 
+      $('#btn3').click(function () {
+        //向上收缩 隐藏　 height
+        $('#main').slideUp(1000)
+      })
 
-  <div id="main">
+      // 下拉
 
+      $('#btn4').click(function () {
+        ////下拉 显示
+        $('#main').slideDown(1000)
+      })
 
-  </div>
+      //淡出
+      $('#btn5').click(function () {
+        //js qu --骆驼
+        $('#main').fadeOut(1000)
+      })
 
-  <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
-  <script type="text/javascript">
+      //淡入
+      $('#btn6').click(function () {
+        //js qu --骆驼
+        $('#main').fadeIn(1000)
+      })
 
-    $("#btn1").click(function () {
-      //hidden
-      //隐藏元素 毫秒-1000
-      $("#main").hide(500);
+      //toggle
 
-    })
+      $('#btn7').click(function () {
+        $('#main').toggle(1000)
+      })
 
+      $('#btn8').click(function () {
+        $('#main').slideToggle()
+      })
 
-    //显示 
-    $("#btn2").click(function () {
-
-      //显示 width height  opacity
-      $("#main").show(500);
-
-    })
-
-    //收缩
-
-    $("#btn3").click(function () {
-
-
-      //向上收缩 隐藏　 height
-      $("#main").slideUp(1000);
-    })
-
-    // 下拉
-
-    $("#btn4").click(function () {
-
-      ////下拉 显示
-      $("#main").slideDown(1000);
-    })
-
-
-    //淡出
-    $("#btn5").click(function () {
-
-      //js qu --骆驼
-      $("#main").fadeOut(1000);
-    })
-
-    //淡入
-    $("#btn6").click(function () {
-
-      //js qu --骆驼
-      $("#main").fadeIn(1000);
-    })
-
-
-    //toggle
-
-    $("#btn7").click(function () {
-
-      $("#main").toggle(1000);
-
-    })
-
-
-    $("#btn8").click(function () {
-
-      $("#main").slideToggle();
-    })
-
-
-    $("#btn9").click(function () {
-
-      $("#main").fadeToggle();
-    })
-  </script>
-
-
-
-
-</body>
-
+      $('#btn9').click(function () {
+        $('#main').fadeToggle()
+      })
+    </script>
+  </body>
 </html>

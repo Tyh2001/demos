@@ -6,8 +6,7 @@
  * @returns 转换为的大写数字
  */
 
-export const changeStrSize = str => {
-
+export const changeStrSize = (str) => {
   if (typeof str !== 'string') {
     try {
       var str2 = str.toString()

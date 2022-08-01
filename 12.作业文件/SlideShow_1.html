@@ -1,97 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+    <style>
+      .banner_1 {
+        overflow: hidden;
+        width: 777px;
+        height: 397px;
+        list-style: none;
+        position: relative;
+      }
 
-<head>
-  <meta charset="UTF-8">
-  <title></title>
-  <style>
-    .banner_1 {
-      overflow: hidden;
-      width: 777px;
-      height: 397px;
-      list-style: none;
-      position: relative;
-    }
+      .banner_img {
+        width: 777px;
+        height: 2382px;
+      }
 
-    .banner_img {
-      width: 777px;
-      height: 2382px;
-    }
+      .banner_1 .banner_img img {
+        float: left;
+      }
 
-    .banner_1 .banner_img img {
-      float: left;
-    }
+      .banner_1 .banner_list {
+        list-style: none;
+        height: 25px;
+        position: absolute;
+        top: 300px;
+        left: 400px;
+      }
 
-    .banner_1 .banner_list {
-      list-style: none;
-      height: 25px;
-      position: absolute;
-      top: 300px;
-      left: 400px;
-    }
+      .banner_1 .banner_list li {
+        float: left;
+        width: 25px;
+        height: 25px;
+        background-color: #000;
+        margin-right: 15px;
+      }
 
-    .banner_1 .banner_list li {
-      float: left;
-      width: 25px;
-      height: 25px;
-      background-color: #000;
-      margin-right: 15px;
-    }
+      .banner_1 .banner_list .changeColor {
+        background-color: #ffffff;
+      }
+    </style>
+    <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+    <script>
+      $(function () {
+        //将第一个图片所在的li显示出来
+        $('.banner_1 .banner_img li:not(:first)').hide()
+        //将第一个点显示出来
+        $('.banner_1 .banner_list li:first').addClass('changeColor')
 
-    .banner_1 .banner_list .changeColor {
-      background-color: #FFFFFF;
-    }
-  </style>
-  <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
-  <script>
-    $(function () {
-      //将第一个图片所在的li显示出来
-      $(".banner_1 .banner_img li:not(:first)").hide();
-      //将第一个点显示出来
-      $(".banner_1 .banner_list li:first").addClass("changeColor");
+        $('.banner_1 .banner_list li').click(function () {
+          var i = $(this).index() //获取索引
+          //将选择的元素渐进显示
+          $('.banner_1 .banner_img li').eq(i).fadeIn(2000)
+          //隐藏其它元素
+          $('.banner_1 .banner_img li').eq(i).siblings().hide()
 
-      $(".banner_1 .banner_list li").click(function () {
-        var i = $(this).index();//获取索引
-        //将选择的元素渐进显示
-        $(".banner_1 .banner_img li").eq(i).fadeIn(2000);
-        //隐藏其它元素
-        $(".banner_1 .banner_img li").eq(i).siblings().hide();
-
-        //将当前选中的li设置为白色
-        $(this).addClass("changeColor");
-        //将其它li设置为黑色
-        $(this).siblings().removeClass("changeColor");
+          //将当前选中的li设置为白色
+          $(this).addClass('changeColor')
+          //将其它li设置为黑色
+          $(this).siblings().removeClass('changeColor')
+        })
       })
-    })
+    </script>
+  </head>
 
+  <body>
+    <div class="banner_1">
+      <ul class="banner_img">
+        <li><img src="images/banner_1.jpg" alt="" /></li>
+        <li><img src="images/banner_2.jpg" alt="" /></li>
+        <li><img src="images/banner_3.jpg" alt="" /></li>
+        <li><img src="images/banner_4.jpg" alt="" /></li>
+        <li><img src="images/banner_5.jpg" alt="" /></li>
+        <li><img src="images/banner_6.jpg" alt="" /></li>
+      </ul>
+      <ul class="banner_list">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
 
-  </script>
-</head>
-
-<body>
-
-  <div class="banner_1">
-    <ul class="banner_img">
-      <li><img src="images/banner_1.jpg" alt="" /></li>
-      <li><img src="images/banner_2.jpg" alt="" /></li>
-      <li><img src="images/banner_3.jpg" alt="" /></li>
-      <li><img src="images/banner_4.jpg" alt="" /></li>
-      <li><img src="images/banner_5.jpg" alt="" /></li>
-      <li><img src="images/banner_6.jpg" alt="" /></li>
-    </ul>
-    <ul class="banner_list">
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-    </ul>
-
-    <input type="button" id="btnleft_1" />
-    <input type="button" id="btnright_1" />
-
-  </div>
-</body>
-
+      <input type="button" id="btnleft_1" />
+      <input type="button" id="btnright_1" />
+    </div>
+  </body>
 </html>

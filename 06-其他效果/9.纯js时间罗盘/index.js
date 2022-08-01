@@ -1,5 +1,5 @@
-(function () {
-  (function () {
+;(function () {
+  ;(function () {
     const newBox = document.createElement('div')
     const body = document.querySelector('body')
     newBox.setAttribute('id', 'box')
@@ -24,7 +24,7 @@
    * 创建出每个装时间的盒子
    * @param { String } labelName 创建的标签的 class 名称
    */
-  function addBigBox (labelName) {
+  function addBigBox(labelName) {
     const newLabel = document.createElement('div')
     newLabel.setAttribute('class', labelName)
     box.appendChild(newLabel)
@@ -57,7 +57,7 @@
    * @param { Number } number 循环次数
    * @param { Number } deg 旋转度数
    */
-  function Rendering (PointerName, bigTabName, explain, number, deg) {
+  function Rendering(PointerName, bigTabName, explain, number, deg) {
     for (let i = 1; i < number; i++) {
       // 新建一个 div 标签 设置 class 名称和旋转角度
       const Pointer = document.createElement('div')
@@ -91,7 +91,7 @@
    * 清空指针的 32 号
    * @param { String } className Class 值
    */
-  function subItem (className) {
+  function subItem(className) {
     const item = document.querySelectorAll(className)
     item[item.length - 1].children[0].innerHTML = ''
   }
@@ -103,12 +103,12 @@
   /**
    * 获取时间 控制旋转角度
    */
-  function transform () {
+  function transform() {
     const now = new Date()
-    const s = now.getSeconds()  // 秒
-    const m = now.getMinutes()  // 分
+    const s = now.getSeconds() // 秒
+    const m = now.getMinutes() // 分
     const h = now.getHours() % 12 // 小时
-    const d = now.getDate()  // 日
+    const d = now.getDate() // 日
     const y = now.getMonth() + 1 // 月
     const n = now.getFullYear() // 年
 
@@ -117,14 +117,15 @@
     hourBox.style.transform = `rotate(-${h * 30}deg)` // 时
     NumberBox.style.transform = `rotate(-${d * 11.25}deg)` // 日
     monthBox.style.transform = `rotate(-${y * 30}deg)` // 月
-    year.innerHTML = n  // 年
+    year.innerHTML = n // 年
   }
 
   /**
    * 等待1.4秒后 css 动画结束后再获取时间
    */
   setTimeout(() => {
-    setInterval(() => { transform() }, 1000)
+    setInterval(() => {
+      transform()
+    }, 1000)
   }, 1400)
-
 })()

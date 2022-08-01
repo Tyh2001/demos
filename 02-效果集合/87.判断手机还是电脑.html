@@ -1,38 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-
-<body>
-
-  <object id="app" data="" type=""></object>
-  <script>
-    //判断登录设备
-    function info() {
-      const userAgentInfo = navigator.userAgent
-      const Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod")
-      let flag = false
-      for (let v = 0; v < Agents.length; v++) {
-        if (userAgentInfo.indexOf(Agents[v]) > 0) {
-          flag = true
-          break
+  <body>
+    <object id="app" data="" type=""></object>
+    <script>
+      //判断登录设备
+      function info() {
+        const userAgentInfo = navigator.userAgent
+        const Agents = new Array(
+          'Android',
+          'iPhone',
+          'SymbianOS',
+          'Windows Phone',
+          'iPad',
+          'iPod'
+        )
+        let flag = false
+        for (let v = 0; v < Agents.length; v++) {
+          if (userAgentInfo.indexOf(Agents[v]) > 0) {
+            flag = true
+            break
+          }
         }
+        return flag
       }
-      return flag
-    }
 
-    if (info()) {
-      console.log('这是手机')
-    } else {
-      console.log('这是电脑')
-    }
-
-  </script>
-</body>
-
+      if (info()) {
+        console.log('这是手机')
+      } else {
+        console.log('这是电脑')
+      }
+    </script>
+  </body>
 </html>

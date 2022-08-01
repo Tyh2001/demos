@@ -1,33 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <title>Document</title>
-</head>
+  <body>
+    <script src="jquery.js"></script>
+    <script>
+      // 判断一个年份是平年还是闰年
+      var a = 1954
+      if ((a % 4 === 0 && a % 100 !== 0) || a % 400 === 0) {
+        console.log(a + '年是闰年')
+      } else {
+        console.log(a + '年是平年')
+      }
 
-<body>
-  <script src="jquery.js"></script>
-  <script>
-    // 判断一个年份是平年还是闰年
-    var a = 1954;
-    if (a % 4 === 0 && a % 100 !== 0 || a % 400 === 0) {
-      console.log(a + "年是闰年")
-    } else {
-      console.log(a + "年是平年")
-    }
+      // 使用while语句输出20-100
+      for (var a = 20; a <= 100; a++) {
+        console.log(a)
+      }
 
-    // 使用while语句输出20-100
-    for (var a = 20; a <= 100; a++) {
-      console.log(a)
-    };
-
-    var a = 20
-    while (a <= 100) {
-      console.log(a);
-      a++;
-    }
-  </script>
-</body>
-
+      var a = 20
+      while (a <= 100) {
+        console.log(a)
+        a++
+      }
+    </script>
+  </body>
 </html>

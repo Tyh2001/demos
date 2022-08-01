@@ -1,294 +1,292 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <title>3D切换图片</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
 
-<head>
-  <meta charset="utf-8" />
-  <title>3D切换图片</title>
-</head>
-<style>
-  * {
-    margin: 0;
-    padding: 0;
-  }
+    li {
+      list-style: none;
+    }
 
-  li {
-    list-style: none;
-  }
+    .container {
+      width: 1190px;
+      height: 310px;
+      margin: 10px auto;
+      position: relative;
+      overflow: hidden;
+    }
 
-  .container {
-    width: 1190px;
-    height: 310px;
-    margin: 10px auto;
-    position: relative;
-    overflow: hidden;
-  }
+    .btnLeft {
+      width: 275px;
+      height: 225px;
+      position: absolute;
+      left: 0px;
+      top: 22px;
+      z-index: 3;
+      cursor: pointer;
+      z-index: 6;
+    }
 
-  .btnLeft {
-    width: 275px;
-    height: 225px;
-    position: absolute;
-    left: 0px;
-    top: 22px;
-    z-index: 3;
-    cursor: pointer;
-    z-index: 6;
-  }
+    .btnRight {
+      width: 275px;
+      height: 225px;
+      position: absolute;
+      right: 0px;
+      top: 22px;
+      z-index: 3;
+      cursor: pointer;
+      z-index: 6;
+    }
 
-  .btnRight {
-    width: 275px;
-    height: 225px;
-    position: absolute;
-    right: 0px;
-    top: 22px;
-    z-index: 3;
-    cursor: pointer;
-    z-index: 6;
-  }
+    .container ul {
+      width: 100%;
+      height: 270px;
+      position: relative;
+    }
 
-  .container ul {
-    width: 100%;
-    height: 270px;
-    position: relative;
-  }
+    .container ul li {
+      position: absolute;
+      width: 0px;
+      height: 0px;
+      left: 595px;
+      top: 135px;
+      overflow: hidden;
+      box-shadow: 1px 5px 3px #ccc;
+    }
 
-  .container ul li {
-    position: absolute;
-    width: 0px;
-    height: 0px;
-    left: 595px;
-    top: 135px;
-    overflow: hidden;
-    box-shadow: 1px 5px 3px #ccc;
-  }
+    .container ul li img {
+      width: 100%;
+      height: auto;
+    }
 
-  .container ul li img {
-    width: 100%;
-    height: auto;
-  }
+    .container ol {
+      padding-left: 552px;
+      margin-top: 10px;
+    }
 
-  .container ol {
-    padding-left: 552px;
-    margin-top: 10px;
-  }
+    .container ol li {
+      width: 10px;
+      height: 10px;
+      display: block;
+      background: #ccc;
+      border-radius: 6px;
+      margin: 0px 3px;
+      text-indent: -9999px;
+      float: left;
+      cursor: pointer;
+    }
 
-  .container ol li {
-    width: 10px;
-    height: 10px;
-    display: block;
-    background: #ccc;
-    border-radius: 6px;
-    margin: 0px 3px;
-    text-indent: -9999px;
-    float: left;
-    cursor: pointer;
-  }
+    .container ol .active {
+      background: #69aaec;
+    }
+  </style>
 
-  .container ol .active {
-    background: #69aaec;
-  }
-</style>
+  <body>
+    <div class="container">
+      <span class="btnLeft"></span>
+      <span class="btnRight"></span>
 
-<body>
-  <div class="container">
-    <span class="btnLeft"></span>
-    <span class="btnRight"></span>
-
-    <ul id="arrLi">
-      <li data-num="3">
-        <a href="#"><img src="图片/牌子1.jpg" /></a>
-      </li>
-      <li data-num="4">
-        <a href="#"><img src="图片/牌子2.jpg" /></a>
-      </li>
-      <li data-num="0">
-        <a href="#"><img src="图片/牌子3.jpg" /></a>
-      </li>
-      <li data-num="1">
-        <a href="#"><img src="图片/牌子2.jpg" /></a>
-      </li>
-      <li data-num="2">
-        <a href="#"><img src="图片/牌子1.jpg" /></a>
-      </li>
-    </ul>
-    <ol id="btnLi">
-      <li class="active">0</li>
-      <li>1</li>
-      <li>2</li>
-      <li>3</li>
-      <li>4</li>
-    </ol>
-  </div>
-  <script src="jquery.js"></script>
-  <script>
-    (function () {
-      $(function () {
-        //初始值
-        var btnLeft = $(".btnLeft"); //左边按钮
-        var btnRight = $(".btnRight"); //右边按钮
-        var arrUl = $("#arrLi");
-        var arrLi = $("#arrLi>li");
-        var btnLi = $("#btnLi>li");
-        var arrSort = [];
-        var kai = true; //开关
-        //始终显示三张图片，数组的第2位是大图所在位置，俩侧一次递减
-        var pos = [{
-          width: "430px",
-          height: "182px",
-          left: "-430px",
-          top: "55px",
-          zindex: 1,
-          opacity: 0
-        },
-        {
-          width: "530px",
-          height: "224px",
-          left: "0px",
-          top: "22px",
-          zindex: 2,
-          opacity: 1
-        },
-        {
-          width: "640px",
-          height: "270px",
-          left: "275px",
-          top: "0px",
-          zindex: 4,
-          opacity: 1
-        },
-        {
-          width: "530px",
-          height: "224px",
-          left: "660px",
-          top: "22px",
-          zindex: 2,
-          opacity: 1
-        },
-        {
-          width: "430px",
-          height: "182px",
-          left: "1190px",
-          top: "55px",
-          zindex: 1,
-          opacity: 0
-        }
-        ];
-        /*初始化图片位置，然后把所有li记录到arrSort里*/
-        for (var i = 0; i < 5; i++) {
-          $(arrLi[i]).css({
-            width: pos[i].width,
-            height: pos[i].height,
-            left: pos[i].left,
-            top: pos[i].top,
-            "z-index": pos[i].zindex,
-            opacity: pos[i].opacity
-          });
-        }
-        var oPath = parseInt(arrLi.eq(2).attr("data-num"));
-        moveClass(oPath);
-        for (var i = 0; i < 5; i++) {
-          arrSort.push(arrLi[i]);
-        }
-        //左按钮点击
-        btnRight.on("click", function () {
-          //点击进来的时候检测上一个动画是否执行完了，没执行之前，不可以再进行下一步动画操作
-          if (kai) {
-            kai = false;
-
-            doPrev();
-            setTimeout(function () {
-              kai = true;
-            }, 500);
-            //上方的setTimeout必须有，
-            //不然会出bug,不信可以试试
-          }
-        });
-        //右按钮点击
-        btnLeft.on("click", function () {
-          //点击进来的时候检测上一个动画是否执行完了，没执行之前，不可以再进行下一步动画操作
-          if (kai) {
-            kai = false;
-            doNext();
-
-            setTimeout(function () {
-              kai = true;
-            }, 500);
-          }
-        });
-        //btn点击
-        btnLi.on("click", function () {
-          var _index = $(this).index();
-          var _imgIndex = addCenter(_index); //返回当前按钮点击后 ，对应的图片的真实index值，后续进行arrSort操作
-          switch (_imgIndex) {
-            case 0:
-              for (var i = 0; i < 2; i++) {
-                doNext();
-              }
-              break;
-            case 1:
-              doNext();
-              break;
-            case 2:
-              return;
-              break;
-            case 3:
-              doPrev();
-              break;
-            case 4:
-              for (var i = 0; i < 2; i++) {
-                doPrev();
-              }
-              break;
-          }
-        });
-        //数组造作 上一个依次排序
-        function doPrev() {
-          arrSort.push(arrSort.shift());
-          doMove();
-        }
-        //数组造作 下一个依次排序
-        function doNext() {
-          arrSort.unshift(arrSort.pop());
-          doMove();
-        }
-        //根据排序,计算元素新的位置，然后animate
-        function doMove() {
-          arrUl.append(arrSort);
-          for (var i = 0; i < 5; i++) {
-            $(arrSort[i]).css("z-index", pos[i].zindex);
-            $(arrSort[i])
-              .stop()
-              .animate({
-                width: pos[i].width,
-                height: pos[i].height,
-                left: pos[i].left,
-                top: pos[i].top,
-                opacity: pos[i].opacity
-              },
-                500
-              );
-          }
-          var _index = parseInt($(arrSort[2]).attr("data-num"));
-          moveClass(_index);
-        }
-        //给当前btn加减class
-        function moveClass(oindex) {
-          btnLi.removeClass("active");
-          btnLi.eq(oindex).addClass("active");
-        }
-        //把当前按钮点击的元素，增加到中间位置去
-        function addCenter(index) {
-          var _imgIndex = 0;
-          arrLi.each(function () {
-            var num = $(this).attr("data-num");
-            if (num == index) {
-              _imgIndex = $(this).index();
+      <ul id="arrLi">
+        <li data-num="3">
+          <a href="#"><img src="图片/牌子1.jpg" /></a>
+        </li>
+        <li data-num="4">
+          <a href="#"><img src="图片/牌子2.jpg" /></a>
+        </li>
+        <li data-num="0">
+          <a href="#"><img src="图片/牌子3.jpg" /></a>
+        </li>
+        <li data-num="1">
+          <a href="#"><img src="图片/牌子2.jpg" /></a>
+        </li>
+        <li data-num="2">
+          <a href="#"><img src="图片/牌子1.jpg" /></a>
+        </li>
+      </ul>
+      <ol id="btnLi">
+        <li class="active">0</li>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+      </ol>
+    </div>
+    <script src="jquery.js"></script>
+    <script>
+      ;(function () {
+        $(function () {
+          //初始值
+          var btnLeft = $('.btnLeft') //左边按钮
+          var btnRight = $('.btnRight') //右边按钮
+          var arrUl = $('#arrLi')
+          var arrLi = $('#arrLi>li')
+          var btnLi = $('#btnLi>li')
+          var arrSort = []
+          var kai = true //开关
+          //始终显示三张图片，数组的第2位是大图所在位置，俩侧一次递减
+          var pos = [
+            {
+              width: '430px',
+              height: '182px',
+              left: '-430px',
+              top: '55px',
+              zindex: 1,
+              opacity: 0
+            },
+            {
+              width: '530px',
+              height: '224px',
+              left: '0px',
+              top: '22px',
+              zindex: 2,
+              opacity: 1
+            },
+            {
+              width: '640px',
+              height: '270px',
+              left: '275px',
+              top: '0px',
+              zindex: 4,
+              opacity: 1
+            },
+            {
+              width: '530px',
+              height: '224px',
+              left: '660px',
+              top: '22px',
+              zindex: 2,
+              opacity: 1
+            },
+            {
+              width: '430px',
+              height: '182px',
+              left: '1190px',
+              top: '55px',
+              zindex: 1,
+              opacity: 0
             }
-          });
-          return _imgIndex;
-        }
-      });
-    })();
-  </script>
-</body>
+          ]
+          /*初始化图片位置，然后把所有li记录到arrSort里*/
+          for (var i = 0; i < 5; i++) {
+            $(arrLi[i]).css({
+              width: pos[i].width,
+              height: pos[i].height,
+              left: pos[i].left,
+              top: pos[i].top,
+              'z-index': pos[i].zindex,
+              opacity: pos[i].opacity
+            })
+          }
+          var oPath = parseInt(arrLi.eq(2).attr('data-num'))
+          moveClass(oPath)
+          for (var i = 0; i < 5; i++) {
+            arrSort.push(arrLi[i])
+          }
+          //左按钮点击
+          btnRight.on('click', function () {
+            //点击进来的时候检测上一个动画是否执行完了，没执行之前，不可以再进行下一步动画操作
+            if (kai) {
+              kai = false
 
+              doPrev()
+              setTimeout(function () {
+                kai = true
+              }, 500)
+              //上方的setTimeout必须有，
+              //不然会出bug,不信可以试试
+            }
+          })
+          //右按钮点击
+          btnLeft.on('click', function () {
+            //点击进来的时候检测上一个动画是否执行完了，没执行之前，不可以再进行下一步动画操作
+            if (kai) {
+              kai = false
+              doNext()
+
+              setTimeout(function () {
+                kai = true
+              }, 500)
+            }
+          })
+          //btn点击
+          btnLi.on('click', function () {
+            var _index = $(this).index()
+            var _imgIndex = addCenter(_index) //返回当前按钮点击后 ，对应的图片的真实index值，后续进行arrSort操作
+            switch (_imgIndex) {
+              case 0:
+                for (var i = 0; i < 2; i++) {
+                  doNext()
+                }
+                break
+              case 1:
+                doNext()
+                break
+              case 2:
+                return
+                break
+              case 3:
+                doPrev()
+                break
+              case 4:
+                for (var i = 0; i < 2; i++) {
+                  doPrev()
+                }
+                break
+            }
+          })
+          //数组造作 上一个依次排序
+          function doPrev() {
+            arrSort.push(arrSort.shift())
+            doMove()
+          }
+          //数组造作 下一个依次排序
+          function doNext() {
+            arrSort.unshift(arrSort.pop())
+            doMove()
+          }
+          //根据排序,计算元素新的位置，然后animate
+          function doMove() {
+            arrUl.append(arrSort)
+            for (var i = 0; i < 5; i++) {
+              $(arrSort[i]).css('z-index', pos[i].zindex)
+              $(arrSort[i]).stop().animate(
+                {
+                  width: pos[i].width,
+                  height: pos[i].height,
+                  left: pos[i].left,
+                  top: pos[i].top,
+                  opacity: pos[i].opacity
+                },
+                500
+              )
+            }
+            var _index = parseInt($(arrSort[2]).attr('data-num'))
+            moveClass(_index)
+          }
+          //给当前btn加减class
+          function moveClass(oindex) {
+            btnLi.removeClass('active')
+            btnLi.eq(oindex).addClass('active')
+          }
+          //把当前按钮点击的元素，增加到中间位置去
+          function addCenter(index) {
+            var _imgIndex = 0
+            arrLi.each(function () {
+              var num = $(this).attr('data-num')
+              if (num == index) {
+                _imgIndex = $(this).index()
+              }
+            })
+            return _imgIndex
+          }
+        })
+      })()
+    </script>
+  </body>
 </html>

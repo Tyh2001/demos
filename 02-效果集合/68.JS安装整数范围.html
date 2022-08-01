@@ -1,22 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <title>Document</title>
-</head>
+  <body>
+    <script>
+      // str 初始的一个 JSON 格式的字符串
+      let str = '{ "id":12345678901234567890 }'
 
-<body>
-
-
-  <script>
-    // str 初始的一个 JSON 格式的字符串
-    let str = '{ "id":12345678901234567890 }';
-
-    // 将 JSON 格式字符串转换成数字
-    // 这里输出之后已经不是之前的数字了
-    console.log(JSON.parse(str));
-  </script>
-</body>
-
+      // 将 JSON 格式字符串转换成数字
+      // 这里输出之后已经不是之前的数字了
+      console.log(JSON.parse(str))
+    </script>
+  </body>
 </html>

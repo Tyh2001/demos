@@ -1,59 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
 
-<head>
-  <meta charset="UTF-8">
-  <title>Document</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-    }
+      .boxa {
+        width: 750px;
+        height: 1000px;
+        background-color: rgba(0, 0, 0, 0.1);
+        margin: 0 auto;
+        display: flex;
+      }
 
-    .boxa {
-      width: 750px;
-      height: 1000px;
-      background-color: rgba(0, 0, 0, 0.1);
-      margin: 0 auto;
-      display: flex;
-    }
+      .left {
+        width: 200px;
+        height: 400px;
+        background-color: skyblue;
+        position: fixed;
+      }
 
-    .left {
-      width: 200px;
-      height: 400px;
-      background-color: skyblue;
-      position: fixed;
-    }
+      .zhong {
+        width: 200px;
+        height: 800px;
+        background-color: tan;
+        margin-left: 250px;
+      }
 
-    .zhong {
-      width: 200px;
-      height: 800px;
-      background-color: tan;
-      margin-left: 250px;
-    }
+      .right {
+        width: 200px;
+        height: 211px;
+        background-color: springgreen;
+        position: fixed;
+        margin-left: 470px;
+      }
+    </style>
+  </head>
 
-    .right {
-      width: 200px;
-      height: 211px;
-      background-color: springgreen;
-      position: fixed;
-      margin-left: 470px;
-    }
-  </style>
-</head>
-
-<body>
-  <div class="boxa">
-    <div class="left">
-      <h1>内容1111</h1>
+  <body>
+    <div class="boxa">
+      <div class="left">
+        <h1>内容1111</h1>
+      </div>
+      <div class="zhong">
+        <h1>内容2222</h1>
+      </div>
+      <div class="right">
+        <h1>内容333</h1>
+      </div>
     </div>
-    <div class="zhong">
-      <h1>内容2222</h1>
-    </div>
-    <div class="right">
-      <h1>内容333</h1>
-    </div>
-  </div>
-</body>
-
+  </body>
 </html>

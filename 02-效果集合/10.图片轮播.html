@@ -1,93 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <title>图片轮播</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-    }
-
-    .box {
-      width: 20px;
-      height: 20px;
-      border: 1px solid black;
-      border-radius: 50%;
-      position: absolute;
-    }
-
-    .one {
-      top: 390px;
-      left: 310px;
-      background-color: black;
-    }
-
-    .two {
-      top: 390px;
-      left: 410px;
-    }
-
-    .three {
-      top: 390px;
-      left: 510px;
-    }
-  </style>
-</head>
-
-<body>
-  <button class="up">上一张</button>
-  <img src="图片/牌子1.jpg" alt="">
-  <button class="down">下一张</button>
-  <div>
-    <div class="box one"></div>
-    <div class="box two"></div>
-    <div class="box three"></div><!-- 下面点击的三个点 -->
-  </div>
-  <script src="jquery.js"></script>
-  <script>
-    //1.点击按钮左右换图
-    var box_arr = $(".box");//获取下面三个点
-    var arr = ["图片/牌子1.jpg", "图片/牌子2.jpg", "图片/牌子3.jpg"];//数组中放入所有图片
-    $(".up").click(function () {//给上一个按钮点击事件
-      var img_src = $("img").attr("src");//获取当前图片的src属性
-      for (var i = 0; i < arr.length; i++) {//遍历数组
-        if (img_src === arr[i]) {
-          $("img").attr("src", arr[i - 1]);
-        }
+  <head>
+    <meta charset="UTF-8" />
+    <title>图片轮播</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
       }
-    })
-    $(".down").click(function () {//给下一张图片点击事件
-      var img_src = $("img").attr("src");//获取当前图片的scr属性
-      for (var i = 0; i < arr.length; i++) {//遍历数组
-        if (img_src === arr[i]) {
-          $("img").attr("src", arr[i + 1]);//更改标签属性值
-        }
+
+      .box {
+        width: 20px;
+        height: 20px;
+        border: 1px solid black;
+        border-radius: 50%;
+        position: absolute;
       }
-    })
-    //2.点击圈圈换相对应对图
-    $(".box").click(function () {
-      var box_index = $(this).index();//获取点击的圈的索引值赋值给box_index
-      $("img").attr("src", arr[box_index]);
-    })
-    //3.自动换图
-    setInterval(function () {//周期函数
-      var img_src = $("img").attr("src");
-      for (var i = 0; i < arr.length; i++) {
-        if (img_src === arr[i]) {
-          $("img").attr("src", arr[i + 1]);
-          $(box_arr[i + 1]).css("background-color", "black");
-          $(box_arr[i + 1]).siblings().css("background-color", "transparent");
-          if (i == arr.length - 1) {//如果图片到最后一张，索引值为长度-1时
-            $("img").attr("src", arr[0])//图片的索引值改为0，到第一张
-            $(box_arr[0]).css("background-color", "black");
-            $(box_arr[0]).siblings().css("background-color", "transparent");
+
+      .one {
+        top: 390px;
+        left: 310px;
+        background-color: black;
+      }
+
+      .two {
+        top: 390px;
+        left: 410px;
+      }
+
+      .three {
+        top: 390px;
+        left: 510px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <button class="up">上一张</button>
+    <img src="图片/牌子1.jpg" alt="" />
+    <button class="down">下一张</button>
+    <div>
+      <div class="box one"></div>
+      <div class="box two"></div>
+      <div class="box three"></div>
+      <!-- 下面点击的三个点 -->
+    </div>
+    <script src="jquery.js"></script>
+    <script>
+      //1.点击按钮左右换图
+      var box_arr = $('.box') //获取下面三个点
+      var arr = ['图片/牌子1.jpg', '图片/牌子2.jpg', '图片/牌子3.jpg'] //数组中放入所有图片
+      $('.up').click(function () {
+        //给上一个按钮点击事件
+        var img_src = $('img').attr('src') //获取当前图片的src属性
+        for (var i = 0; i < arr.length; i++) {
+          //遍历数组
+          if (img_src === arr[i]) {
+            $('img').attr('src', arr[i - 1])
           }
         }
-      }
-    }, 1000)//具体时间
-  </script>
-</body>
-
+      })
+      $('.down').click(function () {
+        //给下一张图片点击事件
+        var img_src = $('img').attr('src') //获取当前图片的scr属性
+        for (var i = 0; i < arr.length; i++) {
+          //遍历数组
+          if (img_src === arr[i]) {
+            $('img').attr('src', arr[i + 1]) //更改标签属性值
+          }
+        }
+      })
+      //2.点击圈圈换相对应对图
+      $('.box').click(function () {
+        var box_index = $(this).index() //获取点击的圈的索引值赋值给box_index
+        $('img').attr('src', arr[box_index])
+      })
+      //3.自动换图
+      setInterval(function () {
+        //周期函数
+        var img_src = $('img').attr('src')
+        for (var i = 0; i < arr.length; i++) {
+          if (img_src === arr[i]) {
+            $('img').attr('src', arr[i + 1])
+            $(box_arr[i + 1]).css('background-color', 'black')
+            $(box_arr[i + 1])
+              .siblings()
+              .css('background-color', 'transparent')
+            if (i == arr.length - 1) {
+              //如果图片到最后一张，索引值为长度-1时
+              $('img').attr('src', arr[0]) //图片的索引值改为0，到第一张
+              $(box_arr[0]).css('background-color', 'black')
+              $(box_arr[0]).siblings().css('background-color', 'transparent')
+            }
+          }
+        }
+      }, 1000) //具体时间
+    </script>
+  </body>
 </html>

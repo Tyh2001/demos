@@ -6,14 +6,14 @@
 </template>
 
 <script>
-export default {
-  data () {
-    return {
-      age: 0
-    };
-  },
-  created () {
-    this.age = this.$route.query.age;
+  export default {
+    data() {
+      return {
+        age: 0
+      }
+    },
+    created() {
+      this.age = this.$route.query.age
+    }
   }
-};
 </script>

@@ -1,75 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <title>百叶窗</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-    }
-
-    #wrap {
-      position: relative;
-      width: 800px;
-      height: 242px;
-      overflow: hidden;
-    }
-
-    img {
-      position: absolute;
-      width: 638px;
-      height: 242px;
-      border: 1px solid #fff;
-    }
-  </style>
-
-</head>
-
-<body>
-  <div id="wrap">
-    <img src="图片/1.jpg" alt="">
-    <img src="图片/2.jpg" alt="">
-    <img src="图片/3.jpg" alt="">
-    <img src="图片/4.jpg" alt="">
-    <img src="图片/5.jpg" alt="">
-  </div>
-  <script src="jquery.js"></script>
-  <script>
-    // 页面加载完毕，执行的代码
-    // $(document).ready()
-    // $(function(){})
-    // 0 160 320 480 640
-
-    $(function () {
-      // 初始化页面
-      for (var i = 0; i < 5; i++) {
-        $("img").eq(i).css({ left: i * 160 });
+  <head>
+    <meta charset="UTF-8" />
+    <title>百叶窗</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
       }
-      // 鼠标移入的时候
-      $("img").mouseenter(function () {
-        // 获取当前元素的索引值 
-        var ind = $(this).index();
-        // 当前元素之前的图片，包括当前的元素
-        for (var i = 0; i <= ind; i++) {
-          $("img").eq(i).stop().animate({ left: 40 * i }, 500);
-        }
-        // 后面的元素
-        for (var i = ind + 1; i < 5; i++) {
-          $("img").eq(i).stop().animate({ left: 640 + 40 * (i - 1) }, 500);
-        }
-      })
-      // 鼠标移出
-      $("img").mouseleave(function () {
+
+      #wrap {
+        position: relative;
+        width: 800px;
+        height: 242px;
+        overflow: hidden;
+      }
+
+      img {
+        position: absolute;
+        width: 638px;
+        height: 242px;
+        border: 1px solid #fff;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="wrap">
+      <img src="图片/1.jpg" alt="" />
+      <img src="图片/2.jpg" alt="" />
+      <img src="图片/3.jpg" alt="" />
+      <img src="图片/4.jpg" alt="" />
+      <img src="图片/5.jpg" alt="" />
+    </div>
+    <script src="jquery.js"></script>
+    <script>
+      // 页面加载完毕，执行的代码
+      // $(document).ready()
+      // $(function(){})
+      // 0 160 320 480 640
+
+      $(function () {
+        // 初始化页面
         for (var i = 0; i < 5; i++) {
-          $("img").eq(i).stop().animate({ left: i * 160 }, 500);
+          $('img')
+            .eq(i)
+            .css({ left: i * 160 })
         }
+        // 鼠标移入的时候
+        $('img').mouseenter(function () {
+          // 获取当前元素的索引值
+          var ind = $(this).index()
+          // 当前元素之前的图片，包括当前的元素
+          for (var i = 0; i <= ind; i++) {
+            $('img')
+              .eq(i)
+              .stop()
+              .animate({ left: 40 * i }, 500)
+          }
+          // 后面的元素
+          for (var i = ind + 1; i < 5; i++) {
+            $('img')
+              .eq(i)
+              .stop()
+              .animate({ left: 640 + 40 * (i - 1) }, 500)
+          }
+        })
+        // 鼠标移出
+        $('img').mouseleave(function () {
+          for (var i = 0; i < 5; i++) {
+            $('img')
+              .eq(i)
+              .stop()
+              .animate({ left: i * 160 }, 500)
+          }
+        })
       })
-    })
-
-  </script>
-
-</body>
-
+    </script>
+  </body>
 </html>

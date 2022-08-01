@@ -1,38 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Document</title>
-  <link rel="stylesheet" href="./style/index.css">
-</head>
-<body>
-  <div id="app">
-    <div class="cardBox">
-      <img :src="url" alt="">
-      <ul class="list">
-        <li
-          v-for="(li, index) in 5"
-          :key="li"
-          @mouseenter="changeCard(index)"
-        >
-          小米电视-{{ index + 1 }}
-        </li>
-      </ul>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style/index.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div class="cardBox">
+        <img :src="url" alt="" />
+        <ul class="list">
+          <li
+            v-for="(li, index) in 5"
+            :key="li"
+            @mouseenter="changeCard(index)"
+          >
+            小米电视-{{ index + 1 }}
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
-  <script>
-    new Vue({
-      el: '#app',
-      data: {
-        url: "./images/1.jpg"
-      },
-      methods: {
-        changeCard (index) {
-          this.url = `./images/${index + 1}.jpg`
-        } 
-      }
-    })
-  </script>
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script>
+      new Vue({
+        el: '#app',
+        data: {
+          url: './images/1.jpg'
+        },
+        methods: {
+          changeCard(index) {
+            this.url = `./images/${index + 1}.jpg`
+          }
+        }
+      })
+    </script>
+  </body>
 </html>

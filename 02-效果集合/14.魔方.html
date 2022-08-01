@@ -1,191 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <title>魔方</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-    }
-
-    .mofang {
-      position: relative;
-      width: 300px;
-      height: 300px;
-      margin: 100px auto;
-      /* 3D显示 */
-      transform-style: preserve-3d;
-      /* 透视距离 */
-      perspective: 10000px;
-      /* 3D旋转 */
-      /* transform: rotate3d(X,Y,Z,deg) */
-      animation: ani 10s infinite;
-    }
-
-    .item {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 300px;
-      height: 300px;
-      /* 解决行内块元素之间的间距 */
-      font-size: 0;
-    }
-
-    .item span {
-      display: inline-block;
-      /*变成行内块元素：可以设置宽度和高度*/
-      width: 80px;
-      height: 80px;
-      margin: 10px;
-      border-radius: 10px;
-      /*圆角  yellow 黄色*/
-      font-size: 20px;
-      color: #fff;
-      text-align: center;
-      line-height: 80px;
-    }
-
-    .green span {
-      background-color: green;
-    }
-
-    .pink span {
-      background-color: pink;
-    }
-
-    .red span {
-      background-color: red;
-    }
-
-    .yellow span {
-      background-color: yellow;
-    }
-
-    .blue span {
-      background-color: blue;
-    }
-
-    .orange span {
-      background-color: orange;
-    }
-
-    .green {
-      /* Z */
-      transform: translateZ(150px);
-    }
-
-    .pink {
-      transform: translateZ(-150px);
-    }
-
-    .red {
-      transform: rotateY(90deg) translateZ(150px);
-    }
-
-    .yellow {
-      transform: rotateY(-90deg) translateZ(150px);
-    }
-
-    .blue {
-      transform: rotateX(90deg) translateZ(150px);
-    }
-
-    .orange {
-      transform: rotateX(-90deg) translateZ(150px);
-    }
-
-    @keyframes ani {
-      25% {
-        transform: rotate3d(1, 1, 1, 360deg)
+  <head>
+    <meta charset="UTF-8" />
+    <title>魔方</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
       }
 
-      50% {
-        transform: rotate3d(0.3, 0.5, 1, 90deg)
+      .mofang {
+        position: relative;
+        width: 300px;
+        height: 300px;
+        margin: 100px auto;
+        /* 3D显示 */
+        transform-style: preserve-3d;
+        /* 透视距离 */
+        perspective: 10000px;
+        /* 3D旋转 */
+        /* transform: rotate3d(X,Y,Z,deg) */
+        animation: ani 10s infinite;
       }
 
-      75% {
-        transform: rotate3d(1, 0.5, 0.8, 270deg)
+      .item {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 300px;
+        height: 300px;
+        /* 解决行内块元素之间的间距 */
+        font-size: 0;
       }
 
-      100% {
-        transform: rotate3d(0.4, 0.5, 0.8, 720deg)
+      .item span {
+        display: inline-block;
+        /*变成行内块元素：可以设置宽度和高度*/
+        width: 80px;
+        height: 80px;
+        margin: 10px;
+        border-radius: 10px;
+        /*圆角  yellow 黄色*/
+        font-size: 20px;
+        color: #fff;
+        text-align: center;
+        line-height: 80px;
       }
-    }
-  </style>
-</head>
 
-<body>
-  <div class="mofang">
-    <div class="item green">
-      <span>1</span>
-      <span>2</span>
-      <span>3</span>
-      <span>4</span>
-      <span>5</span>
-      <span>6</span>
-      <span>7</span>
-      <span>8</span>
-      <span>9</span>
-    </div>
-    <div class="item pink">
-      <span>1</span>
-      <span>2</span>
-      <span>3</span>
-      <span>4</span>
-      <span>5</span>
-      <span>6</span>
-      <span>7</span>
-      <span>8</span>
-      <span>9</span>
-    </div>
-    <div class="item red">
-      <span>1</span>
-      <span>2</span>
-      <span>3</span>
-      <span>4</span>
-      <span>5</span>
-      <span>6</span>
-      <span>7</span>
-      <span>8</span>
-      <span>9</span>
-    </div>
-    <div class="item yellow">
-      <span>1</span>
-      <span>2</span>
-      <span>3</span>
-      <span>4</span>
-      <span>5</span>
-      <span>6</span>
-      <span>7</span>
-      <span>8</span>
-      <span>9</span>
-    </div>
-    <div class="item blue">
-      <span>1</span>
-      <span>2</span>
-      <span>3</span>
-      <span>4</span>
-      <span>5</span>
-      <span>6</span>
-      <span>7</span>
-      <span>8</span>
-      <span>9</span>
-    </div>
-    <div class="item orange">
-      <span>1</span>
-      <span>2</span>
-      <span>3</span>
-      <span>4</span>
-      <span>5</span>
-      <span>6</span>
-      <span>7</span>
-      <span>8</span>
-      <span>9</span>
-    </div>
-  </div>
-</body>
+      .green span {
+        background-color: green;
+      }
 
+      .pink span {
+        background-color: pink;
+      }
+
+      .red span {
+        background-color: red;
+      }
+
+      .yellow span {
+        background-color: yellow;
+      }
+
+      .blue span {
+        background-color: blue;
+      }
+
+      .orange span {
+        background-color: orange;
+      }
+
+      .green {
+        /* Z */
+        transform: translateZ(150px);
+      }
+
+      .pink {
+        transform: translateZ(-150px);
+      }
+
+      .red {
+        transform: rotateY(90deg) translateZ(150px);
+      }
+
+      .yellow {
+        transform: rotateY(-90deg) translateZ(150px);
+      }
+
+      .blue {
+        transform: rotateX(90deg) translateZ(150px);
+      }
+
+      .orange {
+        transform: rotateX(-90deg) translateZ(150px);
+      }
+
+      @keyframes ani {
+        25% {
+          transform: rotate3d(1, 1, 1, 360deg);
+        }
+
+        50% {
+          transform: rotate3d(0.3, 0.5, 1, 90deg);
+        }
+
+        75% {
+          transform: rotate3d(1, 0.5, 0.8, 270deg);
+        }
+
+        100% {
+          transform: rotate3d(0.4, 0.5, 0.8, 720deg);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="mofang">
+      <div class="item green">
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+        <span>5</span>
+        <span>6</span>
+        <span>7</span>
+        <span>8</span>
+        <span>9</span>
+      </div>
+      <div class="item pink">
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+        <span>5</span>
+        <span>6</span>
+        <span>7</span>
+        <span>8</span>
+        <span>9</span>
+      </div>
+      <div class="item red">
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+        <span>5</span>
+        <span>6</span>
+        <span>7</span>
+        <span>8</span>
+        <span>9</span>
+      </div>
+      <div class="item yellow">
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+        <span>5</span>
+        <span>6</span>
+        <span>7</span>
+        <span>8</span>
+        <span>9</span>
+      </div>
+      <div class="item blue">
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+        <span>5</span>
+        <span>6</span>
+        <span>7</span>
+        <span>8</span>
+        <span>9</span>
+      </div>
+      <div class="item orange">
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+        <span>5</span>
+        <span>6</span>
+        <span>7</span>
+        <span>8</span>
+        <span>9</span>
+      </div>
+    </div>
+  </body>
 </html>

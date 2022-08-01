@@ -1,79 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+  </style>
 
-<head>
-  <meta charset="UTF-8">
-  <title>Document</title>
-</head>
-<style>
-  * {
-    margin: 0;
-    padding: 0;
-  }
-</style>
+  <body>
+    <script>
+      // 字符串方法
+      // 返回：把"hello" 拆分成 ["h","e","l","l","o"]
+      var a = 'hello'.split('')
+      console.log(a)
 
-<body>
+      // indexOf()  返回字符串所在的位置 第一位返回1 如果没有返回-1
+      // 如果输入l返回2  只找到第一个l
+      var str = 'hello'
+      var b = str.indexOf('h')
+      console.log(b)
 
-  <script>
-    // 字符串方法
-    // 返回：把"hello" 拆分成 ["h","e","l","l","o"]
-    var a = "hello".split("");
-    console.log(a)
+      // 如何知道字符串里有几个e
+      var mes = 'message=hello world'
 
-    // indexOf()  返回字符串所在的位置 第一位返回1 如果没有返回-1
-    // 如果输入l返回2  只找到第一个l
-    var str = "hello";
-    var b = str.indexOf("h");
-    console.log(b);
+      // 查string方法
+      // 字符串拼接用+
+      // 替换字母
 
-    // 如何知道字符串里有几个e
-    var mes = "message=hello world";
+      // 截取字符串
+      // slice(start,end)方法
+      var aa = 'Hello-world-aa'
+      // 输出包括初始  不包括结束 可以有负数
+      console.log(aa.slice(5, 7))
+      // 负数是输出从后往前数的第几位
+      console.log(aa.slice(3, -2))
 
-    // 查string方法
-    // 字符串拼接用+
-    // 替换字母
+      // substring() 不能有负数 如果有负数
+      // 输出包括初始  不包括结束
+      console.log(aa.substring(5, 7)) // -w
+      // 负数不起作用 结果是从头开始截取长度5的字符串
+      console.log(aa.substring(5, -7)) //hello
 
-    // 截取字符串
-    // slice(start,end)方法
-    var aa = "Hello-world-aa";
-    // 输出包括初始  不包括结束 可以有负数
-    console.log(aa.slice(5, 7));
-    // 负数是输出从后往前数的第几位
-    console.log(aa.slice(3, -2));
+      // substr(start,length)
+      // substr(从第几位开始截,截取的长度)
+      console.log(aa.substr(0, 10))
+      console.log(aa.substr(5, 2))
 
-    // substring() 不能有负数 如果有负数
-    // 输出包括初始  不包括结束
-    console.log(aa.substring(5, 7)); // -w
-    // 负数不起作用 结果是从头开始截取长度5的字符串
-    console.log(aa.substring(5, -7)); //hello
+      // 替换内容
+      // replace()
 
-    // substr(start,length)
-    // substr(从第几位开始截,截取的长度)
-    console.log(aa.substr(0, 10));
-    console.log(aa.substr(5, 2));
+      // 转化大小写
+      console.log(aa.toUpperCase())
 
-    // 替换内容
-    // replace()
+      // concat() 连接两个或者多个字符串 数组也可以使用
 
-    // 转化大小写
-    console.log(aa.toUpperCase());
+      // trim()  去掉字符串两端的空白字符串
 
-    // concat() 连接两个或者多个字符串 数组也可以使用
+      // split()  字符串转为位数组
 
-    // trim()  去掉字符串两端的空白字符串
+      // 去掉字符串中的空格
 
-    // split()  字符串转为位数组
-
-    // 去掉字符串中的空格
-
-    var url = "http://127.0.0.1:7001/login?url=%2F";
-    // 最终变成%2F => "/"
-    // 字符串变成数组 split()
-    console.log(decodeURIComponent(url.split("=")[1]));
-        // [http://127.0.0.1:7001/login?url],[%2F]
-        // encodeURIComponent()  =>  转换为URI编码
-        // decodeURIComponent()  =>  将URI编码转换为正常值
-  </script>
-</body>
-
+      var url = 'http://127.0.0.1:7001/login?url=%2F'
+      // 最终变成%2F => "/"
+      // 字符串变成数组 split()
+      console.log(decodeURIComponent(url.split('=')[1]))
+      // [http://127.0.0.1:7001/login?url],[%2F]
+      // encodeURIComponent()  =>  转换为URI编码
+      // decodeURIComponent()  =>  将URI编码转换为正常值
+    </script>
+  </body>
 </html>

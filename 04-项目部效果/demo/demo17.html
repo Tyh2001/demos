@@ -1,48 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-</head>
-
-<body>
-  <div id="app">
-    <form @submit.prevent="insert">
-      <input type="text" v-model="fruit">
-      <input type="submit" 添加>
-      <ul>
-        <li v-for="item,index in fruitList">
-          <span>{{item}}</span>
-          <span @click="del(index)">删除</span>
-        </li>
-      </ul>
-    </form>
-  </div>
-  <script src="script/vue.js"></script>
-  <script>
-    new Vue({
-      el: "#app",
-      data: {
-        fruitList: [
-          "香蕉",
-          "苹果",
-          "鸭梨"
-        ],
-        fruit: ''
-      },
-      methods: {
-        del(i) {
-          this.fruitList.splice(i, 1)
+  <body>
+    <div id="app">
+      <form @submit.prevent="insert">
+        <input type="text" v-model="fruit" />
+        <input type="submit" 添加 />
+        <ul>
+          <li v-for="item,index in fruitList">
+            <span>{{item}}</span>
+            <span @click="del(index)">删除</span>
+          </li>
+        </ul>
+      </form>
+    </div>
+    <script src="script/vue.js"></script>
+    <script>
+      new Vue({
+        el: '#app',
+        data: {
+          fruitList: ['香蕉', '苹果', '鸭梨'],
+          fruit: ''
         },
-        insert() {
-          this.fruitList.push(this.fruit);
+        methods: {
+          del(i) {
+            this.fruitList.splice(i, 1)
+          },
+          insert() {
+            this.fruitList.push(this.fruit)
+          }
         }
-      }
-    })
-  </script>
-</body>
-
+      })
+    </script>
+  </body>
 </html>

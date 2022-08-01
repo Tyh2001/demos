@@ -1,110 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
 
-<head>
-  <meta charset="UTF-8">
-  <title>Document</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-    }
+      body {
+        background: #16a085;
+      }
 
-    body {
-      background: #16A085;
-    }
+      #main {
+        width: 400px;
+        margin: 10px auto;
 
-    #main {
-      width: 400px;
-      margin: 10px auto;
+        padding: 10px;
+      }
 
-      padding: 10px;
-    }
+      .box {
+        width: 340px;
+        height: 50px;
+        border: none;
+        background: #138871;
+        float: left;
+        color: white;
+        padding-left: 10px;
+      }
 
-    .box {
-      width: 340px;
-      height: 50px;
-      border: none;
-      background: #138871;
-      float: left;
-      color: white;
-      padding-left: 10px;
-    }
+      #add {
+        width: 50px;
+        height: 50px;
+        text-align: center;
+        line-height: 50px;
+        background: #107864;
+        color: white;
+        border: none;
+      }
 
-    #add {
-      width: 50px;
-      height: 50px;
-      text-align: center;
-      line-height: 50px;
-      background: #107864;
-      color: white;
-      border: none;
-    }
+      #list {
+        list-style: none;
+      }
 
-    #list {
-      list-style: none;
-    }
+      #list .item {
+        width: 395px;
+        padding: 0 5px;
+        height: 50px;
+        background: white;
+        color: gray;
+        line-height: 50px;
+        margin: 10px 0px;
+        display: none;
+        float: left;
+        position: relative;
+      }
 
-    #list .item {
-      width: 395px;
-      padding: 0 5px;
-      height: 50px;
-      background: white;
-      color: gray;
-      line-height: 50px;
-      margin: 10px 0px;
-      display: none;
-      float: left;
-      position: relative;
-    }
+      #list .item a {
+        text-decoration: none;
+        float: right;
+        color: gray;
+        margin-right: 20px;
+      }
 
-    #list .item a {
-      text-decoration: none;
-      ;
-      float: right;
-      color: gray;
-      margin-right: 20px;
-    }
+      #list .item span {
+        float: right;
+        color: gray;
+        margin-right: 20px;
+      }
+    </style>
+  </head>
 
-    #list .item span {
-      float: right;
-      color: gray;
-      margin-right: 20px;
-    }
-  </style>
-</head>
+  <body>
+    <div id="main">
+      <input type="text" name="name" class="box" />
+      <input type="button" id="add" value="Add" />
+      <ul id="list"></ul>
+    </div>
 
-<body>
+    <script src="./jquery.js"></script>
+    <script>
+      $('#add').click(function () {
+        var word = $('.box').val()
 
-  <div id="main">
-    <input type="text" name="name" class="box">
-    <input type="button" id="add" value="Add">
-    <ul id="list"></ul>
-  </div>
+        $('.box').val('')
+        var item = $(
+          "<li class='item'>" +
+            word +
+            "<a href='#'>DEL</a> <span>CLEAR</span></li>"
+        )
+        $('#list').append(item)
+        item.slideDown(200)
 
-  <script src="./jquery.js"></script>
-  <script>
-    $("#add").click(function () {
-      var word = $(".box").val();
-
-      $(".box").val("");
-      var item = $("<li class='item'>" + word + "<a href='#'>DEL</a> <span>CLEAR</span></li>");
-      $("#list").append(item);
-      item.slideDown(200);
-
-      $(".item a").click(function () {
-
-        $(this).parent().animate({ left: "100px" }, 300)
-          .animate({ left: "-500px" }, 500, function () {
-            $(this).remove();
-          })
+        $('.item a').click(function () {
+          $(this)
+            .parent()
+            .animate({ left: '100px' }, 300)
+            .animate({ left: '-500px' }, 500, function () {
+              $(this).remove()
+            })
+        })
       })
-    })
-    $("body").on("click", ".item span", function () {
-
-      $(this).parent().empty();
-    })
-  </script>
-</body>
-
+      $('body').on('click', '.item span', function () {
+        $(this).parent().empty()
+      })
+    </script>
+  </body>
 </html>

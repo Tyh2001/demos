@@ -1,198 +1,200 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>筛选商品</title>
+    <style>
+      body {
+        font-size: 14px;
+      }
 
-<head>
-  <meta charset="UTF-8">
-  <title>筛选商品</title>
-  <style>
-    body {
-      font-size: 14px;
-    }
+      * {
+        margin: 0;
+        padding: 0;
+      }
 
-    * {
-      margin: 0;
-      padding: 0;
-    }
+      ul {
+        list-style: none;
+      }
 
-    ul {
-      list-style: none;
-    }
+      #wrap {
+        width: 800px;
+        margin: 50px auto;
+      }
 
-    #wrap {
-      width: 800px;
-      margin: 50px auto;
-    }
+      .select {
+        height: 40px;
+        padding-left: 20px;
+        line-height: 40px;
+        background-color: rgb(202, 235, 248);
+      }
 
-    .select {
-      height: 40px;
-      padding-left: 20px;
-      line-height: 40px;
-      background-color: rgb(202, 235, 248);
-    }
+      .select h3 {
+        font-weight: normal;
+        font-size: 18px;
+      }
 
-    .select h3 {
-      font-weight: normal;
-      font-size: 18px;
-    }
+      .mark {
+        /* 行内块元素 */
+        display: inline-block;
+        line-height: 1em;
+        padding: 5px 3px;
+        border: 1px solid rgb(103, 155, 168);
+        margin-left: 5px;
+        font-size: 12px;
+      }
 
-    .mark {
-      /* 行内块元素 */
-      display: inline-block;
-      line-height: 1em;
-      padding: 5px 3px;
-      border: 1px solid rgb(103, 155, 168);
-      margin-left: 5px;
-      font-size: 12px;
-    }
+      .del {
+        display: inline-block;
+        background-color: rgb(101, 163, 179);
+        color: #fff;
+        margin-left: 10px;
+        padding: 2px;
+        cursor: pointer;
+      }
 
-    .del {
-      display: inline-block;
-      background-color: rgb(101, 163, 179);
-      color: #fff;
-      margin-left: 10px;
-      padding: 2px;
-      cursor: pointer;
-    }
+      .list {
+        padding: 10px 40px;
+      }
 
-    .list {
-      padding: 10px 40px;
-    }
+      .list li {
+        line-height: 2.5em;
+        border-bottom: 1px dashed #aaa;
+      }
 
-    .list li {
-      line-height: 2.5em;
-      border-bottom: 1px dashed #aaa;
-    }
+      .list li span {
+        font-size: 12px;
+        margin-left: 8px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
 
-    .list li span {
-      font-size: 12px;
-      margin-left: 8px;
-      cursor: pointer;
-    }
-  </style>
-</head>
-
-<body>
-  <!-- 包裹 -->
-  <div id="wrap">
-    <div class="select">
-      <h3>你的选择：
-        <!-- <span class="mark">魅族<span class="del">X</span></span>
+  <body>
+    <!-- 包裹 -->
+    <div id="wrap">
+      <div class="select">
+        <h3>
+          你的选择：
+          <!-- <span class="mark">魅族<span class="del">X</span></span>
         <span class="mark">魅族<span class="del">X</span></span> -->
-      </h3>
+        </h3>
+      </div>
+      <ul class="list">
+        <li>
+          品牌：
+          <span>苹果</span>
+          <span>小米</span>
+          <span>华为</span>
+          <span>锤子</span>
+          <span>魅族</span>
+          <span>OPPO</span>
+          <span>VIVO</span>
+          <span>360</span>
+          <span>乐视</span>
+          <span>美图</span>
+          <span>三星</span>
+          <!-- end -->
+        </li>
+        <li>
+          尺寸：
+          <span>3.0英寸以下</span>
+          <span>3.0-3.9英寸</span>
+          <span>4.0-4.5英寸</span>
+          <span>4.6-4.9英寸</span>
+          <span>5.0-5.5英寸</span>
+          <span>6.0英寸以上</span>
+        </li>
+        <li>
+          系统：
+          <span>安卓（Android）</span>
+          <span>苹果（IOS）</span>
+          <span>微软（WindowsPhone）</span>
+          <span>无</span>
+          <span>其他</span>
+        </li>
+        <li>
+          网络：
+          <span>联通3G</span>
+          <span>双卡单4G</span>
+          <span>双卡双4G</span>
+          <span>双卡5G</span>
+          <span>电信4G</span>
+          <span>联通4G</span>
+          <span>移动4G</span>
+        </li>
+      </ul>
     </div>
-    <ul class="list">
-      <li>
-        品牌：
-        <span>苹果</span>
-        <span>小米</span>
-        <span>华为</span>
-        <span>锤子</span>
-        <span>魅族</span>
-        <span>OPPO</span>
-        <span>VIVO</span>
-        <span>360</span>
-        <span>乐视</span>
-        <span>美图</span>
-        <span>三星</span>
-        <!-- end -->
-      </li>
-      <li>
-        尺寸：
-        <span>3.0英寸以下</span>
-        <span>3.0-3.9英寸</span>
-        <span>4.0-4.5英寸</span>
-        <span>4.6-4.9英寸</span>
-        <span>5.0-5.5英寸</span>
-        <span>6.0英寸以上</span>
-      </li>
-      <li>
-        系统：
-        <span>安卓（Android）</span>
-        <span>苹果（IOS）</span>
-        <span>微软（WindowsPhone）</span>
-        <span>无</span>
-        <span>其他</span>
-      </li>
-      <li>
-        网络：
-        <span>联通3G</span>
-        <span>双卡单4G</span>
-        <span>双卡双4G</span>
-        <span>双卡5G</span>
-        <span>电信4G</span>
-        <span>联通4G</span>
-        <span>移动4G</span>
-      </li>
-    </ul>
-  </div>
 
-  <script src="jquery.js"></script>
-  <script>
-    // 因为有排序
-    var arr = [];
+    <script src="jquery.js"></script>
+    <script>
+      // 因为有排序
+      var arr = []
 
-    $(".list span").click(function () {
-      // 最终要实现在 h3中添加 
-      // <span class="mark">魅族<span class="del">X</span></span>
-      var isReplace = false;
-      // 获取点击的内容
-      var content = $(this).text();
-      // 获取被点击元素的父级的索引值
-      var ind = $(this).parent().index();
-      // 被点击元素文字高亮,同级其他文字还原
-      $(this).css({ color: "blue" }).siblings().css({ color: "" });
-      // 创建mark
-      var mark = $("<span class='mark'></span>");
-      mark.text(content)
-      var del = '<span class="del">X</span>';
-      mark.append(del);
-      // 给创建的标签添加index属性 ,属性值是被点击元素父级的索引值，也就是变量ind
-      mark.attr("index", ind);
-      // 遍历数组，看数组中是否已经有这一行的数据，如果有就替换，没有才添加
-      for (var i = 0; i < arr.length; i++) {
-        if (arr[i].attr("index") == ind) {
-          isReplace = i;
-          // arr[i] = mark
+      $('.list span').click(function () {
+        // 最终要实现在 h3中添加
+        // <span class="mark">魅族<span class="del">X</span></span>
+        var isReplace = false
+        // 获取点击的内容
+        var content = $(this).text()
+        // 获取被点击元素的父级的索引值
+        var ind = $(this).parent().index()
+        // 被点击元素文字高亮,同级其他文字还原
+        $(this).css({ color: 'blue' }).siblings().css({ color: '' })
+        // 创建mark
+        var mark = $("<span class='mark'></span>")
+        mark.text(content)
+        var del = '<span class="del">X</span>'
+        mark.append(del)
+        // 给创建的标签添加index属性 ,属性值是被点击元素父级的索引值，也就是变量ind
+        mark.attr('index', ind)
+        // 遍历数组，看数组中是否已经有这一行的数据，如果有就替换，没有才添加
+        for (var i = 0; i < arr.length; i++) {
+          if (arr[i].attr('index') == ind) {
+            isReplace = i
+            // arr[i] = mark
+          }
         }
-      }
-      // 将mark添加到数组中
-      if (isReplace === false) {
-        arr.push(mark);
-      } else {
-        arr[isReplace] = mark;
-      }
-      // 对数组中的数据排序
-      arr.sort(function (a, b) { // a,b 代表的是数组中的元素
-        return a.attr("index") - b.attr("index");
+        // 将mark添加到数组中
+        if (isReplace === false) {
+          arr.push(mark)
+        } else {
+          arr[isReplace] = mark
+        }
+        // 对数组中的数据排序
+        arr.sort(function (a, b) {
+          // a,b 代表的是数组中的元素
+          return a.attr('index') - b.attr('index')
+        })
+        // innerHTML
+        $('h3').html('您的选择是：')
+        // 遍历数组，并且将数组中的每一个元素添加到h3中
+        for (var i = 0; i < arr.length; i++) {
+          $('h3').append(arr[i])
+        }
       })
-      // innerHTML
-      $("h3").html("您的选择是：")
-      // 遍历数组，并且将数组中的每一个元素添加到h3中
-      for (var i = 0; i < arr.length; i++) {
-        $("h3").append(arr[i]);
-      }
-    })
 
-    // 删除功能
-    $("h3").on("click", ".del", function () {
-      // 删除掉点击元素的父级
-      $(this).parent().remove();
-      // 数组删除元素 splice()
-      for (var i = 0; i < arr.length; i++) {
-        if ($(this).parent().attr("index") == arr[i].attr("index")) {
-          arr.splice(i, 1);
+      // 删除功能
+      $('h3').on('click', '.del', function () {
+        // 删除掉点击元素的父级
+        $(this).parent().remove()
+        // 数组删除元素 splice()
+        for (var i = 0; i < arr.length; i++) {
+          if ($(this).parent().attr('index') == arr[i].attr('index')) {
+            arr.splice(i, 1)
+          }
         }
-      }
-      // 指定行的颜色去掉高亮
-      $("li").eq($(this).parent().attr("index")).find("span").css({ color: "" });
-    })
-    var arr1 = [1, 2, 3, 4, 5, 6];
-    arr1.unshift(0);
-    arr1.pop()
-    arr1.splice(3, 0, 30, 50)
-    console.log(arr1)
-
-  </script>
-</body>
-
+        // 指定行的颜色去掉高亮
+        $('li')
+          .eq($(this).parent().attr('index'))
+          .find('span')
+          .css({ color: '' })
+      })
+      var arr1 = [1, 2, 3, 4, 5, 6]
+      arr1.unshift(0)
+      arr1.pop()
+      arr1.splice(3, 0, 30, 50)
+      console.log(arr1)
+    </script>
+  </body>
 </html>

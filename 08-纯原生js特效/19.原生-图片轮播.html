@@ -1,224 +1,221 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>原生图片轮播</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
 
-<head>
-  <meta charset="UTF-8">
-  <title>原生图片轮播</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-    }
+      .box {
+        width: 800px;
+        height: 300px;
+        margin: auto;
+        position: relative;
+      }
 
-    .box {
-      width: 800px;
-      height: 300px;
-      margin: auto;
-      position: relative;
-    }
+      img {
+        width: 800px;
+        height: 300px;
+      }
 
-    img {
-      width: 800px;
-      height: 300px;
-    }
+      .content {
+        list-style: none;
+      }
 
-    .content {
-      list-style: none;
-    }
+      .content > li {
+        float: left;
+        position: absolute;
+        opacity: 0;
+        /* 切换时候过度的效果 */
+        transition: opacity 0.75s;
+      }
 
-    .content>li {
-      float: left;
-      position: absolute;
-      opacity: 0;
-      /* 切换时候过度的效果 */
-      transition: opacity 0.75s;
-    }
+      /* li 的第一张图片为显示状态 */
+      .content > li:first-child {
+        opacity: 1;
+      }
 
-    /* li 的第一张图片为显示状态 */
-    .content>li:first-child {
-      opacity: 1;
-    }
+      /* 左右按钮 */
+      .left,
+      .right {
+        width: 30px;
+        height: 60px;
+        color: #fff;
+        font-size: 20px;
+        font-weight: 800;
+        text-align: center;
+        line-height: 60px;
+        cursor: pointer;
+        background-color: rgba(0, 0, 0, 0.1);
+        /* 禁止被选中 */
+        user-select: none;
+        opacity: 0;
+      }
 
-    /* 左右按钮 */
-    .left,
-    .right {
-      width: 30px;
-      height: 60px;
-      color: #fff;
-      font-size: 20px;
-      font-weight: 800;
-      text-align: center;
-      line-height: 60px;
-      cursor: pointer;
-      background-color: rgba(0, 0, 0, 0.1);
-      /* 禁止被选中 */
-      user-select: none;
-      opacity: 0;
-    }
+      .left {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        bottom: 0px;
+        margin: auto;
+      }
 
-    .left {
-      position: absolute;
-      top: 0px;
-      left: 0px;
-      bottom: 0px;
-      margin: auto;
-    }
+      .left:hover,
+      .right:hover {
+        background-color: rgba(0, 0, 0, 0.5);
+      }
 
-    .left:hover,
-    .right:hover {
-      background-color: rgba(0, 0, 0, 0.5);
-    }
+      .right {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        margin: auto;
+      }
 
-    .right {
-      position: absolute;
-      top: 0px;
-      right: 0px;
-      bottom: 0px;
-      margin: auto;
-    }
+      /* 下方小点的列表 */
+      .nav {
+        position: absolute;
+        left: 0px;
+        right: 0px;
+        bottom: 20px;
+        margin: auto;
+        width: 150px;
+        height: 20px;
+        background-color: rgba(255, 255, 255, 0.5);
+        border-radius: 10px;
+      }
 
-    /* 下方小点的列表 */
-    .nav {
-      position: absolute;
-      left: 0px;
-      right: 0px;
-      bottom: 20px;
-      margin: auto;
-      width: 150px;
-      height: 20px;
-      background-color: rgba(255, 255, 255, 0.5);
-      border-radius: 10px;
-    }
+      .nav > ul {
+        display: flex;
+        margin-top: 2.5px;
+        justify-content: space-around;
+      }
 
-    .nav>ul {
-      display: flex;
-      margin-top: 2.5px;
-      justify-content: space-around;
-    }
+      .nav > ul > li {
+        list-style: none;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background-color: #eee;
+      }
 
-    .nav>ul>li {
-      list-style: none;
-      width: 15px;
-      height: 15px;
-      border-radius: 50%;
-      background-color: #eee;
-    }
+      /* 第一个是红色 */
+      .nav > ul > li:first-child {
+        background-color: red;
+      }
+    </style>
+  </head>
 
-    /* 第一个是红色 */
-    .nav>ul>li:first-child {
-      background-color: red;
-    }
-  </style>
-</head>
-
-<body>
-  <div class="box">
-    <!-- ul.content>li*5>img[src=./图片/$.jpg] -->
-    <ul class="content">
-      <li><img src="./图片/1.jpg" alt=""></li>
-      <li><img src="./图片/2.jpg" alt=""></li>
-      <li><img src="./图片/3.jpg" alt=""></li>
-      <li><img src="./图片/4.jpg" alt=""></li>
-      <li><img src="./图片/5.jpg" alt=""></li>
-    </ul>
-
-    <!-- 左右切换的按钮 -->
-    <div class="left"> &lt; </div>
-    <div class="right"> > </div>
-
-    <!-- 下方小点的列表 -->
-    <div class="nav">
-      <ul>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
+  <body>
+    <div class="box">
+      <!-- ul.content>li*5>img[src=./图片/$.jpg] -->
+      <ul class="content">
+        <li><img src="./图片/1.jpg" alt="" /></li>
+        <li><img src="./图片/2.jpg" alt="" /></li>
+        <li><img src="./图片/3.jpg" alt="" /></li>
+        <li><img src="./图片/4.jpg" alt="" /></li>
+        <li><img src="./图片/5.jpg" alt="" /></li>
       </ul>
+
+      <!-- 左右切换的按钮 -->
+      <div class="left">&lt;</div>
+      <div class="right">></div>
+
+      <!-- 下方小点的列表 -->
+      <div class="nav">
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
     </div>
-  </div>
 
-  <script>
-    let leftBtn = document.querySelector(".left");
-    let rightBtn = document.querySelector(".right");
-    let lis = document.querySelectorAll(".content>li");
-    let dots = document.querySelectorAll(".nav>ul>li");
-    let box = document.querySelector(".box");
+    <script>
+      let leftBtn = document.querySelector('.left')
+      let rightBtn = document.querySelector('.right')
+      let lis = document.querySelectorAll('.content>li')
+      let dots = document.querySelectorAll('.nav>ul>li')
+      let box = document.querySelector('.box')
 
-    let index = 0;
+      let index = 0
 
-    // 向右换图
-    // 点击下一张调用函数
-    // 这里调用不能加括号
-    rightBtn.onclick = nextFun;
+      // 向右换图
+      // 点击下一张调用函数
+      // 这里调用不能加括号
+      rightBtn.onclick = nextFun
 
-    function nextFun() {
-      lis[index].style.opacity = "0";
-      index++;
-      if (index === 5) {
-        index = 0;
-      }
-      lis[index].style.opacity = "1";
-      changDot()
-    }
-
-    // 向左换图
-    leftBtn.onclick = function () {
-      lis[index].style.opacity = "0";
-      index--;
-      if (index === -1) {
-        index = 4;
-      }
-      lis[index].style.opacity = "1";
-      changDot()
-    }
-
-    // 切换图片之后下面的小点颜色跟着改变
-    function changDot() {
-      for (let i = 0; i < dots.length; i++) {
-        // 先让所有的都变白色
-        dots[i].style.background = "#eee";
-      }
-      dots[index].style.background = "red";
-    }
-
-    // 每过两秒自动切换图片
-    // 每隔两秒钟调用一下右换图的函数
-    let timer = setInterval(nextFun, 2000);
-
-    // 鼠标移入之后图片不再自动切换
-    // 移出后继续每隔两秒自动切换一次
-    box.onmouseover = function () {
-      clearInterval(timer);
-
-      // 开始状态下时左右切换的按钮是隐藏的
-      // 这里鼠标移入之后按钮再显示出来
-      leftBtn.style.opacity = "1";
-      rightBtn.style.opacity = "1";
-    }
-    box.onmouseout = function () {
-      timer = setInterval(nextFun, 2000);
-      leftBtn.style.opacity = "0";
-      rightBtn.style.opacity = "0";
-    }
-
-    // 为下面每个小点添加移入事件
-    // 可以通过下面小点来切换图片
-
-    // 先给每个 li 添加一个索引值
-    for (let i = 0; i < dots.length; i++) {
-      dots[i].pos = i;
-    }
-    for (let i = 0; i < dots.length; i++) {
-      dots[i].onmouseover = function () {
-        lis[index].style.opacity = "0";
-        index = this.pos;
-        lis[index].style.opacity = "1";
+      function nextFun() {
+        lis[index].style.opacity = '0'
+        index++
+        if (index === 5) {
+          index = 0
+        }
+        lis[index].style.opacity = '1'
         changDot()
       }
-    }
-  </script>
 
-</body>
+      // 向左换图
+      leftBtn.onclick = function () {
+        lis[index].style.opacity = '0'
+        index--
+        if (index === -1) {
+          index = 4
+        }
+        lis[index].style.opacity = '1'
+        changDot()
+      }
 
+      // 切换图片之后下面的小点颜色跟着改变
+      function changDot() {
+        for (let i = 0; i < dots.length; i++) {
+          // 先让所有的都变白色
+          dots[i].style.background = '#eee'
+        }
+        dots[index].style.background = 'red'
+      }
+
+      // 每过两秒自动切换图片
+      // 每隔两秒钟调用一下右换图的函数
+      let timer = setInterval(nextFun, 2000)
+
+      // 鼠标移入之后图片不再自动切换
+      // 移出后继续每隔两秒自动切换一次
+      box.onmouseover = function () {
+        clearInterval(timer)
+
+        // 开始状态下时左右切换的按钮是隐藏的
+        // 这里鼠标移入之后按钮再显示出来
+        leftBtn.style.opacity = '1'
+        rightBtn.style.opacity = '1'
+      }
+      box.onmouseout = function () {
+        timer = setInterval(nextFun, 2000)
+        leftBtn.style.opacity = '0'
+        rightBtn.style.opacity = '0'
+      }
+
+      // 为下面每个小点添加移入事件
+      // 可以通过下面小点来切换图片
+
+      // 先给每个 li 添加一个索引值
+      for (let i = 0; i < dots.length; i++) {
+        dots[i].pos = i
+      }
+      for (let i = 0; i < dots.length; i++) {
+        dots[i].onmouseover = function () {
+          lis[index].style.opacity = '0'
+          index = this.pos
+          lis[index].style.opacity = '1'
+          changDot()
+        }
+      }
+    </script>
+  </body>
 </html>

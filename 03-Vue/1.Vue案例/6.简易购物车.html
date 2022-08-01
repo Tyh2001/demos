@@ -1,119 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>简易购物车</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
 
-<head>
-  <meta charset="UTF-8">
-  <title>简易购物车</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-    }
+      table {
+        width: 600px;
+        border-spacing: 0;
+        line-height: 2.5em;
+      }
 
-    table {
-      width: 600px;
-      border-spacing: 0;
-      line-height: 2.5em;
-    }
+      thead {
+        background-color: aquamarine;
+      }
 
-    thead {
-      background-color: aquamarine;
-    }
+      button {
+        width: 20px;
+        height: 20px;
+        border: 0;
+        border-radius: 4px;
+        background-color: cornflowerblue;
+        color: #fff;
+      }
+    </style>
+  </head>
 
-    button {
-      width: 20px;
-      height: 20px;
-      border: 0;
-      border-radius: 4px;
-      background-color: cornflowerblue;
-      color: #fff;
-    }
-  </style>
-</head>
+  <body>
+    <div id="app">
+      <h3>总价：{{totalPrice}}</h3>
+      <table>
+        <thead>
+          <tr>
+            <td>名称</td>
+            <td>单价</td>
+            <td>数量</td>
+            <td>总价</td>
+          </tr>
+        </thead>
 
-<body>
-  <div id="app">
-    <h3>总价：{{totalPrice}}</h3>
-    <table>
-      <thead>
-        <tr>
-          <td>名称</td>
-          <td>单价</td>
-          <td>数量</td>
-          <td>总价</td>
-        </tr>
-      </thead>
+        <tbody>
+          <tr v-for=" item,index in goods ">
+            <td>{{item.name}}</td>
+            <td>{{item.price}}</td>
+            <td>
+              <button v-on:click="jian(index)">-</button>
+              {{item.count}}
+              <button v-on:click="jia(index)">+</button>
+            </td>
+            <td>{{item.sumPrice}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
-      <tbody>
-        <tr v-for=" item,index in goods ">
-          <td>{{item.name}}</td>
-          <td>{{item.price}}</td>
-          <td>
-            <button v-on:click="jian(index)">-</button>
-            {{item.count}}
-            <button v-on:click="jia(index)">+</button>
-          </td>
-          <td>{{item.sumPrice}}</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <script src="./vue.js"></script>
-  <script>
-    new Vue({
-      el: "#app",
-      data: {
-        totalPrice: 0, /* 所有商品总价 */
-        goods: [        /* 商品列表 */
-          {
-            name: "香蕉",
-            price: "3", /* 单个商品的价钱 */
-            count: 0,     /* 单个商品的数量 */
-            sumPrice: 0   /* 单个商品的总价钱 */
-          },
-          {
-            name: "苹果",
-            price: "1",
-            count: 0,
-            sumPrice: 0
-          },
-          {
-            name: "鸭梨",
-            price: "5",
-            count: 0,
-            sumPrice: 0
-          }
-        ]
-      },
-      methods: {  /* 方法 */
-        jia(i) { /* 形参i代表的是数组的索引 */
-          /* this 代表 vue 实例对象 */
-          this.goods[i].count++; /* 将data数据中 goods数组对应的对象里面的数量（count）加1 */
-          // 单个商品的总价钱
-          this.goods[i].sumPrice = (this.goods[i].price * this.goods[i].count).toFixed(2);
-          //number.toFixed(count) 数字保留几位小数 count表示保留的位数
-          this.getTotal();//调用获取总价函数
+    <script src="./vue.js"></script>
+    <script>
+      new Vue({
+        el: '#app',
+        data: {
+          totalPrice: 0 /* 所有商品总价 */,
+          goods: [
+            /* 商品列表 */
+            {
+              name: '香蕉',
+              price: '3' /* 单个商品的价钱 */,
+              count: 0 /* 单个商品的数量 */,
+              sumPrice: 0 /* 单个商品的总价钱 */
+            },
+            {
+              name: '苹果',
+              price: '1',
+              count: 0,
+              sumPrice: 0
+            },
+            {
+              name: '鸭梨',
+              price: '5',
+              count: 0,
+              sumPrice: 0
+            }
+          ]
         },
-        jian(i) {
-          // 数量不能是负数,大于0时才进行数量的减法
-          if (this.goods[i].count > 0) {
-            this.goods[i].count--;
-          }
-          this.goods[i].sumPrice = (this.goods[i].price * this.goods[i].count).toFixed(2);
-          this.getTotal();  //调用获取总价函数
-        },
-        getTotal() { /* 获取总价 */
-          this.totalPrice = 0; /* 累加前初始化总价钱 变成0*/
-          // 总价钱累加 
-          for (var i = 0; i < this.goods.length; i++) {
-            this.totalPrice = Number(this.totalPrice) + Number(this.goods[i].sumPrice)
+        methods: {
+          /* 方法 */
+          jia(i) {
+            /* 形参i代表的是数组的索引 */
+            /* this 代表 vue 实例对象 */
+            this.goods[i]
+              .count++ /* 将data数据中 goods数组对应的对象里面的数量（count）加1 */
+            // 单个商品的总价钱
+            this.goods[i].sumPrice = (
+              this.goods[i].price * this.goods[i].count
+            ).toFixed(2)
+            //number.toFixed(count) 数字保留几位小数 count表示保留的位数
+            this.getTotal() //调用获取总价函数
+          },
+          jian(i) {
+            // 数量不能是负数,大于0时才进行数量的减法
+            if (this.goods[i].count > 0) {
+              this.goods[i].count--
+            }
+            this.goods[i].sumPrice = (
+              this.goods[i].price * this.goods[i].count
+            ).toFixed(2)
+            this.getTotal() //调用获取总价函数
+          },
+          getTotal() {
+            /* 获取总价 */
+            this.totalPrice = 0 /* 累加前初始化总价钱 变成0*/
+            // 总价钱累加
+            for (var i = 0; i < this.goods.length; i++) {
+              this.totalPrice =
+                Number(this.totalPrice) + Number(this.goods[i].sumPrice)
+            }
           }
         }
-      }
-    })
-
-  </script>
-</body>
-
+      })
+    </script>
+  </body>
 </html>

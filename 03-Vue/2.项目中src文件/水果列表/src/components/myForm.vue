@@ -6,18 +6,18 @@
   </div>
 </template>
 <script>
-import bus from "../bus.js";
-export default {
-  data () {
-    return {
-      msg: ""
-    };
-  },
-  methods: {
-    add () {
-      // $emit 触发事件
-      bus.$emit("transMsg", this.msg);
+  import bus from '../bus.js'
+  export default {
+    data() {
+      return {
+        msg: ''
+      }
+    },
+    methods: {
+      add() {
+        // $emit 触发事件
+        bus.$emit('transMsg', this.msg)
+      }
     }
   }
-};
 </script>

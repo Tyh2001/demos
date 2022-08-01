@@ -10,9 +10,9 @@
 </template>
 
 <style scoped>
-a {
-  margin-left: 20px;
-  color: aliceblue;
-  font-size: 20px;
-}
+  a {
+    margin-left: 20px;
+    color: aliceblue;
+    font-size: 20px;
+  }
 </style>

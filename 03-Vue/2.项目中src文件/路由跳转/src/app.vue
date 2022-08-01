@@ -16,21 +16,21 @@
       <router-link
         :to="{
           name: 'movie',
-          params: { movieId: '99999', moviename: '战狼Ⅲ' },
+          params: { movieId: '99999', moviename: '战狼Ⅲ' }
         }"
         >战狼Ⅲ</router-link
       >
       <router-link
         :to="{
           name: 'movie',
-          params: { movieId: '88888', moviename: '狼图腾' },
+          params: { movieId: '88888', moviename: '狼图腾' }
         }"
         >狼图腾</router-link
       >
       <router-link
         :to="{
           name: 'movie',
-          params: { movieId: '77777', moviename: '大人物' },
+          params: { movieId: '77777', moviename: '大人物' }
         }"
         >大人物</router-link
       >
@@ -46,34 +46,28 @@
   </div>
 </template>
 <script>
-import home from "./components/home.vue";
-export default {};
+  import home from './components/home.vue'
+  export default {}
 </script>
 <style scoped>
-header {
-  height: 100px;
-  background-color: yellowgreen;
-}
-footer {
-  height: 100px;
-  background-color: skyblue;
-}
-.box {
-  height: 200px;
-  background-color: pink;
-  overflow: hidden;
-}
-a {
-  margin-left: 20px;
-  color: aliceblue;
-}
+  header {
+    height: 100px;
+    background-color: yellowgreen;
+  }
+  footer {
+    height: 100px;
+    background-color: skyblue;
+  }
+  .box {
+    height: 200px;
+    background-color: pink;
+    overflow: hidden;
+  }
+  a {
+    margin-left: 20px;
+    color: aliceblue;
+  }
 </style>
 
-
-
-
-// Ⅰ  Ⅱ  Ⅲ  Ⅳ  Ⅴ  Ⅵ  Ⅶ  Ⅷ  Ⅸ  Ⅹ  
-// 一  二  三  四  五  六  七  八  九  十
-// 1  2  3  4  5  6  7  8  9  10
-// ①  ②  ③  ④  ⑤  ⑥  ⑦  ⑧  ⑨  ⑩
-// 壹  贰  叁  肆  伍  陆  柒  捌  玖  拾
+// Ⅰ Ⅱ Ⅲ Ⅳ Ⅴ Ⅵ Ⅶ Ⅷ Ⅸ Ⅹ // 一 二 三 四 五 六 七 八 九 十 // 1 2 3 4 5 6 7 8 9 10
+// ① ② ③ ④ ⑤ ⑥ ⑦ ⑧ ⑨ ⑩ // 壹 贰 叁 肆 伍 陆 柒 捌 玖 拾

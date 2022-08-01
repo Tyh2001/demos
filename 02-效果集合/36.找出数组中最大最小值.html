@@ -1,27 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>找出数组中最大最小值</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <title>找出数组中最大最小值</title>
-</head>
-
-<body>
-  <script>
-    var arr = [1, 3, 18, 6, 20, 8, 11, 12];
-    var max = arr[0];
-    var xiao = arr[0]
-    for (var i = 0; i < arr.length; i++) {
-      if (max < arr[i]) {
-        max = arr[i]
+  <body>
+    <script>
+      var arr = [1, 3, 18, 6, 20, 8, 11, 12]
+      var max = arr[0]
+      var xiao = arr[0]
+      for (var i = 0; i < arr.length; i++) {
+        if (max < arr[i]) {
+          max = arr[i]
+        }
+        if (xiao > arr[i]) {
+          xiao = arr[i]
+        }
       }
-      if (xiao > arr[i]) {
-        xiao = arr[i]
-      }
-    }
-    console.log("最大值是" + max);
-    console.log("最小值是" + xiao)
-  </script>
-</body>
-
+      console.log('最大值是' + max)
+      console.log('最小值是' + xiao)
+    </script>
+  </body>
 </html>

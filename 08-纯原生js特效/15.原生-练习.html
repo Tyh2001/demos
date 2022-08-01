@@ -1,96 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
 
-<head>
-  <meta charset="UTF-8">
-  <title>Document</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-    }
+      body {
+        background-color: #000;
+      }
 
-    body {
-      background-color: #000;
-    }
+      .box {
+        width: 600px;
+        height: 400px;
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        margin: auto;
+        overflow: hidden;
+      }
 
-    .box {
-      width: 600px;
-      height: 400px;
-      position: fixed;
-      top: 0px;
-      left: 0px;
-      right: 0px;
-      bottom: 0px;
-      margin: auto;
-      overflow: hidden;
-    }
+      .box img {
+        width: 600px;
+        height: 4400px;
+        position: absolute;
+        top: 0px;
+      }
 
-    .box img {
-      width: 600px;
-      height: 4400px;
-      position: absolute;
-      top: 0px;
-    }
+      .box .top {
+        position: absolute;
+        top: 0px;
+        width: 600px;
+        height: 200px;
+      }
 
-    .box .top {
-      position: absolute;
-      top: 0px;
-      width: 600px;
-      height: 200px;
-    }
+      .box .bottom {
+        position: absolute;
+        top: 200px;
+        width: 600px;
+        height: 200px;
+      }
+    </style>
+  </head>
 
-    .box .bottom {
-      position: absolute;
-      top: 200px;
-      width: 600px;
-      height: 200px;
-    }
-  </style>
-</head>
+  <body>
+    <div class="box">
+      <img src="./图片/图片滚动/我的朋友圈.jpg" alt="" />
+      <div class="top"></div>
+      <div class="bottom"></div>
+    </div>
 
-<body>
-  <div class="box">
-    <img src="./图片/图片滚动/我的朋友圈.jpg" alt="">
-    <div class="top"></div>
-    <div class="bottom"></div>
-  </div>
+    <script>
+      function $(Class) {
+        return typeof Class === 'string' ? document.querySelector(Class) : null
+      }
 
-  <script>
-    function $(Class) {
-      return typeof Class === "string" ? document.querySelector(Class) : null;
-    }
+      let timer = null
+      let num = 0
+      $('.top').onmouseover = function () {
+        clearInterval(timer)
+        timer = setInterval(() => {
+          num -= 4
+          if (num >= -4000) {
+            $('img').style.top = num + 'px'
+          } else {
+            clearInterval(timer)
+          }
+        }, 10)
+      }
 
-    let timer = null;
-    let num = 0;
-    $(".top").onmouseover = function () {
-      clearInterval(timer);
-      timer = setInterval(() => {
-        num -= 4;
-        if (num >= -4000) {
-          $("img").style.top = num + "px";
-        } else {
-          clearInterval(timer);
-        }
-      }, 10)
-    }
+      $('.bottom').onmouseover = function () {
+        clearInterval(timer)
+        timer = setInterval(() => {
+          num += 4
+          if (num <= 0) {
+            $('img').style.top = num + 'px'
+          } else {
+            clearInterval(timer)
+          }
+        }, 10)
+      }
 
-    $(".bottom").onmouseover = function () {
-      clearInterval(timer);
-      timer = setInterval(() => {
-        num += 4;
-        if (num <= 0) {
-          $("img").style.top = num + "px";
-        } else {
-          clearInterval(timer);
-        }
-      }, 10)
-    }
-
-    $(".box").onmouseout = function () {
-      clearInterval(timer);
-    }
-  </script>
-</body>
-
+      $('.box').onmouseout = function () {
+        clearInterval(timer)
+      }
+    </script>
+  </body>
 </html>

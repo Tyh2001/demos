@@ -1,28 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <title>Document</title>
-</head>
-
-<body>
-  <script>
-    /* 最终拿到一个没有重复数据的数组 */
-    var arr = [1, 5, 6, 3, 4, 2, 1, 1, 5, 1, 7, 9];
-    //1. 获取数组里面的每一个元素
-    for (var i = 0; i < arr.length; i++) {
-      // 2. 数组中的一个元素，与他后面的每个元素一一比较，有相同的就把他后面相同的元素删掉
-      for (var j = i + 1; j < arr.length; j++) {
-        if (arr[i] == arr[j]) {
-          arr.splice(j, 1)
-          j--;
+  <body>
+    <script>
+      /* 最终拿到一个没有重复数据的数组 */
+      var arr = [1, 5, 6, 3, 4, 2, 1, 1, 5, 1, 7, 9]
+      //1. 获取数组里面的每一个元素
+      for (var i = 0; i < arr.length; i++) {
+        // 2. 数组中的一个元素，与他后面的每个元素一一比较，有相同的就把他后面相同的元素删掉
+        for (var j = i + 1; j < arr.length; j++) {
+          if (arr[i] == arr[j]) {
+            arr.splice(j, 1)
+            j--
+          }
         }
       }
-    }
-    console.log(arr)
-    // arr = [1,5,6,3,4,2,7,9]
-  </script>
-</body>
-
+      console.log(arr)
+      // arr = [1,5,6,3,4,2,7,9]
+    </script>
+  </body>
 </html>

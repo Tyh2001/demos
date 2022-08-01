@@ -6,16 +6,16 @@
   </div>
 </template>
 <script>
-export default {
-  props: ["count", "index"],
-  methods: {
-    jia () {
-      // $emit触发自定义事件
-      this.$emit("jia-event", this.index);
-    },
-    jian () {
-      this.$emit("jian-event", this.index);
+  export default {
+    props: ['count', 'index'],
+    methods: {
+      jia() {
+        // $emit触发自定义事件
+        this.$emit('jia-event', this.index)
+      },
+      jian() {
+        this.$emit('jian-event', this.index)
+      }
     }
   }
-};
 </script>

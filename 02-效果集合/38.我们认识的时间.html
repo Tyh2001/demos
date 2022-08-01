@@ -1,60 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
 
-<head>
-  <meta charset="UTF-8">
-  <title>Document</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-    }
+      div {
+        display: flex;
+        width: 400px;
+        border: 3px solid pink;
+        text-align: center;
+        margin: 0 auto;
+      }
 
-    div {
-      display: flex;
-      width: 400px;
-      border: 3px solid pink;
-      text-align: center;
-      margin: 0 auto;
-    }
+      div h1 {
+        font-size: 45px;
+      }
+    </style>
+  </head>
 
-    div h1 {
-      font-size: 45px;
-    }
-  </style>
-</head>
-
-<body>
-  <div>
-    <span>从2020年8月25日12:27开始到现在,我们已经认识了：</span>
-  </div>
-  <div>
-    <h1 class="day"></h1>天
-    <h1 class="hours"></h1>小时
-    <h1 class="minutes"></h1>分钟
-    <h1 class="seconds"></h1>秒
-  </div>
-  <script src="jquery.js"></script>
-  <script>
-    // <span>从2020年8月25日12:27</span>
-    let target = new Date("2020-8-25 12:27").getTime(); //获取目标时间戳 2020-8-25 12:27
-    // 计时器 每一秒输出一次
-    setInterval(() => {
-      let now = new Date().getTime(); //获取当前时间戳
-      let difference = now - target; //现在的时间戳 - 目标日期的时间戳 = 相差的时间戳
-      let allSeconds = Math.floor(difference / 1000); //计算距离目标时间总计有多少秒
-      let allMinutes = Math.floor(allSeconds / 60); //计算距离目标时间总计有多少分钟
-      let seconds = allSeconds % 60;
-      let allHours = Math.floor(allMinutes / 60);
-      let minutes = allMinutes % 60;
-      let day = Math.floor(allHours / 24);
-      let hours = allHours % 24;
-      $(".day").text(day);
-      $(".hours").text(hours);
-      $(".minutes").text(minutes);
-      $(".seconds").text(seconds);
-    }, 1000);
-  </script>
-</body>
-
+  <body>
+    <div>
+      <span>从2020年8月25日12:27开始到现在,我们已经认识了：</span>
+    </div>
+    <div>
+      <h1 class="day"></h1>
+      天
+      <h1 class="hours"></h1>
+      小时
+      <h1 class="minutes"></h1>
+      分钟
+      <h1 class="seconds"></h1>
+      秒
+    </div>
+    <script src="jquery.js"></script>
+    <script>
+      // <span>从2020年8月25日12:27</span>
+      let target = new Date('2020-8-25 12:27').getTime() //获取目标时间戳 2020-8-25 12:27
+      // 计时器 每一秒输出一次
+      setInterval(() => {
+        let now = new Date().getTime() //获取当前时间戳
+        let difference = now - target //现在的时间戳 - 目标日期的时间戳 = 相差的时间戳
+        let allSeconds = Math.floor(difference / 1000) //计算距离目标时间总计有多少秒
+        let allMinutes = Math.floor(allSeconds / 60) //计算距离目标时间总计有多少分钟
+        let seconds = allSeconds % 60
+        let allHours = Math.floor(allMinutes / 60)
+        let minutes = allMinutes % 60
+        let day = Math.floor(allHours / 24)
+        let hours = allHours % 24
+        $('.day').text(day)
+        $('.hours').text(hours)
+        $('.minutes').text(minutes)
+        $('.seconds').text(seconds)
+      }, 1000)
+    </script>
+  </body>
 </html>

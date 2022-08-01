@@ -1,373 +1,909 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="https://www.hualigs.cn/image/60813be18fcf1.jpg" />
+    <title>网站 6.1</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        user-select: none;
+        text-decoration: none;
+      }
 
-<head>
-  <meta charset="UTF-8">
-  <link rel="icon" href="https://www.hualigs.cn/image/60813be18fcf1.jpg">
-  <title>网站 6.1</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      user-select: none;
-      text-decoration: none;
-    }
+      body {
+        padding: 20px;
+        overflow-y: scroll;
+      }
 
-    body {
-      padding: 20px;
-      overflow-y: scroll;
-    }
+      a {
+        width: 170px;
+        height: 40px;
+        display: inline-block;
+        font-size: 18px;
+        font-weight: 800;
+        background-color: #f3f3f3;
+        line-height: 40px;
+        text-align: center;
+        margin: 6px;
+      }
 
-    a {
-      width: 170px;
-      height: 40px;
-      display: inline-block;
-      font-size: 18px;
-      font-weight: 800;
-      background-color: #f3f3f3;
-      line-height: 40px;
-      text-align: center;
-      margin: 6px;
-    }
+      .bigBox {
+        width: 100%;
+        height: 100%;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12),
+          0 0 6px 0 rgba(0, 0, 0, 0.04);
+      }
 
-    .bigBox {
-      width: 100%;
-      height: 100%;
-      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12), 0 0 6px 0 rgba(0, 0, 0, 0.04);
-    }
+      .bigBox .navBar {
+        width: 100%;
+        display: flex;
+        background: #f5f7fa;
+      }
 
-    .bigBox .navBar {
-      width: 100%;
-      display: flex;
-      background: #f5f7fa;
-    }
+      .bigBox .navBar .NavBar-item {
+        width: 98px;
+        height: 50px;
+        font-size: 14px;
+        color: #9093a6;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+      }
 
-    .bigBox .navBar .NavBar-item {
-      width: 98px;
-      height: 50px;
-      font-size: 14px;
-      color: #9093a6;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      cursor: pointer;
-    }
+      .bigBox .content {
+        height: 100%;
+        display: none;
+        box-sizing: border-box;
+        padding: 20px;
+      }
 
-    .bigBox .content {
-      height: 100%;
-      display: none;
-      box-sizing: border-box;
-      padding: 20px;
-    }
+      .bigBox .content .content-box .content-title {
+        width: 100%;
+        height: 48px;
+        color: #303133;
+        font-size: 15px;
+        display: flex;
+        align-items: center;
+        border-top: 1px solid #ebeef5;
+        cursor: pointer;
+      }
 
-    .bigBox .content .content-box .content-title {
-      width: 100%;
-      height: 48px;
-      color: #303133;
-      font-size: 15px;
-      display: flex;
-      align-items: center;
-      border-top: 1px solid #ebeef5;
-      cursor: pointer;
-    }
+      .bigBox .content .content-box .content-list {
+        display: none;
+        padding: 15px;
+      }
+    </style>
+  </head>
 
-    .bigBox .content .content-box .content-list {
-      display: none;
-      padding: 15px;
-    }
-  </style>
-</head>
+  <body>
+    <div class="bigBox">
+      <!-- 导航栏 -->
+      <div class="navBar">
+        <div class="NavBar-item">常用工具</div>
+        <div class="NavBar-item">GitHub相关</div>
+        <div class="NavBar-item">其他工具</div>
+      </div>
 
-<body>
-  <div class="bigBox">
-    <!-- 导航栏 -->
-    <div class="navBar">
-      <div class="NavBar-item">常用工具</div>
-      <div class="NavBar-item">GitHub相关</div>
-      <div class="NavBar-item">其他工具</div>
+      <!-- 常用工具 -->
+      <div class="content" style="display: block">
+        <!-- 常用网站 -->
+        <div class="content-box">
+          <div class="content-title">常用网站</div>
+          <div class="content-list" style="display: block">
+            <a style="color: #2319dc" href="https://www.baidu.com">百度</a>
+            <a style="color: #2319dc" href="https://fanyi.baidu.com/ "
+              >百度翻译</a
+            >
+            <a style="color: #0177d7" href="https://www.zhihu.com">知乎</a>
+            <a style="color: #96b97d" href="https://www.runoob.com/"
+              >菜鸟教程</a
+            >
+            <a style="color: #bd2d30" href="https://www.w3school.com.cn/"
+              >w3school</a
+            >
+            <a style="color: #41b883" href="https://cn.vuejs.org/">Vue.js</a>
+            <a style="color: #41b883" href="https://vue3js.cn/docs/zh/"
+              >Vue 3.0</a
+            >
+            <a style="color: #c71d23" href="https://gitee.com/">码云</a>
+            <a
+              style="color: #212121"
+              href="https://developer.mozilla.org/zh-CN/"
+              >MDN</a
+            >
+            <a style="color: #2b3137" href="https://github.com/">Github</a>
+            <a style="color: #24ace6" href="https://www.bilibili.com/ "
+              >哔哩哔哩</a
+            >
+            <a
+              style="color: #000"
+              href="https://www.infinitymcn.com/phpmyadmin/sql.php"
+              >达买线上数据库</a
+            >
+            <a
+              style="color: rgb(31, 83, 148)"
+              href="https://exmail.qq.com/cgi-bin/frame_html?sid=WIm-YuP5Epc1JQpq,7&sign_type=&r=234edb4e1970581c68717c274e516743"
+              >腾讯企业邮箱</a
+            >
+            <a
+              style="color: rgb(7, 193, 96)"
+              href="https://mp.weixin.qq.com/cgi-bin/home?t=home/index&lang=zh_CN&token=11039487#tab=sent-panel"
+              >微信公众号</a
+            >
+          </div>
+        </div>
+
+        <!-- 前端框架 -->
+        <div class="content-box">
+          <div class="content-title">前端框架</div>
+          <div class="content-list" style="display: none">
+            <a
+              style="color: rgb(11, 181, 226)"
+              href="http://datav.jiaminghi.com/"
+              title="Vue 大屏数据展示组件库"
+              >DataV</a
+            >
+            <a
+              style="color: rgb(4, 158, 244)"
+              href="http://www.yanhuangxueyuan.com/"
+              title="Vue PC端"
+              >three.js</a
+            >
+            <a
+              style="color: #2b3137"
+              href="https://github.com/janl/mustache.js"
+              title="模板引擎"
+              >mustache.js</a
+            >
+            <a
+              style="color: rgb(39, 174, 96)"
+              href="https://www.bootcdn.cn/"
+              title="集成文件"
+              >mustache.js</a
+            >
+            <a
+              style="color: #409eff"
+              href="https://element.eleme.cn/#/zh-CN"
+              title="Vue PC端"
+              >element</a
+            >
+            <a
+              style="color: #409eff"
+              href="https://element-plus.org/#/zh-CN/"
+              title="Vue3"
+              >element-Plus</a
+            >
+            <a
+              style="color: #2d8cf0"
+              href="https://www.iviewui.com/"
+              title="Vue PC端"
+              >iView UI</a
+            >
+            <a
+              style="color: rgb(27, 139, 243)"
+              href="https://at-ui.github.io/at-ui/#/zh/"
+              title="Vue PC端"
+              >At UIKIT</a
+            >
+            <a style="color: #000000" href="https://vux.li/" title="Vue PC端"
+              >VUX</a
+            >
+            <a
+              style="color: #23282d"
+              href="https://ant.design/index-cn"
+              title="Vue PC端"
+              >Ant Design</a
+            >
+            <a
+              style="color: #23282d"
+              href="https://vuetifyjs.com/zh-Hans/"
+              title="Vue PC端"
+              >Vuetifyjs</a
+            >
+            <a
+              style="color: #27a2ff"
+              href="https://mint-ui.github.io/#!/zh-cn"
+              title="Vue 移动端"
+              >Mint UI</a
+            >
+            <a
+              style="color: #36d7b7"
+              href="https://youzan.github.io/vant/#/zh-CN/quickstart"
+              title="Vue 移动端"
+              >Vant</a
+            >
+            <a
+              style="color: #23282d"
+              href="https://dcloud.io/"
+              title="移动端开发"
+              >dcloud</a
+            >
+            <a
+              style="color: #110f25"
+              href="https://www.layui.com/"
+              title="原生 PC端"
+              >lay UI</a
+            >
+            <a
+              style="color: #7952b3"
+              href="https://www.bootcss.com/"
+              title="jQuery PC端"
+              >Bootstrap</a
+            >
+            <a
+              style="color: #41b883"
+              href="https://vuepress.vuejs.org/"
+              title="Vue 静态网站生成"
+              >VuePress</a
+            >
+            <a
+              style="color: #23282d"
+              href="https://cn.wordpress.org/"
+              title="博客搭建"
+              >WordPress</a
+            >
+            <a
+              style="color: #409eff"
+              href="https://developers.weixin.qq.com/doc/"
+              >微信小程序api</a
+            >
+            <a
+              style="color: rgb(0, 145, 234)"
+              href="https://flutterchina.club/"
+              title="谷歌移动UI框架"
+              >Flutter</a
+            >
+            <a
+              style="color: rgb(229, 57, 53)"
+              href="https://madewith.cn/293"
+              title="这是一个交互式动画组件"
+              >vue-kinesis</a
+            >
+            <a
+              style="color: rgb(43, 153, 57)"
+              href="https://uniapp.dcloud.io/"
+              title=""
+              >uni-app</a
+            >
+            <a
+              style="color: rgb(51, 51, 51)"
+              href="https://freefrontend.com/"
+              title="自由前端 样式库"
+              >Free Frontend</a
+            >
+            <a
+              style="color: rgb(14, 131, 205)"
+              href="https://hexo.io/zh-tw/"
+              title="模板大全"
+              >Hexo</a
+            >
+          </div>
+        </div>
+
+        <!-- 文档教程 -->
+        <div class="content-box">
+          <div class="content-title">文档教程</div>
+          <div class="content-list" style="display: none">
+            <a
+              style="color: rgba(111, 183, 55)"
+              href="https://www.kancloud.cn/manual/thinkphp5/118003"
+              >ThinkPHP</a
+            >
+            <a
+              style="color: rgba(244, 100, 95)"
+              href="https://www.houdunren.com/"
+              >后盾人视频教程</a
+            >
+            <a
+              style="color: rgba(62, 175, 124)"
+              href="https://houdunren.gitee.io/note/"
+              >后盾人文档教程</a
+            >
+            <a style="color: #2b3a42" href="https://webpack.docschina.org/"
+              >webpack</a
+            >
+            <a style="color: rgb(100, 108, 255)" href="https://cn.vitejs.dev/"
+              >Vite</a
+            >
+            <a style="color: rgb(90, 41, 228)" href="https://www.axios-http.cn/"
+              >axios</a
+            >
+            <a style="color: rgb(203, 56, 55)" href="https://www.npmjs.cn/"
+              >npm 中文文档</a
+            >
+            <a
+              style="color: rgb(41, 78, 128)"
+              href="https://www.tslang.cn/index.html"
+              >TypeScript</a
+            >
+            <a
+              style="color: #41b883"
+              href="https://github.com/vuejs/awesome-vue"
+              >Vue 官方资源包</a
+            >
+            <a style="color: #61dafb" href="https://react.docschina.org/"
+              >React</a
+            >
+            <a style="color: #41b883" href="https://cli.vuejs.org/zh/"
+              >Vue CLI</a
+            >
+            <a style="color: #0177d7" href="http://www.xiaozhoubg.com/"
+              >晓舟报告</a
+            >
+            <a
+              style="color: rgb(255, 64, 75)"
+              href="https://jquery.cuishifeng.cn/"
+              >jQuery</a
+            >
+            <a style="color: #41b883" href="https://eggjs.org/zh-cn/">Egg.js</a>
+            <a style="color: #3d8137" href="https://nunjucks.bootcss.com/ "
+              >Nunjucks</a
+            >
+            <a
+              style="color: rgb(29, 54, 93)"
+              href="https://less.bootcss.com/"
+              title="css 预处理器"
+              >Less</a
+            >
+            <a
+              style="color: rgb(204, 102, 153)"
+              href="https://www.sass.hk/ "
+              title="css 预处理器"
+              >Sass</a
+            >
+            <a
+              style="color: rgb(255, 99, 71)"
+              href="https://www.sass.hk/"
+              title="css 预处理器"
+              >Stylus</a
+            >
+            <a
+              style="color: rgb(0, 0, 0)"
+              href="https://leetcode-cn.com/"
+              title="编程技术"
+              >力扣</a
+            >
+            <a
+              style="color: rgb(0, 153, 0)"
+              href="http://nginx.org/en/download.html"
+              title="服务器搭建"
+              >nginx</a
+            >
+            <a
+              style="color: rgb(0, 224, 161)"
+              href="https://www.nuxtjs.cn/"
+              title="Vue SEO 优化"
+              >Nuxt.js</a
+            >
+            <a
+              style="color: rgb(0, 153, 0)"
+              href="https://lnmp.org/"
+              title="服务器一件配置"
+              >LNMP</a
+            >
+          </div>
+        </div>
+
+        <!-- 前端常用工具 -->
+        <div class="content-box">
+          <div class="content-title">前端常用工具</div>
+          <div class="content-list" style="display: none">
+            <a style="color: rgb(27, 193, 161)" href="https://clipboardjs.com/"
+              >复制插件</a
+            >
+            <a
+              style="color: rgb(61, 171, 83)"
+              href="https://tool.oschina.net/codeformat/html"
+              >代码格式化</a
+            >
+            <a style="color: #cb0000" href="https://docs.npmjs.com/">NPM文档</a>
+            <a style="color: rgb(201, 0, 0)" href="https://www.npmjs.com/ "
+              >NPM官网</a
+            >
+            <a
+              style="color: rgb(102, 0, 0)"
+              href="https://highlightjs.org/ "
+              title="代码高亮"
+              >highlight.js</a
+            >
+            <a style="color: #ff0000" href="https://www.iconfont.cn/ "
+              >阿里图标</a
+            >
+            <a
+              style="color: rgb(203, 56, 55)"
+              href="https://www.npmjs.com/package/vue-json-excel"
+              >Excel 导出</a
+            >
+            <a
+              style="color: #010101"
+              href="https://www.fastmock.site/#/"
+              title="模拟接口"
+              >fastmock</a
+            >
+            <a
+              style="color: #aa314d"
+              href="https://echarts.apache.org/zh/index.html"
+              title="可视化图表"
+              >Echarts</a
+            >
+            <a
+              style="color: rgb(249, 155, 64)"
+              href="https://d3js.org/"
+              title="可视化图表"
+              >D3</a
+            >
+            <a style="color: #19b6b9" href="https://www.tailwindcss.cn/"
+              >tailwindcss</a
+            >
+            <a
+              style="color: rgb(52, 146, 255)"
+              href="https://www.lodashjs.com/"
+              title="JS库"
+              >Lodash</a
+            >
+            <a
+              style="color: rgb(39, 38, 43)"
+              href="https://www.erupt.xyz/#!/"
+              title="后台开发"
+              >Erupt</a
+            >
+            <a
+              style="color: #6332f6"
+              href="https://www.swiper.com.cn/"
+              title="触摸滑动插件"
+              >Swiper</a
+            >
+            <a style="color: #aa0000" href="https://standardjs.com/rules.html"
+              >JavaScript书写规范</a
+            >
+            <a style="color: #463fd4" href="https://eslint.bootcss.com/"
+              >ESlint</a
+            >
+            <a style="color: #000000" href="https://icomoon.io/">Icomoon</a>
+            <a
+              style="color: #ff5f4c"
+              href="https://day.js.org/zh-CN/"
+              title="时间处理"
+              >Day.js</a
+            >
+            <a
+              style="color: rgb(97, 178, 167)"
+              href="http://momentjs.cn/"
+              title="时间处理"
+              >Moment.js</a
+            >
+            <a
+              style="color: #dd3a0a"
+              href="https://www.postcss.com.cn/"
+              title="CSS 单位转换"
+              >PostCSS</a
+            >
+            <a style="color: #000000" href="https://www.hellogithub.com/"
+              >helloGithub</a
+            >
+            <a
+              style="color: #f5da55"
+              href="https://www.babeljs.cn/"
+              title="JS编译器"
+              >Babel</a
+            >
+            <a style="color: #2673e7" href="https://webgradients.com/ "
+              >CSS样式渐变库</a
+            >
+            <a style="color: #006cff" href="https://juejin.cn/">掘金</a>
+            <a
+              style="color: rgb(249, 113, 71)"
+              href="https://www.jsdelivr.com/"
+              title="免费的CDN开源"
+              >JSDelivr</a
+            >
+            <a
+              style="color: rgb(54, 159, 255)"
+              href="https://www.showdoc.com.cn/"
+              title="接口文档制作"
+              >ShowDoc</a
+            >
+            <a style="color: rgba(255, 0, 0)" href="https://www.youtube.com/"
+              >youtube</a
+            >
+            <a style="color: rgba(52, 58, 64)" href="https://www.hualigs.cn/"
+              >遇见图床</a
+            >
+            <a
+              style="color: rgba(180, 160, 120)"
+              href="https://lhammer.cn/You-need-to-know-css/#/zh-cn/centering-known"
+              >好看的 CSS 样式</a
+            >
+            <a
+              style="color: rgba(0, 48, 79)"
+              href="https://chokcoco.github.io/CSS-Inspiration/#/"
+              >CSS 灵感</a
+            >
+            <a
+              style="color: rgba(34, 40, 49)"
+              href="https://qishaoxuan.github.io/css_tricks/"
+              >神奇 CSS</a
+            >
+            <a
+              style="color: rgba(211, 84, 0)"
+              href="https://tobiasahlin.com/spinkit/"
+              >CSS 加载过度</a
+            >
+            <a style="color: rgba(255, 96, 96)" href="https://animista.net/"
+              >CSS 动画</a
+            >
+            <a
+              style="color: rgba(25, 77, 224)"
+              href="https://www.swiper.com.cn/"
+              title="触摸滑动插件"
+              >wiper.js</a
+            >
+            <a
+              style="color: rgba(0, 186, 255)"
+              href="https://data.avuejs.com/"
+              title="可视化数据大屏"
+              >可视化数据大屏</a
+            >
+          </div>
+        </div>
+
+        <!-- 娱乐 -->
+        <div class="content-box">
+          <div class="content-title">娱乐</div>
+          <div class="content-list" style="display: none">
+            <a style="color: #fe5735" href="https://weibo.com/ ">微博</a>
+            <a style="color: rgb(194, 12, 12)" href="https://music.163.com/ "
+              >网易云音乐</a
+            >
+            <a style="color: rgb(3, 186, 71)" href="https://www.iqiyi.com/ "
+              >爱奇艺</a
+            >
+            <a style="color: rgb(253, 58, 114)" href="https://music.migu.cn/v3 "
+              >咪咕音乐</a
+            >
+            <a style="color: rgb(126, 210, 19)" href="https://v.qq.com/"
+              >腾讯视频</a
+            >
+            <a style="color: rgb(0, 196, 255)" href="https://www.youku.com/"
+              >优酷</a
+            >
+            <a style="color: rgb(255, 120, 35)" href="https://douyu.com "
+              >斗鱼直播</a
+            >
+            <a style="color: rgb(255, 120, 35)" href="https://douyu.com/99999 "
+              >旭旭宝宝</a
+            >
+            <a
+              style="color: rgb(255, 120, 35)"
+              href="https://douyu.com/4493964 "
+              >南瓜最开心</a
+            >
+            <a style="color: rgb(255, 228, 67)" href="http://www.kuwo.cn/ "
+              >酷我音乐</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- GitHub相关 -->
+      <div class="content">
+        <!-- 我的网站 -->
+        <div class="content-box">
+          <div class="content-title">我的网站</div>
+          <div class="content-list" style="display: block">
+            <a style="color: #2b3137" href="http://tyhui.tianyuhao.icu"
+              >Tyh-ui</a
+            >
+            <a
+              style="color: rgb(201, 0, 0)"
+              href="https://www.npmjs.com/package/tyh-ui"
+              >tyh-ui 仓库</a
+            >
+            <a style="color: #2b3137" href="https://github.com/Tyh2001/tyh-ui"
+              >Tyh-ui 仓库</a
+            >
+            <a style="color: #2b3137" href="http://old.tianyuhao.icu"
+              >Tyh.(旧)</a
+            >
+            <a style="color: #2b3137" href="http://tianyuhao.icu">Tyh.(新)</a>
+            <a style="color: #2b3137" href="http://dangmeng.top">小萌.</a>
+            <a style="color: #2b3137" href="http://biaoqing.tianyuhao.icu"
+              >表情发布</a
+            >
+            <a style="color: #2b3137" href="http://article.tianyuhao.icu"
+              >盛邦文章发布</a
+            >
+            <a style="color: #2b3137" href="http://xinwen.tianyuhao.icu"
+              >今日头条</a
+            >
+            <a style="color: #2b3137" href="https://github.com/Tyh2001/tyh-doc"
+              >个人网站仓库</a
+            >
+            <a
+              style="color: #2b3137"
+              href="https://github.com/Tyh2001/Web-Interview-Lssues"
+              >面试题仓库</a
+            >
+            <a style="color: #2b3137" href="http://renova.tianyuhao.icu"
+              >达买可视化</a
+            >
+            <a
+              style="color: #2b3137"
+              href="https://www.infinitymcn.com/web/0705_renova_list/front_end/index.html#/"
+              >达买可视化2</a
+            >
+          </div>
+        </div>
+
+        <!-- 文档仓库 -->
+        <div class="content-box">
+          <div class="content-title">文档仓库</div>
+          <div class="content-list" style="display: none">
+            <a
+              style="color: #2b3137"
+              href="https://github.com/fengyuanchen/cropperjs"
+              title="头像裁切器"
+              >cropperjs</a
+            >
+            <a
+              style="color: #2b3137"
+              href="https://github.com/axios/axios"
+              title="axios文档"
+              >axios</a
+            >
+            <a
+              style="color: #2b3137"
+              href="https://github.com/Leecason/element-tiptap"
+              title="富文本编辑器"
+              >element-tiptap</a
+            >
+            <a
+              style="color: #2b3137"
+              href="https://github.com/hinesboy/mavonEditor"
+              title="富文本编辑器"
+              >mavonEditor</a
+            >
+            <a
+              style="color: #2b3137"
+              href="https://github.com/sidorares/json-bigint"
+              title="JS安全整数范围"
+              >json-bigint</a
+            >
+            <a
+              style="color: #2b3137"
+              href="https://github.com/browserslist/browserslist"
+              >browserslist</a
+            >
+            <a
+              style="color: #2b3137"
+              href="https://github.com/videojs/video.js"
+              title="视频播放"
+              >Video.js</a
+            >
+            <a
+              style="color: #2b3137"
+              href="https://github.com/ecomfe/echarts-for-weixin"
+              title="视频播放"
+              >微信小程序 echarts</a
+            >
+            <a
+              style="color: #2b3137"
+              href="https://github.com/metachris/vue-highlightjs"
+              title="代码高亮"
+              >代码高亮</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- 其他工具 -->
+      <div class="content">
+        <!-- 应用类 -->
+        <div class="content-box">
+          <div class="content-title">应用类</div>
+          <div class="content-list" style="display: block">
+            <a style="color: rgb(61, 68, 76)" href="https://www.nowcoder.com/"
+              >牛客网</a
+            >
+            <a style="color: #ff6a00" href="https://homenew.console.aliyun.com/"
+              >阿里云</a
+            >
+            <a style="color: rgb(0, 82, 217)" href="https://cloud.tencent.com/"
+              >腾讯云</a
+            >
+            <a
+              style="color: rgb(0, 82, 217)"
+              href="https://console.cloud.tencent.com/cvm/instance/index?rid=4"
+              >腾讯云我的服务器</a
+            >
+            <a style="color: #be0c25" href="https://www.jd.com/">京东</a>
+            <a style="color: #fd5433" href="https://www.taobao.com/">淘宝</a>
+            <a style="color: #2319dc" href="https://map.baidu.com/ "
+              >百度地图</a
+            >
+            <a style="color: #ff7700" href="https://mail.qq.com/">球球邮箱</a>
+            <a style="color: #2577e3" href="https://www.ctrip.com/">携程</a>
+            <a style="color: rgb(255, 69, 61)" href="https://www.wondercv.com"
+              >超级简历</a
+            >
+            <a
+              style="color: rgb(0, 141, 86)"
+              href="http://rsrc.mohrss.gov.cn/jxxxcx/Omp.do?method=fwdPageJgyxStuInfoEntry"
+              >学籍查询</a
+            >
+            <a
+              style="color: rgb(0, 111, 201)"
+              href="https://account.microsoft.com"
+              >微软官网</a
+            >
+            <a style="color: rgb(29, 8, 223)" href="https://aotu.io/"
+              >凹凸实验室</a
+            >
+            <a style="color: rgb(51, 51, 51)" href="https://www.apple.com/"
+              >iphone官网</a
+            >
+          </div>
+        </div>
+
+        <!-- 收藏类 -->
+        <div class="content-box">
+          <div class="content-title">收藏类</div>
+          <div class="content-list" style="display: none">
+            <a
+              style="color: #000000"
+              href="https://juejin.cn/post/6910857740327845901"
+              >下雪教程</a
+            >
+            <a style="color: #003c72" href="https://www.airpano.com/"
+              >360度环绕世界</a
+            >
+            <a style="color: #f87424" href="https://uigradients.com/ "
+              >AI渐变</a
+            >
+            <a style="color: #dc0000" href="http://pngimg.com/ ">PNG图片下载</a>
+            <a style="color: #6c63ff" href="https://undraw.co/illustrations "
+              >矢量插画下载</a
+            >
+            <a style="color: #4bad4f" href="https://bigjpg.com/"
+              >模糊图变清晰</a
+            >
+            <a style="color: #1155ee" href="https://koutu.gaoding.com/"
+              >稿定抠图</a
+            >
+            <a
+              style="color: #ff0088"
+              href="https://cubic-bezier.com/#.42,0,1,1 "
+              >贝塞尔曲线</a
+            >
+            <a style="color: purple" href="https://bz.zzzmh.cn/ ">极简壁纸</a>
+            <a style="color: #2fb101" href="http://www.winbaicai.com/"
+              >大白菜装机</a
+            >
+            <a style="color: purple" href="https://www.remove.bg/ ">抠图网站</a>
+            <a style="color: purple" href="http://weavesilk.com/ ">绘画网站</a>
+            <a style="color: #eca1a2" href="http://zhongguose.com/#mudanfenhong"
+              >中国色</a
+            >
+            <a style="color: #55f0f2" href="http://www.super-fastapps.com/zh/"
+              >VPN</a
+            >
+            <a style="color: #ea6c06" href="http://ppt.sotary.com/"
+              >PPT超级市场</a
+            >
+            <a style="color: #e9b14a" href="https://www.jing.fm/"
+              >免费剪贴画下载</a
+            >
+            <a style="color: #fcb03f" href="http://simpledesktops.com/"
+              >极其简约图片</a
+            >
+            <a style="color: #00c2ca" href="https://www.canva.cn/"
+              >可画-图片模板</a
+            >
+            <a
+              style="color: #111111"
+              href="https://ps.gaoding.com/#/?hmsr=zc-cc"
+              >在线PS</a
+            >
+            <a style="color: #0b4165" href="https://wallhaven.cc/"
+              >WallHaven壁纸</a
+            >
+            <a style="color: #148dce" href="https://365psd.com/"
+              >PSD文件免费下载</a
+            >
+            <a style="color: #8247ff" href="https://iconstore.co/">简单插画</a>
+            <a style="color: #000002" href="https://excalidraw.com/"
+              >精简画图</a
+            >
+            <a style="color: #111111" href="https://sg.godaddy.com/zh"
+              >GoDaddy<span>买域名</span></a
+            >
+            <a style="color: #24ace6" href="http://client.jijidown.com/"
+              >哔哩哔哩下载视频</a
+            >
+            <a style="color: #f5da55" href="https://tinypng.com/"
+              >图片压缩工具</a
+            >
+            <a style="color: #ff0000" href="http://www.16xx8.com/">PS学习</a>
+            <a
+              style="color: #000"
+              href="https://api.wod.xyz/Image/GetImage?type=3"
+              >调接口拿图片</a
+            >
+            <a style="color: #000" href="https://api.wod.xyz/#2708245"
+              >免费接口</a
+            >
+            <a
+              style="color: #000"
+              href="https://www.cuiliangblog.cn/blog/show-125/"
+              >崔亮</a
+            >
+            <a style="color: rgb(25, 25, 32)" href="https://vscodethemes.com/"
+              >VS code 主题</a
+            >
+            <a
+              style="color: rgb(85, 85, 85)"
+              href="http://tmtheme-editor.herokuapp.com/#!/editor/theme/Monokai"
+              >VS code主题订制</a
+            >
+            <a
+              style="color: rgb(232, 66, 52)"
+              href="https://www.google.cn/chrome/"
+              >谷歌浏览器下载</a
+            >
+            <a
+              style="color: rgb(88, 81, 144)"
+              href="https://photokit.com/tools/cutout/?lang=zh"
+              >抠图网站</a
+            >
+            <a style="color: rgb(240, 3, 128)" href="https://wormhole.app/"
+              >炫酷文件传输工具</a
+            >
+            <a style="color: rgb(10, 10, 10)" href="https://webrename.cn/"
+              >批量重命名工具</a
+            >
+            <a style="color: rgb(100, 5, 253)" href="https://app.haikei.app/"
+              >惊艳背景生成器</a
+            >
+            <a
+              style="color: rgb(178, 1, 139)"
+              href="https://www.qingfengwuhan.com/cn/"
+              >佛跳墙 VPN</a
+            >
+            <a
+              style="color: rgb(255, 120, 35)"
+              href="https://v.douyu.com/show/Yo4evyb44x678L62?ap=1"
+              >百世看南瓜</a
+            >
+          </div>
+        </div>
+      </div>
     </div>
 
-    <!-- 常用工具 -->
-    <div class="content" style="display: block;">
-      <!-- 常用网站 -->
-      <div class="content-box">
-        <div class="content-title">常用网站</div>
-        <div class="content-list" style="display: block;">
-          <a style="color: #2319dc;" href="https://www.baidu.com">百度</a>
-          <a style="color: #2319dc; " href="https://fanyi.baidu.com/ ">百度翻译</a>
-          <a style="color: #0177d7;" href="https://www.zhihu.com">知乎</a>
-          <a style="color: #96b97d;" href="https://www.runoob.com/">菜鸟教程</a>
-          <a style="color: #bd2d30;" href="https://www.w3school.com.cn/">w3school</a>
-          <a style="color: #41b883;" href="https://cn.vuejs.org/">Vue.js</a>
-          <a style="color: #41b883;" href="https://vue3js.cn/docs/zh/">Vue 3.0</a>
-          <a style="color: #c71d23;" href="https://gitee.com/">码云</a>
-          <a style="color: #212121;" href="https://developer.mozilla.org/zh-CN/">MDN</a>
-          <a style="color: #2b3137;" href="https://github.com/">Github</a>
-          <a style="color: #24ace6; " href="https://www.bilibili.com/ ">哔哩哔哩</a>
-          <a style="color: #000; " href="https://www.infinitymcn.com/phpmyadmin/sql.php">达买线上数据库</a>
-          <a style="color: rgb(31,83,148); "
-            href="https://exmail.qq.com/cgi-bin/frame_html?sid=WIm-YuP5Epc1JQpq,7&sign_type=&r=234edb4e1970581c68717c274e516743">腾讯企业邮箱</a>
-          <a style="color: rgb(7,193,96); "
-            href="https://mp.weixin.qq.com/cgi-bin/home?t=home/index&lang=zh_CN&token=11039487#tab=sent-panel">微信公众号</a>
-        </div>
-      </div>
-
-      <!-- 前端框架 -->
-      <div class="content-box">
-        <div class="content-title">前端框架</div>
-        <div class="content-list" style="display: none;">
-          <a style="color: rgb(11,181,226); " href="http://datav.jiaminghi.com/" title="Vue 大屏数据展示组件库">DataV</a>
-          <a style="color: rgb(4,158,244); " href="http://www.yanhuangxueyuan.com/" title="Vue PC端">three.js</a>
-          <a style="color: #2b3137; " href="https://github.com/janl/mustache.js" title="模板引擎">mustache.js</a>
-          <a style="color: rgb(39,174,96); " href="https://www.bootcdn.cn/" title="集成文件">mustache.js</a>
-          <a style="color: #409eff; " href="https://element.eleme.cn/#/zh-CN" title="Vue PC端">element</a>
-          <a style="color: #409eff; " href="https://element-plus.org/#/zh-CN/" title="Vue3">element-Plus</a>
-          <a style="color: #2d8cf0; " href="https://www.iviewui.com/" title="Vue PC端">iView UI</a>
-          <a style="color: rgb(27,139,243); " href="https://at-ui.github.io/at-ui/#/zh/" title="Vue PC端">At UIKIT</a>
-          <a style="color: #000000; " href="https://vux.li/" title="Vue PC端">VUX</a>
-          <a style="color: #23282d " href="https://ant.design/index-cn" title="Vue PC端">Ant Design</a>
-          <a style="color: #23282d " href="https://vuetifyjs.com/zh-Hans/" title="Vue PC端">Vuetifyjs</a>
-          <a style="color: #27a2ff; " href="https://mint-ui.github.io/#!/zh-cn" title="Vue 移动端">Mint UI</a>
-          <a style="color: #36d7b7; " href="https://youzan.github.io/vant/#/zh-CN/quickstart" title="Vue 移动端">Vant</a>
-          <a style="color: #23282d " href="https://dcloud.io/" title="移动端开发">dcloud</a>
-          <a style="color: #110f25; " href="https://www.layui.com/" title="原生 PC端">lay UI</a>
-          <a style="color: #7952b3;" href="https://www.bootcss.com/" title="jQuery PC端">Bootstrap</a>
-          <a style="color: #41b883;" href="https://vuepress.vuejs.org/" title="Vue 静态网站生成">VuePress</a>
-          <a style="color: #23282d " href="https://cn.wordpress.org/" title="博客搭建">WordPress</a>
-          <a style="color: #409eff; " href="https://developers.weixin.qq.com/doc/">微信小程序api</a>
-          <a style="color: rgb(0,145,234); " href="https://flutterchina.club/" title="谷歌移动UI框架">Flutter</a>
-          <a style="color: rgb(229,57,53); " href="https://madewith.cn/293" title="这是一个交互式动画组件">vue-kinesis</a>
-          <a style="color: rgb(43, 153, 57); " href="https://uniapp.dcloud.io/" title="">uni-app</a>
-          <a style="color: rgb(51, 51, 51); " href="https://freefrontend.com/" title="自由前端 样式库">Free Frontend</a>
-          <a style="color: rgb(14,131,205); " href="https://hexo.io/zh-tw/" title="模板大全">Hexo</a>
-        </div>
-      </div>
-
-      <!-- 文档教程 -->
-      <div class="content-box">
-        <div class="content-title">文档教程</div>
-        <div class="content-list" style="display: none;">
-          <a style="color: rgba(111,183,55) " href="https://www.kancloud.cn/manual/thinkphp5/118003">ThinkPHP</a>
-          <a style="color: rgba(244,100,95) " href="https://www.houdunren.com/">后盾人视频教程</a>
-          <a style="color: rgba(62,175,124) " href="https://houdunren.gitee.io/note/">后盾人文档教程</a>
-          <a style="color: #2b3a42 " href="https://webpack.docschina.org/">webpack</a>
-          <a style="color: rgb(100,108,255) " href="https://cn.vitejs.dev/">Vite</a>
-          <a style="color: rgb(90,41,228) " href="https://www.axios-http.cn/">axios</a>
-          <a style="color: rgb(203,56,55) " href="https://www.npmjs.cn/">npm 中文文档</a>
-          <a style="color: rgb(41,78,128);" href="https://www.tslang.cn/index.html">TypeScript</a>
-          <a style="color: #41b883;" href="https://github.com/vuejs/awesome-vue">Vue 官方资源包</a>
-          <a style="color: #61dafb; " href="https://react.docschina.org/">React</a>
-          <a style="color: #41b883;" href="https://cli.vuejs.org/zh/">Vue CLI</a>
-          <a style="color: #0177d7;" href="http://www.xiaozhoubg.com/">晓舟报告</a>
-          <a style="color: rgb(255,64,75); " href="https://jquery.cuishifeng.cn/">jQuery</a>
-          <a style="color: #41b883;" href="https://eggjs.org/zh-cn/">Egg.js</a>
-          <a style="color: #3d8137;" href="https://nunjucks.bootcss.com/ ">Nunjucks</a>
-          <a style="color: rgb(29,54,93);" href="https://less.bootcss.com/" title="css 预处理器">Less</a>
-          <a style="color: rgb(204,102,153);" href="https://www.sass.hk/ " title="css 预处理器">Sass</a>
-          <a style="color: rgb(255,99,71);" href="https://www.sass.hk/" title="css 预处理器">Stylus</a>
-          <a style="color: rgb(0,0,0);" href="https://leetcode-cn.com/" title="编程技术">力扣</a>
-          <a style="color: rgb(0,153,0);" href="http://nginx.org/en/download.html" title="服务器搭建">nginx</a>
-          <a style="color: rgb(0,224,161);" href="https://www.nuxtjs.cn/" title="Vue SEO 优化">Nuxt.js</a>
-          <a style="color: rgb(0,153,0);" href="https://lnmp.org/" title="服务器一件配置">LNMP</a>
-        </div>
-      </div>
-
-      <!-- 前端常用工具 -->
-      <div class="content-box">
-        <div class="content-title">前端常用工具</div>
-        <div class="content-list" style="display: none;">
-          <a style="color: rgb(27,193,161) " href="https://clipboardjs.com/">复制插件</a>
-          <a style="color: rgb(61,171,83) " href="https://tool.oschina.net/codeformat/html">代码格式化</a>
-          <a style="color: #cb0000 " href="https://docs.npmjs.com/">NPM文档</a>
-          <a style="color: rgb(201,0,0); " href="https://www.npmjs.com/ ">NPM官网</a>
-          <a style="color: rgb(102,0,0); " href="https://highlightjs.org/ " title="代码高亮">highlight.js</a>
-          <a style="color: #ff0000; " href="https://www.iconfont.cn/ ">阿里图标</a>
-          <a style="color: rgb(203,56,55) " href="https://www.npmjs.com/package/vue-json-excel">Excel 导出</a>
-          <a style="color: #010101; " href="https://www.fastmock.site/#/" title="模拟接口">fastmock</a>
-          <a style="color: #aa314d " href="https://echarts.apache.org/zh/index.html" title="可视化图表">Echarts</a>
-          <a style="color: rgb(249,155,64) " href="https://d3js.org/" title="可视化图表">D3</a>
-          <a style="color: #19b6b9; " href="https://www.tailwindcss.cn/">tailwindcss</a>
-          <a style="color: rgb(52,146,255) " href="https://www.lodashjs.com/" title="JS库">Lodash</a>
-          <a style="color: rgb(39, 38, 43); " href="https://www.erupt.xyz/#!/" title="后台开发">Erupt</a>
-          <a style="color: #6332f6; " href="https://www.swiper.com.cn/" title="触摸滑动插件">Swiper</a>
-          <a style="color: #aa0000 " href="https://standardjs.com/rules.html">JavaScript书写规范</a>
-          <a style="color: #463fd4 " href="https://eslint.bootcss.com/">ESlint</a>
-          <a style="color: #000000 " href="https://icomoon.io/">Icomoon</a>
-          <a style="color: #ff5f4c; " href="https://day.js.org/zh-CN/" title="时间处理">Day.js</a>
-          <a style="color: rgb(97,178,167); " href="http://momentjs.cn/" title="时间处理">Moment.js</a>
-          <a style="color: #dd3a0a; " href="https://www.postcss.com.cn/" title="CSS 单位转换">PostCSS</a>
-          <a style="color: #000000; " href="https://www.hellogithub.com/">helloGithub</a>
-          <a style="color: #f5da55 " href="https://www.babeljs.cn/" title="JS编译器">Babel</a>
-          <a style="color: #2673e7; " href="https://webgradients.com/ ">CSS样式渐变库</a>
-          <a style="color: #006cff; " href="https://juejin.cn/">掘金</a>
-          <a style="color: rgb(249,113,71); " href="https://www.jsdelivr.com/" title="免费的CDN开源">JSDelivr</a>
-          <a style="color: rgb(54,159,255); " href="https://www.showdoc.com.cn/" title="接口文档制作">ShowDoc</a>
-          <a style="color: rgba(255,0,0); " href="https://www.youtube.com/">youtube</a>
-          <a style="color: rgba(52,58,64); " href="https://www.hualigs.cn/">遇见图床</a>
-          <a style="color: rgba(180,160,120); "
-            href="https://lhammer.cn/You-need-to-know-css/#/zh-cn/centering-known">好看的 CSS 样式</a>
-          <a style="color: rgba(0,48,79); " href="https://chokcoco.github.io/CSS-Inspiration/#/">CSS 灵感</a>
-          <a style="color: rgba(34,40,49); " href="https://qishaoxuan.github.io/css_tricks/">神奇 CSS</a>
-          <a style="color: rgba(211,84,0); " href="https://tobiasahlin.com/spinkit/">CSS 加载过度</a>
-          <a style="color: rgba(255,96,96); " href="https://animista.net/">CSS 动画</a>
-          <a style="color: rgba(25,77,224); " href="https://www.swiper.com.cn/" title="触摸滑动插件">wiper.js</a>
-          <a style="color: rgba(0,186,255); " href="https://data.avuejs.com/" title="可视化数据大屏">可视化数据大屏</a>
-        </div>
-      </div>
-
-      <!-- 娱乐 -->
-      <div class="content-box">
-        <div class="content-title">娱乐</div>
-        <div class="content-list" style="display: none;">
-          <a style="color: #fe5735 " href="https://weibo.com/ ">微博</a>
-          <a style="color: rgb(194,12,12); " href="https://music.163.com/ ">网易云音乐</a>
-          <a style="color: rgb(3,186,71); " href="https://www.iqiyi.com/ ">爱奇艺</a>
-          <a style="color: rgb(253,58,114); " href="https://music.migu.cn/v3 ">咪咕音乐</a>
-          <a style="color: rgb(126,210,19); " href="https://v.qq.com/">腾讯视频</a>
-          <a style="color: rgb(0,196,255); " href="https://www.youku.com/">优酷</a>
-          <a style="color: rgb(255,120,35) " href="https://douyu.com ">斗鱼直播</a>
-          <a style="color: rgb(255,120,35); " href="https://douyu.com/99999 ">旭旭宝宝</a>
-          <a style="color: rgb(255,120,35) " href="https://douyu.com/4493964 ">南瓜最开心</a>
-          <a style="color: rgb(255,228,67) " href="http://www.kuwo.cn/ ">酷我音乐</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- GitHub相关 -->
-    <div class="content">
-      <!-- 我的网站 -->
-      <div class="content-box">
-        <div class="content-title">我的网站</div>
-        <div class="content-list" style="display: block;">
-          <a style="color: #2b3137;" href="http://tyhui.tianyuhao.icu">Tyh-ui</a>
-          <a style="color: rgb(201,0,0); " href="https://www.npmjs.com/package/tyh-ui">tyh-ui 仓库</a>
-          <a style="color: #2b3137;" href="https://github.com/Tyh2001/tyh-ui">Tyh-ui 仓库</a>
-          <a style="color: #2b3137;" href="http://old.tianyuhao.icu">Tyh.(旧)</a>
-          <a style="color: #2b3137;" href="http://tianyuhao.icu">Tyh.(新)</a>
-          <a style="color: #2b3137;" href="http://dangmeng.top">小萌.</a>
-          <a style="color: #2b3137;" href="http://biaoqing.tianyuhao.icu">表情发布</a>
-          <a style="color: #2b3137;" href="http://article.tianyuhao.icu">盛邦文章发布</a>
-          <a style="color: #2b3137;" href="http://xinwen.tianyuhao.icu">今日头条</a>
-          <a style="color: #2b3137;" href="https://github.com/Tyh2001/tyh-doc">个人网站仓库</a>
-          <a style="color: #2b3137;" href="https://github.com/Tyh2001/Web-Interview-Lssues">面试题仓库</a>
-          <a style="color: #2b3137;" href="http://renova.tianyuhao.icu">达买可视化</a>
-          <a style="color: #2b3137;"
-            href="https://www.infinitymcn.com/web/0705_renova_list/front_end/index.html#/">达买可视化2</a>
-        </div>
-      </div>
-
-      <!-- 文档仓库 -->
-      <div class="content-box">
-        <div class="content-title">文档仓库</div>
-        <div class="content-list" style="display: none;">
-          <a style="color: #2b3137;" href="https://github.com/fengyuanchen/cropperjs" title="头像裁切器">cropperjs</a>
-          <a style="color: #2b3137;" href="https://github.com/axios/axios" title="axios文档">axios</a>
-          <a style="color: #2b3137;" href="https://github.com/Leecason/element-tiptap" title="富文本编辑器">element-tiptap</a>
-          <a style="color: #2b3137;" href="https://github.com/hinesboy/mavonEditor" title="富文本编辑器">mavonEditor</a>
-          <a style="color: #2b3137;" href="https://github.com/sidorares/json-bigint" title="JS安全整数范围">json-bigint</a>
-          <a style="color: #2b3137; " href="https://github.com/browserslist/browserslist">browserslist</a>
-          <a style="color: #2b3137; " href="https://github.com/videojs/video.js" title="视频播放">Video.js</a>
-          <a style="color: #2b3137; " href="https://github.com/ecomfe/echarts-for-weixin" title="视频播放">微信小程序 echarts</a>
-          <a style="color: #2b3137; " href="https://github.com/metachris/vue-highlightjs" title="代码高亮">代码高亮</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- 其他工具 -->
-    <div class="content">
-      <!-- 应用类 -->
-      <div class="content-box">
-        <div class="content-title">应用类</div>
-        <div class="content-list" style="display: block;">
-          <a style="color: rgb(61,68,76)" href="https://www.nowcoder.com/">牛客网</a>
-          <a style="color: #ff6a00" href="https://homenew.console.aliyun.com/">阿里云</a>
-          <a style="color: rgb(0,82,217)" href="https://cloud.tencent.com/">腾讯云</a>
-          <a style="color: rgb(0,82,217)" href="https://console.cloud.tencent.com/cvm/instance/index?rid=4">腾讯云我的服务器</a>
-          <a style="color: #be0c25" href="https://www.jd.com/">京东</a>
-          <a style="color: #fd5433 " href="https://www.taobao.com/">淘宝</a>
-          <a style="color: #2319dc; " href="https://map.baidu.com/ ">百度地图</a>
-          <a style="color: #ff7700; " href="https://mail.qq.com/">球球邮箱</a>
-          <a style="color: #2577e3; " href="https://www.ctrip.com/">携程</a>
-          <a style="color: rgb(255,69,61); " href="https://www.wondercv.com">超级简历</a>
-          <a style="color: rgb(0,141,86); "
-            href="http://rsrc.mohrss.gov.cn/jxxxcx/Omp.do?method=fwdPageJgyxStuInfoEntry">学籍查询</a>
-          <a style="color: rgb(0,111,201); " href="https://account.microsoft.com">微软官网</a>
-          <a style="color: rgb(29,8,223); " href="https://aotu.io/">凹凸实验室</a>
-          <a style="color: rgb(51,51,51); " href="https://www.apple.com/">iphone官网</a>
-        </div>
-      </div>
-
-      <!-- 收藏类 -->
-      <div class="content-box">
-        <div class="content-title">收藏类</div>
-        <div class="content-list" style="display: none;">
-          <a style="color: #000000 " href="https://juejin.cn/post/6910857740327845901">下雪教程</a>
-          <a style="color: #003c72 " href="https://www.airpano.com/">360度环绕世界</a>
-          <a style="color: #f87424; " href="https://uigradients.com/ ">AI渐变</a>
-          <a style="color: #dc0000; " href="http://pngimg.com/ ">PNG图片下载</a>
-          <a style="color: #6c63ff; " href="https://undraw.co/illustrations ">矢量插画下载</a>
-          <a style="color: #4bad4f; " href="https://bigjpg.com/">模糊图变清晰</a>
-          <a style="color: #1155ee; " href="https://koutu.gaoding.com/">稿定抠图</a>
-          <a style="color: #ff0088; " href="https://cubic-bezier.com/#.42,0,1,1 ">贝塞尔曲线</a>
-          <a style="color: purple; " href="https://bz.zzzmh.cn/ ">极简壁纸</a>
-          <a style="color: #2fb101 " href="http://www.winbaicai.com/">大白菜装机</a>
-          <a style="color: purple; " href="https://www.remove.bg/ ">抠图网站</a>
-          <a style="color: purple; " href="http://weavesilk.com/ ">绘画网站</a>
-          <a style="color: #eca1a2 " href="http://zhongguose.com/#mudanfenhong">中国色</a>
-          <a style="color: #55f0f2 " href="http://www.super-fastapps.com/zh/">VPN</a>
-          <a style="color: #ea6c06 " href="http://ppt.sotary.com/">PPT超级市场</a>
-          <a style="color: #e9b14a " href="https://www.jing.fm/">免费剪贴画下载</a>
-          <a style="color: #fcb03f " href="http://simpledesktops.com/">极其简约图片</a>
-          <a style="color: #00c2ca " href="https://www.canva.cn/">可画-图片模板</a>
-          <a style="color: #111111 " href="https://ps.gaoding.com/#/?hmsr=zc-cc">在线PS</a>
-          <a style="color: #0b4165 " href="https://wallhaven.cc/">WallHaven壁纸</a>
-          <a style="color: #148dce " href="https://365psd.com/">PSD文件免费下载</a>
-          <a style="color: #8247ff " href="https://iconstore.co/">简单插画</a>
-          <a style="color: #000002 " href="https://excalidraw.com/">精简画图</a>
-          <a style="color: #111111 " href="https://sg.godaddy.com/zh">GoDaddy<span>买域名</span></a>
-          <a style="color: #24ace6 " href="http://client.jijidown.com/">哔哩哔哩下载视频</a>
-          <a style="color: #f5da55 " href="https://tinypng.com/">图片压缩工具</a>
-          <a style="color: #ff0000 " href="http://www.16xx8.com/">PS学习</a>
-          <a style="color: #000 " href="https://api.wod.xyz/Image/GetImage?type=3">调接口拿图片</a>
-          <a style="color: #000 " href="https://api.wod.xyz/#2708245">免费接口</a>
-          <a style="color: #000 " href="https://www.cuiliangblog.cn/blog/show-125/">崔亮</a>
-          <a style="color: rgb(25, 25, 32) " href="https://vscodethemes.com/">VS code 主题</a>
-          <a style="color: rgb(85, 85, 85) " href="http://tmtheme-editor.herokuapp.com/#!/editor/theme/Monokai">VS
-            code主题订制</a>
-          <a style="color: rgb(232,66,52) " href="https://www.google.cn/chrome/">谷歌浏览器下载</a>
-          <a style="color: rgb(88,81,144) " href="https://photokit.com/tools/cutout/?lang=zh">抠图网站</a>
-          <a style="color: rgb(240,3,128) " href="https://wormhole.app/">炫酷文件传输工具</a>
-          <a style="color: rgb(10,10,10) " href="https://webrename.cn/">批量重命名工具</a>
-          <a style="color: rgb(100,5,253) " href="https://app.haikei.app/">惊艳背景生成器</a>
-          <a style="color: rgb(178,1,139) " href="https://www.qingfengwuhan.com/cn/">佛跳墙 VPN</a>
-          <a style="color: rgb(255,120,35) " href="https://v.douyu.com/show/Yo4evyb44x678L62?ap=1">百世看南瓜</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    // 顶部选项卡切换
-    const NavBarItem = document.querySelectorAll(".NavBar-item")
-    const content = document.querySelectorAll(".content")
-    NavBarItem[0].style = `
+    <script>
+      // 顶部选项卡切换
+      const NavBarItem = document.querySelectorAll('.NavBar-item')
+      const content = document.querySelectorAll('.content')
+      NavBarItem[0].style = `
         background: #fff;
         color: #409eff;
         border-top: 1px solid #ebeef5;
         border-left: 1px solid #ebeef5;
         border-right: 1px solid #ebeef5;
       `
-    for (let i = 0; i < NavBarItem.length; i++) {
-      NavBarItem[i].onclick = function () {
-        for (let j = 0; j < content.length; j++) {
-          content[j].style.display = "none"
-          NavBarItem[j].style = `
+      for (let i = 0; i < NavBarItem.length; i++) {
+        NavBarItem[i].onclick = function () {
+          for (let j = 0; j < content.length; j++) {
+            content[j].style.display = 'none'
+            NavBarItem[j].style = `
             color: rgb(144, 147, 166);
             background: rgb(245,247,250);
           `
-        }
-        content[i].style.display = "block"
-        NavBarItem[i].style = `
+          }
+          content[i].style.display = 'block'
+          NavBarItem[i].style = `
             background: #fff;
             color: #409eff;
             border-top: 1px solid #ebeef5;
@@ -377,27 +913,25 @@
             justify-content: center;
             align-items: center;
           `
-      }
-    }
-
-    // 下拉菜单
-    const contentTitle = document.querySelectorAll(".content-title")
-    const contentList = document.querySelectorAll(".content-list")
-    contentTitle.forEach((item, i) => {
-      item.addEventListener('click', function () {
-        if (contentList[i].style.display === "none") {
-          contentList[i].style.display = "block"
-          return
         }
-        contentList[i].style.display = "none"
+      }
+
+      // 下拉菜单
+      const contentTitle = document.querySelectorAll('.content-title')
+      const contentList = document.querySelectorAll('.content-list')
+      contentTitle.forEach((item, i) => {
+        item.addEventListener('click', function () {
+          if (contentList[i].style.display === 'none') {
+            contentList[i].style.display = 'block'
+            return
+          }
+          contentList[i].style.display = 'none'
+        })
       })
-    })
 
-    const adom = document.querySelectorAll('a')
+      const adom = document.querySelectorAll('a')
 
-    console.log(`目前已经收藏了${adom.length}个网站`)
-
-  </script>
-</body>
-
+      console.log(`目前已经收藏了${adom.length}个网站`)
+    </script>
+  </body>
 </html>

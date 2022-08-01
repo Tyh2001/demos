@@ -5,7 +5,7 @@
  * @returns xxx天xx小时xx分钟xx秒
  */
 
-export const onTime = time => {
+export const onTime = (time) => {
   const nowStamp = new Date().getTime()
   const targetStamp = new Date(time).getTime()
   const difference = nowStamp - targetStamp

@@ -1,36 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <title>Document</title>
-</head>
+  <body>
+    <script>
+      // for (let i = 1; i <= 1000; i++) {
+      //     let str = i.toString();
+      //     var a = str.substr(0, 1);
+      //     var b = str.substr(1, 1);
+      //     var c = str.substr(2, 1);
+      //     if ((a * a * a) + (b * b * b) + (c * c * c) == str) {
+      //         console.log(str);
+      //     }
+      // }
 
-<body>
+      for (let i = 100; i < 1000; i++) {
+        let a = i % 10
+        let b = Math.floor(i / 10) % 10
+        let c = Math.floor(i / 100)
 
-  <script>
-
-    // for (let i = 1; i <= 1000; i++) {
-    //     let str = i.toString();
-    //     var a = str.substr(0, 1);
-    //     var b = str.substr(1, 1);
-    //     var c = str.substr(2, 1);
-    //     if ((a * a * a) + (b * b * b) + (c * c * c) == str) {
-    //         console.log(str);
-    //     }
-    // }
-
-    for (let i = 100; i < 1000; i++) {
-
-      let a = i % 10;
-      let b = Math.floor(i / 10) % 10;
-      let c = Math.floor(i / 100);
-
-      if (a * a * a + b * b * b + c * c * c === i) {
-        console.log(i);
+        if (a * a * a + b * b * b + c * c * c === i) {
+          console.log(i)
+        }
       }
-    }
-  </script>
-</body>
-
+    </script>
+  </body>
 </html>

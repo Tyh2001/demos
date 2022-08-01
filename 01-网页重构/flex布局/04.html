@@ -1,46 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
 
-<head>
-  <meta charset="UTF-8">
-  <title>Document</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-    }
+      html {
+        height: 100%;
+      }
 
-    html {
-      height: 100%;
-    }
+      body {
+        height: 100%;
+        display: flex;
+        background-color: seagreen;
+      }
 
-    body {
-      height: 100%;
-      display: flex;
-      background-color: seagreen;
-    }
-
-    .fixed {
-      flex: 0 0 100px;
-      /* flex-grow: 0;
+      .fixed {
+        flex: 0 0 100px;
+        /* flex-grow: 0;
       flex-shrink: 0;
       flex-basis: 100px; */
-      background-color: yellow;
-    }
+        background-color: yellow;
+      }
 
-    .center {
-      flex-grow: 1;
-      flex-shrink: 0;
-      flex-basis: 300px;
-      background-color: red;
-    }
-  </style>
-</head>
+      .center {
+        flex-grow: 1;
+        flex-shrink: 0;
+        flex-basis: 300px;
+        background-color: red;
+      }
+    </style>
+  </head>
 
-<body>
-  <div class="fixed  left">左边100宽</div>
-  <div class="center">中间最小宽度300px</div>
-  <div class="fixed right">右边100宽</div>
-</body>
-
+  <body>
+    <div class="fixed left">左边100宽</div>
+    <div class="center">中间最小宽度300px</div>
+    <div class="fixed right">右边100宽</div>
+  </body>
 </html>

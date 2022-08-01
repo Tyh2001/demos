@@ -1,142 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>电子时钟</title>
+    <style>
+      /* 引入字体 */
 
-<head>
-  <meta charset="UTF-8">
-  <title>电子时钟</title>
-  <style>
-    /* 引入字体 */
+      @font-face {
+        font-family: 'digital';
+        src: url(电子时钟字体/digital-7.ttf);
+      }
 
-    @font-face {
-      font-family: "digital";
-      src: url(电子时钟字体/digital-7.ttf);
-    }
+      .clock {
+        font-family: 'digital';
+        width: 400px;
+        height: 100px;
+        border: 2px solid #ccc;
+        margin: 20px auto;
+      }
 
-    .clock {
-      font-family: "digital";
-      width: 400px;
-      height: 100px;
-      border: 2px solid #ccc;
-      margin: 20px auto;
-    }
+      .weekday {
+        font-size: 14px;
+        text-align: center;
+        margin: 10px 0;
+        color: #999;
+      }
 
-    .weekday {
-      font-size: 14px;
-      text-align: center;
-      margin: 10px 0;
-      color: #999;
-    }
+      .time {
+        position: relative;
+        text-align: center;
+        font-size: 40px;
+      }
 
-    .time {
-      position: relative;
-      text-align: center;
-      font-size: 40px;
-    }
+      .time .bg {
+        opacity: 0.1;
+      }
 
-    .time .bg {
-      opacity: 0.1;
-    }
+      .top {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        /* 使块元素垂直水平居中 */
+      }
 
-    .top {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translateX(-50%) translateY(-50%);
-      /* 使块元素垂直水平居中 */
-    }
+      .ap {
+        float: right;
+        margin-right: 50px;
+      }
+    </style>
+  </head>
 
-    .ap {
-      float: right;
-      margin-right: 50px;
-    }
-  </style>
-</head>
-
-<body>
-  <div class="clock">
-    <div class="weekday">
-      <span>sunday</span>
-      <span>monday</span>
-      <span>tuseday</span>
-      <span>wednesday</span>
-      <span>thursday</span>
-      <span>friday</span>
-      <span>saturday</span>
+  <body>
+    <div class="clock">
+      <div class="weekday">
+        <span>sunday</span>
+        <span>monday</span>
+        <span>tuseday</span>
+        <span>wednesday</span>
+        <span>thursday</span>
+        <span>friday</span>
+        <span>saturday</span>
+      </div>
+      <div class="time">
+        <div class="bg">88:88:88</div>
+        <div class="top"></div>
+      </div>
+      <div class="ap">
+        <span class="am">AM</span>
+        <span class="pm">PM</span>
+      </div>
     </div>
-    <div class="time">
-      <div class="bg">88:88:88</div>
-      <div class="top"></div>
-    </div>
-    <div class="ap">
-      <span class="am">AM</span>
-      <span class="pm">PM</span>
-    </div>
-  </div>
-  <script src="jquery.js"></script>
-  <script>
-    // 获取当前日期
-    var now = new Date();
-    var week = now.getDay() // 0-6  获取星期几
-    var hour = now.getHours() // 获取小)时
-    var minute = now.getMinutes() // 获取分
-    var second = now.getSeconds() // 获取秒
-    console.log(now)
-    // 周几变色
+    <script src="jquery.js"></script>
+    <script>
+      // 获取当前日期
+      var now = new Date()
+      var week = now.getDay() // 0-6  获取星期几
+      var hour = now.getHours() // 获取小)时
+      var minute = now.getMinutes() // 获取分
+      var second = now.getSeconds() // 获取秒
+      console.log(now)
+      // 周几变色
 
+      // 时分秒
+      // second = second<10? "0"+second : second;
 
-    // 时分秒
-    // second = second<10? "0"+second : second;
-
-    $('.top').text(hour + ":" + minute + ":" + second)
-    setInterval(function () {
-      console.log(new Date())
-      second = ++second;
-      if (second < 10) {
-        second = "0" + Number(second);
-      }
-      if (second > 59) {
-        ++minute;
-        second = "00";
-      }
-      if (minute < 10) {
-        minute = "0" + Number(minute);
-      }
-      if (minute > 59) {
-        ++hour;
-        minute = "00";
-      }
-      if (hour < 10) {
-        hour = "0" + Number(hour);
-      }
-      if (hour > 23) {
-        ++week;
-        if (week == 7) {
-          week = 0;
+      $('.top').text(hour + ':' + minute + ':' + second)
+      setInterval(function () {
+        console.log(new Date())
+        second = ++second
+        if (second < 10) {
+          second = '0' + Number(second)
         }
-        hour = "00";
-      }
-      $(".weekday span").eq(week).css({
-        "color": "red"
-      }).siblings().css({
-        color: "#999"
-      });
-      $('.top').text(hour + ":" + minute + ":" + second)
-      // 判断上下午
-      if (hour > 11) {
-        $(".pm").css({
-          color: "#000"
-        }).siblings().css({
-          color: "#999"
-        })
-      } else {
-        $(".am").css({
-          color: "#000"
-        }).siblings().css({
-          color: "#999"
-        })
-      }
-    }, 1000)
-  </script>
-</body>
-
+        if (second > 59) {
+          ++minute
+          second = '00'
+        }
+        if (minute < 10) {
+          minute = '0' + Number(minute)
+        }
+        if (minute > 59) {
+          ++hour
+          minute = '00'
+        }
+        if (hour < 10) {
+          hour = '0' + Number(hour)
+        }
+        if (hour > 23) {
+          ++week
+          if (week == 7) {
+            week = 0
+          }
+          hour = '00'
+        }
+        $('.weekday span')
+          .eq(week)
+          .css({
+            color: 'red'
+          })
+          .siblings()
+          .css({
+            color: '#999'
+          })
+        $('.top').text(hour + ':' + minute + ':' + second)
+        // 判断上下午
+        if (hour > 11) {
+          $('.pm')
+            .css({
+              color: '#000'
+            })
+            .siblings()
+            .css({
+              color: '#999'
+            })
+        } else {
+          $('.am')
+            .css({
+              color: '#000'
+            })
+            .siblings()
+            .css({
+              color: '#999'
+            })
+        }
+      }, 1000)
+    </script>
+  </body>
 </html>

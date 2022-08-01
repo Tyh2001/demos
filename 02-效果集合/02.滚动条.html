@@ -1,129 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>滚动条</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
 
-<head>
-  <meta charset="UTF-8">
-  <title>滚动条</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-    }
+      .a {
+        width: 200px;
+        height: 52px;
+        text-align: center;
+        list-style: none;
+        line-height: 50px;
+        color: white;
+        background-color: blue;
+      }
 
-    .a {
-      width: 200px;
-      height: 52px;
-      text-align: center;
-      list-style: none;
-      line-height: 50px;
-      color: white;
-      background-color: blue;
-    }
+      .a1 {
+        width: 200px;
+        height: 50px;
+        text-align: center;
+        list-style: none;
+        line-height: 50px;
+        color: white;
+        background-color: brown;
+      }
 
-    .a1 {
-      width: 200px;
-      height: 50px;
-      text-align: center;
-      list-style: none;
-      line-height: 50px;
-      color: white;
-      background-color: brown;
-    }
+      .b {
+        width: 200px;
+        height: 52px;
+        text-align: center;
+        list-style: none;
+        line-height: 50px;
+        color: white;
+        background-color: blue;
+      }
 
-    .b {
-      width: 200px;
-      height: 52px;
-      text-align: center;
-      list-style: none;
-      line-height: 50px;
-      color: white;
-      background-color: blue;
-    }
+      .b1 {
+        width: 200px;
+        height: 50px;
+        text-align: center;
+        list-style: none;
+        line-height: 50px;
+        color: white;
+        background-color: brown;
+      }
 
-    .b1 {
-      width: 200px;
-      height: 50px;
-      text-align: center;
-      list-style: none;
-      line-height: 50px;
-      color: white;
-      background-color: brown;
-    }
+      .c {
+        width: 200px;
+        height: 52px;
+        text-align: center;
+        list-style: none;
+        line-height: 50px;
+        color: white;
+        background-color: blue;
+      }
 
-    .c {
-      width: 200px;
-      height: 52px;
-      text-align: center;
-      list-style: none;
-      line-height: 50px;
-      color: white;
-      background-color: blue;
-    }
+      .c1 {
+        width: 200px;
+        height: 50px;
+        text-align: center;
+        list-style: none;
+        line-height: 50px;
+        color: white;
+        background-color: brown;
+      }
 
-    .c1 {
-      width: 200px;
-      height: 50px;
-      text-align: center;
-      list-style: none;
-      line-height: 50px;
-      color: white;
-      background-color: brown;
-    }
+      .ad {
+        overflow: hidden;
+        width: 202px;
+        height: 52px;
+        float: left;
+      }
 
-    .ad {
-      overflow: hidden;
-      width: 202px;
-      height: 52px;
-      float: left;
-    }
+      .bd {
+        overflow: hidden;
+        width: 202px;
+        height: 52px;
+        float: left;
+      }
 
-    .bd {
-      overflow: hidden;
-      width: 202px;
-      height: 52px;
-      float: left;
-    }
+      .cd {
+        overflow: hidden;
+        width: 202px;
+        height: 52px;
+        float: left;
+      }
+    </style>
+  </head>
 
-    .cd {
-      overflow: hidden;
-      width: 202px;
-      height: 52px;
-      float: left;
-    }
-  </style>
-</head>
-
-<body>
-  <div>
-    <ul class="ad">
-      <li class="s a">主页</li>
-      <li class="a1">主页</li>
-    </ul>
-  </div>
-  <div>
-    <ul class="bd">
-      <li class="s b">电影</li>
-      <li class="b1">电影</li>
-    </ul>
-  </div>
-  <div>
-    <ul class="cd">
-      <li class="s c">视频</li>
-      <li class="c1">视频</li>
-    </ul>
-  </div>
-  <script src="jquery.js"></script>
-  <script>
-    $("ul").mouseenter(function () {
-      $(this).find(".s").animate({
-        "margin-top": "-50"
-      }, 500)
-    }).mouseleave(function () {
-      $(this).find(".s").animate({
-        "margin-top": "0"
-      }, 500)
-    })
-  </script>
-</body>
-
+  <body>
+    <div>
+      <ul class="ad">
+        <li class="s a">主页</li>
+        <li class="a1">主页</li>
+      </ul>
+    </div>
+    <div>
+      <ul class="bd">
+        <li class="s b">电影</li>
+        <li class="b1">电影</li>
+      </ul>
+    </div>
+    <div>
+      <ul class="cd">
+        <li class="s c">视频</li>
+        <li class="c1">视频</li>
+      </ul>
+    </div>
+    <script src="jquery.js"></script>
+    <script>
+      $('ul')
+        .mouseenter(function () {
+          $(this).find('.s').animate(
+            {
+              'margin-top': '-50'
+            },
+            500
+          )
+        })
+        .mouseleave(function () {
+          $(this).find('.s').animate(
+            {
+              'margin-top': '0'
+            },
+            500
+          )
+        })
+    </script>
+  </body>
 </html>

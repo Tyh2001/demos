@@ -1,65 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+      canvas {
+        border: 1px solid red;
+      }
+    </style>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <title>Document</title>
-  <style type="text/css">
-    canvas {
-      border: 1px solid red;
-    }
-  </style>
-</head>
+  <body>
+    <canvas width="600" height="400"></canvas>
+    <script type="text/javascript">
+      //获取canvas画布对象
+      var canvas = document.querySelector('canvas')
+      //获取绘图上下文
+      var ctx = canvas.getContext('2d')
 
-<body>
-  <canvas width="600" height="400"></canvas>
-  <script type="text/javascript">
-    //获取canvas画布对象
-    var canvas = document.querySelector("canvas");
-    //获取绘图上下文
-    var ctx = canvas.getContext("2d");
+      ctx.moveTo(200, 0)
+      ctx.lineTo(200, 400)
 
-    ctx.moveTo(200, 0);
-    ctx.lineTo(200, 400);
+      ctx.stroke()
 
-    ctx.stroke();
+      ctx.moveTo(400, 0)
+      ctx.lineTo(400, 400)
+      ctx.stroke()
 
-    ctx.moveTo(400, 0);
-    ctx.lineTo(400, 400);
-    ctx.stroke();
+      //正方形  边长为100
+      ctx.moveTo(50, 150)
+      ctx.lineTo(150, 150)
+      ctx.lineTo(150, 250)
+      ctx.lineTo(50, 250)
+      ctx.lineTo(50, 150)
+      ctx.stroke()
 
+      //直角三角形  边长为100
+      ctx.moveTo(250, 150)
+      ctx.lineTo(250, 250)
+      ctx.lineTo(350, 250)
+      ctx.lineTo(250, 150)
+      ctx.stroke()
 
-    //正方形  边长为100
-    ctx.moveTo(50, 150);
-    ctx.lineTo(150, 150);
-    ctx.lineTo(150, 250);
-    ctx.lineTo(50, 250);
-    ctx.lineTo(50, 150);
-    ctx.stroke();
+      //梯形    边长为100
 
+      ctx.moveTo(450, 150)
 
-    //直角三角形  边长为100
-    ctx.moveTo(250, 150);
-    ctx.lineTo(250, 250);
-    ctx.lineTo(350, 250);
-    ctx.lineTo(250, 150);
-    ctx.stroke();
+      ctx.lineTo(550, 150)
 
-    //梯形    边长为100
+      ctx.lineTo(550, 250)
 
-    ctx.moveTo(450, 150);
+      ctx.lineTo(500, 250)
 
-    ctx.lineTo(550, 150);
+      ctx.lineTo(450, 150)
 
-    ctx.lineTo(550, 250);
-
-    ctx.lineTo(500, 250);
-
-    ctx.lineTo(450, 150);
-
-    ctx.stroke();
-
-  </script>
-</body>
-
+      ctx.stroke()
+    </script>
+  </body>
 </html>

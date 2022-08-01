@@ -1,76 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      ol li {
+        width: 60px;
+        height: 60px;
+        background: url(http://r.photo.store.qq.com/psc?/V52OzcjM296N4D3IEo5e1DfOQZ2trftl/45NBuzDIW489QBoVep5mcR2653VxdmVum93y2OkENJh9tOM8sXpwvPF*A85Z6q0lMtqwMt8HuWUqXM8THK6aiAndkLBPYRY*woyCaIY5qC0!/r)
+          no-repeat;
+      }
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <style>
-    ol li {
-      width: 60px;
-      height: 60px;
-      background: url(http://r.photo.store.qq.com/psc?/V52OzcjM296N4D3IEo5e1DfOQZ2trftl/45NBuzDIW489QBoVep5mcR2653VxdmVum93y2OkENJh9tOM8sXpwvPF*A85Z6q0lMtqwMt8HuWUqXM8THK6aiAndkLBPYRY*woyCaIY5qC0!/r) no-repeat;
-    }
+      .item1 {
+        background: url(http://r.photo.store.qq.com/psc?/V52OzcjM296N4D3IEo5e1DfOQZ2trftl/45NBuzDIW489QBoVep5mcR2653VxdmVum93y2OkENJh9tOM8sXpwvPF*A85Z6q0lMtqwMt8HuWUqXM8THK6aiAndkLBPYRY*woyCaIY5qC0!/r)
+          no-repeat;
+      }
 
-    .item1 {
-      background: url(http://r.photo.store.qq.com/psc?/V52OzcjM296N4D3IEo5e1DfOQZ2trftl/45NBuzDIW489QBoVep5mcR2653VxdmVum93y2OkENJh9tOM8sXpwvPF*A85Z6q0lMtqwMt8HuWUqXM8THK6aiAndkLBPYRY*woyCaIY5qC0!/r) no-repeat;
-    }
+      .item2 {
+        background: url(http://r.photo.store.qq.com/psc?/V52OzcjM296N4D3IEo5e1DfOQZ2trftl/45NBuzDIW489QBoVep5mcR2653VxdmVum93y2OkENJh9tOM8sXpwvPF*A85Z6q0lMtqwMt8HuWUqXM8THK6aiAndkLBPYRY*woyCaIY5qC0!/r)
+          no-repeat;
+        background-position: -60px 0px;
+      }
 
-    .item2 {
-      background: url(http://r.photo.store.qq.com/psc?/V52OzcjM296N4D3IEo5e1DfOQZ2trftl/45NBuzDIW489QBoVep5mcR2653VxdmVum93y2OkENJh9tOM8sXpwvPF*A85Z6q0lMtqwMt8HuWUqXM8THK6aiAndkLBPYRY*woyCaIY5qC0!/r) no-repeat;
-      background-position: -60px 0px;
-    }
+      .item3 {
+        background: url(http://r.photo.store.qq.com/psc?/V52OzcjM296N4D3IEo5e1DfOQZ2trftl/45NBuzDIW489QBoVep5mcR2653VxdmVum93y2OkENJh9tOM8sXpwvPF*A85Z6q0lMtqwMt8HuWUqXM8THK6aiAndkLBPYRY*woyCaIY5qC0!/r)
+          no-repeat;
+        background-position: -120px 0px;
+      }
 
-    .item3 {
-      background: url(http://r.photo.store.qq.com/psc?/V52OzcjM296N4D3IEo5e1DfOQZ2trftl/45NBuzDIW489QBoVep5mcR2653VxdmVum93y2OkENJh9tOM8sXpwvPF*A85Z6q0lMtqwMt8HuWUqXM8THK6aiAndkLBPYRY*woyCaIY5qC0!/r) no-repeat;
-      background-position: -120px 0px;
-    }
+      .item4 {
+        background: url(http://r.photo.store.qq.com/psc?/V52OzcjM296N4D3IEo5e1DfOQZ2trftl/45NBuzDIW489QBoVep5mcR2653VxdmVum93y2OkENJh9tOM8sXpwvPF*A85Z6q0lMtqwMt8HuWUqXM8THK6aiAndkLBPYRY*woyCaIY5qC0!/r)
+          no-repeat;
+        background-position: 0px -60px;
+      }
 
-    .item4 {
-      background: url(http://r.photo.store.qq.com/psc?/V52OzcjM296N4D3IEo5e1DfOQZ2trftl/45NBuzDIW489QBoVep5mcR2653VxdmVum93y2OkENJh9tOM8sXpwvPF*A85Z6q0lMtqwMt8HuWUqXM8THK6aiAndkLBPYRY*woyCaIY5qC0!/r) no-repeat;
-      background-position: 0px -60px;
-    }
+      .item5 {
+        background: url(http://r.photo.store.qq.com/psc?/V52OzcjM296N4D3IEo5e1DfOQZ2trftl/45NBuzDIW489QBoVep5mcR2653VxdmVum93y2OkENJh9tOM8sXpwvPF*A85Z6q0lMtqwMt8HuWUqXM8THK6aiAndkLBPYRY*woyCaIY5qC0!/r)
+          no-repeat;
+        background-position: -60px -60px;
+      }
 
-    .item5 {
-      background: url(http://r.photo.store.qq.com/psc?/V52OzcjM296N4D3IEo5e1DfOQZ2trftl/45NBuzDIW489QBoVep5mcR2653VxdmVum93y2OkENJh9tOM8sXpwvPF*A85Z6q0lMtqwMt8HuWUqXM8THK6aiAndkLBPYRY*woyCaIY5qC0!/r) no-repeat;
-      background-position: -60px -60px;
-    }
+      .item6 {
+        background: url(http://r.photo.store.qq.com/psc?/V52OzcjM296N4D3IEo5e1DfOQZ2trftl/45NBuzDIW489QBoVep5mcR2653VxdmVum93y2OkENJh9tOM8sXpwvPF*A85Z6q0lMtqwMt8HuWUqXM8THK6aiAndkLBPYRY*woyCaIY5qC0!/r)
+          no-repeat;
+        background-position: -120px -60px;
+      }
 
-    .item6 {
-      background: url(http://r.photo.store.qq.com/psc?/V52OzcjM296N4D3IEo5e1DfOQZ2trftl/45NBuzDIW489QBoVep5mcR2653VxdmVum93y2OkENJh9tOM8sXpwvPF*A85Z6q0lMtqwMt8HuWUqXM8THK6aiAndkLBPYRY*woyCaIY5qC0!/r) no-repeat;
-      background-position: -120px -60px;
-    }
+      .item7 {
+        background: url(http://r.photo.store.qq.com/psc?/V52OzcjM296N4D3IEo5e1DfOQZ2trftl/45NBuzDIW489QBoVep5mcR2653VxdmVum93y2OkENJh9tOM8sXpwvPF*A85Z6q0lMtqwMt8HuWUqXM8THK6aiAndkLBPYRY*woyCaIY5qC0!/r)
+          no-repeat;
+        background-position: 0px -120px;
+      }
 
-    .item7 {
-      background: url(http://r.photo.store.qq.com/psc?/V52OzcjM296N4D3IEo5e1DfOQZ2trftl/45NBuzDIW489QBoVep5mcR2653VxdmVum93y2OkENJh9tOM8sXpwvPF*A85Z6q0lMtqwMt8HuWUqXM8THK6aiAndkLBPYRY*woyCaIY5qC0!/r) no-repeat;
-      background-position: 0px -120px;
-    }
+      .item8 {
+        background: url(http://r.photo.store.qq.com/psc?/V52OzcjM296N4D3IEo5e1DfOQZ2trftl/45NBuzDIW489QBoVep5mcR2653VxdmVum93y2OkENJh9tOM8sXpwvPF*A85Z6q0lMtqwMt8HuWUqXM8THK6aiAndkLBPYRY*woyCaIY5qC0!/r)
+          no-repeat;
+        background-position: -60px -120px;
+      }
 
-    .item8 {
-      background: url(http://r.photo.store.qq.com/psc?/V52OzcjM296N4D3IEo5e1DfOQZ2trftl/45NBuzDIW489QBoVep5mcR2653VxdmVum93y2OkENJh9tOM8sXpwvPF*A85Z6q0lMtqwMt8HuWUqXM8THK6aiAndkLBPYRY*woyCaIY5qC0!/r) no-repeat;
-      background-position: -60px -120px;
-    }
+      .item9 {
+        background: url(http://r.photo.store.qq.com/psc?/V52OzcjM296N4D3IEo5e1DfOQZ2trftl/45NBuzDIW489QBoVep5mcR2653VxdmVum93y2OkENJh9tOM8sXpwvPF*A85Z6q0lMtqwMt8HuWUqXM8THK6aiAndkLBPYRY*woyCaIY5qC0!/r)
+          no-repeat;
+        background-position: -120px -120px;
+      }
+    </style>
+  </head>
 
-    .item9 {
-      background: url(http://r.photo.store.qq.com/psc?/V52OzcjM296N4D3IEo5e1DfOQZ2trftl/45NBuzDIW489QBoVep5mcR2653VxdmVum93y2OkENJh9tOM8sXpwvPF*A85Z6q0lMtqwMt8HuWUqXM8THK6aiAndkLBPYRY*woyCaIY5qC0!/r) no-repeat;
-      background-position: -120px -120px;
-    }
-  </style>
-</head>
-
-<body>
-  <ol>
-    <li class="item1"></li>
-    <li class="item2"></li>
-    <li class="item3"></li>
-    <li class="item4"></li>
-    <li class="item5"></li>
-    <li class="item6"></li>
-    <li class="item7"></li>
-    <li class="item8"></li>
-    <li class="item9"></li>
-  </ol>
-</body>
-
+  <body>
+    <ol>
+      <li class="item1"></li>
+      <li class="item2"></li>
+      <li class="item3"></li>
+      <li class="item4"></li>
+      <li class="item5"></li>
+      <li class="item6"></li>
+      <li class="item7"></li>
+      <li class="item8"></li>
+      <li class="item9"></li>
+    </ol>
+  </body>
 </html>

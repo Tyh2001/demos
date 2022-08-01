@@ -1,49 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+      canvas {
+        border: 1px solid red;
+      }
+    </style>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <title>Document</title>
-  <style type="text/css">
-    canvas {
-      border: 1px solid red;
-    }
-  </style>
-</head>
+  <body>
+    <canvas width="600" height="400"></canvas>
+    <script type="text/javascript">
+      //获取canvas画布对象
+      var canvas = document.querySelector('canvas')
+      //获取绘图上下文
+      var ctx = canvas.getContext('2d')
 
-<body>
-  <canvas width="600" height="400"></canvas>
-  <script type="text/javascript">
-    //获取canvas画布对象
-    var canvas = document.querySelector("canvas");
-    //获取绘图上下文
-    var ctx = canvas.getContext("2d");
+      ctx.moveTo(200, 100)
+      ctx.lineTo(400, 100)
+      ctx.lineTo(400, 300)
+      ctx.lineTo(200, 300)
+      ctx.closePath()
 
+      ctx.moveTo(250, 150)
+      ctx.lineTo(250, 250)
+      ctx.lineTo(350, 250)
+      ctx.lineTo(350, 150)
+      ctx.closePath()
 
-    ctx.moveTo(200, 100);
-    ctx.lineTo(400, 100);
-    ctx.lineTo(400, 300);
-    ctx.lineTo(200, 300);
-    ctx.closePath();
+      ctx.stroke()
 
+      // ctx.fillStyle="red";
 
-    ctx.moveTo(250, 150);
-    ctx.lineTo(250, 250);
-    ctx.lineTo(350, 250);
-    ctx.lineTo(350, 150);
-    ctx.closePath();
-
-
-    ctx.stroke();
-
-
-	 	 // ctx.fillStyle="red";
-
-	 	 // ctx.fill();
-
-
-
-  </script>
-</body>
-
+      // ctx.fill();
+    </script>
+  </body>
 </html>

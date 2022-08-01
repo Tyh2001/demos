@@ -1,57 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>输入文本框</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
 
-<head>
-  <meta charset="UTF-8">
-  <title>输入文本框</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-    }
+      input {
+        width: 300px;
+        height: 40px;
+        font-size: 28px;
+      }
 
-    input {
-      width: 300px;
-      height: 40px;
-      font-size: 28px;
-    }
+      ul li {
+        list-style: none;
+        width: 30px;
+        height: 30px;
+        border: 1px solid black;
+        line-height: 30px;
+        text-align: center;
+        float: left;
+        cursor: pointer;
+        background-color: skyblue;
+      }
+    </style>
+  </head>
 
-    ul li {
-      list-style: none;
-      width: 30px;
-      height: 30px;
-      border: 1px solid black;
-      line-height: 30px;
-      text-align: center;
-      float: left;
-      cursor: pointer;
-      background-color: skyblue;
-    }
-  </style>
-</head>
-
-
-<body>
-  <input type="text">
-  <ul>
-    <li onclick="AcceptData('1')">1</li>
-    <li onclick="AcceptData('2')">2</li>
-    <li onclick="AcceptData('3')">3</li>
-    <li onclick="AcceptData('4')">4</li>
-    <li onclick="AcceptData('5')">5</li>
-    <li onclick="AcceptData('6')">6</li>
-    <li onclick="AcceptData('7')">7</li>
-    <li onclick="AcceptData('8')">8</li>
-    <li onclick="AcceptData('9')">9</li>
-    <li onclick="AcceptData('0')">0</li>
-  </ul>
-  <script>
-    function AcceptData(num) {
-      // 获取文本框的value值
-      document.querySelector("input").value += num;
-    }
-  </script>
-
-</body>
-
+  <body>
+    <input type="text" />
+    <ul>
+      <li onclick="AcceptData('1')">1</li>
+      <li onclick="AcceptData('2')">2</li>
+      <li onclick="AcceptData('3')">3</li>
+      <li onclick="AcceptData('4')">4</li>
+      <li onclick="AcceptData('5')">5</li>
+      <li onclick="AcceptData('6')">6</li>
+      <li onclick="AcceptData('7')">7</li>
+      <li onclick="AcceptData('8')">8</li>
+      <li onclick="AcceptData('9')">9</li>
+      <li onclick="AcceptData('0')">0</li>
+    </ul>
+    <script>
+      function AcceptData(num) {
+        // 获取文本框的value值
+        document.querySelector('input').value += num
+      }
+    </script>
+  </body>
 </html>

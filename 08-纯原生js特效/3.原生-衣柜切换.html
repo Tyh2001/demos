@@ -1,77 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <title>原生衣柜切换</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-    }
-
-    .BigImg {
-      height: 200px;
-    }
-
-    ul {
-      list-style: none;
-      margin-top: 20px;
-      display: flex;
-    }
-
-    ul li {
-      height: 30px;
-      width: 60px;
-      margin-left: 15px;
-      border: 4px solid transparent;
-      cursor: pointer;
-    }
-
-    .smallImg {
-      height: 30px;
-      width: 60px;
-    }
-
-    .smallImgLi {
-      border: 4px solid blue;
-    }
-  </style>
-</head>
-
-<body>
-  <img class="BigImg" src="./图片/1.jpg" alt="">
-  <br>
-  <ul>
-    <li class="smallImgLi"><img class="smallImg" src="./图片/1.jpg" alt=""></li>
-    <li><img class="smallImg" src="./图片/2.jpg" alt=""></li>
-    <li><img class="smallImg" src="./图片/3.jpg" alt=""></li>
-    <li><img class="smallImg" src="./图片/4.jpg" alt=""></li>
-    <li><img class="smallImg" src="./图片/5.jpg" alt=""></li>
-  </ul>
-
-  <script>
-    let smallImg = document.querySelectorAll(".smallImg")
-    let BigImg = document.querySelector(".BigImg");
-
-    for (let i = 0; i < smallImg.length; i++) {
-      smallImg[i].onmouseover = function () {
-
-        // 先将所有的类名全部清空
-        for (let j = 0; j < smallImg.length; j++) {
-          smallImg[j].parentNode.setAttribute("class", "");
-        }
-
-        // 再将移入的添加类名 
-        //parentNode是 dom里的操作
-        this.parentNode.setAttribute("class", "smallImgLi");
-
-        // 小图的src赋值给大图的src
-        let smallSrc = this.getAttribute("src");
-        BigImg.setAttribute("src", smallSrc);
+  <head>
+    <meta charset="UTF-8" />
+    <title>原生衣柜切换</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
       }
-    }
-  </script>
-</body>
 
+      .BigImg {
+        height: 200px;
+      }
+
+      ul {
+        list-style: none;
+        margin-top: 20px;
+        display: flex;
+      }
+
+      ul li {
+        height: 30px;
+        width: 60px;
+        margin-left: 15px;
+        border: 4px solid transparent;
+        cursor: pointer;
+      }
+
+      .smallImg {
+        height: 30px;
+        width: 60px;
+      }
+
+      .smallImgLi {
+        border: 4px solid blue;
+      }
+    </style>
+  </head>
+
+  <body>
+    <img class="BigImg" src="./图片/1.jpg" alt="" />
+    <br />
+    <ul>
+      <li class="smallImgLi">
+        <img class="smallImg" src="./图片/1.jpg" alt="" />
+      </li>
+      <li><img class="smallImg" src="./图片/2.jpg" alt="" /></li>
+      <li><img class="smallImg" src="./图片/3.jpg" alt="" /></li>
+      <li><img class="smallImg" src="./图片/4.jpg" alt="" /></li>
+      <li><img class="smallImg" src="./图片/5.jpg" alt="" /></li>
+    </ul>
+
+    <script>
+      let smallImg = document.querySelectorAll('.smallImg')
+      let BigImg = document.querySelector('.BigImg')
+
+      for (let i = 0; i < smallImg.length; i++) {
+        smallImg[i].onmouseover = function () {
+          // 先将所有的类名全部清空
+          for (let j = 0; j < smallImg.length; j++) {
+            smallImg[j].parentNode.setAttribute('class', '')
+          }
+
+          // 再将移入的添加类名
+          //parentNode是 dom里的操作
+          this.parentNode.setAttribute('class', 'smallImgLi')
+
+          // 小图的src赋值给大图的src
+          let smallSrc = this.getAttribute('src')
+          BigImg.setAttribute('src', smallSrc)
+        }
+      }
+    </script>
+  </body>
 </html>

@@ -1,36 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>原生开始关闭定时器</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <title>原生开始关闭定时器</title>
-</head>
+  <body>
+    <button class="start">开始</button>
+    <button class="end">关闭</button>
+    <p>0</p>
 
-<body>
-  <button class="start">开始</button>
-  <button class="end">关闭</button>
-  <p>0</p>
+    <script>
+      let start = document.querySelector('.start')
+      let end = document.querySelector('.end')
+      let p = document.querySelector('p')
 
-  <script>
-    let start = document.querySelector(".start");
-    let end = document.querySelector(".end");
-    let p = document.querySelector("p");
+      let num = 0
+      timer = null
+      start.onclick = function () {
+        // 点击时先清除定时器 再开启定时器
+        // 以免每点一次都增加一个定时器
+        clearInterval(timer)
+        timer = setInterval(function () {
+          num++
+          p.innerHTML = num
+        }, 1000)
+      }
 
-    let num = 0; timer = null;
-    start.onclick = function () {
-      // 点击时先清除定时器 再开启定时器
-      // 以免每点一次都增加一个定时器
-      clearInterval(timer);
-      timer = setInterval(function () {
-        num++
-        p.innerHTML = num;
-      }, 1000)
-    }
-
-    end.onclick = function () {
-      clearInterval(timer);
-    }
-  </script>
-</body>
-
+      end.onclick = function () {
+        clearInterval(timer)
+      }
+    </script>
+  </body>
 </html>

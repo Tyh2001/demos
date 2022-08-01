@@ -1,65 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>模态框</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
 
-<head>
-  <meta charset="UTF-8">
-  <title>模态框</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-    }
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+      }
 
-    html,
-    body {
-      width: 100%;
-      height: 100%;
-    }
+      .a {
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.3);
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        display: none;
+      }
 
-    .a {
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.3);
-      position: absolute;
-      top: 0px;
-      left: 0px;
-      display: none;
-    }
+      .b {
+        width: 500px;
+        height: 300px;
+        border: 1px solid black;
+        float: left;
+        margin-top: 300px;
+        margin-left: 700px;
+        background-color: #fff;
+      }
 
-    .b {
-      width: 500px;
-      height: 300px;
-      border: 1px solid black;
-      float: left;
-      margin-top: 300px;
-      margin-left: 700px;
-      background-color: #fff;
-    }
+      .an {
+        width: 50px;
+        height: 30px;
+      }
+    </style>
+  </head>
 
-    .an {
-      width: 50px;
-      height: 30px;
-    }
-  </style>
-</head>
-
-<body>
-  <button class="btn1 an">弹出</button>
-  <div class="a">
-    <div class="b">
-      <button class="btn2 an">关闭</button>
-      这是一段文字
+  <body>
+    <button class="btn1 an">弹出</button>
+    <div class="a">
+      <div class="b">
+        <button class="btn2 an">关闭</button>
+        这是一段文字
+      </div>
     </div>
-  </div>
-  <script src="jquery.js"></script>
-  <script>
-    $(".btn1").click(function () {
-      $(".a").fadeIn(300)
-    })
-    $(".btn2").click(function () {
-      $(".a").fadeOut(300)
-    })
-  </script>
-</body>
-
+    <script src="jquery.js"></script>
+    <script>
+      $('.btn1').click(function () {
+        $('.a').fadeIn(300)
+      })
+      $('.btn2').click(function () {
+        $('.a').fadeOut(300)
+      })
+    </script>
+  </body>
 </html>

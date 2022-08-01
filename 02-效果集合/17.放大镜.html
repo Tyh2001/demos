@@ -1,136 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>放大镜</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
 
-<head>
-  <meta charset="UTF-8">
-  <title>放大镜</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-    }
+      .smallbox {
+        position: relative;
+        float: left;
+        width: 400px;
+        height: 255px;
+        margin: 20px;
+        border: 2px solid #999;
+      }
 
-    .smallbox {
-      position: relative;
-      float: left;
-      width: 400px;
-      height: 255px;
-      margin: 20px;
-      border: 2px solid #999;
-    }
+      .smallbox img {
+        width: 400px;
+        height: 255px;
+      }
 
-    .smallbox img {
-      width: 400px;
-      height: 255px;
-    }
+      .floatbox {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 200px;
+        height: 125px;
+        background-color: rgba(255, 255, 0, 0.5);
+        display: none;
+      }
 
-    .floatbox {
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 200px;
-      height: 125px;
-      background-color: rgba(255, 255, 0, 0.5);
-      display: none;
-    }
+      .bigbox {
+        position: relative;
+        float: left;
+        width: 500px;
+        height: 320px;
+        border: 2px solid red;
+        overflow: hidden;
+        display: none;
+      }
 
-    .bigbox {
-      position: relative;
-      float: left;
-      width: 500px;
-      height: 320px;
-      border: 2px solid red;
-      overflow: hidden;
-      display: none;
-    }
+      .bigbox img {
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
 
-    .bigbox img {
-      position: absolute;
-      left: 0;
-      top: 0;
-    }
+      /* 并集选择器 */
 
-    /* 并集选择器 */
+      .smallbox,
+      .bigbox {
+        /* display: none; */
+        /* 边框的宽度 */
+        border-width: 2px;
+        /* 边框颜色 */
+        border-color: red;
+        /* 边框线的类型 */
+        border-style: solid;
+        border-left-color: #000;
+      }
+    </style>
+  </head>
 
-    .smallbox,
-    .bigbox {
-      /* display: none; */
-      /* 边框的宽度 */
-      border-width: 2px;
-      /* 边框颜色 */
-      border-color: red;
-      /* 边框线的类型 */
-      border-style: solid;
-      border-left-color: #000;
-    }
-  </style>
-</head>
-
-<body>
-  <div id="wrap">
-    <div class="smallbox">
-      <img src="图片/牌子1.jpg">
-      <div class="floatbox"></div>
+  <body>
+    <div id="wrap">
+      <div class="smallbox">
+        <img src="图片/牌子1.jpg" />
+        <div class="floatbox"></div>
+      </div>
+      <div class="bigbox">
+        <img src="图片/牌子1.jpg" />
+      </div>
     </div>
-    <div class="bigbox">
-      <img src="图片/牌子1.jpg">
-    </div>
-  </div>
 
-  <script src="jquery.js"></script>
-  <script>
-    // 鼠标移入时，显示浮动盒子，大图片；
-    $('.smallbox').mouseenter(function () {
-      $(".floatbox,.bigbox").show();
-    })
+    <script src="jquery.js"></script>
+    <script>
+      // 鼠标移入时，显示浮动盒子，大图片；
+      $('.smallbox').mouseenter(function () {
+        $('.floatbox,.bigbox').show()
+      })
 
-    // 鼠标移出时，浮动盒子，大图片隐藏
-    $('.smallbox').mouseleave(function () {
-      $(".floatbox,.bigbox").hide();
-    })
+      // 鼠标移出时，浮动盒子，大图片隐藏
+      $('.smallbox').mouseleave(function () {
+        $('.floatbox,.bigbox').hide()
+      })
 
-    // smallbox中鼠标移动
-    $(".smallbox").mousemove(function (e) {
-      // 计算浮动盒子定位的left和top值
-      // left = 光标距页面左边的距离 - smallbox距页面左边的距离 - 浮动盒子的一半宽度 - smallbox左边边框的大小
-      // .css("border-width") 获取的值带有单位，我们的目标是数字，需要去掉单位，parseInt() 可以取到数字部分
-      // offset() 偏移位置 offset().left 元素距页面左边的距离，只有数字没有单位，默认单位是像素
-      var floatL = e.pageX - $(this).offset().left - $(".floatbox").width() / 2 - parseInt($(this).css("border-width"));
-      var floatT = e.pageY - $(this).offset().top - $(".floatbox").height() / 2 - parseInt($(this).css("border-width"));
+      // smallbox中鼠标移动
+      $('.smallbox').mousemove(function (e) {
+        // 计算浮动盒子定位的left和top值
+        // left = 光标距页面左边的距离 - smallbox距页面左边的距离 - 浮动盒子的一半宽度 - smallbox左边边框的大小
+        // .css("border-width") 获取的值带有单位，我们的目标是数字，需要去掉单位，parseInt() 可以取到数字部分
+        // offset() 偏移位置 offset().left 元素距页面左边的距离，只有数字没有单位，默认单位是像素
+        var floatL =
+          e.pageX -
+          $(this).offset().left -
+          $('.floatbox').width() / 2 -
+          parseInt($(this).css('border-width'))
+        var floatT =
+          e.pageY -
+          $(this).offset().top -
+          $('.floatbox').height() / 2 -
+          parseInt($(this).css('border-width'))
 
-      // 不让浮动盒子超出边框
-      if (floatL < 0) {
-        floatL = 0;
-      }
-      // 浮动盒子在最右边的时候，left值不能大于 父级盒子的宽度 减去 本身的宽度 ；
-      if (floatL > $(".smallbox").width() - $(".floatbox").width()) {
-        floatL = $(".smallbox").width() - $(".floatbox").width();
-      }
+        // 不让浮动盒子超出边框
+        if (floatL < 0) {
+          floatL = 0
+        }
+        // 浮动盒子在最右边的时候，left值不能大于 父级盒子的宽度 减去 本身的宽度 ；
+        if (floatL > $('.smallbox').width() - $('.floatbox').width()) {
+          floatL = $('.smallbox').width() - $('.floatbox').width()
+        }
 
-      if (floatT < 0) {
-        floatT = 0;
-      }
-      if (floatT > $(".smallbox").height() - $(".floatbox").height()) {
-        floatT = $(".smallbox").height() - $(".floatbox").height();
-      }
+        if (floatT < 0) {
+          floatT = 0
+        }
+        if (floatT > $('.smallbox').height() - $('.floatbox').height()) {
+          floatT = $('.smallbox').height() - $('.floatbox').height()
+        }
 
-      // 将floatL floatT 值给floatbox
-      $(".floatbox").css({
-        left: floatL,
-        top: floatT
-      });
+        // 将floatL floatT 值给floatbox
+        $('.floatbox').css({
+          left: floatL,
+          top: floatT
+        })
 
-      // 大图片动
-      var L = ($(".bigbox img").width() * floatL) / $(".smallbox img").width();
-      var T = ($(".bigbox img").height() * floatT) / $(".smallbox img").height();
+        // 大图片动
+        var L = ($('.bigbox img').width() * floatL) / $('.smallbox img').width()
+        var T =
+          ($('.bigbox img').height() * floatT) / $('.smallbox img').height()
 
-      $(".bigbox img").css({
-        left: -L,
-        top: -T
-      });
-
-    })
-  </script>
-</body>
-
+        $('.bigbox img').css({
+          left: -L,
+          top: -T
+        })
+      })
+    </script>
+  </body>
 </html>

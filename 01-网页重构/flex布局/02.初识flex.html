@@ -1,99 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <title>Document</title>
-  <style>
-    /* flex 弹性布局 */
-    /* 给父级元素设置 display: flex; 父级里面的子元素我们称之为项 ，里面的每一项默认沿主轴排列，默认水平方向是主轴，也就是说默认元素水平排列；垂直方向是交叉轴 ； 父级我们称之为 “容器” */
-    .box {
-      height: 200px;
-      border: 1px solid #000;
-      display: flex;
-      /* flex-direction 控制主轴方向
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+      /* flex 弹性布局 */
+      /* 给父级元素设置 display: flex; 父级里面的子元素我们称之为项 ，里面的每一项默认沿主轴排列，默认水平方向是主轴，也就是说默认元素水平排列；垂直方向是交叉轴 ； 父级我们称之为 “容器” */
+      .box {
+        height: 200px;
+        border: 1px solid #000;
+        display: flex;
+        /* flex-direction 控制主轴方向
         row            水平方向是主轴，从左到右   默认值
         row-reverse    水平方向是主轴，从右到左
         column         垂直方向是主轴，从上到下
         column-reverse 垂直方向是主轴，从下到上*/
-      flex-direction: row;
-      /* justify-content 每项在主轴方向 对齐方式
+        flex-direction: row;
+        /* justify-content 每项在主轴方向 对齐方式
         flex-start:     左对齐   默认值
         flex-end:       右对齐 
         center:         居中对齐
         space-around    每一项两边的空间是相同的
         space-between   任意相邻两项中间的空间是相同的 */
-      justify-content: space-between;
-      /* flex-wrap 项在主轴方向超出是否换行  
+        justify-content: space-between;
+        /* flex-wrap 项在主轴方向超出是否换行  
         nowrap    不换行  默认值
         wrap      换行，第一行在上面
         wrap-reverse   换行，第一行在下面*/
-      flex-wrap: nowrap;
-      /* align-items  每项在交叉轴上的对齐方式 
+        flex-wrap: nowrap;
+        /* align-items  每项在交叉轴上的对齐方式 
         stretch     拉伸  默认值
         flex-start  上对齐
         flex-end    下对齐
         center      居中对齐
         baseline    文字基线对齐
       */
-      align-items: center;
-    }
+        align-items: center;
+      }
 
-    .box>div {
-      font-size: 30px;
-      color: #fff;
-      /* 每一项的默认大小是项里面内容的大小 */
-      /* flex-grow 控制项放大比例，每一项所占剩余空间的比例 
+      .box > div {
+        font-size: 30px;
+        color: #fff;
+        /* 每一项的默认大小是项里面内容的大小 */
+        /* flex-grow 控制项放大比例，每一项所占剩余空间的比例 
         0 不能放大   默认值
         大于0的整数值是放大比例
       */
-      flex-grow: 1;
-      /* flex-shrink  是否可以缩小
+        flex-grow: 1;
+        /* flex-shrink  是否可以缩小
           0  不能缩小
           1  可以缩小
       */
-      /* 死瑞科 */
-      flex-shrink: 1;
-      /* order 给项目排序 默认值是0 值越小越靠前，越大越靠后 */
-      /* 给每项设置大小 */
-      flex-basis: 300px;
-      order: 0;
-    }
+        /* 死瑞科 */
+        flex-shrink: 1;
+        /* order 给项目排序 默认值是0 值越小越靠前，越大越靠后 */
+        /* 给每项设置大小 */
+        flex-basis: 300px;
+        order: 0;
+      }
 
-    .box div:nth-child(1) {
-      background-color: red;
-    }
+      .box div:nth-child(1) {
+        background-color: red;
+      }
 
-    .box div:nth-child(2) {
-      background-color: green;
-      flex-grow: 3;
-    }
+      .box div:nth-child(2) {
+        background-color: green;
+        flex-grow: 3;
+      }
 
-    .box div:nth-child(3) {
-      background-color: blue;
-      order: -1;
-    }
+      .box div:nth-child(3) {
+        background-color: blue;
+        order: -1;
+      }
 
-    .box div:nth-child(4) {
-      background-color: yellow;
-    }
+      .box div:nth-child(4) {
+        background-color: yellow;
+      }
 
-    .box.a {
-      /* 一个元素同时拥有这几个类名 */
-      /* 这些类名必须在同一个元素上 */
-    }
-  </style>
-</head>
+      .box.a {
+        /* 一个元素同时拥有这几个类名 */
+        /* 这些类名必须在同一个元素上 */
+      }
+    </style>
+  </head>
 
-<body>
-  <div class='box a b c'>
-    <div>第1个div
-      <div></div>
+  <body>
+    <div class="box a b c">
+      <div>
+        第1个div
+        <div></div>
+      </div>
+      <div>第2个div</div>
+      <div>第3个div</div>
+      <div>第4个div</div>
     </div>
-    <div>第2个div</div>
-    <div>第3个div</div>
-    <div>第4个div</div>
-  </div>
-</body>
-
+  </body>
 </html>

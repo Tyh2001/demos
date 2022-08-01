@@ -1,32 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>冒泡排序</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <title>冒泡排序 </title>
-</head>
-
-<body>
-  <script src="jquery.js"></script>
-  <script>
-    var arr = [3, 2, 5, 4]
-    function fun(arr) {
-      var c = "";
-      for (var i = 0; i < arr.length; i++) {
-        for (var j = i + 1; j < arr.length; j++) {
-          if (arr[i] > arr[j]) {
-            c = arr[i];
-            arr[i] = arr[j];
-            arr[j] = c;
+  <body>
+    <script src="jquery.js"></script>
+    <script>
+      var arr = [3, 2, 5, 4]
+      function fun(arr) {
+        var c = ''
+        for (var i = 0; i < arr.length; i++) {
+          for (var j = i + 1; j < arr.length; j++) {
+            if (arr[i] > arr[j]) {
+              c = arr[i]
+              arr[i] = arr[j]
+              arr[j] = c
+            }
           }
         }
+        return arr
       }
-      return arr;
-    }
-    console.log(fun(arr))
-
-  </script>
-
-</body>
-
+      console.log(fun(arr))
+    </script>
+  </body>
 </html>

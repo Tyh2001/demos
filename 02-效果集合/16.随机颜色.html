@@ -1,53 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+      * {
+        transform: translate() rotate() rotate3d(x, y, z, deg) scale(0-1);
+        animation: name duration timing-function delay iteration-count direction;
+        /* 动画状态： paused 暂停动画  running 动画运行 */
+        animation-play-state: paused;
+      }
 
-<head>
-  <meta charset="UTF-8">
-  <title>Document</title>
-  <style>
-    * {
-      transform: translate() rotate() rotate3d(x, y, z, deg) scale(0-1);
-      animation: name duration timing-function delay iteration-count direction;
-      /* 动画状态： paused 暂停动画  running 动画运行 */
-      animation-play-state: paused;
-    }
+      @keyframes ani {
+        from {
+        }
 
-    @keyframes ani {
-      from {}
+        to {
+        }
+      }
+    </style>
+  </head>
 
-      to {}
-    }
-  </style>
-</head>
-
-<body>
-  <button class="start">开始</button>
-  <button class="stop">暂停</button>
-  <script>
-    // alt + shift + 向下箭头
-    var start = document.querySelector(".start");
-    var stop = document.querySelector(".stop");
-    // #ffffff  rgb(0,0,0)->rgb(255,255,255)
-    function getColor() {
-      // 获取到0-255
-      var red = Math.round(Math.random() * 255);
-      var green = Math.round(Math.random() * 255);
-      var blue = Math.round(Math.random() * 255);
-      // document.body.style.backgroundColor = "rgb(" + red + "," + green + "," + blue + ")" ;
-      document.body.style.backgroundColor = `rgb(${red},${green},${blue})`;
-    }
-    var time;
-    start.onclick = function () {
-      clearInterval(time); // 每次开始前，先清空计时器
-      time = setInterval(getColor, 100);
-    }
-    stop.onclick = function () {
-      clearInterval(time);
-    }
-    //  获取到 10-25 之内的随机数
-    10 + Math.round(Math.random() * 15);
-  </script>
-
-</body>
-
+  <body>
+    <button class="start">开始</button>
+    <button class="stop">暂停</button>
+    <script>
+      // alt + shift + 向下箭头
+      var start = document.querySelector('.start')
+      var stop = document.querySelector('.stop')
+      // #ffffff  rgb(0,0,0)->rgb(255,255,255)
+      function getColor() {
+        // 获取到0-255
+        var red = Math.round(Math.random() * 255)
+        var green = Math.round(Math.random() * 255)
+        var blue = Math.round(Math.random() * 255)
+        // document.body.style.backgroundColor = "rgb(" + red + "," + green + "," + blue + ")" ;
+        document.body.style.backgroundColor = `rgb(${red},${green},${blue})`
+      }
+      var time
+      start.onclick = function () {
+        clearInterval(time) // 每次开始前，先清空计时器
+        time = setInterval(getColor, 100)
+      }
+      stop.onclick = function () {
+        clearInterval(time)
+      }
+      //  获取到 10-25 之内的随机数
+      10 + Math.round(Math.random() * 15)
+    </script>
+  </body>
 </html>

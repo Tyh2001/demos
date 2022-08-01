@@ -4,10 +4,10 @@
  * @returns 克隆好的新对象
  */
 
-export const shallowClone = obj => {
-    const newObj = {}
-    for (const key in obj) {
-        newObj[key] = obj[key]
-    }
-    return newObj
+export const shallowClone = (obj) => {
+  const newObj = {}
+  for (const key in obj) {
+    newObj[key] = obj[key]
+  }
+  return newObj
 }
