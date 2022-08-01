@@ -1,4 +1,5 @@
 {
+  "name": "demo-list",
   "dependencies": {
     "prettier": "^2.7.1"
   },
