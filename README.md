@@ -1,4 +1,4 @@
-# demo-list
+# demos
 
 ## 🐍 前言
 
